@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function(){
+      var t = localStorage.getItem('binah-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="מדריך Prompt Engineering בעברית — מסגרת CRISPE, 20 פרומפטים לדוגמה, טעויות נפוצות וטכניקות מתקדמות.">
+  <meta property="og:title" content="מדריך Prompt Engineering: כיצד לדבר עם AI נכון">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <title>מדריך Prompt Engineering: כיצד לדבר עם AI נכון | בינה</title>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- GA4_CODE_HERE -->
+  <!-- ADSENSE_HEAD_CODE_HERE -->
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">בינה ✦</a>
+      <nav>
+        <a href="../index.html">ראשי</a>
+        <a href="../index.html#articles">כתבות</a>
+        <a href="../guides.html">מדריכים</a>
+        <a href="../weekly-news.html">חדשות</a>
+      </nav>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+        <span class="icon-dark">🌙 כהה</span>
+        <span class="icon-light">☀️ בהיר</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+</div>
+
+<div class="container">
+  <div class="article-header">
+    <span class="category">מדריך</span>
+    <h1>מדריך Prompt Engineering: כיצד לדבר עם AI נכון</h1>
+    <div class="meta">
+      <span>📅 מרץ 2025</span>
+      <span>⏱ 6 דקות קריאה</span>
+      <span>✍ צוות בינה</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-layout">
+    <main class="article-body">
+<div class="container"><button class="btn-back" onclick="history.back()">→ חזרה</button></div>
+
+      <p>שני אנשים יכולים להשתמש באותו AI ולקבל תוצאות שונות לחלוטין — אחד מתאכזב, השני מרוצה. ההבדל לא בכלי, אלא ב<strong>אופן השאלה</strong>. Prompt Engineering הוא האמנות (ומדע) של לדבר עם AI בצורה שמוציאה את המיטב ממנו.</p>
+
+      <h2>מה זה Prompt?</h2>
+      <p>Prompt הוא כל קלט שאתם נותנים למודל AI — שאלה, הוראה, הקשר, דוגמה. ה-AI מחזיר פלט בהתאם ל-Prompt. כל מה שהמודל "יודע" על המשימה שלכם — מגיע מה-Prompt.</p>
+
+      <p>Prompt גרוע: "כתוב לי מייל"</p>
+      <p>Prompt טוב: "כתוב מייל ב-150 מילה לצוות מפתחים המודיע על עיכוב בגרסה v2.0 בשבוע. הטון: מקצועי ואופטימי. כלול: סיבה קצרה, תאריך חדש, ומה שהצוות יכול לעשות בינתיים."</p>
+
+        <div class="adsense-in-article">
+          <!-- Google AdSense In-Article Ad -->
+          <!-- ADSENSE_IN_ARTICLE_SLOT -->
+          <div class="adsense-placeholder">📢 מודעה</div>
+        </div>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+מסגרת CRISPE — הפרומפט המושלם</h2>
+      <p>CRISPE היא מסגרת מוכחת לבניית פרומפטים איכותיים:</p>
+
+      <table>
+        <thead>
+          <tr><th>אות</th><th>מרכיב</th><th>דוגמה</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>C</td><td>Context — הקשר</td><td>"אני מנהל שיווק בחברת SaaS B2B"</td></tr>
+          <tr><td>R</td><td>Role — תפקיד</td><td>"פעל כ-Copywriter עם 15 שנות ניסיון"</td></tr>
+          <tr><td>I</td><td>Instructions — הוראות</td><td>"כתוב מאמר בלוג ב-800 מילה"</td></tr>
+          <tr><td>S</td><td>Style — סגנון</td><td>"טון: סמכותי אך נגיש. בלי ז'רגון"</td></tr>
+          <tr><td>P</td><td>Purpose — מטרה</td><td>"המטרה: להניע לידים להירשם לטריאל"</td></tr>
+          <tr><td>E</td><td>Examples — דוגמאות</td><td>"בסגנון של HubSpot Blog"</td></tr>
+        </tbody>
+      </table>
+
+      <h2>20 פרומפטים לדוגמה בעברית</h2>
+
+      <h3>לעסקים וכתיבה מקצועית</h3>
+      <p><strong>1. מייל מכירה:</strong></p>
+      <blockquote>פעל כ-Sales Copywriter מנוסה. כתוב מייל מכירה קצר (150 מילה) לבעלי עסקים קטנים בישראל שמציע להם ניהול רשתות חברתיות. הדגש חסכון בזמן ו-ROI ברור. כלול CTA ברור. בלי ביטויי שחיקה.</blockquote>
+
+      <p><strong>2. ניתוח SWOT:</strong></p>
+      <blockquote>אני בעל מסעדה בתל אביב עם 3 שנות פעילות. עזור לי לבנות ניתוח SWOT מלא. שאל אותי 5 שאלות כדי לאסוף מידע, ואז הצג ניתוח מסודר.</blockquote>
+
+      <p><strong>3. תיאור מוצר לאתר:</strong></p>
+      <blockquote>כתוב תיאור מוצר ל-Amazon / Shopify עבור [שם מוצר]. כולל: פסקה ראשית 50 מילה, 5 bullet points עם יתרונות (לא תכונות — יתרונות!), ו-CTA. הדגש [USP ראשי].</blockquote>
+
+      <h3>לתוכן ורשתות חברתיות</h3>
+      <p><strong>4. 30 רעיונות לפוסטים:</strong></p>
+      <blockquote>תן לי 30 רעיונות לפוסטים ברשת [פלטפורמה] לעסק בתחום [תחום]. כל רעיון: כותרת ומשפט תיאור. מגוון פורמטים: שאלות, טיפים, Behind the scenes, מחלוקות.</blockquote>
+
+      <p><strong>5. Thread לטוויטר/X:</strong></p>
+      <blockquote>כתוב Thread ב-8 tweets על הנושא [נושא]. פתיחה מרתקת שגורמת לאנשים לעצור. כל tweet: תובנה עצמאית אך המשך מהקודם. סיום עם CTA ו-retweet bait.</blockquote>
+
+      <h3>לפיתוח תוכנה</h3>
+      <p><strong>6. Code Review:</strong></p>
+      <blockquote>עיין בקוד הזה ותן לי: (1) 3 בעיות קריטיות, (2) 3 שיפורי ביצועים, (3) האם יש בעיות אבטחה? הסבר כל נקודה עם דוגמת תיקון. [הדביקו קוד]</blockquote>
+
+      <p><strong>7. יצירת פונקציה:</strong></p>
+      <blockquote>כתוב פונקציה ב-Python שמקבלת רשימת JSON של הזמנות ומחזירה: סכום כולל, הזמנה הגדולה ביותר, ממוצע. כולל docstring, type hints וטיפול בשגיאות. הוסף unit tests.</blockquote>
+
+      <h3>ללמידה וחינוך</h3>
+      <p><strong>8. הסבר מושג:</strong></p>
+      <blockquote>הסבר לי [מושג] בשלושה רמות: (1) כאילו אני בן 10, (2) כאילו אני סטודנט, (3) כאילו אני מומחה בתחום. לכל רמה — אנלוגיה אחת ממחיש.</blockquote>
+
+      <p><strong>9. בחינה וחזרה:</strong></p>
+      <blockquote>אני לומד [נושא]. שאל אותי 10 שאלות בחינה ברמה עולה — קל לקשה. לאחר כל תשובה שלי — תן משוב מיידי ואם טעיתי, הסבר את התשובה הנכונה.</blockquote>
+
+      <h3>לניתוח ומחקר</h3>
+      <p><strong>10. ניתוח מסמך:</strong></p>
+      <blockquote>נתח את המסמך הבא ותן לי: (1) 5 נקודות המפתח, (2) מה חסר או לא ברור, (3) 3 שאלות שכדאי לשאול את הכותב. [הדביקו מסמך]</blockquote>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+טעויות נפוצות — ומה לעשות במקום</h2>
+
+      <table>
+        <thead>
+          <tr><th>טעות</th><th>פרומפט רע</th><th>פרומפט טוב</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>קצר מדי</td><td>"כתוב מאמר על AI"</td><td>"כתוב מאמר 800 מילה על השפעת AI על שוק העבודה, לקהל מנהלי HR"</td></tr>
+          <tr><td>ללא הקשר</td><td>"כתוב מייל"</td><td>"אני מנהל פרויקט, כתוב מייל ללקוח על עיכוב..."</td></tr>
+          <tr><td>ללא פורמט</td><td>"תן לי רשימה"</td><td>"תן לי רשימה מסודרת עם כותרות ו-bullet points"</td></tr>
+          <tr><td>ללא מגבלות</td><td>"כתוב הרבה"</td><td>"כתוב 300-400 מילה בדיוק"</td></tr>
+        </tbody>
+      </table>
+
+      <h2>טכניקות מתקדמות</h2>
+
+      <h3>Chain of Thought — חשיבה שלב אחר שלב</h3>
+      <p>הוסיפו "חשוב על זה שלב אחר שלב לפני שאתה עונה" לשאלות מורכבות. זה מגדיל דרמטית את איכות התשובות.</p>
+
+      <h3>Few-Shot — דוגמאות לפני הבקשה</h3>
+      <p>תנו 2-3 דוגמאות של הפלט שאתם רוצים, ואז בקשו את הפלט החדש. AI "מבין" דפוסים מהדוגמאות.</p>
+
+      <h3>Role + Persona</h3>
+      <p>"פעל כ-Senior Product Manager ב-Google עם 10 שנות ניסיון בשוק B2B" — נותן תשובות עם ניסיון מקצועי אמיתי.</p>
+
+      <h3>Iterative Refinement</h3>
+      <p>לעולם אל תצפו לתשובה מושלמת בפעם הראשונה. שפרו: "טוב, עכשיו קצר ב-30%, הפוך ל-bullet points, והוסף דוגמה לכל נקודה".</p>
+
+        <div class="adsense-in-article">
+          <!-- ADSENSE_BEFORE_CTA_SLOT -->
+          <div class="adsense-placeholder">📢 מודעה</div>
+        </div>
+
+      <div class="related-section">
+        <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+מאמרים קשורים</h2>
+        <div class="related-grid">
+          <div class="related-card">
+            <span class="pill-tag">טיפים</span>
+            <h4>10 שימושים ל-ChatGPT שלא ידעתם</h4>
+            <a href="chatgpt-10-uses.html">קרא עוד ←</a>
+          </div>
+          <div class="related-card">
+            <span class="pill-tag">מדריך</span>
+            <h4>מדריך הרשמה ל-ChatGPT שלב אחר שלב</h4>
+            <a href="../guides/guide-chatgpt.html">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+      <div class="ad-in-article"><!-- ADSENSE_BOTTOM_HERE --><span>פרסומת</span></div>
+    </main>
+    <aside class="sidebar sticky-sidebar">
+      <div class="ad-zone ad-rectangle"><!-- ADSENSE_SIDEBAR_HERE --><span>פרסומת</span></div>
+      <div class="widget">
+        <div class="widget-title">מדריכים מומלצים</div>
+        <div class="widget-list">
+          <div class="widget-item"><a href="../guides/guide-chatgpt.html">מדריך ChatGPT למתחילים</a><span>5 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-claude.html">מדריך Claude AI</a><span>6 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-prompt-basics.html">Prompt Engineering</a><span>10 דקות</span></div>
+        </div>
+      </div>
+      <div class="ad-zone" style="min-height:300px"><!-- ADSENSE_SIDEBAR_2_HERE --><span>פרסומת</span></div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="../index.html">ראשי</a></li>
+        <li><a href="../guides.html">מדריכים</a></li>
+        <li><a href="../weekly-news.html">חדשות</a></li>
+        <li><a href="../ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="../privacy-policy.html">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+<script src="../header-bg.js"></script>
+<script src="../card-bg.js"></script>
+<script src="../site.js"></script>
+</body>
+</html>

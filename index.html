@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function(){
+      var t = localStorage.getItem('binah-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="בינה — הבלוג המוביל בעברית על בינה מלאכותית. מדריכים, השוואות וחדשות AI לישראלים. מתעדכן יומיומית.">
+  <meta name="keywords" content="בינה מלאכותית, AI, כלי AI, ChatGPT, Claude, מדריכים AI, עברית">
+  <meta property="og:title" content="בינה — AI בעברית">
+  <meta property="og:description" content="הבלוג המוביל בעברית על בינה מלאכותית — כלים, מדריכים וטיפים שעובדים.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <title>בינה — AI בעברית | מדריכים, כלים וחדשות בינה מלאכותית</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- GA4_CODE_HERE -->
+  <!-- ADSENSE_HEAD_CODE_HERE -->
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">בינה ✦</a>
+      <nav id="main-nav">
+        <a href="index.html" class="active">ראשי</a>
+        <a href="guides.html">מדריכים</a>
+        <a href="weekly-news.html">חדשות</a>
+        <a href="ai-crazy.html">AI מטורף</a>
+        <a href="privacy-policy.html">פרטיות</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+          <span class="icon-dark">🌙 כהה</span>
+          <span class="icon-light">☀️ בהיר</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content text-center">
+      <div class="live-badge"><span class="live-dot"></span> מתעדכן יומיומית</div>
+      <h1>AI בעברית —<br><span class="gradient-text">פשוט, שימושי, עתידני</span></h1>
+      <p>מדריכים מעשיים, השוואות כלים וחדשות בינה מלאכותית — הכל בעברית, הכל שימושי.</p>
+      <div class="hero-btns">
+        <a href="#articles" class="btn-primary">לכתבות ←</a>
+        <a href="guides.html" class="btn-outline">מדריכים</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card"><span>30+</span><small>כתבות ומדריכים</small></div>
+        <div class="stat-card"><span>100%</span><small>בעברית</small></div>
+        <div class="stat-card"><span>יומי</span><small>תוכן חדש</small></div>
+        <div class="stat-card"><span>חינם</span><small>לגמרי</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AD BANNER -->
+<div class="container">
+  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+</div>
+
+<!-- TRENDING BAR -->
+<div class="container">
+  <div class="trending-bar">
+    <span class="trending-label">🔥 טרנד</span>
+    <div class="trending-links">
+      <a href="article_claude_vs_gpt4o.html">Claude נגד GPT-4o</a>
+      <a href="articles/deepseek-r2.html">DeepSeek R2</a>
+      <a href="articles/vibe-coding.html">Vibe Coding</a>
+      <a href="guides/guide-prompt-basics.html">Prompt Engineering</a>
+      <a href="articles/ollama-guide.html">Ollama בחינם</a>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES FILTER -->
+<div class="container">
+  <div class="categories-bar">
+    <button class="cat-btn active" onclick="filterCat('all',this)">הכל</button>
+    <button class="cat-btn" onclick="filterCat('compare',this)">השוואות</button>
+    <button class="cat-btn" onclick="filterCat('tools',this)">כלים</button>
+    <button class="cat-btn" onclick="filterCat('guide',this)">מדריכים</button>
+    <button class="cat-btn" onclick="filterCat('news',this)">חדשות</button>
+    <button class="cat-btn" onclick="filterCat('analysis',this)">ניתוח</button>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="main-layout">
+    <main>
+
+      <!-- ARTICLES SECTION -->
+      <div class="section-header-row" id="articles">
+        <h2>כתבות</h2>
+        <a href="#articles">הכל ←</a>
+      </div>
+
+      <div class="articles-grid" id="articles-grid">
+        <!-- NEW_ARTICLES_HERE -->
+
+        <!-- FEATURED -->
+        <article class="article-card featured-card has-thumb reveal" data-cat="compare">
+          <div class="card-thumb cat-compare">
+          <a href="article_claude_vs_gpt4o.html" class="thumb-title">Claude 3.7 Sonnet נגד GPT-4o: מי המודל הטוב ביותר ב-2025?</a></div>
+          <div class="card-body">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <span class="card-category cat-compare">השוואה</span>
+              <span class="featured-badge">פיצ׳ר</span>
+              <span class="new-badge">חדש</span>
+            </div>
+            
+            <p class="card-excerpt">השוואה מקיפה ומעמיקה — קידוד, כתיבה, יצירתיות, מחיר וביצועים. נבדקנו עשרות שאלות ומשימות — מי מנצח?</p>
+            <div class="card-tags"><span class="tag">Claude</span><span class="tag">GPT-4o</span><span class="tag">השוואה</span></div>
+            <div class="card-meta"><span>⏱ 5 דקות · מרץ 2025</span><a href="article_claude_vs_gpt4o.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="tools">
+          <div class="card-thumb cat-tools">
+          <a href="article2_ai_video_tools.html" class="thumb-title">5 כלי AI לעריכת וידאו שחוסכים 10 שעות בשבוע</a></div>
+          <div class="card-body">
+            <span class="card-category cat-tools">כלים</span>
+            
+            <p class="card-excerpt">Runway, Kling, CapCut, Descript ו-Sora — השוואה מלאה עם מחירים.</p>
+            <div class="card-tags"><span class="tag">וידאו</span><span class="tag">Runway</span></div>
+            <div class="card-meta"><span>⏱ 7 דקות</span><a href="article2_ai_video_tools.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="guide">
+          <div class="card-thumb cat-guide">
+          <a href="article3_vibe_coding.html" class="thumb-title">Vibe Coding: כיצד לבנות אפליקציה ב-2025 בלי לדעת לתכנת</a></div>
+          <div class="card-body">
+            <span class="card-category cat-guide">מדריך</span>
+            
+            <p class="card-excerpt">Cursor, Bolt.new, v0 ו-Replit AI — המדריך המלא לפיתוח בעזרת AI.</p>
+            <div class="card-tags"><span class="tag">Cursor</span><span class="tag">Bolt.new</span></div>
+            <div class="card-meta"><span>⏱ 6 דקות</span><a href="article3_vibe_coding.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="analysis">
+          <div class="card-thumb cat-analysis">
+          <a href="articles/deepseek-r2.html" class="thumb-title">DeepSeek R2: המודל הסיני שמאיים על ChatGPT</a></div>
+          <div class="card-body">
+            <span class="card-category cat-analysis">ניתוח</span>
+            
+            <p class="card-excerpt">מה זה DeepSeek, בנצ'מארקים, חששות פרטיות וכיצד להשתמש בו.</p>
+            <div class="card-tags"><span class="tag">DeepSeek</span><span class="tag">סין</span></div>
+            <div class="card-meta"><span>⏱ 8 דקות</span><a href="articles/deepseek-r2.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="news">
+          <div class="card-thumb cat-news">
+          <a href="articles/sora-openai.html" class="thumb-title">Sora של OpenAI: עתיד יצירת הווידאו עם AI</a></div>
+          <div class="card-body">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span class="card-category cat-news">חדשות</span>
+              <span class="new-badge">חם</span>
+            </div>
+            
+            <p class="card-excerpt">מה Sora יכול לעשות, כיצד לגשת אליו, והשוואה ל-Runway ו-Kling.</p>
+            <div class="card-tags"><span class="tag">Sora</span><span class="tag">OpenAI</span></div>
+            <div class="card-meta"><span>⏱ 7 דקות</span><a href="articles/sora-openai.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="tools">
+          <div class="card-thumb cat-tools">
+          <a href="articles/perplexity-ai.html" class="thumb-title">Perplexity AI: מנוע החיפוש שמאיים על גוגל</a></div>
+          <div class="card-body">
+            <span class="card-category cat-tools">סקירה</span>
+            
+            <p class="card-excerpt">מה עושה אותו שונה, Free vs Pro, ומתי עדיף על גוגל.</p>
+            <div class="card-tags"><span class="tag">Perplexity</span><span class="tag">חיפוש</span></div>
+            <div class="card-meta"><span>⏱ 7 דקות</span><a href="articles/perplexity-ai.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="tools">
+          <div class="card-thumb cat-tools">
+          <a href="articles/gemini-2025.html" class="thumb-title">Gemini של Google ב-2025: כל מה שצריך לדעת</a></div>
+          <div class="card-body">
+            <span class="card-category cat-tools">סקירה</span>
+            
+            <p class="card-excerpt">גרסאות, השוואה ל-ChatGPT, שימושים מומלצים וגישה חינמית.</p>
+            <div class="card-tags"><span class="tag">Gemini</span><span class="tag">Google</span></div>
+            <div class="card-meta"><span>⏱ 7 דקות</span><a href="articles/gemini-2025.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="guide">
+          <div class="card-thumb cat-guide">
+          <a href="articles/prompt-engineering.html" class="thumb-title">מדריך Prompt Engineering: כיצד לדבר עם AI נכון</a></div>
+          <div class="card-body">
+            <span class="card-category cat-guide">מדריך</span>
+            
+            <p class="card-excerpt">מסגרת CRISPE, 20 פרומפטים לדוגמה וטכניקות מתקדמות.</p>
+            <div class="card-tags"><span class="tag">פרומפטים</span><span class="tag">AI</span></div>
+            <div class="card-meta"><span>⏱ 12 דקות</span><a href="articles/prompt-engineering.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="guide">
+          <div class="card-thumb cat-guide">
+          <a href="articles/ollama-guide.html" class="thumb-title">Ollama: כיצד להריץ AI בחינם ובפרטיות על המחשב שלך</a></div>
+          <div class="card-body">
+            <span class="card-category cat-guide">מדריך</span>
+            
+            <p class="card-excerpt">מה זה Ollama, התקנה, מודלים מומלצים וביצועים.</p>
+            <div class="card-tags"><span class="tag">Ollama</span><span class="tag">פרטיות</span></div>
+            <div class="card-meta"><span>⏱ 8 דקות</span><a href="articles/ollama-guide.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="guide">
+          <div class="card-thumb cat-guide">
+          <a href="articles/midjourney-beginners.html" class="thumb-title">Midjourney למתחילים: יצירת תמונות AI בקלות</a></div>
+          <div class="card-body">
+            <span class="card-category cat-guide">מדריך</span>
+            
+            <p class="card-excerpt">מה זה AI ליצירת תמונות, 10 פרומפטים לדוגמה וטיפים מעשיים.</p>
+            <div class="card-tags"><span class="tag">Midjourney</span><span class="tag">תמונות</span></div>
+            <div class="card-meta"><span>⏱ 8 דקות</span><a href="articles/midjourney-beginners.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="tools">
+          <div class="card-thumb cat-tips">
+          <a href="articles/ai-small-business.html" class="thumb-title">7 כלי AI שכל עסק קטן צריך ב-2025</a></div>
+          <div class="card-body">
+            <span class="card-category cat-tips">כלים</span>
+            
+            <p class="card-excerpt">ChatGPT, Canva AI, Otter.ai ועוד — מחירים, תיאורים ו-ROI לכל כלי.</p>
+            <div class="card-tags"><span class="tag">עסקים</span><span class="tag">כלים</span></div>
+            <div class="card-meta"><span>⏱ 9 דקות</span><a href="articles/ai-small-business.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="analysis">
+          <div class="card-thumb cat-analysis">
+          <a href="articles/ai-jobs-2025.html" class="thumb-title">כיצד AI משנה את שוק העבודה ב-2025 — מה לדעת</a></div>
+          <div class="card-body">
+            <span class="card-category cat-analysis">ניתוח</span>
+            
+            <p class="card-excerpt">אילו משרות בסיכון, אילו נוצרות, וכיצד להכין את הקריירה לעתיד.</p>
+            <div class="card-tags"><span class="tag">עבודה</span><span class="tag">קריירה</span></div>
+            <div class="card-meta"><span>⏱ 9 דקות</span><a href="articles/ai-jobs-2025.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="tips">
+          <div class="card-thumb cat-tips">
+          <a href="articles/chatgpt-10-uses.html" class="thumb-title">10 שימושים ל-ChatGPT שלא ידעתם שאפשר</a></div>
+          <div class="card-body">
+            <span class="card-category cat-tips">טיפים</span>
+            
+            <p class="card-excerpt">מכתיבת קורות חיים ועד תכנון ארוחות — עם פרומפטים לדוגמה.</p>
+            <div class="card-tags"><span class="tag">ChatGPT</span><span class="tag">טיפים</span></div>
+            <div class="card-meta"><span>⏱ 8 דקות</span><a href="articles/chatgpt-10-uses.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+      </div><!-- /articles-grid -->
+
+      <!-- AD RECTANGLE -->
+      <div class="ad-zone ad-rectangle" style="margin-top:32px"><!-- ADSENSE_RECTANGLE_HERE --><span>פרסומת</span></div>
+
+      <!-- NEWSLETTER STRIP -->
+      <div class="newsletter-strip reveal">
+        <div class="newsletter-strip-text">
+          <h3>✦ רוצה AI ישר למייל?</h3>
+          <p>כתבות חדשות, טיפים וכלים — שבועי, בלי ספאם.</p>
+        </div>
+        <form class="newsletter-strip-form" onsubmit="return false">
+          <input type="email" placeholder="האימייל שלך" autocomplete="email">
+          <button type="submit">הצטרף חינם</button>
+        </form>
+      </div>
+
+      <!-- GUIDES SECTION -->
+      <div class="section-header-row" id="guides" style="margin-top:16px">
+        <h2>מדריכים</h2>
+        <a href="guides.html">כל המדריכים ←</a>
+      </div>
+
+      <div class="articles-grid">
+
+        <article class="article-card has-thumb reveal" data-cat="guide">
+          <div class="card-thumb cat-guide">
+          <a href="guides/guide-chatgpt.html" class="thumb-title">מדריך הרשמה ל-ChatGPT שלב אחר שלב (2025)</a></div>
+          <div class="card-body">
+            <span class="card-category cat-guide">מדריך</span>
+            
+            <p class="card-excerpt">איך נרשמים, בוחרים תוכנית ומתחילים לשאול — עם צילומי מסך.</p>
+            <div class="card-meta"><span>⏱ 5 דקות</span><a href="guides/guide-chatgpt.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="guide">
+          <div class="card-thumb cat-compare">
+          <a href="guides/guide-claude.html" class="thumb-title">מדריך הרשמה ל-Claude AI — המדריך המלא בעברית</a></div>
+          <div class="card-body">
+            <span class="card-category cat-compare">מדריך</span>
+            
+            <p class="card-excerpt">Free לעומת Pro, מה Claude עושה הכי טוב ועוד.</p>
+            <div class="card-meta"><span>⏱ 6 דקות</span><a href="guides/guide-claude.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="guide">
+          <div class="card-thumb cat-analysis">
+          <a href="guides/guide-prompt-basics.html" class="thumb-title">פרומפט אנג'ינירינג — כיצד לדבר עם AI נכון</a></div>
+          <div class="card-body">
+            <span class="card-category cat-analysis">מדריך</span>
+            
+            <p class="card-excerpt">מדריך בסיסי לכתיבת פרומפטים נכונים ל-AI ולקבל תשובות טובות יותר.</p>
+            <div class="card-meta"><span>⏱ 10 דקות</span><a href="guides/guide-prompt-basics.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="guide">
+          <div class="card-thumb">
+          <a href="guides/guide-prompt-cot.html" class="thumb-title">Chain of Thought: הטכניקה שהופכת AI לגאון אמיתי</a></div>
+          <div class="card-body">
+            <span class="card-category cat-analysis">מדריך</span>
+            
+            <p class="card-excerpt">איך לגרום ל-AI לחשוב שלב אחר שלב ולקבל תשובות מדויקות.</p>
+            <div class="card-meta"><span>⏱ 8 דקות</span><a href="guides/guide-prompt-cot.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="guide">
+          <div class="card-thumb">
+          <a href="guides/guide-prompt-role.html" class="thumb-title">הטכניקה הכי חזקה: תפקיד + משימה ב-AI</a></div>
+          <div class="card-body">
+            <span class="card-category cat-tips">מדריך</span>
+            
+            <p class="card-excerpt">כיצד להגדיר תפקיד ל-AI ולקבל תשובות ברמת מומחה — 15 פרומפטים מוכנים.</p>
+            <div class="card-meta"><span>⏱ 8 דקות</span><a href="guides/guide-prompt-role.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="guide">
+          <div class="card-thumb">
+          <a href="guides/guide-midjourney.html" class="thumb-title">מדריך Midjourney — כך יוצרים תמונות AI מהממות (2025)</a></div>
+          <div class="card-body">
+            <span class="card-category cat-news">מדריך</span>
+            
+            <p class="card-excerpt">מ-Discord ועד לתמונה הראשונה, עם דוגמאות פרומפטים מפורטות.</p>
+            <div class="card-meta"><span>⏱ 10 דקות</span><a href="guides/guide-midjourney.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+        <article class="article-card has-thumb reveal" data-cat="guide">
+          <div class="card-thumb cat-guide">
+          <a href="guides/guide-ollama.html" class="thumb-title">מדריך Ollama — הרצת AI על המחשב שלך (חינם, פרטי)</a></div>
+          <div class="card-body">
+            <span class="card-category cat-guide">מדריך</span>
+            
+            <p class="card-excerpt">התקנה על Mac ו-Windows, מודלים מומלצים ו-Open WebUI.</p>
+            <div class="card-meta"><span>⏱ 15 דקות</span><a href="guides/guide-ollama.html" class="read-more">קרא עוד ←</a></div>
+          </div>
+        </article>
+
+      </div><!-- /guides grid -->
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar sticky-sidebar">
+      <div class="ad-zone ad-rectangle"><!-- ADSENSE_SIDEBAR_1_HERE --><span>פרסומת</span></div>
+
+      <div class="widget">
+        <div class="widget-title">✉ Newsletter</div>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">כתבות AI חדשות ישירות למייל</p>
+        <form class="newsletter-form" onsubmit="return false">
+          <input type="email" placeholder="המייל שלך">
+          <button type="submit">✓</button>
+        </form>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">🔥 הכי נקרא</div>
+        <div class="widget-list">
+          <div class="widget-item"><a href="article_claude_vs_gpt4o.html">Claude נגד GPT-4o</a><span>⏱ 5 דקות</span></div>
+          <div class="widget-item"><a href="articles/deepseek-r2.html">DeepSeek R2 — המודל הסיני</a><span>⏱ 8 דקות</span></div>
+          <div class="widget-item"><a href="articles/prompt-engineering.html">Prompt Engineering מלא</a><span>⏱ 12 דקות</span></div>
+          <div class="widget-item"><a href="articles/perplexity-ai.html">Perplexity vs גוגל</a><span>⏱ 7 דקות</span></div>
+          <div class="widget-item"><a href="articles/ollama-guide.html">Ollama — AI על המחשב</a><span>⏱ 8 דקות</span></div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">📚 מדריכים מהירים</div>
+        <div class="widget-list">
+          <div class="widget-item"><a href="guides/guide-chatgpt.html">מדריך ChatGPT</a></div>
+          <div class="widget-item"><a href="guides/guide-claude.html">מדריך Claude AI</a></div>
+          <div class="widget-item"><a href="guides/guide-midjourney.html">מדריך Midjourney</a></div>
+          <div class="widget-item"><a href="guides/guide-ollama.html">מדריך Ollama</a></div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-title">🏷 תגיות</div>
+        <div class="card-tags" style="flex-wrap:wrap">
+          <span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Gemini</span>
+          <span class="tag">Midjourney</span><span class="tag">Cursor</span><span class="tag">Runway</span>
+          <span class="tag">DeepSeek</span><span class="tag">Perplexity</span><span class="tag">Ollama</span>
+          <span class="tag">פרומפטים</span><span class="tag">אוטומציה</span>
+        </div>
+      </div>
+
+      <div class="ad-zone" style="min-height:300px"><!-- ADSENSE_SIDEBAR_2_HERE --><span>פרסומת</span></div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">בינה ✦</div>
+        <p>הבלוג המוביל בעברית על בינה מלאכותית. מדריכים, השוואות וחדשות AI — מתעדכן יומיומית.</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon" aria-label="YouTube">▶</a>
+          <a href="#" class="social-icon" aria-label="Telegram">✈</a>
+          <a href="#" class="social-icon" aria-label="Facebook">f</a>
+          <a href="#" class="social-icon" aria-label="Instagram">◈</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>תוכן</h4>
+        <ul>
+          <li><a href="index.html">ראשי</a></li>
+          <li><a href="guides.html">מדריכים</a></li>
+          <li><a href="weekly-news.html">חדשות השבוע</a></li>
+          <li><a href="ai-crazy.html">AI מטורף</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>מידע</h4>
+        <ul>
+          <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+          <li><a href="sitemap.xml">מפת האתר</a></li>
+          <li><a href="mailto:contact@binah.co.il">צור קשר</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 בינה. כל הזכויות שמורות.</span>
+      <span style="color:var(--text-muted);font-size:0.75rem">מופעל בעזרת Claude AI ✦</span>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" aria-label="חזרה לראש הדף" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* Filter categories */
+function filterCat(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.article-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+</script>
+<script src="site.js"></script>
+<script src="header-bg.js"></script>
+<script src="card-bg.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function(){
+      var t = localStorage.getItem('binah-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="מדריך בסיסי לפרומפט אנג'ינירינג בעברית — כיצד לכתוב פרומפטים נכונים ל-AI ולקבל תשובות טובות יותר.">
+  <meta property="og:title" content="Prompt Engineering — המדריך הבסיסי לפרומפטים נכונים">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <title>Prompt Engineering — המדריך הבסיסי לפרומפטים נכונים | בינה</title>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- GA4_CODE_HERE -->
+  <!-- ADSENSE_HEAD_CODE_HERE -->
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">בינה ✦</a>
+      <nav>
+        <a href="../index.html">ראשי</a>
+        <a href="../index.html#articles">כתבות</a>
+        <a href="../guides.html">מדריכים</a>
+        <a href="../weekly-news.html">חדשות</a>
+      </nav>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+        <span class="icon-dark">🌙 כהה</span>
+        <span class="icon-light">☀️ בהיר</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+</div>
+
+<div class="container">
+  <div class="article-header">
+    <span class="category">מדריך</span>
+    <h1>Prompt Engineering — המדריך הבסיסי לפרומפטים נכונים</h1>
+    <div class="meta">
+      <span>📅 מרץ 2026</span>
+      <span>⏱ 6 דקות קריאה</span>
+      <span>✍ צוות בינה</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-layout">
+    <main class="article-body">
+<div class="container">
+        <button class="btn-back" onclick="history.back()">→ חזרה</button>
+      </div>
+
+      <p>רוב האנשים כותבים לAI בדיוק כמו שהם שולחים הודעת WhatsApp לחבר. זו הטעות הגדולה ביותר. AI הוא לא חבר — הוא מנוע שזקוק להוראות מדויקות. ברגע שתבינו את זה, האיכות של התשובות תקפוץ פי 3.</p>
+
+      <h2>מה זה בכלל פרומפט?</h2>
+      <p>פרומפט הוא ההוראה שאתם כותבים ל-AI. כל מה שאתם מקלידים = פרומפט. ההבדל בין פרומפט טוב לגרוע יכול להיות ההבדל בין תשובה שטחית לתשובה שמשנה את חייכם.</p>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+3 עקרונות הזהב</h2>
+      <ol>
+        <li><strong>ספציפיות</strong> — ככל שתהיו ספציפיים יותר, כך התשובה תהיה מדויקת יותר</li>
+        <li><strong>הקשר</strong> — ספרו ל-AI מי אתם, מה הרקע, למה אתם צריכים את זה</li>
+        <li><strong>פורמט</strong> — בקשו בדיוק מה אתם רוצים לקבל (רשימה, טבלה, מאמר, קוד)</li>
+      </ol>
+
+      <h2>דוגמאות — רע מול טוב</h2>
+      <table>
+        <thead>
+          <tr><th>פרומפט גרוע</th><th>פרומפט טוב</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>תכתוב לי אימייל</code></td>
+            <td><code>כתוב אימייל מקצועי בעברית ללקוח שביקש החזר כספי. הטון: מנומס אך נחרץ. אורך: 3 פסקאות.</code></td>
+          </tr>
+          <tr>
+            <td><code>תסביר לי AI</code></td>
+            <td><code>הסבר לי מה זה בינה מלאכותית כאילו אני בן 12, בלי מונחים טכניים, עם 3 דוגמאות מהחיים היומיומיים</code></td>
+          </tr>
+          <tr>
+            <td><code>תעזור לי לירד במשקל</code></td>
+            <td><code>אני גבר בן 35, שוקל 90 ק״ג, עובד ישיבה 9 שעות ביום. צור לי תפריט שבועי מגוון לירידה של 0.5 ק״ג בשבוע. כולל ארוחות בוקר, צהריים וערב.</code></td>
+          </tr>
+          <tr>
+            <td><code>תכתוב קוד</code></td>
+            <td><code>כתוב פונקציה Python שמקבלת רשימת מספרים ומחזירה את הממוצע, הגדול ביותר והקטן ביותר. כולל docstring ו-type hints.</code></td>
+          </tr>
+          <tr>
+            <td><code>תציע לי שם לעסק</code></td>
+            <td><code>אני פותח מסעדה איטלקית בתל אביב, קהל יעד: 25-45 גיל, אווירה: רומנטית ומשפחתית. הצע 10 שמות בעברית ובאנגלית, כולל הסבר קצר לכל אחד.</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+20 פרומפטים מוכנים לשימוש</h2>
+
+      <h3>עבודה ועסקים</h3>
+      <ol>
+        <li><code>כתוב סיכום פגישה מקצועי על סמך הנקודות הבאות: [נקודות]. הוסף: החלטות שהתקבלו, משימות לביצוע ותאריכי יעד.</code></li>
+        <li><code>נתח את האימייל הבא ותן לי 3 אפשרויות תשובה — ידידותית, מקצועית ונחרצת: [הדבק אימייל]</code></li>
+        <li><code>אתה יועץ עסקי מנוסה. בצע ניתוח SWOT לעסק הבא: [תאר את העסק]</code></li>
+        <li><code>כתוב תיאור משרה מפתה לתפקיד [שם תפקיד] בחברה [תחום]. כולל: דרישות, יתרונות ותרבות חברה.</code></li>
+        <li><code>עזור לי להתכונן לראיון עבודה לתפקיד [תפקיד]. צור 10 שאלות נפוצות עם תשובות מומלצות.</code></li>
+      </ol>
+
+      <h3>יצירת תוכן</h3>
+      <ol>
+        <li><code>כתוב פוסט לינקדאין על [נושא] שיקבל הרבה engagement. כולל hook מרתק בשורה הראשונה ו-CTA בסוף.</code></li>
+        <li><code>צור 10 רעיונות לפוסטים לאינסטגרם בנושא [נושא]. לכל רעיון: כותרת, תיאור קצר, האשטגים.</code></li>
+        <li><code>כתוב תסריט לסרטון יוטיוב של 5 דקות על [נושא]. כולל: hook, 3 נקודות מרכזיות, CTA.</code></li>
+        <li><code>תרגם את הטקסט הבא לאנגלית שיווקית, שמור על הטון המקורי: [טקסט]</code></li>
+        <li><code>כתוב ביוגרפיה מקצועית ל-LinkedIn בגוף שלישי, 150 מילה, על בסיס: [פרטים]</code></li>
+      </ol>
+
+      <h3>לימוד ופיתוח אישי</h3>
+      <ol>
+        <li><code>למד אותי [נושא] בשיטת פיינמן: הסבר פשוט, אנלוגיה, דוגמה מהחיים ושאלה לבדיקת הבנה.</code></li>
+        <li><code>צור תוכנית לימוד של 30 יום ללמוד [נושא] מאפס. שעה ביום. כולל משאבים חינמיים.</code></li>
+        <li><code>אני נתקל בבעיה: [תאר בעיה]. נתח את הבעיה משלוש זוויות שונות והצע פתרון לכל אחת.</code></li>
+        <li><code>הסבר לי את ההבדל בין [מושג א] ל-[מושג ב] עם 3 דוגמאות לכל אחד.</code></li>
+        <li><code>צור חידון של 10 שאלות לבדיקת הידע שלי ב[נושא]. אחרי שאענה — תן לי ציון והסבר.</code></li>
+      </ol>
+
+      <h3>יומיום ואישי</h3>
+      <ol>
+        <li><code>אני צריך לקבל החלטה בין [אפשרות א] ל[אפשרות ב]. עזור לי לבנות מטריצת החלטה עם הקריטריונים החשובים לי: [קריטריונים]</code></li>
+        <li><code>כתוב לי תכנית ארוחת שבת מרשימה ל-8 אנשים. תקציב: 300 ש״ח. כולל: תפריט, רשימת קניות ולוח זמנים לבישול.</code></li>
+        <li><code>עזור לי לכתוב הודעה עדינה ל[מישהו] שביקשו ממני [בקשה]. אני רוצה לסרב בנימוס בלי לפגוע.</code></li>
+        <li><code>תן לי 5 רעיונות לטיול סוף שבוע עם [מי] ב[אזור]. תקציב: [סכום]. כולל: לינה, אטרקציות ואוכל.</code></li>
+        <li><code>כתוב ברכה אישית ומרגשת ל[אירוע] בשביל [מי]. הטון: [חמים/הומוריסטי/רשמי]</code></li>
+      </ol>
+
+      <h2>טעויות נפוצות שכדאי להימנע מהן</h2>
+      <ul>
+        <li>פרומפט קצר מדי ("תעזור לי") — חסר כל הקשר</li>
+        <li>לא לבקש פורמט ספציפי — ה-AI מנחש מה אתם רוצים</li>
+        <li>לא לתת הקשר — מי אתם, מה המטרה</li>
+        <li>לא לציין את השפה הרצויה — לפעמים יענה באנגלית</li>
+        <li>לקבל תשובה ראשונה בלי לחדד — תמיד אפשר לבקש "שפר", "קצר", "שנה טון"</li>
+      </ul>
+
+      <div class="affiliate-box">
+        <h3>רוצים להעמיק?</h3>
+        <p>קראו את המאמר המורחב שלנו על prompt engineering עם עשרות טכניקות מתקדמות.</p>
+        <a href="../articles/prompt-engineering.html" class="btn-primary">קרא את המאמר המורחב →</a>
+      </div>
+
+      <div class="related-section">
+        <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+מדריכים קשורים</h2>
+        <div class="related-grid">
+          <div class="related-card">
+            <span class="pill-tag">מדריך</span>
+            <h4>פרומפטים עם תפקיד ומשימה — הטכניקה שמשנה הכל</h4>
+            <a href="guide-prompt-role.html">קרא עוד ←</a>
+          </div>
+          <div class="related-card">
+            <span class="pill-tag">מדריך</span>
+            <h4>Chain of Thought — לגרום ל-AI לחשוב לפני שהוא עונה</h4>
+            <a href="guide-prompt-cot.html">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+      <div class="ad-in-article"><!-- ADSENSE_BOTTOM_HERE --><span>פרסומת</span></div>
+    </main>
+    <aside class="sidebar sticky-sidebar">
+      <div class="ad-zone ad-rectangle"><!-- ADSENSE_SIDEBAR_HERE --><span>פרסומת</span></div>
+      <div class="widget">
+        <div class="widget-title">מדריכים מומלצים</div>
+        <div class="widget-list">
+          <div class="widget-item"><a href="../guides/guide-chatgpt.html">מדריך ChatGPT למתחילים</a><span>5 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-claude.html">מדריך Claude AI</a><span>6 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-prompt-basics.html">Prompt Engineering</a><span>10 דקות</span></div>
+        </div>
+      </div>
+      <div class="ad-zone" style="min-height:300px"><!-- ADSENSE_SIDEBAR_2_HERE --><span>פרסומת</span></div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="../index.html">ראשי</a></li>
+        <li><a href="../guides.html">מדריכים</a></li>
+        <li><a href="../weekly-news.html">חדשות</a></li>
+        <li><a href="../ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="../privacy-policy.html">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+<script src="../header-bg.js"></script>
+<script src="../card-bg.js"></script>
+<script src="../site.js"></script>
+</body>
+</html>

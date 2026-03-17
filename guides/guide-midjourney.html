@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function(){
+      var t = localStorage.getItem('binah-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="מדריך Midjourney בעברית — כך יוצרים תמונות AI מהממות ב-2025. מ-Discord ועד לתמונה הראשונה, עם דוגמאות פרומפטים.">
+  <meta property="og:title" content="מדריך Midjourney — כך יוצרים תמונות AI מהממות (2025)">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <title>מדריך Midjourney — כך יוצרים תמונות AI מהממות (2025) | בינה</title>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- GA4_CODE_HERE -->
+  <!-- ADSENSE_HEAD_CODE_HERE -->
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">בינה ✦</a>
+      <nav>
+        <a href="../index.html">ראשי</a>
+        <a href="../index.html#articles">כתבות</a>
+        <a href="../guides.html">מדריכים</a>
+        <a href="../weekly-news.html">חדשות</a>
+      </nav>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+        <span class="icon-dark">🌙 כהה</span>
+        <span class="icon-light">☀️ בהיר</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+</div>
+
+<div class="container">
+  <div class="article-header">
+    <span class="category">מדריך</span>
+    <h1>מדריך Midjourney — כך יוצרים תמונות AI מהממות (2025)</h1>
+    <div class="meta">
+      <span>📅 מרץ 2025</span>
+      <span>⏱ 6 דקות קריאה</span>
+      <span>✍ צוות בינה</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-layout">
+    <main class="article-body">
+<div class="container">
+        <button class="btn-back" onclick="history.back()">→ חזרה</button>
+      </div>
+
+      <p>Midjourney הוא כלי יצירת תמונות ה-AI המרשים ביותר הקיים כיום. בעוד שכלים אחרים מייצרים תמונות "מספקות", Midjourney מייצר תמונות שגורמות לאנשים לשאול "זה צולם או נוצר?". הסוד: אלגוריתם ייחודי שהוכשר במיוחד על תמונות אמנות ועיצוב.</p>
+
+      <h2>מה זה Midjourney ולמה זה כל כך טוב?</h2>
+      <p>Midjourney היא חברה עצמאית (לא OpenAI, לא Google) שפיתחה מודל יצירת תמונות בעל סגנון ייחודי. היתרון הגדול: <strong>הסגנון האסתטי</strong>. תמונות Midjourney נראות כאילו צייר אמן אמיתי — עם תאורה עמוקה, מרקמים עשירים ורגש ויזואלי.</p>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+שלב 1 — יצירת חשבון Discord</h2>
+      <p>Midjourney עובד דרך Discord — פלטפורמת תקשורת קהילתית. אם אין לכם חשבון Discord, עליכם ליצור אחד קודם:</p>
+      <ol>
+        <li>היכנסו ל-<strong>discord.com</strong> ולחצו "Register"</li>
+        <li>הכניסו אימייל, שם משתמש וסיסמה</li>
+        <li>אמתו את האימייל</li>
+        <li>הורידו את אפליקציית Discord לדסקטופ (מומלץ) או השתמשו בדפדפן</li>
+      </ol>
+
+      <h2>שלב 2 — הצטרפות לשרת Midjourney</h2>
+      <p>לאחר שיש לכם Discord:</p>
+      <ol>
+        <li>היכנסו ל-<strong>midjourney.com</strong></li>
+        <li>לחצו על <strong>"Join the Beta"</strong></li>
+        <li>אשרו את הזמנת הצטרפות לשרת Discord של Midjourney</li>
+      </ol>
+      <p>תצטרפו לשרת עם מאות אלפי משתמשים. בתחילה זה נראה עמוס — אל תדאגו, זה נורמלי.</p>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+שלב 3 — הרשמה ל-Midjourney.com</h2>
+      <p>כעת חזרו ל-<strong>midjourney.com</strong> ולחצו "Sign in". היכנסו עם חשבון Discord שיצרתם. זה ינסה לפנות ל-midjourney.com/app שזה הממשק הגרפי החדש — קל יותר לשימוש מ-Discord.</p>
+
+      <h2>שלב 4 — בחירת תוכנית</h2>
+      <p>Midjourney הוא <strong>לא חינמי</strong>. לאחר ניסיון חינמי קצר (אם זמין), תצטרכו לבחור תוכנית:</p>
+
+      <table>
+        <thead>
+          <tr><th>תוכנית</th><th>מחיר</th><th>דקות GPU</th><th>מתאים ל</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Basic</td><td>$10/חודש</td><td>200 דקות</td><td>הוביסטים, מתחילים</td></tr>
+          <tr><td>Standard</td><td>$30/חודש</td><td>900 דקות + Relax</td><td>יוצרי תוכן קבועים</td></tr>
+          <tr><td>Pro</td><td>$60/חודש</td><td>1800 דקות + Stealth</td><td>עסקים ומקצוענים</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>המלצה:</strong> התחילו עם Basic. אם אתם אוהבים את התוצאות ורוצים ליצור יותר, שדרגו ל-Standard.</p>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+שלב 5 — הפרומפט הראשון שלכם</h2>
+      <p>ב-midjourney.com/app יש שדה טקסט בתחתית. כתבו בו תיאור באנגלית (Midjourney עובד טוב יותר באנגלית) של מה שאתם רוצים לראות.</p>
+
+      <p>5 פרומפטים ראשונים שמומלץ לנסות:</p>
+      <ol>
+        <li><code>a futuristic city at sunset, cyberpunk, neon lights, ultra detailed, 8k</code></li>
+        <li><code>portrait of a wise old wizard, fantasy art, dramatic lighting, oil painting style</code></li>
+        <li><code>cozy coffee shop interior, warm lighting, bokeh, photorealistic</code></li>
+        <li><code>abstract geometric patterns, vibrant colors, minimalist, modern design</code></li>
+        <li><code>majestic lion on mountain peak, golden hour, National Geographic style</code></li>
+      </ol>
+
+      <h2>טיפים לפרומפטים טובים</h2>
+      <ul>
+        <li><strong>פרטו את הסגנון:</strong> "oil painting", "photorealistic", "anime style", "watercolor"</li>
+        <li><strong>ציינו תאורה:</strong> "golden hour", "dramatic lighting", "soft ambient light"</li>
+        <li><strong>הוסיפו מצלמה:</strong> "wide angle", "macro shot", "aerial view", "bokeh"</li>
+        <li><strong>רמת פירוט:</strong> "ultra detailed", "8k resolution", "highly detailed"</li>
+        <li><strong>משקלים:</strong> <code>a cat:: dog::2</code> — כפל האחרי :: = חשיבות כפולה</li>
+        <li><strong>ספקו מה לא רוצים:</strong> הוסיפו <code>--no text, watermark</code> בסוף</li>
+      </ul>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+מה ההבדל בין גרסאות v5, v6, v7?</h2>
+
+      <table>
+        <thead>
+          <tr><th>גרסה</th><th>מצוינת ב</th><th>מתי להשתמש</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>v5.2</td><td>פנים, פורטרטים</td><td>תמונות אנשים קלאסיות</td></tr>
+          <tr><td>v6.1</td><td>פוטוריאליזם, טקסט</td><td>תמונות ריאליסטיות, לוגואים עם טקסט</td></tr>
+          <tr><td>v7 (חדש)</td><td>כל-תכליתי, בקרה טובה</td><td>ברירת המחדל המומלצת</td></tr>
+        </tbody>
+      </table>
+
+      <p>כדי לבחור גרסה, הוסיפו בסוף הפרומפט: <code>--v 6.1</code> או <code>--v 7</code></p>
+
+      <!-- Affiliate CTA -->
+      <div class="affiliate-box">
+        <h3>מוכנים להתחיל ליצור עם Midjourney?</h3>
+        <p>הצטרפו עם תוכנית Basic ב-$10 לחודש — 200 דקות GPU, ליצירת מאות תמונות</p>
+        <a href="[AFFILIATE_MIDJOURNEY]" class="btn-primary">התחל ב-Midjourney →</a>
+      </div>
+
+      <div class="related-section">
+        <h2>מאמרים קשורים</h2>
+        <div class="related-grid">
+          <div class="related-card">
+            <span class="pill-tag">מאמר</span>
+            <h4>Midjourney למתחילים: יצירת תמונות AI בקלות</h4>
+            <a href="../articles/midjourney-beginners.html">קרא עוד ←</a>
+          </div>
+          <div class="related-card">
+            <span class="pill-tag">מדריך</span>
+            <h4>מדריך Prompt Engineering — כיצד לדבר עם AI נכון</h4>
+            <a href="../articles/prompt-engineering.html">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+      <div class="ad-in-article"><!-- ADSENSE_BOTTOM_HERE --><span>פרסומת</span></div>
+    </main>
+    <aside class="sidebar sticky-sidebar">
+      <div class="ad-zone ad-rectangle"><!-- ADSENSE_SIDEBAR_HERE --><span>פרסומת</span></div>
+      <div class="widget">
+        <div class="widget-title">מדריכים מומלצים</div>
+        <div class="widget-list">
+          <div class="widget-item"><a href="../guides/guide-chatgpt.html">מדריך ChatGPT למתחילים</a><span>5 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-claude.html">מדריך Claude AI</a><span>6 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-prompt-basics.html">Prompt Engineering</a><span>10 דקות</span></div>
+        </div>
+      </div>
+      <div class="ad-zone" style="min-height:300px"><!-- ADSENSE_SIDEBAR_2_HERE --><span>פרסומת</span></div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="../index.html">ראשי</a></li>
+        <li><a href="../guides.html">מדריכים</a></li>
+        <li><a href="../weekly-news.html">חדשות</a></li>
+        <li><a href="../ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="../privacy-policy.html">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+<script src="../header-bg.js"></script>
+<script src="../card-bg.js"></script>
+<script src="../site.js"></script>
+</body>
+</html>

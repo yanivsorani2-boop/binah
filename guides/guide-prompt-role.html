@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function(){
+      var t = localStorage.getItem('binah-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="טכניקת Role Prompting — כיצד להגדיר תפקיד ל-AI ולקבל תשובות ברמת מומחה. 15 פרומפטים מוכנים לשימוש.">
+  <meta property="og:title" content="פרומפטים עם תפקיד ומשימה — הטכניקה שמשנה הכל">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <title>פרומפטים עם תפקיד ומשימה — הטכניקה שמשנה הכל | בינה</title>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- GA4_CODE_HERE -->
+  <!-- ADSENSE_HEAD_CODE_HERE -->
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">בינה ✦</a>
+      <nav>
+        <a href="../index.html">ראשי</a>
+        <a href="../index.html#articles">כתבות</a>
+        <a href="../guides.html">מדריכים</a>
+        <a href="../weekly-news.html">חדשות</a>
+      </nav>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+        <span class="icon-dark">🌙 כהה</span>
+        <span class="icon-light">☀️ בהיר</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+</div>
+
+<div class="container">
+  <div class="article-header">
+    <span class="category">מדריך</span>
+    <h1>פרומפטים עם תפקיד ומשימה — הטכניקה שמשנה הכל</h1>
+    <div class="meta">
+      <span>📅 מרץ 2026</span>
+      <span>⏱ 6 דקות קריאה</span>
+      <span>✍ צוות בינה</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-layout">
+    <main class="article-body">
+<div class="container">
+        <button class="btn-back" onclick="history.back()">→ חזרה</button>
+      </div>
+
+      <p>יש טכניקה אחת שמשפרת כל פרומפט ב-200%. היא נקראת Role Prompting — ואתם פשוט מגדירים ל-AI מי הוא לפני שאתם שואלים אותו.</p>
+
+      <h2>למה תפקיד עובד?</h2>
+      <p>כאשר אתם אומרים ל-AI "אתה מומחה עם 20 שנות ניסיון ב...", הוא מתכייל לרמת הידע, הסגנון וזווית הראייה של אותו מומחה. זה לא קסם — זה הדרך שבה המודל מסנן את מיליארדי הפרמטרים שלו.</p>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+המבנה הבסיסי</h2>
+      <p>כל פרומפט עם תפקיד בנוי כך:</p>
+      <pre><code>אתה [תפקיד + ניסיון + התמחות].
+המשימה שלך: [מה אתם רוצים].
+הקהל: [מי יקרא/ישמע].
+פורמט: [איך תרצו את התשובה].</code></pre>
+
+      <h2>15 תפקידים מוכנים לשימוש — עם פרומפטים מלאים</h2>
+
+      <div class="reveal">
+        <h3>1. יועץ עסקי</h3>
+        <code>אתה יועץ עסקי בכיר עם 20 שנות ניסיון בליווי סטארטאפים ישראליים. המשימה: נתח את מודל ההכנסות של העסק הבא ותן 3 המלצות קונקרטיות לצמיחה: [תאר עסק]</code>
+      </div>
+
+      <div class="reveal">
+        <h3>2. מורה סבלני</h3>
+        <code>אתה מורה מנוסה שמתמחה בהסבר מושגים מורכבים לאנשים שלא באים מתחום הטכנולוגיה. הסבר לי מה זה [מושג] בשלושה שלבים: הגדרה פשוטה, אנלוגיה מהחיים, דוגמה מעשית.</code>
+      </div>
+
+      <div class="reveal">
+        <h3>3. קופירייטר</h3>
+        <code>אתה קופירייטר בכיר שעבד עם המותגים הגדולים בישראל. כתוב סלוגן ל[מוצר/שירות] שיהיה קליט, ישראלי ויתאים לקהל [תאר קהל]. הצע 5 אפשרויות.</code>
+      </div>
+
+      <div class="reveal">
+        <h3>4. פסיכולוג</h3>
+        <code>אתה פסיכולוג קליני עם ניסיון בטיפול CBT. אני מתמודד עם [בעיה]. עזור לי להבין את דפוס החשיבה שמאחוריה ותן לי 3 כלים מעשיים להתמודדות.</code>
+      </div>
+
+      <div class="reveal">
+        <h3>5. מתכנת בכיר</h3>
+        <code>אתה מפתח Full Stack עם 15 שנות ניסיון ב-Python ו-JavaScript. סקור את הקוד הבא, מצא בעיות אפשריות ותצע שיפורים: [הדבק קוד]</code>
+      </div>
+
+      <div class="reveal">
+        <h3>6. עורך דין</h3>
+        <code>אתה עורך דין ישראלי המתמחה בדיני עבודה. בצע ניתוח ראשוני של המצב הבא ותן לי את זכויותיי העיקריות: [תאר מצב]</code>
+        <p><em>הערה: זה לא ייעוץ משפטי מחייב.</em></p>
+      </div>
+
+      <div class="reveal">
+        <h3>7. דיאטנית</h3>
+        <code>אתה דיאטנית קלינית המתמחה בתזונה ים-תיכונית. בנה לי תפריט שבועי על בסיס: [פרטים אישיים, יעדים, העדפות]</code>
+      </div>
+
+      <div class="reveal">
+        <h3>8. מנהל שיווק</h3>
+        <code>אתה מנהל שיווק דיגיטלי שמתמחה בגדילה אורגנית. בנה אסטרטגיית תוכן ל-3 חודשים ל[עסק]. כולל: ערוצים, תדירות, סוגי תוכן ו-KPIs.</code>
+      </div>
+
+      <div class="reveal">
+        <h3>9. מגייס HR</h3>
+        <code>אתה מגייסת בכירה שראתה אלפי קורות חיים. עיין ב-CV שלי ותן לי משוב כנה: מה חזק, מה חסר ואיך לשפר: [הדבק CV]</code>
+      </div>
+
+      <div class="reveal">
+        <h3>10. סבתא</h3>
+        <code>אתה סבתא חמה ואוהבת שמסבירה הכל בסבלנות אינסופית. הסבר לי איך [משימה טכנולוגית] שלב אחר שלב, כאילו אני בן 70 ולא מכיר טכנולוגיה.</code>
+      </div>
+
+      <div class="reveal">
+        <h3>11. מבקר חד</h3>
+        <code>אתה מבקר חד ואמיתי שלא מחמיא. קרא את [הטקסט/התוכנית/הרעיון] הבא ותן לי ביקורת ישירה וכנה: מה לא עובד ולמה.</code>
+      </div>
+
+      <div class="reveal">
+        <h3>12. מאמן כושר</h3>
+        <code>אתה מאמן כושר מוסמך עם ניסיון בתוכניות ריצה. בנה לי תוכנית אימון ל-8 שבועות על בסיס: [פרטים, יעד, ציוד זמין]</code>
+      </div>
+
+      <div class="reveal">
+        <h3>13. ברטנדר</h3>
+        <code>אתה ברטנדר מנוסה שיודע להמליץ על קוקטייל לכל אירוע. אני מארח [אירוע] ויש לי במזווה: [רשימת בקבוקים]. מה אתה ממליץ?</code>
+      </div>
+
+      <div class="reveal">
+        <h3>14. כלכלן</h3>
+        <code>אתה כלכלן ישראלי שמתמחה בשוק הנדל״ן המקומי. נתח את ההחלטה הפיננסית הבאה ותן המלצה מנומקת: [קנייה/שכירות בתנאים X]</code>
+      </div>
+
+      <div class="reveal">
+        <h3>15. סטנדאפיסט</h3>
+        <code>אתה קומיקאי ישראלי חד לשון. כתוב בדיחה קצרה ועוקצנית על [נושא] שתתאים לקהל [תאר קהל]. לא צריך להיות ספציפי פוליטית.</code>
+      </div>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+שילוב עם Chain of Thought</h2>
+      <p>כשמשלבים תפקיד עם ההוראה <strong>"חשוב שלב אחר שלב לפני שאתה עונה"</strong> — מקבלים תשובות ברמה אחרת לגמרי. ה-AI לא רק מגיב מהבטן, הוא בונה לוגיקה עמוקה לפני שהוא כותב.</p>
+      <p>לטכניקה המלאה: <a href="guide-prompt-cot.html">מדריך Chain of Thought ←</a></p>
+
+      <div class="related-section">
+        <h2>מדריכים קשורים</h2>
+        <div class="related-grid">
+          <div class="related-card">
+            <span class="pill-tag">מדריך</span>
+            <h4>Prompt Engineering — המדריך הבסיסי לפרומפטים נכונים</h4>
+            <a href="guide-prompt-basics.html">קרא עוד ←</a>
+          </div>
+          <div class="related-card">
+            <span class="pill-tag">מדריך</span>
+            <h4>Chain of Thought — לגרום ל-AI לחשוב לפני שהוא עונה</h4>
+            <a href="guide-prompt-cot.html">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+      <div class="ad-in-article"><!-- ADSENSE_BOTTOM_HERE --><span>פרסומת</span></div>
+    </main>
+    <aside class="sidebar sticky-sidebar">
+      <div class="ad-zone ad-rectangle"><!-- ADSENSE_SIDEBAR_HERE --><span>פרסומת</span></div>
+      <div class="widget">
+        <div class="widget-title">מדריכים מומלצים</div>
+        <div class="widget-list">
+          <div class="widget-item"><a href="../guides/guide-chatgpt.html">מדריך ChatGPT למתחילים</a><span>5 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-claude.html">מדריך Claude AI</a><span>6 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-prompt-basics.html">Prompt Engineering</a><span>10 דקות</span></div>
+        </div>
+      </div>
+      <div class="ad-zone" style="min-height:300px"><!-- ADSENSE_SIDEBAR_2_HERE --><span>פרסומת</span></div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="../index.html">ראשי</a></li>
+        <li><a href="../guides.html">מדריכים</a></li>
+        <li><a href="../weekly-news.html">חדשות</a></li>
+        <li><a href="../ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="../privacy-policy.html">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+<script src="../header-bg.js"></script>
+<script src="../card-bg.js"></script>
+<script src="../site.js"></script>
+</body>
+</html>

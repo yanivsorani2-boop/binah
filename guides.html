@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function(){
+      var t = localStorage.getItem('binah-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="מדריכים מעשיים לבינה מלאכותית בעברית — ChatGPT, Claude, Midjourney, Ollama ועוד. מתחיל ומתקדם.">
+  <meta name="robots" content="index, follow">
+  <title>מדריכים מעשיים לבינה מלאכותית | בינה</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- GA4_CODE_HERE -->
+  <!-- ADSENSE_HEAD_CODE_HERE -->
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">בינה ✦</a>
+      <nav>
+        <a href="index.html">ראשי</a>
+        <a href="index.html#articles">כתבות</a>
+        <a href="guides.html" class="active">מדריכים</a>
+        <a href="weekly-news.html">חדשות</a>
+        <a href="ai-crazy.html">AI מטורף</a>
+      </nav>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+        <span class="icon-dark">🌙 כהה</span>
+        <span class="icon-light">☀️ בהיר</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-content">
+    <h1>מדריכים מעשיים<br>לבינה מלאכותית</h1>
+    <p>מתחיל? מתקדם? יש לנו מדריך בשבילך. הסברים פשוטים, צעד אחר צעד, בלי ג'רגון.</p>
+    <div class="hero-btns">
+      <a href="#beginners" class="btn-primary">מדריכים למתחילים</a>
+      <a href="#advanced" class="btn-outline">מדריכים למתקדמים</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><span>15</span> מדריכים זמינים</div>
+      <div class="stat-card"><span>100%</span> בעברית</div>
+      <div class="stat-card"><span>עם</span> צילומי מסך</div>
+    </div>
+  </div>
+</section>
+
+<!-- BEGINNER GUIDES -->
+<section id="beginners">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2>מדריכי התחלה מהירה — למתחילים</h2>
+      <p class="section-sub">אין ניסיון קודם? תוך 5 דקות תהיו בפנים</p>
+    </div>
+
+    <div class="guides-grid">
+
+      <!-- ChatGPT -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">ChatGPT — הרשמה והתחלת שימוש</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level beginner">מתחיל</span>
+            <span class="guide-time">⏱ 5 דקות</span>
+          </div>
+          <p>מדריך שלב אחר שלב להרשמה ל-ChatGPT בחינם, בחירת תוכנית, והשאלה הראשונה שלכם.</p>
+          <a href="guides/guide-chatgpt.html" class="btn-guide">קרא את המדריך ←</a>
+        </div>
+      </div>
+
+      <!-- Claude -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">Claude AI — הרשמה בחינם</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level beginner">מתחיל</span>
+            <span class="guide-time">⏱ 5 דקות</span>
+          </div>
+          <p>איך נרשמים ל-Claude של Anthropic, ומה ההבדל בין גרסה חינמית לגרסת Pro.</p>
+          <a href="guides/guide-claude.html" class="btn-guide">קרא את המדריך ←</a>
+        </div>
+      </div>
+
+      <!-- Midjourney -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">Midjourney — יצירת תמונות AI ראשונה</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level beginner">מתחיל</span>
+            <span class="guide-time">⏱ 10 דקות</span>
+          </div>
+          <p>ממה שמתחילים ב-Discord ועד לתמונה הראשונה שתרצו לשמור — מדריך מלא.</p>
+          <a href="guides/guide-midjourney.html" class="btn-guide">קרא את המדריך ←</a>
+        </div>
+      </div>
+
+      <!-- Gemini -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">Gemini (Google) — ה-AI של גוגל</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level beginner">מתחיל</span>
+            <span class="guide-time">⏱ 5 דקות</span>
+          </div>
+          <p>כיצד לגשת ל-Gemini בחינם דרך הדפדפן, לחבר ל-Google Workspace ולהתחיל להשתמש.</p>
+          <a href="articles/gemini-2025.html" class="btn-guide">קרא את המדריך ←</a>
+        </div>
+      </div>
+
+      <!-- Canva AI -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">Canva AI — עריכת תמונות עם AI</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level beginner">מתחיל</span>
+            <span class="guide-time">⏱ 8 דקות</span>
+          </div>
+          <p>איך להשתמש בכלי ה-AI של Canva — הסרת רקע, Magic Edit, Text to Image ועוד.</p>
+          <a class="btn-guide soon">בקרוב</a>
+        </div>
+      </div>
+
+      <!-- Perplexity -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">Perplexity AI — חיפוש חכם</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level beginner">מתחיל</span>
+            <span class="guide-time">⏱ 5 דקות</span>
+          </div>
+          <p>כיצד Perplexity משנה את אופן החיפוש ברשת — עם מקורות, עדכון בזמן אמת ותשובות מדויקות.</p>
+          <a href="articles/perplexity-ai.html" class="btn-guide">קרא את המדריך ←</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ADVANCED GUIDES -->
+<section id="advanced" style="background: var(--bg-code); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding-bottom: 48px;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2>מדריכים למתקדמים</h2>
+      <p class="section-sub">כלים חזקים לאוטומציה, קוד ו-AI מקומי</p>
+    </div>
+
+    <div class="guides-grid">
+
+      <!-- Ollama -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">Ollama — הרצת AI על המחשב שלך</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level advanced">מתקדם</span>
+            <span class="guide-time">⏱ 15 דקות · 💻 כולל פקודות</span>
+          </div>
+          <p>התקנת Ollama על Mac או Windows, הורדת מודלים כמו Llama 3 ו-Mistral, והרצה ללא ענן.</p>
+          <a href="guides/guide-ollama.html" class="btn-guide">קרא את המדריך ←</a>
+        </div>
+      </div>
+
+      <!-- Cursor AI -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">Cursor AI — עורך קוד עם AI</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level advanced">מתקדם</span>
+            <span class="guide-time">⏱ 12 דקות</span>
+          </div>
+          <p>איך להתקין ולהתחיל עם Cursor, להשתמש ב-Agent Mode ולבנות פרויקטים מאפס עם AI.</p>
+          <a href="articles/vibe-coding.html" class="btn-guide">קרא את המדריך ←</a>
+        </div>
+      </div>
+
+      <!-- n8n -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">n8n — אוטומציה ללא קוד</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level advanced">מתקדם</span>
+            <span class="guide-time">⏱ 20 דקות · 💻 כולל דוגמאות</span>
+          </div>
+          <p>כיצד לחבר שירותים שונים, לייצר אוטומציות חכמות עם AI, ולהריץ n8n על השרת שלכם.</p>
+          <a class="btn-guide soon">בקרוב</a>
+        </div>
+      </div>
+
+      <!-- Make.com -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">Make.com — חיבור כלים אוטומטי</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level advanced">מתקדם</span>
+            <span class="guide-time">⏱ 15 דקות</span>
+          </div>
+          <p>מדריך ל-Make.com (לשעבר Integromat): בניית תרחישים, חיבור API ואוטומציה לכל תחום.</p>
+          <a class="btn-guide soon">בקרוב</a>
+        </div>
+      </div>
+
+      <!-- API Keys -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">API Keys — כיצד לקבל ולהשתמש</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level advanced">מתקדם</span>
+            <span class="guide-time">⏱ 10 דקות · 💻 כולל קוד</span>
+          </div>
+          <p>מה זה API Key, איך מקבלים מ-OpenAI, Anthropic ו-Google, ואיך משתמשים בו בצורה בטוחה.</p>
+          <a class="btn-guide soon">בקרוב</a>
+        </div>
+      </div>
+
+      <!-- ComfyUI -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">ComfyUI — יצירת תמונות מתקדמת</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level advanced">מתקדם</span>
+            <span class="guide-time">⏱ 25 דקות · 💻 כולל פקודות</span>
+          </div>
+          <p>התקנת ComfyUI, עבודה עם Stable Diffusion, Workflows מתקדמים ו-ControlNet.</p>
+          <a class="btn-guide soon">בקרוב</a>
+        </div>
+      </div>
+
+      <!-- Prompt Basics -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">Prompt Engineering — הבסיס</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level advanced">מתקדם</span>
+            <span class="guide-time">⏱ 10 דקות</span>
+          </div>
+          <p>איך לנסח פרומפטים שמביאים תוצאות מדויקות. תבניות בסיסיות, טעויות נפוצות ו-20 דוגמאות מעשיות.</p>
+          <a href="guides/guide-prompt-basics.html" class="btn-guide">קרא את המדריך ←</a>
+        </div>
+      </div>
+
+      <!-- Role + Task -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">פרומפטים עם תפקיד ומשימה (Role + Task)</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level advanced">מתקדם</span>
+            <span class="guide-time">⏱ 12 דקות</span>
+          </div>
+          <p>טכניקת "אתה מומחה ב..." שמשנה הכל. כיצד להגדיר תפקיד, הקשר ומטרה לתשובות חדות יותר.</p>
+          <a href="guides/guide-prompt-role.html" class="btn-guide">קרא את המדריך ←</a>
+        </div>
+      </div>
+
+      <!-- Chain of Thought -->
+      <div class="guide-card reveal">
+        <div class="guide-thumb"><div class="thumb-title">Chain of Thought — לגרום ל-AI לחשוב בקול</div></div>
+        <div class="guide-body">
+          <div class="guide-badges">
+            <span class="guide-level advanced">מתקדם</span>
+            <span class="guide-time">⏱ 15 דקות</span>
+          </div>
+          <p>הטכניקה המתקדמת שמכפילה את איכות התשובות: שרשרת חשיבה, פירוק משימות ופרומפטים מרובי-שלבים.</p>
+          <a href="guides/guide-prompt-cot.html" class="btn-guide">קרא את המדריך ←</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section" id="newsletter">
+  <div class="container">
+    <div class="newsletter-card reveal">
+      <h2>קבל עדכוני AI ישירות לתיבה שלך</h2>
+      <p>שבועון קצר. ללא ספאם. רק מה שחשוב.</p>
+      <form class="newsletter-form" novalidate>
+        <input type="email" placeholder="הכנס את האימייל שלך" autocomplete="email" required>
+        <button type="submit" class="btn-primary">הצטרף עכשיו</button>
+      </form>
+      <div class="newsletter-success">תודה! נרשמת בהצלחה 🎉</div>
+      <p class="newsletter-note">מצטרפים ל-1,200+ ישראלים שעוקבים אחרי AI בעברית</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="index.html">ראשי</a></li>
+        <li><a href="guides.html">מדריכים</a></li>
+        <li><a href="weekly-news.html">חדשות</a></li>
+        <li><a href="ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script src="header-bg.js"></script>
+<script src="card-bg.js"></script>
+</body>
+</html>

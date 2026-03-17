@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function(){
+      var t = localStorage.getItem('binah-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="מדריך Ollama בעברית — כיצד להריץ AI על המחשב שלך בחינם ובפרטיות מלאה. התקנה על Mac ו-Windows, מודלים מומלצים.">
+  <meta property="og:title" content="מדריך Ollama — הרצת AI על המחשב שלך (חינם, פרטי, ללא ענן)">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <title>מדריך Ollama — הרצת AI על המחשב שלך (חינם, פרטי, ללא ענן) | בינה</title>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- GA4_CODE_HERE -->
+  <!-- ADSENSE_HEAD_CODE_HERE -->
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">בינה ✦</a>
+      <nav>
+        <a href="../index.html">ראשי</a>
+        <a href="../index.html#articles">כתבות</a>
+        <a href="../guides.html">מדריכים</a>
+        <a href="../weekly-news.html">חדשות</a>
+      </nav>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+        <span class="icon-dark">🌙 כהה</span>
+        <span class="icon-light">☀️ בהיר</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+</div>
+
+<div class="container">
+  <div class="article-header">
+    <span class="category">מדריך</span>
+    <h1>מדריך Ollama — הרצת AI על המחשב שלך (חינם, פרטי, ללא ענן)</h1>
+    <div class="meta">
+      <span>📅 מרץ 2025</span>
+      <span>⏱ 6 דקות קריאה</span>
+      <span>✍ צוות בינה</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-layout">
+    <main class="article-body">
+<div class="container">
+        <button class="btn-back" onclick="history.back()">→ חזרה</button>
+      </div>
+
+      <p>מה אם הייתם יכולים להריץ מודל AI חזק כמו Llama 3 או Mistral <strong>ישירות על המחשב שלכם</strong>, ללא תשלום, ללא שמירת נתונים בענן, וללא תלות בשרתים חיצוניים? Ollama הופך את זה לאפשרי — ובצורה פשוטה להפתיע.</p>
+
+      <h2>למה להריץ AI מקומי?</h2>
+      <ul>
+        <li><strong>פרטיות מלאה:</strong> שיחות לא עוזבות את המחשב שלכם — מושלם למסמכים רגישים</li>
+        <li><strong>חינם לגמרי:</strong> לאחר הורדת המודל — אין מנוי, אין מגבלות</li>
+        <li><strong>ללא אינטרנט:</strong> עובד גם אופליין</li>
+        <li><strong>ניסוי וטעייה:</strong> פרמטרים, פרומפטים, כל מה שרוצים</li>
+        <li><strong>מפתחים:</strong> אינטגרציה מקומית ללא עלויות API</li>
+      </ul>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+דרישות מערכת</h2>
+      <p>לפני שמתחילים, בדקו שהמחשב שלכם עומד בדרישות המינימום:</p>
+
+      <table>
+        <thead>
+          <tr><th>רכיב</th><th>מינימום</th><th>מומלץ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>RAM</td><td>8GB</td><td>16GB+</td></tr>
+          <tr><td>אחסון פנוי</td><td>10GB</td><td>50GB+</td></tr>
+          <tr><td>GPU</td><td>אופציונלי</td><td>NVIDIA 8GB VRAM</td></tr>
+          <tr><td>מעבד</td><td>Intel/AMD מודרני</td><td>Apple Silicon (M1+)</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>הערה:</strong> Apple Silicon (M1, M2, M3, M4) הוא <strong>הפלטפורמה הטובה ביותר</strong> ל-Ollama — GPU משותף עם RAM מאפשר ביצועים מצוינים גם ב-8GB RAM.</p>
+
+      <h2>התקנה על Mac</h2>
+      <p>שתי דרכים: מהאתר הרשמי, או דרך Homebrew.</p>
+
+      <h3>דרך 1 — הורדה ישירה (קלה יותר)</h3>
+      <ol>
+        <li>היכנסו ל-<strong>ollama.com</strong></li>
+        <li>לחצו "Download for Mac"</li>
+        <li>פתחו את קובץ ה-.dmg ועשו Drag and Drop לתיקיית Applications</li>
+        <li>פתחו את Ollama — תראו אייקון בשורת המשימות</li>
+      </ol>
+
+      <h3>דרך 2 — Homebrew (למי שמכיר)</h3>
+      <pre><code>brew install ollama</code></pre>
+
+      <p>לאחר ההתקנה, הפעילו את ה-daemon:</p>
+      <pre><code>ollama serve</code></pre>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+התקנה על Windows</h2>
+      <ol>
+        <li>היכנסו ל-<strong>ollama.com</strong></li>
+        <li>לחצו "Download for Windows"</li>
+        <li>הורידו והריצו את קובץ ה-installer</li>
+        <li>עקבו אחרי ה-wizard — זה כמו התקנת תוכנה רגילה</li>
+        <li>Ollama ירוץ כשירות ברקע אוטומטית</li>
+      </ol>
+
+      <p><strong>Windows + NVIDIA GPU:</strong> Ollama מזהה אוטומטית כרטיסי Nvidia ומשתמש ב-CUDA לתאוצה. ודאו שהדרייברים מעודכנים.</p>
+
+      <h2>הורדת מודל ראשון</h2>
+      <p>פתחו Terminal (Mac) או PowerShell (Windows) והריצו:</p>
+      <pre><code>ollama pull llama3.2</code></pre>
+
+      <p>זה יוריד את Llama 3.2 של Meta — מודל חזק מאוד. גודל: ~2GB לגרסת 3B, ~5GB לגרסת 8B.</p>
+
+      <p>מודלים נוספים שמומלץ להוריד:</p>
+      <pre><code>ollama pull mistral
+ollama pull phi3
+ollama pull gemma2</code></pre>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+שיחה ראשונה</h2>
+      <p>לאחר ההורדה, הריצו:</p>
+      <pre><code>ollama run llama3.2</code></pre>
+
+      <p>תקבלו prompt אינטראקטיבי. תכתבו שאלה בעברית:</p>
+      <pre><code>&gt;&gt;&gt; מה זה בינה מלאכותית? הסבר בפשטות</code></pre>
+
+      <p>לסיום השיחה, הקלידו <code>/bye</code></p>
+
+      <h2>ממשק גרפי — Open WebUI</h2>
+      <p>שורת הפקודה נהדרת, אבל לחוויה כמו ChatGPT, התקינו <strong>Open WebUI</strong> — ממשק גרפי יפה מאוד שעובד על Ollama.</p>
+
+      <p>דרישה: Docker מותקן. לאחר מכן:</p>
+      <pre><code>docker run -d -p 3000:8080 \
+  --add-host=host.docker.internal:host-gateway \
+  -v open-webui:/app/backend/data \
+  --name open-webui \
+  --restart always \
+  ghcr.io/open-webui/open-webui:main</code></pre>
+
+      <p>פתחו את הדפדפן ב-<strong>localhost:3000</strong> — תראו ממשק דומה ל-ChatGPT.</p>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+איזה מודל להוריד? השוואה</h2>
+
+      <table>
+        <thead>
+          <tr><th>מודל</th><th>גודל</th><th>מצוין ב</th><th>RAM נדרש</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>llama3.2:3b</td><td>2GB</td><td>שיחות כלליות, מהיר</td><td>8GB</td></tr>
+          <tr><td>llama3.2:8b</td><td>5GB</td><td>הכל-סובב, איכות גבוהה</td><td>16GB</td></tr>
+          <tr><td>mistral:7b</td><td>4.1GB</td><td>הוראות, קוד, אנגלית</td><td>8GB</td></tr>
+          <tr><td>phi3:mini</td><td>2.3GB</td><td>מהיר מאוד, מחשבים חלשים</td><td>4GB</td></tr>
+          <tr><td>gemma2:9b</td><td>5.5GB</td><td>שפות מרובות, כולל עברית</td><td>16GB</td></tr>
+          <tr><td>codellama:7b</td><td>3.8GB</td><td>כתיבת קוד</td><td>8GB</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>המלצה למתחילים:</strong> <code>llama3.2:3b</code> אם יש לכם 8GB RAM, <code>llama3.2:8b</code> אם יש 16GB.</p>
+
+      <h2>פקודות שימושיות</h2>
+      <pre><code># רשימת מודלים מותקנים
+ollama list
+
+# מחיקת מודל
+ollama rm mistral
+
+# מידע על מודל
+ollama show llama3.2
+
+# הרצה עם פרמטרים
+ollama run llama3.2 --verbose</code></pre>
+
+      <div class="related-section">
+        <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+מדריכים קשורים</h2>
+        <div class="related-grid">
+          <div class="related-card">
+            <span class="pill-tag">מאמר</span>
+            <h4>Ollama: כיצד להריץ AI בחינם ובפרטיות על המחשב שלך</h4>
+            <a href="../articles/ollama-guide.html">קרא עוד ←</a>
+          </div>
+          <div class="related-card">
+            <span class="pill-tag">מדריך</span>
+            <h4>API Keys — כיצד לקבל ולהשתמש</h4>
+            <a href="../guides.html#advanced">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+      <div class="ad-in-article"><!-- ADSENSE_BOTTOM_HERE --><span>פרסומת</span></div>
+    </main>
+    <aside class="sidebar sticky-sidebar">
+      <div class="ad-zone ad-rectangle"><!-- ADSENSE_SIDEBAR_HERE --><span>פרסומת</span></div>
+      <div class="widget">
+        <div class="widget-title">מדריכים מומלצים</div>
+        <div class="widget-list">
+          <div class="widget-item"><a href="../guides/guide-chatgpt.html">מדריך ChatGPT למתחילים</a><span>5 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-claude.html">מדריך Claude AI</a><span>6 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-prompt-basics.html">Prompt Engineering</a><span>10 דקות</span></div>
+        </div>
+      </div>
+      <div class="ad-zone" style="min-height:300px"><!-- ADSENSE_SIDEBAR_2_HERE --><span>פרסומת</span></div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="../index.html">ראשי</a></li>
+        <li><a href="../guides.html">מדריכים</a></li>
+        <li><a href="../weekly-news.html">חדשות</a></li>
+        <li><a href="../ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="../privacy-policy.html">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+<script src="../header-bg.js"></script>
+<script src="../card-bg.js"></script>
+<script src="../site.js"></script>
+</body>
+</html>

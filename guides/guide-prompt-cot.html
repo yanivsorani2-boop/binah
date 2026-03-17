@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function(){
+      var t = localStorage.getItem('binah-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="מדריך Chain of Thought בעברית — איך לגרום ל-AI לחשוב שלב אחר שלב ולקבל תשובות מדויקות ומנומקות.">
+  <meta property="og:title" content="Chain of Thought — לגרום ל-AI לחשוב לפני שהוא עונה">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <title>Chain of Thought — לגרום ל-AI לחשוב לפני שהוא עונה | בינה</title>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- GA4_CODE_HERE -->
+  <!-- ADSENSE_HEAD_CODE_HERE -->
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">בינה ✦</a>
+      <nav>
+        <a href="../index.html">ראשי</a>
+        <a href="../index.html#articles">כתבות</a>
+        <a href="../guides.html">מדריכים</a>
+        <a href="../weekly-news.html">חדשות</a>
+      </nav>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+        <span class="icon-dark">🌙 כהה</span>
+        <span class="icon-light">☀️ בהיר</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+</div>
+
+<div class="container">
+  <div class="article-header">
+    <span class="category">מדריך</span>
+    <h1>Chain of Thought — לגרום ל-AI לחשוב לפני שהוא עונה</h1>
+    <div class="meta">
+      <span>📅 מרץ 2026</span>
+      <span>⏱ 6 דקות קריאה</span>
+      <span>✍ צוות בינה</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-layout">
+    <main class="article-body">
+<div class="container">
+        <button class="btn-back" onclick="history.back()">→ חזרה</button>
+      </div>
+
+      <p>יש משפט אחד שמשפר כל פרומפט: <strong>"חשוב שלב אחר שלב לפני שאתה עונה."</strong> זה נשמע פשוט, אבל הרעיון מאחוריו שינה את תחום ה-AI.</p>
+
+      <h2>מה זה Chain of Thought?</h2>
+      <p>Chain of Thought (CoT) היא טכניקה שבה אתם מבקשים מה-AI לחשוף את תהליך החשיבה שלו לפני שהוא מגיע לתשובה. כשה-AI "מדבר בקול" — התשובות מדויקות, מנומקות ואמינות הרבה יותר.</p>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+שלושה סוגים של CoT</h2>
+
+      <div class="reveal">
+        <h3>סוג 1 — Zero-Shot CoT</h3>
+        <p>מוסיפים בסוף כל פרומפט את המשפט: <code>חשוב שלב אחר שלב לפני שאתה עונה.</code></p>
+        <table>
+          <thead>
+            <tr><th>בלי CoT</th><th>עם CoT</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>כמה עולה 15% הנחה על מוצר ב-240 ש"ח?</code><br>תשובה: "36 ש"ח" (לפעמים טועה)</td>
+              <td><code>כמה עולה 15% הנחה על מוצר ב-240 ש"ח? חשוב שלב אחר שלב.</code><br>תשובה: שלב 1: 240 × 0.15 = 36. שלב 2: 240 − 36 = 204 ש"ח. התשובה: 36 ש"ח הנחה, המחיר הסופי 204 ש"ח.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="reveal">
+        <h3>סוג 2 — Few-Shot CoT</h3>
+        <p>נותנים לAI דוגמה אחת של חשיבה מפורטת, ואז מבקשים שיחשוב על השאלה שלנו באותו אופן:</p>
+        <code>דוגמה: שאלה: כמה הוא 12 × 15? תהליך: 12 × 10 = 120. 12 × 5 = 60. 120 + 60 = 180. תשובה: 180. עכשיו, באותה שיטה: [השאלה שלכם]</code>
+        <p>ה-AI ילמד מהדוגמה ויחשוב בצורה מסודרת גם על השאלה שלכם.</p>
+      </div>
+
+      <div class="reveal">
+        <h3>סוג 3 — Self-Ask</h3>
+        <p>מבקשים מה-AI לשאול את עצמו שאלות לפני שהוא עונה:</p>
+        <code>לפני שתענה, כתוב 3 שאלות שאתה צריך לשאול את עצמך כדי לענות נכון, ואז ענה.</code>
+        <p>זה גורם ל-AI לאתר פערי מידע ולמלא אותם לפני שהוא מגיב — במיוחד יעיל לשאלות מורכבות.</p>
+      </div>
+
+      <h2>10 פרומפטי CoT מוכנים</h2>
+
+      <div class="reveal">
+        <h3>1. ניתוח בעיה מורכבת</h3>
+        <code>לפני שאתה עונה, פרק את הבעיה הבאה ל-3 חלקים, נתח כל חלק בנפרד, ואז תן מסקנה משולבת: [בעיה]</code>
+        <p>מתאים ל: בעיות עסקיות, קונפליקטים, תכנון פרויקטים.</p>
+      </div>
+
+      <div class="reveal">
+        <h3>2. קבלת החלטה</h3>
+        <code>חשוב על ההחלטה הבאה שלב אחר שלב: רשום קודם את כל היתרונות, אחר כך את כל החסרונות, אחר כך את הסיכונים, ולבסוף — ההמלצה שלך: [החלטה]</code>
+      </div>
+
+      <div class="reveal">
+        <h3>3. פתרון בעיית קוד</h3>
+        <code>לפני שאתה מתקן את הקוד, הסבר מה לדעתך גורם לבאג, מה הצפי לתיקון, ורק אז כתוב את הקוד המתוקן: [קוד]</code>
+      </div>
+
+      <div class="reveal">
+        <h3>4. ביקורת יצירתית</h3>
+        <code>קרא את הטקסט הבא. קודם — פרט מה עובד טוב ולמה. שנית — מה לא עובד ולמה. שלישית — 3 הצעות ספציפיות לשיפור: [טקסט]</code>
+      </div>
+
+      <div class="reveal">
+        <h3>5. תכנון פרויקט</h3>
+        <code>חשוב על הפרויקט הבא כמנהל פרויקטים מנוסה. שלב 1: חלק לאבני דרך. שלב 2: זהה סיכונים. שלב 3: הצע לוח זמנים ריאלי: [פרויקט]</code>
+      </div>
+
+      <div class="reveal">
+        <h3>6. הסבר מושג</h3>
+        <code>הסבר לי [מושג] בארבעה שלבים: 1) הגדרה פשוטה 2) למה זה חשוב 3) איך זה עובד בפועל 4) דוגמה מהחיים שלי [הקשר אישי]</code>
+      </div>
+
+      <div class="reveal">
+        <h3>7. דיבוג לוגי</h3>
+        <code>יש לי טענה: [טענה]. בדוק אותה כך: 1) מה ההנחות הבסיסיות? 2) האם הן נכונות? 3) האם המסקנה הגיונית? 4) מה יכול להפריך אותה?</code>
+      </div>
+
+      <div class="reveal">
+        <h3>8. כתיבת אסטרטגיה</h3>
+        <code>בנה אסטרטגיה עסקית ל[יעד]. תהליך: 1) נתח את המצב הנוכחי 2) הגדר יעד SMART 3) פרט 3 נתיבים אפשריים 4) המלץ על האחד הטוב ביותר עם נימוק</code>
+      </div>
+
+      <div class="reveal">
+        <h3>9. השוואת אפשרויות</h3>
+        <code>השווה בין [אפשרות א] ל[אפשרות ב]. בצע: 1) רשימת קריטריונים 2) ניקוד לכל קריטריון 3) טבלת השוואה 4) המלצה סופית</code>
+      </div>
+
+      <div class="reveal">
+        <h3>10. Self-Reflection</h3>
+        <code>ענה על השאלה הבאה, ואחרי שענית — בדוק את עצמך: האם הנחת הנחות? האם יש זווית שפספסת? מה הסתברות שאתה טועה? [שאלה]</code>
+        <p>זה הפרומפט שמייצר את התשובות הכנות והשלמות ביותר.</p>
+      </div>
+
+      <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+CoT + Role = השילוב המנצח</h2>
+      <p>מחברים תפקיד עם CoT וקבלים תשובות ברמה שלא ידעתם שאפשר:</p>
+      <pre><code>אתה יועץ עסקי בכיר עם 20 שנות ניסיון.
+חשוב שלב אחר שלב לפני שאתה עונה.
+השאלה: האם כדאי לי לפתוח עסק בתחום [X] כרגע?
+כלול: ניתוח שוק, סיכונים, הזדמנויות, והמלצה מנומקת.</code></pre>
+      <p>התוצאה: ניתוח עמוק שמשלב ידע מומחה עם חשיבה מסודרת — כמו ייעוץ בתשלום, בחינם.</p>
+
+      <h2>מתי לא להשתמש ב-CoT?</h2>
+      <ul>
+        <li>פרומפטים פשוטים כמו תרגום או תמצות קצר — לא צריך</li>
+        <li>כשמהירות חשובה יותר מדיוק</li>
+        <li>משימות יצירתיות חופשיות שבהן ספונטניות היא יתרון</li>
+      </ul>
+
+      <div class="affiliate-box">
+        <h3>רוצים להמשיך ללמוד?</h3>
+        <p>חזרו לכל המדריכים שלנו בנושא Prompt Engineering.</p>
+        <a href="../guides.html" class="btn-primary">כל המדריכים ←</a>
+        <a href="guide-prompt-role.html" class="btn-primary" style="margin-right: 0.5rem;">מדריך Role Prompting ←</a>
+      </div>
+
+      <div class="related-section">
+        <h2>
+      <div class="ad-in-article"><!-- ADSENSE_IN_ARTICLE_HERE --><span>פרסומת</span></div>
+מדריכים קשורים</h2>
+        <div class="related-grid">
+          <div class="related-card">
+            <span class="pill-tag">מדריך</span>
+            <h4>Prompt Engineering — המדריך הבסיסי לפרומפטים נכונים</h4>
+            <a href="guide-prompt-basics.html">קרא עוד ←</a>
+          </div>
+          <div class="related-card">
+            <span class="pill-tag">מדריך</span>
+            <h4>פרומפטים עם תפקיד ומשימה — הטכניקה שמשנה הכל</h4>
+            <a href="guide-prompt-role.html">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+      <div class="ad-in-article"><!-- ADSENSE_BOTTOM_HERE --><span>פרסומת</span></div>
+    </main>
+    <aside class="sidebar sticky-sidebar">
+      <div class="ad-zone ad-rectangle"><!-- ADSENSE_SIDEBAR_HERE --><span>פרסומת</span></div>
+      <div class="widget">
+        <div class="widget-title">מדריכים מומלצים</div>
+        <div class="widget-list">
+          <div class="widget-item"><a href="../guides/guide-chatgpt.html">מדריך ChatGPT למתחילים</a><span>5 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-claude.html">מדריך Claude AI</a><span>6 דקות</span></div>
+          <div class="widget-item"><a href="../guides/guide-prompt-basics.html">Prompt Engineering</a><span>10 דקות</span></div>
+        </div>
+      </div>
+      <div class="ad-zone" style="min-height:300px"><!-- ADSENSE_SIDEBAR_2_HERE --><span>פרסומת</span></div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="../index.html">ראשי</a></li>
+        <li><a href="../guides.html">מדריכים</a></li>
+        <li><a href="../weekly-news.html">חדשות</a></li>
+        <li><a href="../ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="../privacy-policy.html">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+<script src="../header-bg.js"></script>
+<script src="../card-bg.js"></script>
+<script src="../site.js"></script>
+</body>
+</html>

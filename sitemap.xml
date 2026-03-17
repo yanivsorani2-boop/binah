@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.binah.co.il/</loc><lastmod>2025-03-17</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.binah.co.il/guides.html</loc><lastmod>2025-03-17</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.binah.co.il/weekly-news.html</loc><lastmod>2025-03-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/ai-crazy.html</loc><lastmod>2025-03-17</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <!-- Articles -->
+  <url><loc>https://www.binah.co.il/article_claude_vs_gpt4o.html</loc><lastmod>2025-03-10</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.binah.co.il/article2_ai_video_tools.html</loc><lastmod>2025-03-12</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.binah.co.il/article3_vibe_coding.html</loc><lastmod>2025-03-14</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.binah.co.il/articles/deepseek-r2.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/articles/gemini-2025.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/articles/perplexity-ai.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/articles/sora-openai.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/articles/prompt-engineering.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/articles/ollama-guide.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/articles/midjourney-beginners.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/articles/ai-small-business.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/articles/ai-jobs-2025.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/articles/chatgpt-10-uses.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <!-- Guides -->
+  <url><loc>https://www.binah.co.il/guides/guide-chatgpt.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/guides/guide-claude.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/guides/guide-midjourney.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/guides/guide-ollama.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/guides/guide-prompt-basics.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/guides/guide-prompt-cot.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/guides/guide-prompt-role.html</loc><lastmod>2025-03-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.binah.co.il/privacy-policy.html</loc><lastmod>2025-03-17</lastmod><priority>0.3</priority></url>
+</urlset>

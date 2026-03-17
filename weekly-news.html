@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function(){
+      var t = localStorage.getItem('binah-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="סיכום שבועי — מה קרה השבוע בעולם ה-AI. מתעדכן כל יום ראשון.">
+  <meta name="robots" content="index, follow">
+  <title>מה קרה השבוע בעולם ה-AI | בינה</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- GA4_CODE_HERE -->
+  <!-- ADSENSE_HEAD_CODE_HERE -->
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">בינה ✦</a>
+      <nav id="main-nav">
+        <a href="index.html">ראשי</a>
+        <a href="index.html#articles">כתבות</a>
+        <a href="guides.html">מדריכים</a>
+        <a href="weekly-news.html" class="active">חדשות</a>
+        <a href="ai-crazy.html">AI מטורף</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+          <span class="icon-dark">🌙 כהה</span>
+          <span class="icon-light">☀️ בהיר</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-content text-center">
+    <div class="live-badge"><span class="live-dot"></span> מתעדכן כל יום ראשון</div>
+    <h1>מה קרה השבוע<br><span class="gradient-text">בעולם ה-AI</span></h1>
+    <p>כל מה שחשוב בבינה מלאכותית — מסוכם, מדויק, בלי רעש.</p>
+    <div class="hero-btns">
+      <a href="#this-week" class="btn-primary">גיליון השבוע ←</a>
+      <a href="#archive" class="btn-outline">גיליונות קודמים</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><span>כל</span><small>יום ראשון</small></div>
+      <div class="stat-card"><span>4+</span><small>חדשות עיקריות</small></div>
+      <div class="stat-card"><span>100%</span><small>בעברית</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- THIS WEEK -->
+<section id="this-week" style="padding:48px 0 64px">
+  <div class="container">
+
+    <!-- Issue header -->
+    <div class="news-issue-header reveal">
+      <div class="news-issue-label">גיליון שבועי</div>
+      <h2 class="news-issue-title">שבוע 9 מרץ 2026 — שבוע היסטורי ב-AI</h2>
+      <p class="news-issue-sub">ארבע חדשות שמשנות את המציאות — GPT-5, Claude 4, Gemini 2.5 Ultra ורובוטים אוטונומיים</p>
+    </div>
+
+    <!-- Main stories grid -->
+    <div class="news-cards-grid">
+
+      <div class="news-card featured-news-card has-thumb reveal" data-cat="news">
+        <div class="card-thumb"><div class="thumb-title">GPT-5 הושק רשמית — ומשנה את כל הכללים</div></div>
+        <div class="card-body">
+          <div class="news-card-top">
+            <span class="news-num">01</span>
+            <span class="new-badge">חם</span>
+          </div>
+          <p class="news-card-body">OpenAI השיקה רשמית את GPT-5 בפברואר 2026, ומדובר בקפיצה שלא נראתה מאז ימי GPT-4. המודל מולטי-מודאלי במלוא מובן המילה — תמונה, קול, וידאו וטקסט בשיחה אחת אחודה. על מדדי הסקה GPT-5 מציג שיפור פי 10 לעומת GPT-4o. תאגידי Fortune 500 כבר מדווחים על פריסה מסחרית לאוטומציה של תהליכים שלמים.</p>
+          <div class="news-card-footer">
+            <span class="news-tag">OpenAI</span>
+            <span class="news-tag">GPT-5</span>
+            <a href="articles/gpt5-launch.html" class="btn-guide">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-card has-thumb reveal" data-cat="analysis">
+        <div class="card-thumb"><div class="thumb-title">Claude 4 של Anthropic — הקוד הכי טוב בעולם</div></div>
+        <div class="card-body">
+          <div class="news-card-top">
+            <span class="news-num">02</span>
+          </div>
+          <p class="news-card-body">Anthropic שחררה את Claude 4 במרץ 2026. המודל מנפץ את כל מדדי הקידוד הקיימים — SWE-bench עומד על 89%, פי שניים מהשיא הקודם. Claude 4 משולב ישירות ב-VS Code כתוסף נייטיב ומסוגל לנהל קוד-בייסים שלמים באופן אוטונומי.</p>
+          <div class="news-card-footer">
+            <span class="news-tag">Anthropic</span>
+            <span class="news-tag">Claude 4</span>
+            <a href="articles/claude-vs-gpt4o.html" class="btn-guide">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-card has-thumb reveal" data-cat="tools">
+        <div class="card-thumb"><div class="thumb-title">Gemini 2.5 Ultra — גוגל חוזרת למירוץ</div></div>
+        <div class="card-body">
+          <div class="news-card-top">
+            <span class="news-num">03</span>
+          </div>
+          <p class="news-card-body">גוגל שחררה את Gemini 2.5 Ultra עם חלון הקשר של 2 מיליון טוקן וחיפוש אינטרנט מובנה. למנויי Google One — גישה חינמית. לעסקים ישראלים: שכבת AI עמוקה בכל Workspace.</p>
+          <div class="news-card-footer">
+            <span class="news-tag">Google</span>
+            <span class="news-tag">Gemini</span>
+            <a href="articles/gemini-2025.html" class="btn-guide">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="news-card has-thumb reveal" data-cat="compare">
+        <div class="card-thumb"><div class="thumb-title">AI Agents לעולם האמיתי — רובוטים ועבודה אוטונומית</div></div>
+        <div class="card-body">
+          <div class="news-card-top">
+            <span class="news-num">04</span>
+          </div>
+          <p class="news-card-body">2026 — שנת ה-AI Agents. Devin 2.0 עובד כמהנדס תוכנה מן המניין. Figure-03 עם GPT-5 קופץ מכשולים בזמן אמת. Amazon: 100,000 רובוטים מונעי AI עד סוף השנה.</p>
+          <div class="news-card-footer">
+            <span class="news-tag">Agents</span>
+            <span class="news-tag">רובוטיקה</span>
+            <a href="articles/vibe-coding.html" class="btn-guide">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /news-cards-grid -->
+
+    <!-- New tools section -->
+    <div class="news-section-header reveal" style="margin-top:56px">
+      <span class="section-num">02</span>
+      <h2>כלי AI חדשים שכדאי לנסות</h2>
+    </div>
+
+    <div class="tools-row">
+
+      <div class="tool-card has-thumb reveal" data-cat="tips">
+        <div class="card-thumb" style="height:100px"><div class="thumb-title" style="font-size:1.02rem;padding:20px 14px 10px">Manus AI</div></div>
+        <div class="card-body">
+          <p class="tool-card-desc">סוכן AI ישראלי שמבצע משימות מורכבות אוטונומית — גלישה, קוד, מיילים. ממשק עברי מלא.</p>
+          <span class="news-tag">חדש</span>
+        </div>
+      </div>
+
+      <div class="tool-card has-thumb reveal" data-cat="analysis">
+        <div class="card-thumb" style="height:100px"><div class="thumb-title" style="font-size:1.02rem;padding:20px 14px 10px">Cursor 2.0</div></div>
+        <div class="card-body">
+          <p class="tool-card-desc">עורך קוד עם AI שמנהל פרויקטים שלמים — מבין ארכיטקטורה, מתכנן ספרינטים. פרודוקטיביות x3.</p>
+          <span class="news-tag">עדכון</span>
+        </div>
+      </div>
+
+      <div class="tool-card has-thumb reveal" data-cat="review">
+        <div class="card-thumb" style="height:100px"><div class="thumb-title" style="font-size:1.02rem;padding:20px 14px 10px">Udio v3</div></div>
+        <div class="card-body">
+          <p class="tool-card-desc">יצירת מוזיקה מקצועית עם AI — שיפורים דרמטיים באיכות, שליטה בסגנון, שירים שלמים בדקות.</p>
+          <span class="news-tag">v3</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Forecast -->
+    <div class="news-forecast reveal">
+      <div class="news-forecast-icon">🔭</div>
+      <div>
+        <h3>תחזיות לשבועות הקרובים</h3>
+        <ul>
+          <li>GPT-5o (multimodal) — צפוי ברבעון 2 של 2026</li>
+          <li>Apple Intelligence 2.0 עם שילוב Claude — WWDC יוני 2026</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div class="newsletter-strip reveal" style="margin-top:40px">
+      <div class="newsletter-strip-text">
+        <h3>✦ קבל את הגיליון ישירות למייל</h3>
+        <p>כל יום ראשון בבוקר — לפני כולם.</p>
+      </div>
+      <form class="newsletter-strip-form" onsubmit="return false">
+        <input type="email" placeholder="האימייל שלך" autocomplete="email">
+        <button type="submit">הצטרף חינם</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ARCHIVE -->
+<section id="archive" style="background:var(--bg2);border-top:1px solid var(--border);padding:48px 0 64px">
+  <div class="container">
+    <div class="news-section-header reveal">
+      <span class="section-num">03</span>
+      <h2>גיליונות קודמים</h2>
+    </div>
+
+    <div class="archive-grid">
+
+      <div class="archive-card has-thumb reveal" data-cat="news">
+        <div class="card-thumb" style="height:110px"><div class="thumb-title" style="font-size:0.98rem;padding:22px 14px 10px">GPT-5 מגיע לעסקים, Claude 4 נחשף, ורובוטי Figure מוזמנים ב-50,000 יחידות</div></div>
+        <div class="card-body" style="padding:18px 20px">
+          <div class="weekly-date">שבוע 2 מרץ 2026</div>
+          <p style="color:var(--text-muted);font-size:0.98rem">השבוע שבו AI עבר מהמחשב לעולם הפיזי...</p>
+          <a href="weekly/week-2026-03-02.html" class="btn-guide" style="margin-top:12px;font-size:0.78rem">קרא גיליון ←</a>
+        </div>
+      </div>
+
+      <div class="archive-card has-thumb reveal" data-cat="analysis">
+        <div class="card-thumb" style="height:110px"><div class="thumb-title" style="font-size:0.98rem;padding:22px 14px 10px">Gemini 2.5 Ultra עם 2M טוקן, Devin 2.0 כמהנדס אמיתי, ו-Amazon מכריזה על 100K רובוטים</div></div>
+        <div class="card-body" style="padding:18px 20px">
+          <div class="weekly-date">שבוע 24 פברואר 2026</div>
+          <p style="color:var(--text-muted);font-size:0.98rem">המרוץ לסוכנות אוטונומית...</p>
+          <a href="weekly/week-2026-02-24.html" class="btn-guide" style="margin-top:12px;font-size:0.78rem">קרא גיליון ←</a>
+        </div>
+      </div>
+
+      <div class="archive-card has-thumb reveal" data-cat="tools">
+        <div class="card-thumb" style="height:110px"><div class="thumb-title" style="font-size:0.98rem;padding:22px 14px 10px">OpenAI מכריזה על GPT-5 Pro Plan, Cursor 2.0 משוחרר, ו-Udio v3 מגיע</div></div>
+        <div class="card-body" style="padding:18px 20px">
+          <div class="weekly-date">שבוע 17 פברואר 2026</div>
+          <p style="color:var(--text-muted);font-size:0.98rem">כלים חדשים שמשנים את שגרת העבודה...</p>
+          <a href="weekly/week-2026-02-17.html" class="btn-guide" style="margin-top:12px;font-size:0.78rem">קרא גיליון ←</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="index.html">ראשי</a></li>
+        <li><a href="guides.html">מדריכים</a></li>
+        <li><a href="weekly-news.html">חדשות</a></li>
+        <li><a href="ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="חזרה לראש" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="site.js"></script>
+<script src="header-bg.js"></script>
+<script src="card-bg.js"></script>
+</body>
+</html>
