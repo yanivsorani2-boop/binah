@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('binah-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="מדריך כלי AI 2026 — כל הכלים החשובים בעברית: ChatGPT, Claude, Midjourney, Cursor ועוד. מחירים, יכולות ותמיכה בעברית.">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="GSC_TOKEN_HERE">
+  <title>כלי AI — כל הכלים שכדאי להכיר | בינה</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"כלי AI מומלצים","description":"מדריך כלי AI בעברית","inLanguage":"he","url":"https://binah.co.il/tools.html"}</script>
+  <!-- GA4_CODE_HERE -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">בינה ✦</a>
+      <nav id="main-nav">
+        <a href="index.html">ראשי</a>
+        <a href="index.html#articles">כתבות</a>
+        <a href="guides.html">מדריכים</a>
+        <a href="tools.html" class="active">כלים</a>
+        <a href="quiz.html">בחר AI</a>
+        <a href="weekly-news.html">חדשות</a>
+        <a href="ai-crazy.html">AI מטורף</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+          <span class="icon-dark">🌙 כהה</span>
+          <span class="icon-light">☀️ בהיר</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+</div>
+
+<section class="hero">
+  <div class="container hero-content text-center">
+    <div class="live-badge"><span class="live-dot"></span> מתעדכן שוטף</div>
+    <h1>כל כלי ה-AI<br><span class="gradient-text">במקום אחד</span></h1>
+    <p>מדריך מלא לכלי הבינה המלאכותית החשובים ביותר — מחירים, יכולות ותמיכה בעברית.</p>
+    <div class="hero-stats">
+      <div class="stat-card"><span>24</span><small>כלים</small></div>
+      <div class="stat-card"><span>7</span><small>קטגוריות</small></div>
+      <div class="stat-card"><span>100%</span><small>בעברית</small></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:40px 0 80px">
+  <div class="container">
+
+    <div class="tools-filter-bar">
+      <button class="active" onclick="filterTools('all',this)">הכל</button>
+      <button onclick="filterTools('chat',this)">💬 צ'אט ושיחה</button>
+      <button onclick="filterTools('image',this)">🎨 תמונות</button>
+      <button onclick="filterTools('video',this)">🎬 וידאו</button>
+      <button onclick="filterTools('code',this)">💻 קוד</button>
+      <button onclick="filterTools('audio',this)">🎵 מוזיקה וקול</button>
+      <button onclick="filterTools('search',this)">🔍 חיפוש</button>
+      <button onclick="filterTools('automation',this)">⚙️ אוטומציה</button>
+      <button onclick="filterTools('local',this)">🖥️ מקומי</button>
+    </div>
+
+    <p class="tools-count" id="tools-count">מציג 24 כלים</p>
+
+    <div class="tools-directory-grid" id="tools-grid">
+
+      <!-- CHAT -->
+      <div class="tool-dir-card reveal" data-cat="chat">
+        <div class="card-thumb has-thumb"><a href="guides/guide-chatgpt.html" class="thumb-title">ChatGPT</a></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">ChatGPT</div><div class="tool-dir-maker">OpenAI</div></div>
+            <span class="news-tag tool-badge-pop">פופולרי</span>
+          </div>
+          <p class="tool-dir-desc">מודל שפה מוביל לכתיבה, קוד, ניתוח ושיחה. GPT-5 זמין למנויי Plus ו-Pro.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $20 לחודש</span>
+            <span class="tool-hebrew-tag">עברית ✓</span>
+            <a href="guides/guide-chatgpt.html" class="tool-cta">מדריך ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="chat">
+        <div class="card-thumb has-thumb"><a href="guides/guide-claude.html" class="thumb-title">Claude</a></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Claude</div><div class="tool-dir-maker">Anthropic</div></div>
+            <span class="news-tag tool-badge-pop">מומלץ</span>
+          </div>
+          <p class="tool-dir-desc">המודל הטוב ביותר לכתיבת קוד ולניתוח מסמכים. Claude 4 עם 200K טוקן.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $20 לחודש</span>
+            <span class="tool-hebrew-tag">עברית ✓</span>
+            <a href="guides/guide-claude.html" class="tool-cta">מדריך ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="chat">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Gemini</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Gemini</div><div class="tool-dir-maker">Google</div></div>
+          </div>
+          <p class="tool-dir-desc">AI של גוגל עם חיפוש אינטרנט מובנה ו-2M טוקן. משולב ב-Workspace.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $20 לחודש</span>
+            <span class="tool-hebrew-tag">עברית ✓</span>
+            <a href="articles/gemini-2025.html" class="tool-cta">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="chat">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Microsoft Copilot</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Microsoft Copilot</div><div class="tool-dir-maker">Microsoft</div></div>
+            <span class="news-tag tool-badge-free">חינם</span>
+          </div>
+          <p class="tool-dir-desc">AI מובנה ב-Windows, Edge ו-Office 365. מבוסס GPT-4o עם חיפוש Bing.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $30 לחודש</span>
+            <span class="tool-hebrew-tag">עברית ✓</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="chat">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Grok</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Grok</div><div class="tool-dir-maker">xAI (Elon Musk)</div></div>
+          </div>
+          <p class="tool-dir-desc">AI של Elon Musk עם גישה לטוויטר/X בזמן אמת. Grok 3 עם יכולות מתקדמות.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">$8 לחודש (Premium X)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="tool-dir-card reveal" data-cat="image">
+        <div class="card-thumb has-thumb"><a href="guides/guide-midjourney.html" class="thumb-title">Midjourney</a></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Midjourney</div><div class="tool-dir-maker">Midjourney Inc.</div></div>
+            <span class="news-tag tool-badge-pop">פופולרי</span>
+          </div>
+          <p class="tool-dir-desc">הסטנדרט לאיכות תמונות AI. V7 עם פרטים מדהימים וסגנון אמנותי.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">$10–$60 לחודש</span>
+            <a href="guides/guide-midjourney.html" class="tool-cta">מדריך ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="image">
+        <div class="card-thumb has-thumb"><div class="thumb-title">DALL-E 3</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">DALL-E 3</div><div class="tool-dir-maker">OpenAI</div></div>
+          </div>
+          <p class="tool-dir-desc">יצירת תמונות ישירות מ-ChatGPT. פשוט, מהיר ומשולב בממשק ChatGPT.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">כלול ב-ChatGPT Plus</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="image">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Adobe Firefly</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Adobe Firefly</div><div class="tool-dir-maker">Adobe</div></div>
+          </div>
+          <p class="tool-dir-desc">AI לתמונות מאת Adobe — משולב ב-Photoshop ו-Illustrator. בטוח מסחרית.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">כלול ב-Adobe CC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="image">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Ideogram</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Ideogram</div><div class="tool-dir-maker">Ideogram AI</div></div>
+            <span class="news-tag tool-badge-free">חינם</span>
+          </div>
+          <p class="tool-dir-desc">תמונות AI עם טקסט מדויק — הטוב ביותר להכנסת כיתובים לתוך תמונות.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $7 לחודש</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIDEO -->
+      <div class="tool-dir-card reveal" data-cat="video">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Runway Gen-3</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Runway Gen-3</div><div class="tool-dir-maker">Runway</div></div>
+            <span class="news-tag tool-badge-pop">מוביל</span>
+          </div>
+          <p class="tool-dir-desc">יצירת וידאו AI מקצועי. סצנות של 10 שניות עם שליטה על מצלמה ותנועה.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">$12–$76 לחודש</span>
+            <a href="articles/ai-video-tools.html" class="tool-cta">השוואה ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="video">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Kling AI</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Kling AI</div><div class="tool-dir-maker">Kuaishou</div></div>
+          </div>
+          <p class="tool-dir-desc">וידאו AI סיני באיכות גבוהה. סצנות של 3–10 שניות, מחיר נמוך מ-Runway.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $10 לחודש</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="video">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Sora</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Sora</div><div class="tool-dir-maker">OpenAI</div></div>
+          </div>
+          <p class="tool-dir-desc">וידאו AI של OpenAI — איכות קולנועית, 20 שניות, פיזיקה ריאליסטית.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">כלול ב-ChatGPT Plus</span>
+            <a href="articles/sora-openai.html" class="tool-cta">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CODE -->
+      <div class="tool-dir-card reveal" data-cat="code">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Cursor</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Cursor</div><div class="tool-dir-maker">Anysphere</div></div>
+            <span class="news-tag tool-badge-pop">מומלץ</span>
+          </div>
+          <p class="tool-dir-desc">עורך קוד AI שמנהל פרויקטים שלמים. Agent Mode כותב, בודק ומתקן קוד אוטונומי.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $20 לחודש</span>
+            <a href="articles/vibe-coding.html" class="tool-cta">מדריך ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="code">
+        <div class="card-thumb has-thumb"><div class="thumb-title">GitHub Copilot</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">GitHub Copilot</div><div class="tool-dir-maker">Microsoft/GitHub</div></div>
+          </div>
+          <p class="tool-dir-desc">השלמת קוד AI ישירות ב-VS Code. Copilot Workspace לניהול פרויקטים שלמים.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">$10–$19 לחודש</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="code">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Bolt.new</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Bolt.new</div><div class="tool-dir-maker">StackBlitz</div></div>
+            <span class="news-tag tool-badge-free">חינם</span>
+          </div>
+          <p class="tool-dir-desc">בניית אפליקציות React/Next.js מאפס בדפדפן — ללא התקנה, עם AI.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $20 לחודש</span>
+            <a href="articles/vibe-coding.html" class="tool-cta">מדריך ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="code">
+        <div class="card-thumb has-thumb"><div class="thumb-title">v0 by Vercel</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">v0</div><div class="tool-dir-maker">Vercel</div></div>
+          </div>
+          <p class="tool-dir-desc">יצירת ממשקי UI מהפה — כותב קוד React + Tailwind מתיאור טקסטואלי.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $20 לחודש</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUDIO -->
+      <div class="tool-dir-card reveal" data-cat="audio">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Suno AI</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Suno AI</div><div class="tool-dir-maker">Suno</div></div>
+            <span class="news-tag tool-badge-pop">פופולרי</span>
+          </div>
+          <p class="tool-dir-desc">יצירת שירים שלמים עם קול ומוזיקה. פשוט לשימוש, תוצאות מקצועיות.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $8 לחודש</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="audio">
+        <div class="card-thumb has-thumb"><div class="thumb-title">ElevenLabs</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">ElevenLabs</div><div class="tool-dir-maker">ElevenLabs</div></div>
+          </div>
+          <p class="tool-dir-desc">המרת טקסט לדיבור ריאליסטי. שיכפול קול, פודקאסטים ואודיוספר ב-Hebrew.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $5 לחודש</span>
+            <span class="tool-hebrew-tag">עברית ✓</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="audio">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Udio</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Udio v3</div><div class="tool-dir-maker">Udio</div></div>
+          </div>
+          <p class="tool-dir-desc">מוזיקה AI ברמה מקצועית עם שליטה מלאה בסגנון, קצב ומבנה.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $10 לחודש</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEARCH -->
+      <div class="tool-dir-card reveal" data-cat="search">
+        <div class="card-thumb has-thumb"><a href="articles/perplexity-ai.html" class="thumb-title">Perplexity AI</a></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Perplexity AI</div><div class="tool-dir-maker">Perplexity</div></div>
+            <span class="news-tag tool-badge-pop">מומלץ</span>
+          </div>
+          <p class="tool-dir-desc">חיפוש AI עם מקורות — תשובות מעמיקות עם ציטוטים. מחליף את גוגל.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $20 לחודש</span>
+            <a href="articles/perplexity-ai.html" class="tool-cta">קרא עוד ←</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTOMATION -->
+      <div class="tool-dir-card reveal" data-cat="automation">
+        <div class="card-thumb has-thumb"><div class="thumb-title">n8n</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">n8n</div><div class="tool-dir-maker">n8n GmbH</div></div>
+          </div>
+          <p class="tool-dir-desc">אוטומציות ללא קוד עם AI. חיבור כלים, מיילים, Slack ועוד — אורח פתוח.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם (Self-host) / $20</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="automation">
+        <div class="card-thumb has-thumb"><div class="thumb-title">Make.com</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Make.com</div><div class="tool-dir-maker">Celonis</div></div>
+          </div>
+          <p class="tool-dir-desc">אוטומציה ויזואלית — חיבור 1,000+ אפליקציות עם AI. תרחישים ללא קוד.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם / $9 לחודש</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCAL -->
+      <div class="tool-dir-card reveal" data-cat="local">
+        <div class="card-thumb has-thumb"><a href="guides/guide-ollama.html" class="thumb-title">Ollama</a></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">Ollama</div><div class="tool-dir-maker">Ollama Inc.</div></div>
+            <span class="news-tag tool-badge-free">חינם</span>
+          </div>
+          <p class="tool-dir-desc">הרצת מודלי AI על המחשב שלך — פרטיות מלאה, ללא ענן. Llama 3, Mistral ועוד.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם לחלוטין</span>
+            <a href="guides/guide-ollama.html" class="tool-cta">מדריך ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tool-dir-card reveal" data-cat="local">
+        <div class="card-thumb has-thumb"><div class="thumb-title">LM Studio</div></div>
+        <div class="tool-dir-body">
+          <div class="tool-dir-header">
+            <div><div class="tool-dir-name">LM Studio</div><div class="tool-dir-maker">LM Studio</div></div>
+            <span class="news-tag tool-badge-free">חינם</span>
+          </div>
+          <p class="tool-dir-desc">ממשק גרפי נוח להרצת מודלים מקומיים. גרסת Mac/Windows עם ממשק מינימליסטי.</p>
+          <div class="tool-dir-footer">
+            <span class="tool-price">חינם לחלוטין</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tools-grid -->
+
+    <div class="newsletter-strip reveal" style="margin-top:56px">
+      <div class="newsletter-strip-text">
+        <h3>✦ רוצה לדעת על כלים חדשים?</h3>
+        <p>כל יום ראשון — הכלים החמים ביותר ישירות למייל.</p>
+      </div>
+      <form class="newsletter-strip-form" onsubmit="return false">
+        <input type="email" placeholder="האימייל שלך" autocomplete="email">
+        <button type="submit">הצטרף חינם</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="index.html">ראשי</a></li>
+        <li><a href="guides.html">מדריכים</a></li>
+        <li><a href="tools.html">כלים</a></li>
+        <li><a href="weekly-news.html">חדשות</a></li>
+        <li><a href="ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="חזרה לראש" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="site.js"></script>
+<script src="header-bg.js"></script>
+<script src="card-bg.js"></script>
+<script>
+function filterTools(cat, btn) {
+  document.querySelectorAll('.tools-filter-bar button').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  var cards = document.querySelectorAll('.tool-dir-card');
+  var count = 0;
+  cards.forEach(function(c) {
+    var show = cat === 'all' || c.dataset.cat === cat;
+    c.style.display = show ? '' : 'none';
+    if (show) count++;
+  });
+  document.getElementById('tools-count').textContent = 'מציג ' + count + ' כלים';
+}
+</script>
+</body>
+</html>

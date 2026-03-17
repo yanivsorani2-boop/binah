@@ -38,7 +38,53 @@ def parse_json(raw):
     return json.loads(raw.strip())
 
 
-# ── 1. Daily Article ───────────────────────────────────────────────────────
+# ── Niche definitions ───────────────────────────────────────────────────────
+# Each niche: key, Hebrew name, category key, weekly day (0=Mon … 6=Sun)
+NICHES = [
+    {
+        'key':      'tools',
+        'name':     'כלי AI',
+        'cat_key':  'tools',
+        'category': 'כלים',
+        'weekly_day': 0,   # Monday
+        'focus':    'כלים וטכנולוגיות AI חדשות — ביקורות, השוואות, טיפים לשימוש',
+    },
+    {
+        'key':      'business',
+        'name':     'עסקים ישראלים',
+        'cat_key':  'analysis',
+        'category': 'עסקים',
+        'weekly_day': 1,   # Tuesday
+        'focus':    'שימושי AI לעסקים ישראלים — חיסכון בזמן, אוטומציה, ROI',
+    },
+    {
+        'key':      'compare',
+        'name':     'השוואות AI',
+        'cat_key':  'compare',
+        'category': 'השוואה',
+        'weekly_day': 2,   # Wednesday
+        'focus':    'השוואות בין מודלים וכלי AI — יתרונות, חסרונות, מחירים',
+    },
+    {
+        'key':      'hebrew',
+        'name':     'AI בעברית',
+        'cat_key':  'tools',
+        'category': 'כלים',
+        'weekly_day': 3,   # Thursday
+        'focus':    'כלי AI עם תמיכה בעברית — בדיקות, ביקורות, כיצד להפיק את המיטב',
+    },
+    {
+        'key':      'guide',
+        'name':     'מדריכים',
+        'cat_key':  'guide',
+        'category': 'מדריך',
+        'weekly_day': 4,   # Friday
+        'focus':    'מדריכים מעשיים לשימוש ב-AI — צעד אחר צעד לכל רמה',
+    },
+]
+
+
+# ── 1. Daily Article (general) ─────────────────────────────────────────────
 def generate_article(date_str):
     prompt = f"""אתה עורך תוכן של אתר חדשות AI בעברית בשם "בינה".
 כתוב כתבה מקצועית ומעניינת על נושא AI רלוונטי לתאריך {date_str}.
@@ -60,6 +106,30 @@ def generate_article(date_str):
     return parse_json(ask_claude(prompt, 5000))
 
 
+# ── 2. Niche Daily Article ─────────────────────────────────────────────────
+def generate_niche_article(niche, date_str):
+    prompt = f"""אתה עורך תוכן של אתר חדשות AI בעברית בשם "בינה".
+כתוב כתבה מקצועית בנישה: {niche['name']}.
+תאריך: {date_str}.
+מיקוד: {niche['focus']}
+
+החזר JSON נקי בלבד (ללא markdown):
+{{
+  "slug": "כינוי-באנגלית-עם-מקפים-קצר",
+  "title": "כותרת הכתבה בעברית",
+  "category": "{niche['category']}",
+  "cat_key": "{niche['cat_key']}",
+  "excerpt": "תקציר של משפט אחד-שניים",
+  "read_time": "X דקות",
+  "tags": ["תג1", "תג2", "תג3"],
+  "body_html": "תוכן HTML מלא — פסקאות <p>, כותרות <h2>, רשימות <ul><li>. 600-800 מילים."
+}}
+
+כתיבה מקצועית ומעשית בעברית."""
+
+    return parse_json(ask_claude(prompt, 4500))
+
+
 def build_article_html(data, date_str):
     tags_html = ''.join(f'<span class="tag">{t}</span>' for t in data['tags'])
     return f"""<!DOCTYPE html>
@@ -75,7 +145,7 @@ def build_article_html(data, date_str):
   <title>{data['title']} | בינה</title>
   <link rel="stylesheet" href="../styles.css">
   <!-- GA4_CODE_HERE -->
-  <!-- ADSENSE_HEAD_CODE_HERE -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -86,6 +156,8 @@ def build_article_html(data, date_str):
         <a href="../index.html">ראשי</a>
         <a href="../index.html#articles">כתבות</a>
         <a href="../guides.html">מדריכים</a>
+        <a href="../tools.html">כלים</a>
+        <a href="../quiz.html">בחר AI</a>
         <a href="../weekly-news.html">חדשות</a>
         <a href="../ai-crazy.html">AI מטורף</a>
       </nav>
@@ -138,6 +210,13 @@ def build_article_html(data, date_str):
         </ul>
       </div>
       <div class="sidebar-widget">
+        <h3>כלים</h3>
+        <ul>
+          <li><a href="../tools.html">כל כלי ה-AI</a></li>
+          <li><a href="../quiz.html">איזה AI מתאים לי?</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-widget">
         <h3>חדשות שבועיות</h3>
         <ul>
           <li><a href="../weekly-news.html">גיליון השבוע</a></li>
@@ -154,6 +233,7 @@ def build_article_html(data, date_str):
       <div class="footer-col"><h4>תוכן</h4><ul>
         <li><a href="../index.html">ראשי</a></li>
         <li><a href="../guides.html">מדריכים</a></li>
+        <li><a href="../tools.html">כלים</a></li>
         <li><a href="../weekly-news.html">חדשות</a></li>
         <li><a href="../ai-crazy.html">AI מטורף</a></li>
       </ul></div>
@@ -186,12 +266,11 @@ def inject_article_index(data, slug, date_str):
             <div class="card-meta"><span>⏱ {data['read_time']} · {date_str}</span><a href="articles/{slug}.html" class="read-more">קרא עוד ←</a></div>
           </div>
         </article>"""
-    # Replace marker — new card appears at top, marker stays for next run
     html = html.replace('        <!-- NEW_ARTICLES_HERE -->', card, 1)
     path.write_text(html)
 
 
-# ── 2. Daily AI-Crazy Story ────────────────────────────────────────────────
+# ── 3. Daily AI-Crazy Story ────────────────────────────────────────────────
 def generate_crazy_story(date_str):
     prompt = f"""אתה עורך של "AI מטורף" — כתבות על הדברים הכי מדהימים בעולם ה-AI.
 כתוב כותרת ותקציר לסיפור יומי מרתק לתאריך {date_str}.
@@ -231,7 +310,28 @@ def inject_crazy_story(data, date_str):
     path.write_text(html)
 
 
-# ── 3. Weekly Issue (Sundays) ──────────────────────────────────────────────
+# ── 4. Niche Weekly Roundup ────────────────────────────────────────────────
+def generate_niche_weekly(niche, date_str):
+    prompt = f"""אתה עורך של "בינה" — אתר חדשות AI בעברית.
+צור סיכום שבועי לנישה: {niche['name']}.
+תאריך: {date_str}. מיקוד: {niche['focus']}
+
+החזר JSON נקי בלבד:
+{{
+  "slug": "weekly-{niche['key']}-כינוי-קצר",
+  "title": "כותרת לסיכום השבועי בעברית",
+  "category": "{niche['category']}",
+  "cat_key": "{niche['cat_key']}",
+  "excerpt": "תקציר של 2 משפטים",
+  "read_time": "X דקות",
+  "tags": ["תג1", "תג2", "תג3"],
+  "body_html": "HTML מלא — 4-5 פריטים עם <h2> לכל אחד, פסקאות <p>. 500-700 מילים."
+}}"""
+
+    return parse_json(ask_claude(prompt, 4000))
+
+
+# ── 5. Weekly Issue (Sundays) ──────────────────────────────────────────────
 def generate_weekly_issue(date_str):
     prompt = f"""אתה עורך ראשי של "בינה" — אתר חדשות AI בעברית.
 צור גיליון שבועי מקיף לשבוע {date_str}.
@@ -296,6 +396,7 @@ def build_weekly_html(data, date_str, week_slug):
   <meta name="robots" content="index, follow">
   <title>{data['issue_title']} | בינה</title>
   <link rel="stylesheet" href="../styles.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -306,6 +407,8 @@ def build_weekly_html(data, date_str, week_slug):
         <a href="../index.html">ראשי</a>
         <a href="../index.html#articles">כתבות</a>
         <a href="../guides.html">מדריכים</a>
+        <a href="../tools.html">כלים</a>
+        <a href="../quiz.html">בחר AI</a>
         <a href="../weekly-news.html" class="active">חדשות</a>
         <a href="../ai-crazy.html">AI מטורף</a>
       </nav>
@@ -364,6 +467,7 @@ def build_weekly_html(data, date_str, week_slug):
       <div class="footer-col"><h4>תוכן</h4><ul>
         <li><a href="../index.html">ראשי</a></li>
         <li><a href="../guides.html">מדריכים</a></li>
+        <li><a href="../tools.html">כלים</a></li>
         <li><a href="../weekly-news.html">חדשות</a></li>
         <li><a href="../ai-crazy.html">AI מטורף</a></li>
       </ul></div>
@@ -387,7 +491,6 @@ def update_weekly_news_page(data, week_slug, date_str):
     path = ROOT / 'weekly-news.html'
     html = path.read_text()
 
-    # Update issue header title + sub
     html = re.sub(
         r'(<h2 class="news-issue-title">).*?(</h2>)',
         rf'\g<1>{data["issue_title"]}\g<2>', html, count=1)
@@ -395,7 +498,6 @@ def update_weekly_news_page(data, week_slug, date_str):
         r'(<p class="news-issue-sub">).*?(</p>)',
         rf'\g<1>{data["issue_sub"]}\g<2>', html, count=1)
 
-    # Build new cards for the 4 stories
     cards_html = ''
     for i, s in enumerate(data['stories']):
         featured = 'featured-news-card ' if i == 0 else ''
@@ -411,12 +513,10 @@ def update_weekly_news_page(data, week_slug, date_str):
         </div>
       </div>"""
 
-    # Replace entire news-cards-grid content
     html = re.sub(
         r'(<div class="news-cards-grid">).*?(</div><!-- /news-cards-grid -->)',
         rf'\1{cards_html}\n    \2', html, count=1, flags=re.DOTALL)
 
-    # Add new archive entry at top of archive-grid
     new_archive = f"""
       <div class="archive-card has-thumb reveal" data-cat="news">
         <div class="card-thumb" style="height:110px"><div class="thumb-title" style="font-size:0.98rem;padding:22px 14px 10px">{data['issue_title']}</div></div>
@@ -440,27 +540,46 @@ def update_weekly_news_page(data, week_slug, date_str):
 
 # ── Main ───────────────────────────────────────────────────────────────────
 def main():
-    is_sunday = TODAY.weekday() == 6
-    date_str  = he_date(TODAY)
+    day_of_week = TODAY.weekday()  # 0=Mon, 6=Sun
+    is_sunday   = day_of_week == 6
+    date_str    = he_date(TODAY)
     print(f"🚀 עדכון יומי — {date_str}")
 
-    # 1. Daily article
-    print("📝 מייצר כתבה יומית...")
+    # 1. General daily article
+    print("📝 מייצר כתבה יומית כללית...")
     article = generate_article(date_str)
     slug    = f"{TODAY_STR}-{article['slug']}"
     (ROOT / 'articles' / f"{slug}.html").write_text(build_article_html(article, date_str))
     inject_article_index(article, slug, date_str)
     print(f"   ✅ articles/{slug}.html")
 
-    # 2. Daily AI-Crazy story
+    # 2. Niche daily articles (one per niche every day)
+    for niche in NICHES:
+        print(f"📝 מייצר כתבה לנישה: {niche['name']}...")
+        ndata = generate_niche_article(niche, date_str)
+        nslug = f"{TODAY_STR}-{niche['key']}-{ndata['slug']}"
+        (ROOT / 'articles' / f"{nslug}.html").write_text(build_article_html(ndata, date_str))
+        inject_article_index(ndata, nslug, date_str)
+        print(f"   ✅ articles/{nslug}.html")
+
+        # Niche weekly roundup on the designated day
+        if day_of_week == niche['weekly_day']:
+            print(f"   📰 יום שבועי לנישה {niche['name']} — מייצר סיכום שבועי...")
+            wdata = generate_niche_weekly(niche, date_str)
+            wslug = f"{TODAY_STR}-{niche['key']}-{wdata['slug']}"
+            (ROOT / 'articles' / f"{wslug}.html").write_text(build_article_html(wdata, date_str))
+            inject_article_index(wdata, wslug, date_str)
+            print(f"   ✅ articles/{wslug}.html")
+
+    # 3. Daily AI-Crazy story
     print("🤯 מייצר סיפור AI מטורף...")
     crazy = generate_crazy_story(date_str)
     inject_crazy_story(crazy, date_str)
     print("   ✅ נוסף ל-ai-crazy.html")
 
-    # 3. Weekly issue — Sundays only
+    # 4. Main weekly issue — Sundays only
     if is_sunday:
-        print("📰 יום ראשון — מייצר גיליון שבועי...")
+        print("📰 יום ראשון — מייצר גיליון שבועי ראשי...")
         weekly_data = generate_weekly_issue(date_str)
         week_slug   = f"week-{TODAY_STR}"
         weekly_html = build_weekly_html(weekly_data, date_str, week_slug)
