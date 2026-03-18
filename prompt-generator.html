@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('binah-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="מחולל פרומפטים חינמי — בנה פרומפטים מקצועיים ל-ChatGPT ו-Claude לפי תחום: שיווק, תוכן, קוד, HR ועוד. פשוט, מהיר, בעברית.">
+  <meta name="robots" content="index, follow">
+  <title>מחולל פרומפטים לעסקים 2025 | בינה</title>
+  <link rel="canonical" href="https://binah.co.il/prompt-generator.html">
+  <meta property="og:url" content="https://binah.co.il/prompt-generator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="מחולל פרומפטים לעסקים 2025 | בינה">
+  <meta property="og:description" content="בנה פרומפטים מקצועיים ל-ChatGPT ו-Claude לפי תחום — שיווק, תוכן, קוד, HR ועוד.">
+  <meta property="og:site_name" content="בינה">
+  <link rel="stylesheet" href="styles.min.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MG65DD6GYJ');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+  <style>
+    .pg-hero {
+      background: linear-gradient(135deg,#0d0520,#08080f,#030d18);
+      padding: 60px 24px 44px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .pg-hero h1 {
+      font-size: clamp(1.8rem,5vw,2.8rem);
+      font-weight: 900;
+      background: linear-gradient(135deg,#fff 20%,#a78bfa 55%,#67e8f9);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 12px;
+    }
+    .pg-hero p { color: var(--text-muted); font-size: 1rem; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    .pg-wrap { max-width: 860px; margin: 0 auto; padding: 44px 24px 80px; }
+
+    /* Category pills */
+    .cat-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .cat-pill {
+      display: flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 99px;
+      border: 1px solid var(--border);
+      background: transparent; color: var(--text-muted);
+      font-size: 0.88rem; font-weight: 600;
+      cursor: pointer; transition: all 0.15s; font-family: inherit;
+    }
+    .cat-pill:hover { border-color: rgba(124,58,237,0.4); color: #a78bfa; }
+    .cat-pill.active { background: rgba(124,58,237,0.15); border-color: rgba(124,58,237,0.4); color: #a78bfa; }
+
+    /* Task selector */
+    .task-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 10px; margin-bottom: 28px; }
+    .task-btn {
+      padding: 13px 16px; border-radius: 12px;
+      border: 1px solid var(--border); background: var(--card-bg);
+      color: var(--text); font-size: 0.88rem; font-weight: 600;
+      cursor: pointer; transition: all 0.15s; font-family: inherit; text-align: right;
+    }
+    .task-btn:hover { border-color: rgba(124,58,237,0.4); }
+    .task-btn.active { border-color: #7c3aed; background: rgba(124,58,237,0.1); color: #a78bfa; }
+
+    /* Variables form */
+    .vars-section {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px 28px; margin-bottom: 24px;
+    }
+    .vars-title { font-weight: 700; font-size: 1rem; margin-bottom: 18px; }
+    .vars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .var-group { display: flex; flex-direction: column; gap: 5px; }
+    .var-label { font-size: 0.82rem; font-weight: 600; color: var(--text-muted); }
+    .var-input, .var-select {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 9px 12px;
+      font-size: 0.9rem; color: var(--text); font-family: inherit; direction: rtl;
+      transition: border-color 0.2s;
+    }
+    .var-input:focus, .var-select:focus { outline: none; border-color: var(--primary); }
+    .var-group.full { grid-column: 1/-1; }
+
+    /* Generate btn */
+    .gen-btn {
+      width: 100%; padding: 14px;
+      background: linear-gradient(135deg,#7c3aed,#06b6d4);
+      color: #fff; border: none; border-radius: 12px;
+      font-size: 1.05rem; font-weight: 800; cursor: pointer;
+      transition: opacity 0.2s; font-family: inherit; margin-bottom: 24px;
+    }
+    .gen-btn:hover { opacity: 0.88; }
+
+    /* Output */
+    .output-box {
+      background: var(--card-bg); border: 1px solid rgba(124,58,237,0.25);
+      border-radius: 16px; padding: 24px 28px;
+      display: none;
+    }
+    .output-box.show { display: block; }
+    .output-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .output-title { font-weight: 700; font-size: 0.95rem; }
+    .copy-btns { display: flex; gap: 8px; }
+    .copy-btn {
+      padding: 7px 16px; border-radius: 8px;
+      border: 1px solid rgba(124,58,237,0.3);
+      background: rgba(124,58,237,0.1); color: #a78bfa;
+      font-size: 0.82rem; font-weight: 700; cursor: pointer;
+      transition: all 0.15s; font-family: inherit;
+    }
+    .copy-btn:hover { background: rgba(124,58,237,0.2); }
+    .copy-btn.copied { background: rgba(34,197,94,0.15); border-color: rgba(34,197,94,0.3); color: #4ade80; }
+    .prompt-text {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px;
+      font-size: 0.92rem; line-height: 1.8;
+      color: var(--text); white-space: pre-wrap;
+      font-family: inherit; direction: rtl;
+    }
+    .output-tip {
+      margin-top: 14px; padding: 10px 14px;
+      background: rgba(6,182,212,0.06); border: 1px solid rgba(6,182,212,0.15);
+      border-radius: 8px; font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;
+    }
+
+    /* Saved prompts */
+    .saved-section { margin-top: 36px; }
+    .saved-title { font-size: 1rem; font-weight: 700; margin-bottom: 14px; }
+    .saved-list { display: flex; flex-direction: column; gap: 8px; }
+    .saved-item {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 16px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .saved-preview { font-size: 0.85rem; color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+    .saved-actions { display: flex; gap: 6px; flex-shrink: 0; }
+    .saved-btn {
+      padding: 4px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 700;
+      cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--text-muted);
+      font-family: inherit; transition: all 0.15s;
+    }
+    .saved-btn:hover { border-color: rgba(124,58,237,0.4); color: #a78bfa; }
+    .saved-del { color: #f87171 !important; border-color: rgba(239,68,68,0.2) !important; }
+
+    @media (max-width: 600px) {
+      .vars-grid { grid-template-columns: 1fr; }
+      .pg-wrap { padding: 28px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">בינה ✦</a>
+      <nav id="main-nav">
+        <a href="index.html">ראשי</a>
+        <a href="index.html#articles">מאמרים</a>
+        <a href="guides.html">מדריכים</a>
+        <a href="tools.html">כלים</a>
+        <a href="quiz.html">בחר AI</a>
+        <a href="business.html">AI לעסקים</a>
+        <a href="ai-products.html">מוצרי AI</a>
+        <a href="weekly-news.html">חדשות</a>
+        <a href="ai-crazy.html">AI מטורף</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא"><span class="icon-dark">🌙 כהה</span><span class="icon-light">☀️ בהיר</span></button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="pg-hero">
+  <h1>✍️ מחולל פרומפטים</h1>
+  <p>בחר תחום ומשימה, מלא את הפרטים — וקבל פרומפט מקצועי מוכן להדבקה ב-ChatGPT, Claude או Gemini.</p>
+</div>
+
+<div class="pg-wrap">
+
+  <div style="font-size:0.88rem;font-weight:700;color:var(--text-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px">1 — בחר תחום</div>
+  <div class="cat-pills" id="cat-pills"></div>
+
+  <div style="font-size:0.88rem;font-weight:700;color:var(--text-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px">2 — בחר משימה</div>
+  <div class="task-grid" id="task-grid"></div>
+
+  <div class="vars-section" id="vars-section" style="display:none">
+    <div class="vars-title" id="vars-title">3 — מלא פרטים</div>
+    <div class="vars-grid" id="vars-grid"></div>
+  </div>
+
+  <button class="gen-btn" id="gen-btn" onclick="generatePrompt()" style="display:none">⚡ צור פרומפט</button>
+
+  <div class="output-box" id="output-box">
+    <div class="output-header">
+      <div class="output-title">✅ הפרומפט שלך מוכן</div>
+      <div class="copy-btns">
+        <button class="copy-btn" id="copy-chatgpt" onclick="copyPrompt('chatgpt')">העתק ל-ChatGPT</button>
+        <button class="copy-btn" id="copy-claude"  onclick="copyPrompt('claude')">העתק ל-Claude</button>
+        <button class="copy-btn" id="save-btn"     onclick="savePrompt()">💾 שמור</button>
+      </div>
+    </div>
+    <div class="prompt-text" id="prompt-output"></div>
+    <div class="output-tip" id="output-tip"></div>
+  </div>
+
+  <div class="saved-section" id="saved-section" style="display:none">
+    <div class="saved-title">📁 פרומפטים שמורים</div>
+    <div class="saved-list" id="saved-list"></div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>כלים</h4><ul>
+        <li><a href="prompt-generator.html">מחולל פרומפטים</a></li>
+        <li><a href="ai-compare.html">השוואת AI</a></li>
+        <li><a href="ai-cost-calculator.html">מחשבון עלות</a></li>
+        <li><a href="quiz.html">בחר AI</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+
+<script src="site.min.js"></script>
+<script src="/tracker.js"></script>
+<script>
+var CATS = [
+  { id:'marketing', label:'📣 שיווק' },
+  { id:'content',   label:'✍️ תוכן' },
+  { id:'customer',  label:'💬 שירות לקוחות' },
+  { id:'hr',        label:'👥 HR וגיוס' },
+  { id:'biz',       label:'💼 עסקים' },
+  { id:'code',      label:'💻 קוד' },
+  { id:'edu',       label:'📚 חינוך' },
+  { id:'legal',     label:'⚖️ משפטי' },
+];
+
+var TASKS = {
+  marketing: [
+    { id:'social', label:'פוסט לרשתות חברתיות',
+      vars:[
+        {id:'brand',label:'שם המותג/עסק',ph:'למשל: קפה ענבל'},
+        {id:'product',label:'מוצר/שירות',ph:'למשל: קפה קר חדש'},
+        {id:'platform',label:'רשת חברתית',ph:'אינסטגרם / פייסבוק / לינקדאין'},
+        {id:'tone',label:'טון',ph:'מקצועי / שובבי / מעורר השראה'},
+      ],
+      template: `אתה מנהל שיווק ותוכן בכיר עם ניסיון של 10 שנים.
+
+כתוב פוסט לרשת {platform} עבור {brand}.
+הפוסט צריך לקדם את: {product}
+
+דרישות:
+- טון: {tone}
+- כתוב בעברית תקינה
+- כלול קריאה לפעולה (CTA)
+- הוסף 5 האשטאגים רלוונטיים
+- אורך: 150-200 מילים
+
+הפוסט:`,
+      tip:'טיפ: נסה לשנות את הטון — "שובבי" לאינסטגרם, "מקצועי" ללינקדאין.' },
+
+    { id:'email', label:'מייל שיווקי',
+      vars:[
+        {id:'brand',label:'שם המותג',ph:'למשל: טכנו גאדג\'טס'},
+        {id:'product',label:'מוצר/מבצע',ph:'למשל: 30% הנחה על כל הטלפונים'},
+        {id:'audience',label:'קהל יעד',ph:'למשל: לקוחות קיימים'},
+        {id:'goal',label:'מטרה',ph:'למשל: הגדלת מכירות, ניוזלטר'},
+      ],
+      template:`אתה קופירייטר מומחה לאימייל מרקטינג.
+
+כתוב מייל שיווקי עבור {brand} בנושא: {product}
+קהל היעד: {audience}
+מטרת המייל: {goal}
+
+כלול:
+- שורת נושא מפתה (Subject Line) — 3 אפשרויות
+- פסקת פתיחה מושכת תשומת לב
+- גוף המייל עם הטבה ברורה
+- CTA חזק
+- חתימה מקצועית
+
+כתוב בעברית, בטון חם ואמין.`,
+      tip:'שורת הנושא היא 80% מההצלחה — בקש מה-AI לייצר 5 גרסאות ובחר את הטובה.' },
+
+    { id:'ad', label:'מודעת פרסום',
+      vars:[
+        {id:'product',label:'מוצר/שירות',ph:'למשל: ייעוץ עסקי'},
+        {id:'audience',label:'קהל יעד',ph:'למשל: בעלי עסקים קטנים'},
+        {id:'benefit',label:'יתרון עיקרי',ph:'למשל: חיסכון של 10 שעות בשבוע'},
+        {id:'platform',label:'פלטפורמה',ph:'גוגל / פייסבוק / טיקטוק'},
+      ],
+      template:`אתה מומחה לפרסום ממומן עם ניסיון ב-{platform} Ads.
+
+כתוב 3 גרסאות של מודעת פרסום עבור:
+מוצר/שירות: {product}
+קהל יעד: {audience}
+יתרון עיקרי: {benefit}
+
+לכל גרסה כלול:
+- כותרת ראשית (עד 30 תווים)
+- כותרת משנית (עד 90 תווים)
+- תיאור (עד 90 תווים)
+
+כתוב בעברית, עם דחיפות ויתרון ברור.`,
+      tip:'בקש מה-AI לכתוב גרסה A/B — אחת רגשית ואחת רציונלית.' },
+  ],
+
+  content: [
+    { id:'article', label:'מאמר בלוג',
+      vars:[
+        {id:'topic',label:'נושא המאמר',ph:'למשל: 5 טיפים ל-AI לעסקים'},
+        {id:'audience',label:'קהל יעד',ph:'למשל: בעלי עסקים קטנים'},
+        {id:'length',label:'אורך',ph:'קצר (500 מילה) / בינוני (1000) / ארוך (2000)'},
+        {id:'seo',label:'מילת מפתח SEO',ph:'למשל: AI לעסקים'},
+      ],
+      template:`אתה כותב תוכן SEO מנוסה.
+
+כתוב מאמר בלוג בנושא: {topic}
+קהל יעד: {audience}
+אורך: {length}
+מילת מפתח מרכזית: {seo}
+
+מבנה:
+1. כותרת H1 מושכת הכוללת את מילת המפתח
+2. מבוא (100 מילה) שמסביר את הבעיה
+3. גוף — סעיפים עם כותרות H2
+4. דוגמאות מעשיות מהשטח
+5. סיכום + קריאה לפעולה
+
+כתוב בעברית שוטפת, מידענית ומרתקת. כלול מילת המפתח באופן טבעי 3-5 פעמים.`,
+      tip:'אחרי שתקבל את המאמר — בקש מה-AI: "הוסף 3 שאלות נפוצות (FAQ) בסוף".' },
+
+    { id:'headlines', label:'כותרות מושכות',
+      vars:[
+        {id:'topic',label:'נושא',ph:'למשל: שימוש ב-AI בעסקים'},
+        {id:'type',label:'סוג תוכן',ph:'מאמר / וידאו / פוסט / ניוזלטר'},
+        {id:'style',label:'סגנון',ph:'מספרים / שאלה / בעיה-פתרון'},
+      ],
+      template:`אתה מומחה לכותרות ויראליות.
+
+כתוב 10 כותרות לתוכן בנושא: {topic}
+סוג תוכן: {type}
+סגנון: {style}
+
+כלול בכל כותרת:
+- מספר / שאלה / הבטחה ברורה
+- מילת כוח (סוד, חינם, מהיר, ממש, מדהים וכו')
+- ספציפיות (לא "טיפים לעסקים" אלא "7 טיפים ל...")
+
+10 הכותרות בעברית:`,
+      tip:'כותרות עם מספרים מקבלות 36% יותר קליקים — תמיד כלול מספר ספציפי.' },
+  ],
+
+  customer: [
+    { id:'complaint', label:'מענה לתלונת לקוח',
+      vars:[
+        {id:'company',label:'שם החברה',ph:'למשל: חנות הגאדג\'טס שלי'},
+        {id:'complaint',label:'תוכן התלונה',ph:'למשל: המוצר הגיע שבור, לא מרוצה'},
+        {id:'solution',label:'הפתרון שביכולתכם',ph:'למשל: החלפה, החזר כסף, הנחה'},
+      ],
+      template:`אתה נציג שירות לקוחות בכיר ב-{company}.
+
+קיבלת את התלונה הבאה:
+"{complaint}"
+
+כתוב מענה מקצועי שכולל:
+1. הכרה ואמפתיה (ללא הגזמה)
+2. התנצלות כנה
+3. הסבר קצר (אם רלוונטי)
+4. פתרון מוצע: {solution}
+5. אישור שהלקוח חשוב לנו
+
+טון: אנושי, כנה, מקצועי. אל תשתמש בשפה רובוטית.
+אורך: עד 120 מילה.`,
+      tip:'הוסף שם הלקוח בפתיחה — זה מגדיל שביעות רצון ב-25%.' },
+
+    { id:'faq', label:'כתיבת FAQ',
+      vars:[
+        {id:'business',label:'סוג העסק',ph:'למשל: מסעדה / חנות אונליין / קליניקה'},
+        {id:'product',label:'מוצר/שירות',ph:'למשל: שירותי עיצוב גרפי'},
+        {id:'count',label:'מספר שאלות',ph:'5 / 10 / 15'},
+      ],
+      template:`אתה מומחה לחוויית לקוח ושירות.
+
+צור {count} שאלות ותשובות (FAQ) עבור עסק מסוג: {business}
+שמוכר/מספק: {product}
+
+לכל שאלה:
+- שאלה שלקוחות באמת שואלים (מחיר, זמן, תהליך, ביטול)
+- תשובה ברורה ותמציתית (2-4 משפטים)
+- אם רלוונטי — קריאה לפעולה
+
+כתוב בעברית יומיומית, בשפה פשוטה וידידותית.`,
+      tip:'העלה את ה-FAQ לאתר ולגוגל My Business — מגדיל נראות בחיפוש.' },
+  ],
+
+  hr: [
+    { id:'job', label:'מודעת דרושים',
+      vars:[
+        {id:'role',label:'תפקיד',ph:'למשל: מנהל שיווק דיגיטלי'},
+        {id:'company',label:'שם החברה',ph:'למשל: סטארטאפ טכנולוגי'},
+        {id:'requirements',label:'דרישות עיקריות',ph:'למשל: 3 שנות ניסיון, אנגלית ברמה גבוהה'},
+        {id:'benefits',label:'יתרונות המשרה',ph:'למשל: שכר גבוה, גמישות, אופציות'},
+      ],
+      template:`אתה מגייס בכיר עם ניסיון ב-HR.
+
+כתוב מודעת דרושים לתפקיד: {role}
+בחברה: {company}
+
+דרישות: {requirements}
+מה אנחנו מציעים: {benefits}
+
+כלול:
+- כותרת מושכת
+- תיאור קצר של החברה (2 משפטים)
+- תחומי אחריות (5-6 נקודות)
+- דרישות חובה ויתרון
+- מה אנחנו מציעים
+- הנחיות הגשה
+
+כתוב בעברית, בטון חיובי ומזמין.`,
+      tip:'מודעות עם תחום שכר מקבלות 50% יותר פניות — שקול לכלול טווח.' },
+
+    { id:'interview', label:'שאלות לראיון עבודה',
+      vars:[
+        {id:'role',label:'תפקיד',ph:'למשל: מפתח Full Stack'},
+        {id:'level',label:'רמה',ph:'Junior / Senior / מנהל'},
+        {id:'skills',label:'מיומנויות מרכזיות',ph:'למשל: React, Node.js, ניהול צוות'},
+      ],
+      template:`אתה מנהל גיוס מנוסה.
+
+הכן 15 שאלות ראיון לתפקיד: {role}
+רמה: {level}
+מיומנויות נדרשות: {skills}
+
+חלק את השאלות ל-3 קטגוריות:
+1. שאלות מקצועיות/טכניות (6 שאלות)
+2. שאלות התנהגותיות — STAR Method (5 שאלות)
+3. שאלות על מוטיבציה ותרבות ארגונית (4 שאלות)
+
+לכל שאלה — ציין מה אתה רוצה לגלות מהתשובה.`,
+      tip:'שאלות STAR (מצב, משימה, פעולה, תוצאה) חושפות יכולות אמיתיות טוב יותר משאלות תיאורטיות.' },
+  ],
+
+  biz: [
+    { id:'proposal', label:'הצעת מחיר',
+      vars:[
+        {id:'service',label:'השירות/פרויקט',ph:'למשל: בניית אתר + SEO'},
+        {id:'client',label:'סוג הלקוח',ph:'למשל: עסק קטן בתחום המזון'},
+        {id:'price',label:'מחיר כולל',ph:'למשל: 8,000 ₪'},
+        {id:'timeline',label:'לוח זמנים',ph:'למשל: 3 שבועות'},
+      ],
+      template:`אתה יועץ עסקי מנוסה.
+
+כתוב הצעת מחיר מקצועית עבור:
+שירות: {service}
+לקוח: {client}
+מחיר: {price}
+לוח זמנים: {timeline}
+
+כלול:
+1. פתיחה — הבנת הצורך
+2. היקף השירות (מה כלול ומה לא)
+3. לוח זמנים שלבי
+4. מה הלקוח צריך לספק
+5. תנאי תשלום
+6. למה לבחור בנו (2-3 נקודות)
+7. CTA — הנחיה לאישור
+
+כתוב בטון מקצועי ואמין.`,
+      tip:'הצעות עם לוח זמנים ברור ומחיר שקוף מקבלות אישור מהיר יותר ב-40%.' },
+
+    { id:'competitor', label:'ניתוח מתחרים',
+      vars:[
+        {id:'business',label:'העסק שלך',ph:'למשל: חנות ביגוד אונליין'},
+        {id:'competitor',label:'שם המתחרה',ph:'למשל: זארה ישראל'},
+        {id:'aspect',label:'היבט לניתוח',ph:'שיווק / מחיר / חוויית לקוח / מוצר'},
+      ],
+      template:`אתה אנליסט עסקי בכיר.
+
+בצע ניתוח מתחרים עבור: {business}
+המתחרה: {competitor}
+היבט לניתוח: {aspect}
+
+כלול:
+1. סיכום קצר של המתחרה
+2. ניתוח SWOT (חוזקות, חולשות, הזדמנויות, איומים)
+3. אסטרטגיית {aspect} שלהם
+4. מה הם עושים טוב שאפשר ללמוד
+5. היכן יש פערים שאפשר לנצל
+6. המלצות לפעולה — 3 צעדים מיידיים
+
+היה ספציפי ומעשי, לא גנרי.`,
+      tip:'חזור על הניתוח כל 3 חודשים — שוק ה-AI משתנה מהר.' },
+  ],
+
+  code: [
+    { id:'function', label:'כתיבת פונקציה',
+      vars:[
+        {id:'lang',label:'שפת תכנות',ph:'Python / JavaScript / TypeScript / Go'},
+        {id:'task',label:'מה הפונקציה צריכה לעשות',ph:'למשל: קבל רשימת מספרים, החזר ממוצע'},
+        {id:'input',label:'קלט',ph:'למשל: array of numbers'},
+        {id:'output',label:'פלט',ph:'למשל: number'},
+      ],
+      template:`אתה מפתח בכיר עם ניסיון רב ב-{lang}.
+
+כתוב פונקציה ב-{lang} שעושה:
+{task}
+
+קלט: {input}
+פלט: {output}
+
+דרישות:
+- קוד נקי ובקידוד טוב
+- טיפול בשגיאות edge cases
+- JSDoc / Docstring מלא
+- 3 דוגמאות שימוש עם output צפוי
+- אם רלוונטי — unit tests`,
+      tip:'תמיד בקש "הסבר מה הקוד עושה שורה שורה" אם לא מבין חלק מהתוצאה.' },
+
+    { id:'review', label:'ביקורת קוד',
+      vars:[
+        {id:'lang',label:'שפת תכנות',ph:'Python / JavaScript / React'},
+        {id:'code',label:'הקוד לבדיקה',ph:'הדבק את הקוד כאן...'},
+        {id:'focus',label:'על מה להתמקד',ph:'ביצועים / אבטחה / קריאות / הכל'},
+      ],
+      template:`אתה senior code reviewer עם ניסיון של 15 שנה ב-{lang}.
+
+בצע ביקורת קוד (Code Review) על הקוד הבא, תתמקד ב: {focus}
+
+\`\`\`
+{code}
+\`\`\`
+
+כלול בביקורת:
+1. סיכום כללי (2-3 משפטים)
+2. בעיות קריטיות (חובה לתקן)
+3. שיפורים מומלצים
+4. מה עובד טוב
+5. קוד מתוקן לחלקים הבעייתיים
+
+היה ספציפי — ציין מספרי שורות.`,
+      tip:'לאחר ביקורת — בקש: "כתוב tests שמכסים את כל הבאגים שמצאת".' },
+  ],
+
+  edu: [
+    { id:'lesson', label:'תוכנית שיעור',
+      vars:[
+        {id:'subject',label:'מקצוע',ph:'למשל: מתמטיקה / היסטוריה / אנגלית'},
+        {id:'grade',label:'כיתה/גיל',ph:'למשל: כיתה ו׳ / גיל 12'},
+        {id:'topic',label:'נושא השיעור',ph:'למשל: שברים / מלחמת העצמאות'},
+        {id:'duration',label:'משך השיעור',ph:'45 דקות / 90 דקות'},
+      ],
+      template:`אתה מורה מנוסה ומחנך מצטיין.
+
+צור תוכנית שיעור מפורטת:
+מקצוע: {subject}
+כיתה: {grade}
+נושא: {topic}
+משך: {duration}
+
+כלול:
+1. מטרות השיעור (3-4 מטרות מדידות)
+2. חומרי עזר נדרשים
+3. שלבי השיעור עם חלוקת זמן
+4. פעילות לפתיחת השיעור (5 דק')
+5. הסבר מרכזי עם דוגמאות
+6. תרגול בזוגות/קבוצות
+7. סיכום ובדיקת הבנה
+8. שיעורי בית (אם רלוונטי)`,
+      tip:'בקש מה-AI להתאים את השיעור לתלמידים עם קשיי קריאה — קבל גרסה מסתגלת.' },
+  ],
+
+  legal: [
+    { id:'contract', label:'סיכום חוזה',
+      vars:[
+        {id:'type',label:'סוג החוזה',ph:'למשל: חוזה שכירות / חוזה שירות'},
+        {id:'parties',label:'הצדדים',ph:'למשל: שוכר ומשכיר'},
+        {id:'content',label:'עיקרי החוזה',ph:'הדבק את החוזה או תיאור קצר שלו...'},
+      ],
+      template:`אתה עורך דין מנוסה המתמחה ב{type}.
+
+סכם את החוזה הבא בצורה ברורה ופשוטה:
+צדדים: {parties}
+
+תוכן:
+{content}
+
+ספק:
+1. תמצית מנהלים (3-4 משפטים)
+2. עיקרי ההתחייבויות של כל צד
+3. תנאים כספיים (מחיר, תנאי תשלום, קנסות)
+4. תקופת החוזה ותנאי סיום
+5. סעיפים שחשוב לשים לב אליהם ⚠️
+6. שאלות שכדאי לשאול לפני חתימה
+
+⚠️ אין בזה ייעוץ משפטי — יש להתייעץ עם עורך דין.`,
+      tip:'AI יכול לסכם חוזה אבל לא להחליף עורך דין — תמיד בקש ייעוץ מקצועי לפני חתימה.' },
+  ],
+};
+
+var state = { cat: null, task: null };
+
+function initCats() {
+  document.getElementById('cat-pills').innerHTML = CATS.map(function(c){
+    return '<button class="cat-pill" onclick="selectCat(\''+c.id+'\')">' + c.label + '</button>';
+  }).join('');
+}
+
+function selectCat(id) {
+  state.cat = id; state.task = null;
+  document.querySelectorAll('.cat-pill').forEach(function(b){ b.classList.toggle('active', b.textContent.includes(CATS.find(function(c){return c.id===id;}).label.split(' ')[1])); });
+  // simpler active check:
+  document.querySelectorAll('.cat-pill').forEach(function(b,i){ b.classList.toggle('active', CATS[i].id===id); });
+  renderTasks();
+  document.getElementById('vars-section').style.display='none';
+  document.getElementById('gen-btn').style.display='none';
+  document.getElementById('output-box').classList.remove('show');
+}
+
+function renderTasks() {
+  var tasks = TASKS[state.cat] || [];
+  document.getElementById('task-grid').innerHTML = tasks.map(function(t){
+    return '<button class="task-btn" id="task-'+t.id+'" onclick="selectTask(\''+t.id+'\')">'+t.label+'</button>';
+  }).join('');
+}
+
+function selectTask(id) {
+  state.task = id;
+  document.querySelectorAll('.task-btn').forEach(function(b){ b.classList.toggle('active', b.id==='task-'+id); });
+  renderVars();
+  document.getElementById('vars-section').style.display='block';
+  document.getElementById('gen-btn').style.display='block';
+  document.getElementById('output-box').classList.remove('show');
+}
+
+function renderVars() {
+  var tasks = TASKS[state.cat] || [];
+  var task = tasks.find(function(t){ return t.id===state.task; });
+  if (!task) return;
+  document.getElementById('vars-title').textContent = '3 — מלא פרטים: ' + task.label;
+  document.getElementById('vars-grid').innerHTML = task.vars.map(function(v){
+    return '<div class="var-group' + (v.full?'  full':'') + '">'+
+      '<label class="var-label" for="v-'+v.id+'">'+v.label+'</label>'+
+      (v.full
+        ? '<textarea class="var-input" id="v-'+v.id+'" placeholder="'+v.ph+'" rows="4" style="resize:vertical"></textarea>'
+        : '<input class="var-input" id="v-'+v.id+'" placeholder="'+v.ph+'">'
+      )+'</div>';
+  }).join('');
+}
+
+function generatePrompt() {
+  var tasks = TASKS[state.cat] || [];
+  var task = tasks.find(function(t){ return t.id===state.task; });
+  if (!task) return;
+
+  var prompt = task.template;
+  var allFilled = true;
+  task.vars.forEach(function(v){
+    var val = (document.getElementById('v-'+v.id)||{}).value || '';
+    if (!val.trim() && !v.optional) { /* allow empty */ }
+    prompt = prompt.replace(new RegExp('\\{'+v.id+'\\}','g'), val || '['+v.label+']');
+  });
+
+  document.getElementById('prompt-output').textContent = prompt;
+  document.getElementById('output-tip').textContent = task.tip || '';
+  document.getElementById('output-box').classList.add('show');
+  document.getElementById('output-box').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function copyPrompt(tool) {
+  var text = document.getElementById('prompt-output').textContent;
+  navigator.clipboard.writeText(text).then(function(){
+    var btn = document.getElementById('copy-'+tool);
+    btn.textContent = '✓ הועתק!';
+    btn.classList.add('copied');
+    setTimeout(function(){ btn.textContent = 'העתק ל-'+(tool==='chatgpt'?'ChatGPT':'Claude'); btn.classList.remove('copied'); }, 2000);
+    if (tool==='chatgpt') window.open('https://chat.openai.com','_blank');
+    else window.open('https://claude.ai','_blank');
+  });
+}
+
+function savePrompt() {
+  var text = document.getElementById('prompt-output').textContent;
+  var saved = JSON.parse(localStorage.getItem('binah_prompts')||'[]');
+  saved.unshift({ text: text, ts: Date.now(), cat: state.cat, task: state.task });
+  if (saved.length > 50) saved = saved.slice(0,50);
+  localStorage.setItem('binah_prompts', JSON.stringify(saved));
+  var btn = document.getElementById('save-btn');
+  btn.textContent = '✓ נשמר!';
+  setTimeout(function(){ btn.textContent = '💾 שמור'; }, 2000);
+  renderSaved();
+}
+
+function renderSaved() {
+  var saved = JSON.parse(localStorage.getItem('binah_prompts')||'[]');
+  var sec = document.getElementById('saved-section');
+  if (saved.length === 0) { sec.style.display='none'; return; }
+  sec.style.display='block';
+  document.getElementById('saved-list').innerHTML = saved.map(function(p,i){
+    var preview = p.text.substring(0,80) + '...';
+    return '<div class="saved-item">'+
+      '<div class="saved-preview">'+preview+'</div>'+
+      '<div class="saved-actions">'+
+        '<button class="saved-btn" onclick="loadSaved('+i+')">טען</button>'+
+        '<button class="saved-btn saved-del" onclick="deleteSaved('+i+')">מחק</button>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+}
+
+function loadSaved(i) {
+  var saved = JSON.parse(localStorage.getItem('binah_prompts')||'[]');
+  document.getElementById('prompt-output').textContent = saved[i].text;
+  document.getElementById('output-box').classList.add('show');
+  document.getElementById('output-box').scrollIntoView({behavior:'smooth'});
+}
+
+function deleteSaved(i) {
+  var saved = JSON.parse(localStorage.getItem('binah_prompts')||'[]');
+  saved.splice(i,1);
+  localStorage.setItem('binah_prompts', JSON.stringify(saved));
+  renderSaved();
+}
+
+initCats();
+renderSaved();
+</script>
+</body>
+</html>

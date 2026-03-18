@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('binah-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="חדשות AI בזמן אמת — כל הכותרות החמות מ-TechCrunch, VentureBeat, The Verge ועוד, במקום אחד. מתעדכן אוטומטית.">
+  <meta name="robots" content="index, follow">
+  <title>חדשות AI בזמן אמת | לוח חדשות חי | בינה</title>
+  <link rel="canonical" href="https://binah.co.il/ai-news-live.html">
+  <meta property="og:url" content="https://binah.co.il/ai-news-live.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="חדשות AI בזמן אמת | בינה">
+  <meta property="og:description" content="כל הכותרות החמות על AI ממקורות המובילים — TechCrunch, VentureBeat, The Verge ועוד.">
+  <meta property="og:site_name" content="בינה">
+  <link rel="stylesheet" href="styles.min.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MG65DD6GYJ');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+  <style>
+    .news-hero {
+      background: linear-gradient(135deg,#0d0520,#08080f,#030d18);
+      padding: 56px 24px 40px; text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .news-hero h1 {
+      font-size: clamp(1.8rem,5vw,2.8rem); font-weight: 900;
+      background: linear-gradient(135deg,#fff 20%,#a78bfa 55%,#67e8f9);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 10px;
+    }
+    .news-hero p { color: var(--text-muted); font-size: 0.95rem; max-width: 500px; margin: 0 auto 16px; }
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.25);
+      color: #f87171; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 99px;
+    }
+    .live-dot { width: 7px; height: 7px; background: #ef4444; border-radius: 50%; animation: blink 1.2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    .news-wrap { max-width: 1080px; margin: 0 auto; padding: 36px 24px 80px; }
+
+    /* Top bar */
+    .news-topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px; margin-bottom: 24px;
+    }
+    .news-topbar-left { display: flex; gap: 8px; flex-wrap: wrap; }
+    .src-chip {
+      padding: 6px 14px; border-radius: 99px; font-size: 0.82rem; font-weight: 600;
+      border: 1px solid var(--border); background: transparent; color: var(--text-muted);
+      cursor: pointer; transition: all 0.15s; font-family: inherit;
+    }
+    .src-chip:hover { border-color: rgba(124,58,237,0.4); color: #a78bfa; }
+    .src-chip.active { background: rgba(124,58,237,0.15); border-color: rgba(124,58,237,0.4); color: #a78bfa; }
+    .refresh-btn {
+      padding: 7px 16px; border-radius: 8px;
+      background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.25);
+      color: #a78bfa; font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: inherit;
+      transition: all 0.15s;
+    }
+    .refresh-btn:hover { background: rgba(124,58,237,0.2); }
+
+    /* News grid */
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 16px; }
+
+    .news-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px 20px;
+      display: flex; flex-direction: column; gap: 10px;
+      transition: border-color 0.2s; text-decoration: none; color: inherit;
+    }
+    .news-card:hover { border-color: rgba(124,58,237,0.35); }
+    .nc-source {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nc-source-name {
+      font-size: 0.72rem; font-weight: 700; padding: 3px 9px; border-radius: 99px;
+      text-transform: uppercase; letter-spacing: 0.3px;
+    }
+    .nc-date { font-size: 0.72rem; color: var(--text-muted); }
+    .nc-title { font-size: 0.95rem; font-weight: 700; line-height: 1.5; color: var(--text); }
+    .nc-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .nc-link {
+      font-size: 0.78rem; font-weight: 700; color: var(--accent);
+      display: flex; align-items: center; gap: 4px; margin-top: auto;
+    }
+
+    /* Source colors */
+    .src-tc    { background: rgba(239,68,68,0.12);   color: #f87171; }
+    .src-vb    { background: rgba(124,58,237,0.12);  color: #a78bfa; }
+    .src-verge { background: rgba(6,182,212,0.12);   color: #67e8f9; }
+    .src-wired { background: rgba(245,158,11,0.12);  color: #fbbf24; }
+    .src-mit   { background: rgba(34,197,94,0.12);   color: #4ade80; }
+    .src-ars   { background: rgba(236,72,153,0.12);  color: #f9a8d4; }
+
+    /* Loading / error */
+    .news-status {
+      text-align: center; padding: 60px 20px;
+      color: var(--text-muted); font-size: 0.95rem;
+    }
+    .spinner {
+      width: 36px; height: 36px; border: 3px solid var(--border);
+      border-top-color: #7c3aed; border-radius: 50%;
+      animation: spin 0.8s linear infinite; margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .last-updated { font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 24px; }
+
+    @media (max-width: 600px) {
+      .news-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">בינה ✦</a>
+      <nav id="main-nav">
+        <a href="index.html">ראשי</a>
+        <a href="index.html#articles">מאמרים</a>
+        <a href="guides.html">מדריכים</a>
+        <a href="tools.html">כלים</a>
+        <a href="quiz.html">בחר AI</a>
+        <a href="business.html">AI לעסקים</a>
+        <a href="ai-products.html">מוצרי AI</a>
+        <a href="weekly-news.html">חדשות</a>
+        <a href="ai-crazy.html">AI מטורף</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא"><span class="icon-dark">🌙 כהה</span><span class="icon-light">☀️ בהיר</span></button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="news-hero">
+  <div class="live-badge"><div class="live-dot"></div> LIVE</div>
+  <h1>📡 חדשות AI בזמן אמת</h1>
+  <p>כל הכותרות החמות ממקורות ה-AI המובילים בעולם — מתעדכן אוטומטית.</p>
+</div>
+
+<div class="news-wrap">
+  <div class="news-topbar">
+    <div class="news-topbar-left" id="source-filters">
+      <button class="src-chip active" data-src="all" onclick="filterSource('all',this)">הכל</button>
+      <button class="src-chip" data-src="TechCrunch" onclick="filterSource('TechCrunch',this)">TechCrunch</button>
+      <button class="src-chip" data-src="VentureBeat" onclick="filterSource('VentureBeat',this)">VentureBeat</button>
+      <button class="src-chip" data-src="The Verge" onclick="filterSource('The Verge',this)">The Verge</button>
+      <button class="src-chip" data-src="MIT Tech Review" onclick="filterSource('MIT Tech Review',this)">MIT Review</button>
+      <button class="src-chip" data-src="Ars Technica" onclick="filterSource('Ars Technica',this)">Ars Technica</button>
+    </div>
+    <button class="refresh-btn" onclick="loadAllFeeds()">↻ רענן</button>
+  </div>
+
+  <div id="news-container">
+    <div class="news-status"><div class="spinner"></div>טוען חדשות...</div>
+  </div>
+  <div class="last-updated" id="last-updated"></div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>כלים</h4><ul>
+        <li><a href="ai-news-live.html">חדשות חי</a></li>
+        <li><a href="prompt-generator.html">מחולל פרומפטים</a></li>
+        <li><a href="ai-compare.html">השוואת AI</a></li>
+        <li><a href="ai-ready.html">שאלון מוכנות</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+
+<script src="site.min.js"></script>
+<script src="/tracker.js"></script>
+<script>
+var FEEDS = [
+  { name:'TechCrunch',     cls:'src-tc',    url:'https://techcrunch.com/category/artificial-intelligence/feed/' },
+  { name:'VentureBeat',    cls:'src-vb',    url:'https://venturebeat.com/category/ai/feed/' },
+  { name:'The Verge',      cls:'src-verge', url:'https://www.theverge.com/ai-artificial-intelligence/rss/index.xml' },
+  { name:'MIT Tech Review',cls:'src-mit',   url:'https://www.technologyreview.com/feed/' },
+  { name:'Ars Technica',   cls:'src-ars',   url:'https://feeds.arstechnica.com/arstechnica/technology-lab' },
+];
+
+var RSS2JSON = 'https://api.rss2json.com/v1/api.json?rss_url=';
+var allItems = [];
+var currentFilter = 'all';
+
+function loadAllFeeds() {
+  document.getElementById('news-container').innerHTML = '<div class="news-status"><div class="spinner"></div>טוען חדשות...</div>';
+  allItems = [];
+  var done = 0;
+
+  FEEDS.forEach(function(feed) {
+    fetch(RSS2JSON + encodeURIComponent(feed.url) + '&count=10')
+      .then(function(r){ return r.json(); })
+      .then(function(data) {
+        if (data.items) {
+          data.items.forEach(function(item) {
+            allItems.push({
+              title:       item.title || '',
+              desc:        stripHtml(item.description || item.content || ''),
+              link:        item.link || '#',
+              date:        item.pubDate || '',
+              source:      feed.name,
+              sourceCls:   feed.cls,
+            });
+          });
+        }
+      })
+      .catch(function(){})
+      .finally(function(){
+        done++;
+        if (done === FEEDS.length) {
+          allItems.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+          renderItems(currentFilter);
+          var now = new Date();
+          document.getElementById('last-updated').textContent =
+            'עודכן לאחרונה: ' + now.toLocaleTimeString('he-IL',{hour:'2-digit',minute:'2-digit'});
+        }
+      });
+  });
+}
+
+function renderItems(filter) {
+  var items = filter === 'all' ? allItems : allItems.filter(function(i){ return i.source === filter; });
+
+  if (items.length === 0) {
+    document.getElementById('news-container').innerHTML =
+      '<div class="news-status">אין חדשות כרגע — נסה לרענן.</div>';
+    return;
+  }
+
+  document.getElementById('news-container').innerHTML =
+    '<div class="news-grid">' +
+    items.map(function(item) {
+      var ago = timeAgo(item.date);
+      var desc = item.desc.substring(0,160) + (item.desc.length>160?'...':'');
+      return '<a href="'+esc(item.link)+'" target="_blank" rel="noopener" class="news-card">' +
+        '<div class="nc-source">' +
+          '<span class="nc-source-name '+item.sourceCls+'">'+item.source+'</span>' +
+          '<span class="nc-date">'+ago+'</span>' +
+        '</div>' +
+        '<div class="nc-title">'+esc(item.title)+'</div>' +
+        (desc ? '<div class="nc-desc">'+esc(desc)+'</div>' : '') +
+        '<div class="nc-link">קרא עוד ↗</div>' +
+      '</a>';
+    }).join('') +
+    '</div>';
+}
+
+function filterSource(src, btn) {
+  currentFilter = src;
+  document.querySelectorAll('.src-chip').forEach(function(c){ c.classList.remove('active'); });
+  btn.classList.add('active');
+  renderItems(src);
+}
+
+function stripHtml(html) {
+  return html.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ').replace(/&#\d+;/g,'').trim();
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function timeAgo(dateStr) {
+  if (!dateStr) return '';
+  var diff = (Date.now() - new Date(dateStr)) / 1000;
+  if (diff < 3600)  return Math.round(diff/60) + ' דק\'';
+  if (diff < 86400) return Math.round(diff/3600) + ' שע\'';
+  if (diff < 604800)return Math.round(diff/86400) + ' ימים';
+  return new Date(dateStr).toLocaleDateString('he-IL');
+}
+
+loadAllFeeds();
+// Auto-refresh every 10 minutes
+setInterval(loadAllFeeds, 600000);
+</script>
+</body>
+</html>

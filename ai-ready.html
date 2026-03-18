@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('binah-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="בדוק אם העסק שלך מוכן ל-AI — שאלון חינמי עם ציון ודוח אישי. גלה היכן אתה עומד ומה לעשות הלאה.">
+  <meta name="robots" content="index, follow">
+  <title>האם העסק שלך מוכן ל-AI? שאלון חינמי 2025 | בינה</title>
+  <link rel="canonical" href="https://binah.co.il/ai-ready.html">
+  <meta property="og:url" content="https://binah.co.il/ai-ready.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="האם העסק שלך מוכן ל-AI? שאלון חינמי 2025 | בינה">
+  <meta property="og:description" content="שאלון קצר — קבל ציון ודוח אישי על מוכנות העסק שלך לאימוץ AI.">
+  <meta property="og:site_name" content="בינה">
+  <link rel="stylesheet" href="styles.min.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MG65DD6GYJ');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+  <style>
+    .quiz-hero {
+      background: linear-gradient(135deg,#0d0520,#08080f,#030d18);
+      padding: 60px 24px 44px; text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .quiz-hero h1 {
+      font-size: clamp(1.7rem,5vw,2.8rem); font-weight: 900;
+      background: linear-gradient(135deg,#fff 20%,#a78bfa 55%,#67e8f9);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 12px; line-height: 1.2;
+    }
+    .quiz-hero p { color: var(--text-muted); font-size: 1rem; max-width: 520px; margin: 0 auto 20px; line-height: 1.7; }
+    .quiz-meta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .quiz-meta span { font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+
+    .quiz-wrap { max-width: 720px; margin: 0 auto; padding: 44px 24px 80px; }
+
+    /* Progress */
+    .progress-bar-wrap {
+      background: var(--bg); border-radius: 99px; height: 6px; margin-bottom: 8px; overflow: hidden;
+    }
+    .progress-bar { height: 100%; background: linear-gradient(90deg,#7c3aed,#06b6d4); border-radius: 99px; transition: width 0.4s ease; }
+    .progress-text { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 28px; }
+
+    /* Category label */
+    .cat-label {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.2);
+      color: #a78bfa; font-size: 0.78rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 99px; margin-bottom: 14px;
+    }
+
+    /* Question card */
+    .q-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 18px; padding: 28px 30px; margin-bottom: 20px;
+    }
+    .q-text { font-size: 1.1rem; font-weight: 700; line-height: 1.5; margin-bottom: 20px; }
+    .q-options { display: flex; flex-direction: column; gap: 10px; }
+    .q-opt {
+      padding: 13px 18px; border-radius: 12px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--text); font-size: 0.92rem; font-weight: 500;
+      cursor: pointer; transition: all 0.15s; text-align: right; font-family: inherit;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .q-opt:hover { border-color: rgba(124,58,237,0.4); background: rgba(124,58,237,0.04); }
+    .q-opt.selected { border-color: #7c3aed; background: rgba(124,58,237,0.1); color: #a78bfa; }
+    .q-opt .opt-dot {
+      width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--border);
+      flex-shrink: 0; transition: all 0.15s; display: flex; align-items: center; justify-content: center; font-size: 9px;
+    }
+    .q-opt.selected .opt-dot { background: #7c3aed; border-color: #7c3aed; color: #fff; }
+
+    /* Nav buttons */
+    .q-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+    .q-back {
+      background: transparent; border: 1px solid var(--border); color: var(--text-muted);
+      padding: 10px 22px; border-radius: 10px; font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; transition: all 0.15s; font-family: inherit;
+    }
+    .q-back:hover { border-color: rgba(124,58,237,0.3); color: #a78bfa; }
+    .q-next {
+      background: linear-gradient(135deg,#7c3aed,#06b6d4); color: #fff;
+      border: none; padding: 11px 28px; border-radius: 10px;
+      font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: opacity 0.15s; font-family: inherit;
+    }
+    .q-next:disabled { opacity: 0.35; cursor: default; }
+    .q-next:not(:disabled):hover { opacity: 0.88; }
+
+    /* ── Results ── */
+    #results-page { display: none; }
+
+    .score-circle-wrap { text-align: center; margin: 28px 0; }
+    .score-circle {
+      width: 160px; height: 160px; border-radius: 50%;
+      display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+      border: 6px solid transparent;
+      background: var(--card-bg);
+      position: relative;
+    }
+    .score-circle::before {
+      content:''; position: absolute; inset: -6px; border-radius: 50%;
+      background: conic-gradient(var(--score-color) var(--score-deg), var(--border) 0);
+    }
+    .score-circle-inner {
+      width: 148px; height: 148px; border-radius: 50%;
+      background: var(--card-bg); position: absolute;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .score-num { font-size: 2.8rem; font-weight: 900; line-height: 1; }
+    .score-max { font-size: 0.82rem; color: var(--text-muted); }
+
+    .score-level {
+      font-size: 1.3rem; font-weight: 800; margin: 6px 0 4px;
+      background: linear-gradient(135deg,#a78bfa,#67e8f9);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .score-desc { font-size: 0.92rem; color: var(--text-muted); max-width: 460px; margin: 0 auto; line-height: 1.6; }
+
+    /* Category scores */
+    .cat-scores { margin: 32px 0; }
+    .cat-score-row { margin-bottom: 16px; }
+    .cs-header { display: flex; justify-content: space-between; font-size: 0.88rem; font-weight: 700; margin-bottom: 6px; }
+    .cs-bar-wrap { background: var(--bg); border-radius: 99px; height: 8px; overflow: hidden; }
+    .cs-bar { height: 100%; border-radius: 99px; transition: width 0.7s ease; }
+
+    /* Recommendations */
+    .rec-section { margin-bottom: 32px; }
+    .rec-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; }
+    .rec-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px 20px; margin-bottom: 10px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .rec-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .rec-body {}
+    .rec-head { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+    .rec-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+    .rec-tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      padding: 2px 9px; border-radius: 99px; margin-bottom: 5px;
+    }
+    .tag-urgent { background: rgba(239,68,68,0.12); color: #f87171; }
+    .tag-medium { background: rgba(245,158,11,0.12); color: #fbbf24; }
+    .tag-nice   { background: rgba(34,197,94,0.12);  color: #4ade80; }
+
+    /* Share/CTA */
+    .result-cta { text-align: center; padding: 28px; background: linear-gradient(135deg,rgba(124,58,237,0.08),rgba(6,182,212,0.05)); border: 1px solid rgba(124,58,237,0.15); border-radius: 18px; }
+    .result-cta h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+    .result-cta p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 18px; }
+    .cta-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .retry-btn {
+      background: transparent; border: 1px solid var(--border); color: var(--text-muted);
+      padding: 10px 22px; border-radius: 10px; font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; font-family: inherit; transition: all 0.15s;
+    }
+    .retry-btn:hover { border-color: rgba(124,58,237,0.4); color: #a78bfa; }
+
+    @media (max-width: 600px) {
+      .q-card { padding: 20px 18px; }
+      .q-nav { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">בינה ✦</a>
+      <nav id="main-nav">
+        <a href="index.html">ראשי</a>
+        <a href="index.html#articles">מאמרים</a>
+        <a href="guides.html">מדריכים</a>
+        <a href="tools.html">כלים</a>
+        <a href="quiz.html">בחר AI</a>
+        <a href="business.html">AI לעסקים</a>
+        <a href="ai-products.html">מוצרי AI</a>
+        <a href="weekly-news.html">חדשות</a>
+        <a href="ai-crazy.html">AI מטורף</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא"><span class="icon-dark">🌙 כהה</span><span class="icon-light">☀️ בהיר</span></button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="quiz-hero">
+  <h1>🤖 האם העסק שלך<br>מוכן ל-AI?</h1>
+  <p>שאלון קצר של 15 שאלות — קבל ציון אישי, ניתוח לפי תחומים, ודוח המלצות מותאם לעסק שלך.</p>
+  <div class="quiz-meta">
+    <span>⏱ 3 דקות</span>
+    <span>📋 15 שאלות</span>
+    <span>🎯 דוח אישי חינם</span>
+  </div>
+</div>
+
+<div class="quiz-wrap">
+
+  <!-- Quiz page -->
+  <div id="quiz-page">
+    <div class="progress-bar-wrap"><div class="progress-bar" id="progress-bar" style="width:0%"></div></div>
+    <div class="progress-text" id="progress-text">שאלה 1 מתוך 15</div>
+
+    <div id="q-container"></div>
+
+    <div class="q-nav">
+      <button class="q-back" id="q-back" onclick="goBack()" style="visibility:hidden">→ הקודם</button>
+      <button class="q-next" id="q-next" onclick="goNext()" disabled>הבא ←</button>
+    </div>
+  </div>
+
+  <!-- Results page -->
+  <div id="results-page">
+    <div class="score-circle-wrap">
+      <div class="score-circle" id="score-circle">
+        <div class="score-circle-inner">
+          <div class="score-num" id="res-score">0</div>
+          <div class="score-max">מתוך 100</div>
+        </div>
+      </div>
+      <div class="score-level" id="res-level"></div>
+      <div class="score-desc" id="res-desc"></div>
+    </div>
+
+    <div class="cat-scores" id="cat-scores"></div>
+    <div class="rec-section" id="rec-section"></div>
+
+    <div class="result-cta">
+      <h3>רוצה לדעת איך להתחיל?</h3>
+      <p>קרא את המדריך שלנו לאימוץ AI בעסקים קטנים — פרקטי, צעד אחר צעד.</p>
+      <div class="cta-btns">
+        <a href="business.html" class="btn-primary">AI לעסקים ←</a>
+        <a href="ai-cost-calculator.html" class="btn-primary" style="background:linear-gradient(135deg,#0891b2,#06b6d4)">💰 חשב עלות</a>
+        <button class="retry-btn" onclick="restartQuiz()">↺ התחל מחדש</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>כלים</h4><ul>
+        <li><a href="ai-ready.html">שאלון מוכנות AI</a></li>
+        <li><a href="prompt-generator.html">מחולל פרומפטים</a></li>
+        <li><a href="ai-compare.html">השוואת AI</a></li>
+        <li><a href="quiz.html">בחר AI</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+
+<script src="site.min.js"></script>
+<script src="/tracker.js"></script>
+<script>
+var QUESTIONS = [
+  // Category: תשתית טכנולוגית
+  { cat:'tech', catLabel:'💻 תשתית טכנולוגית',
+    q:'האם העסק שלך עובד עם תוכנות ענן (Google Workspace, Microsoft 365, CRM וכד\')?',
+    opts:[
+      {text:'כן, רוב הכלים בענן',score:3},
+      {text:'חלקית — תמהיל של ענן ומקומי',score:2},
+      {text:'לא, בעיקר תוכנות מקומיות',score:1},
+      {text:'לא עובדים עם תוכנות בכלל',score:0},
+    ]},
+  { cat:'tech', catLabel:'💻 תשתית טכנולוגית',
+    q:'כמה נוח הצוות שלך עם כלים דיגיטליים חדשים?',
+    opts:[
+      {text:'מאוד — לומדים כלים חדשים בקלות',score:3},
+      {text:'בינוני — לוקח זמן אבל מסתדרים',score:2},
+      {text:'קשה — יש התנגדות לשינויים',score:1},
+      {text:'לא רלוונטי — אני עובד לבד',score:2},
+    ]},
+  { cat:'tech', catLabel:'💻 תשתית טכנולוגית',
+    q:'האם יש לך נתונים דיגיטליים על הלקוחות/תהליכים שלך (CRM, גיליון אקסל, DB)?',
+    opts:[
+      {text:'כן, נתונים מסודרים ומעודכנים',score:3},
+      {text:'כן, אבל לא מסודרים/מעודכנים',score:2},
+      {text:'מינימלי — רק מה שחייב',score:1},
+      {text:'לא, הכל בניירת או בראש',score:0},
+    ]},
+
+  // Category: תהליכים עסקיים
+  { cat:'process', catLabel:'⚙️ תהליכים עסקיים',
+    q:'האם יש תהליכים חוזרים ונשנים בעסק שלוקחים הרבה זמן?',
+    opts:[
+      {text:'כן, הרבה — וזה כאב ראש אמיתי',score:3},
+      {text:'כן, כמה תהליכים',score:2},
+      {text:'כמה קטנים',score:1},
+      {text:'לא ממש, כל יום שונה',score:1},
+    ]},
+  { cat:'process', catLabel:'⚙️ תהליכים עסקיים',
+    q:'כמה זמן בשבוע הצוות מבלה בכתיבת תוכן (מיילים, הצעות, פוסטים, דוחות)?',
+    opts:[
+      {text:'יותר מ-10 שעות',score:3},
+      {text:'5-10 שעות',score:2},
+      {text:'1-4 שעות',score:1},
+      {text:'כמעט אפס',score:0},
+    ]},
+  { cat:'process', catLabel:'⚙️ תהליכים עסקיים',
+    q:'האם שירות הלקוחות שלך מקבל שאלות חוזרות ונשנות?',
+    opts:[
+      {text:'כן, אותן שאלות שוב ושוב',score:3},
+      {text:'כן, חלק מהשאלות',score:2},
+      {text:'לא — כל לקוח שונה לגמרי',score:0},
+      {text:'אין לי שירות לקוחות',score:0},
+    ]},
+
+  // Category: מוכנות ניהולית
+  { cat:'management', catLabel:'📊 מוכנות ניהולית',
+    q:'האם הנהלת העסק (בעל עסק/מנהלים) פתוחה לניסוי טכנולוגיות חדשות?',
+    opts:[
+      {text:'כן, אנחנו חדשנים ורוצים להתקדם',score:3},
+      {text:'פתוחים אם יש הוכחת ערך',score:2},
+      {text:'סקפטיים אבל לא סוגרים',score:1},
+      {text:'מעדיפים להישאר כמו שאנחנו',score:0},
+    ]},
+  { cat:'management', catLabel:'📊 מוכנות ניהולית',
+    q:'האם יש תקציב לניסוי כלים חדשים?',
+    opts:[
+      {text:'כן, יש תקציב ייעודי לטכנולוגיה',score:3},
+      {text:'אפשר למצוא תקציב קטן',score:2},
+      {text:'רק אם חינם לגמרי',score:1},
+      {text:'לא — אין תקציב כרגע',score:0},
+    ]},
+  { cat:'management', catLabel:'📊 מוכנות ניהולית',
+    q:'האם ניסיתם כלי AI כלשהו בעבר (ChatGPT, Canva AI, Grammarly וכד\')?',
+    opts:[
+      {text:'כן, משתמשים בקביעות',score:3},
+      {text:'ניסינו כמה פעמים',score:2},
+      {text:'פעם אחת/שניים',score:1},
+      {text:'מעולם לא',score:0},
+    ]},
+
+  // Category: נתונים ותוכן
+  { cat:'data', catLabel:'📁 נתונים ותוכן',
+    q:'כמה תוכן דיגיטלי מייצר העסק שלך בחודש?',
+    opts:[
+      {text:'הרבה — פוסטים, מיילים, מסמכים יומיומיים',score:3},
+      {text:'בינוני — כמה פעמים בשבוע',score:2},
+      {text:'מעט — כמה פעמים בחודש',score:1},
+      {text:'כמעט לא',score:0},
+    ]},
+  { cat:'data', catLabel:'📁 נתונים ותוכן',
+    q:'האם יש לך מדיניות פרטיות ברורה לגבי נתוני לקוחות?',
+    opts:[
+      {text:'כן, עמידה ב-GDPR/CCPA',score:3},
+      {text:'בסיסית — מדיניות פשוטה',score:2},
+      {text:'לא ברור לי מה הדרישות',score:1},
+      {text:'לא — אין מדיניות',score:0},
+    ]},
+
+  // Category: תחרות ושוק
+  { cat:'market', catLabel:'🏆 תחרות ושוק',
+    q:'האם מתחרים בתחום שלך כבר משתמשים ב-AI?',
+    opts:[
+      {text:'כן, כולם — אני מפגר',score:3},
+      {text:'כמה מתחרים מובילים',score:2},
+      {text:'מעטים ניסו',score:1},
+      {text:'לא מודע לשימוש AI בתחום',score:0},
+    ]},
+  { cat:'market', catLabel:'🏆 תחרות ושוק',
+    q:'מה הלחץ הכי גדול על העסק שלך?',
+    opts:[
+      {text:'קושי בהרחבת הצוות / עלות כוח אדם',score:3},
+      {text:'שמירה על קצב עם ביקוש גדל',score:3},
+      {text:'תחרות על מחיר',score:2},
+      {text:'מציאת לקוחות חדשים',score:2},
+    ]},
+
+  // Category: מוכנות אישית
+  { cat:'personal', catLabel:'🙋 מוכנות אישית',
+    q:'כמה שעות בשבוע תוכל להשקיע בלימוד כלי AI?',
+    opts:[
+      {text:'3+ שעות — מחויב להשקיע',score:3},
+      {text:'1-2 שעות',score:2},
+      {text:'פחות משעה',score:1},
+      {text:'כמעט אין זמן',score:0},
+    ]},
+  { cat:'personal', catLabel:'🙋 מוכנות אישית',
+    q:'מה המטרה העיקרית שלך מאימוץ AI?',
+    opts:[
+      {text:'חיסכון בזמן ואוטומציה',score:3},
+      {text:'שיפור איכות התוכן',score:2},
+      {text:'הפחתת עלויות',score:2},
+      {text:'סקרנות — רוצה להבין מה זה',score:1},
+    ]},
+];
+
+var CATS_INFO = {
+  tech:       { label:'תשתית טכנולוגית', color:'#7c3aed' },
+  process:    { label:'תהליכים עסקיים',  color:'#06b6d4' },
+  management: { label:'מוכנות ניהולית',  color:'#f59e0b' },
+  data:       { label:'נתונים ותוכן',    color:'#10b981' },
+  market:     { label:'תחרות ושוק',      color:'#ef4444' },
+  personal:   { label:'מוכנות אישית',    color:'#a78bfa' },
+};
+
+var answers = [];
+var current = 0;
+
+function renderQuestion() {
+  var q = QUESTIONS[current];
+  var pct = ((current) / QUESTIONS.length) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-text').textContent = 'שאלה ' + (current+1) + ' מתוך ' + QUESTIONS.length;
+  document.getElementById('q-back').style.visibility = current > 0 ? 'visible' : 'hidden';
+  document.getElementById('q-next').disabled = answers[current] === undefined;
+
+  var selected = answers[current];
+  document.getElementById('q-container').innerHTML =
+    '<div class="cat-label">' + q.catLabel + '</div>' +
+    '<div class="q-card">' +
+      '<div class="q-text">' + q.q + '</div>' +
+      '<div class="q-options">' +
+        q.opts.map(function(o,i){
+          return '<button class="q-opt' + (selected===i?' selected':'') + '" onclick="selectAnswer('+i+')">' +
+            '<div class="opt-dot">' + (selected===i?'✓':'') + '</div>' +
+            o.text + '</button>';
+        }).join('') +
+      '</div>' +
+    '</div>';
+}
+
+function selectAnswer(i) {
+  answers[current] = i;
+  document.querySelectorAll('.q-opt').forEach(function(b,idx){ b.classList.toggle('selected', idx===i); b.querySelector('.opt-dot').textContent = idx===i?'✓':''; });
+  document.getElementById('q-next').disabled = false;
+}
+
+function goNext() {
+  if (answers[current] === undefined) return;
+  if (current < QUESTIONS.length - 1) {
+    current++;
+    renderQuestion();
+  } else {
+    showResults();
+  }
+}
+
+function goBack() {
+  if (current > 0) { current--; renderQuestion(); }
+}
+
+function showResults() {
+  document.getElementById('quiz-page').style.display = 'none';
+  document.getElementById('results-page').style.display = 'block';
+
+  // Calculate total score
+  var totalScore = 0;
+  var maxTotal = 0;
+  var catScores = {};
+  var catMax = {};
+
+  QUESTIONS.forEach(function(q,i){
+    var ans = answers[i] !== undefined ? q.opts[answers[i]].score : 0;
+    var max = Math.max.apply(null, q.opts.map(function(o){ return o.score; }));
+    totalScore += ans;
+    maxTotal += max;
+    catScores[q.cat] = (catScores[q.cat]||0) + ans;
+    catMax[q.cat] = (catMax[q.cat]||0) + max;
+  });
+
+  var pct = Math.round((totalScore / maxTotal) * 100);
+
+  // Score display
+  document.getElementById('res-score').textContent = pct;
+  var color, level, desc;
+  if (pct >= 75) {
+    color='#22c55e'; level='🚀 מוכן מאוד ל-AI';
+    desc='העסק שלך נמצא בעמדה מצוינת לאמץ AI. יש לך תשתית, פתיחות ותהליכים שמתאימים לאוטומציה. הגיע הזמן להתחיל!';
+  } else if (pct >= 50) {
+    color='#f59e0b'; level='⚡ מוכנות בינונית';
+    desc='יש לך בסיס טוב, אבל כדאי לחזק כמה תחומים לפני שמשקיעים הרבה. הדוח מטה מראה איפה להתחיל.';
+  } else if (pct >= 30) {
+    color='#f97316'; level='🌱 בשלבי התחלה';
+    desc='עדיין מוקדם לאוטומציה מלאה, אבל כדאי להתחיל עם כלים פשוטים כמו ChatGPT. כל צעד קטן חשוב.';
+  } else {
+    color='#ef4444'; level='📚 דרוש בסיס קודם';
+    desc='לפני AI, כדאי להתמקד בבניית תשתית דיגיטלית בסיסית. זה לא מורכב — נראה לך איפה להתחיל.';
+  }
+
+  var deg = Math.round((pct / 100) * 360);
+  var circle = document.getElementById('score-circle');
+  circle.style.setProperty('--score-color', color);
+  circle.style.setProperty('--score-deg', deg+'deg');
+  document.getElementById('res-score').style.color = color;
+  document.getElementById('res-level').textContent = level;
+  document.getElementById('res-desc').textContent = desc;
+
+  // Category scores
+  var catsHTML = '<div style="font-size:0.88rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px">ציון לפי תחום</div>';
+  Object.keys(catScores).forEach(function(cat){
+    var info = CATS_INFO[cat];
+    var cp = Math.round((catScores[cat]/catMax[cat])*100);
+    catsHTML += '<div class="cat-score-row">' +
+      '<div class="cs-header"><span>'+info.label+'</span><span style="color:'+info.color+'">'+cp+'%</span></div>' +
+      '<div class="cs-bar-wrap"><div class="cs-bar" style="width:'+cp+'%;background:'+info.color+'"></div></div>' +
+    '</div>';
+  });
+  document.getElementById('cat-scores').innerHTML = catsHTML;
+
+  // Recommendations
+  var recs = buildRecs(catScores, catMax, pct);
+  var recHTML = '<div class="rec-title">📋 המלצות אישיות לך</div>';
+  recs.forEach(function(r){
+    recHTML += '<div class="rec-card">' +
+      '<div class="rec-icon">'+r.icon+'</div>' +
+      '<div class="rec-body">' +
+        '<div class="rec-tag tag-'+r.priority+'">'+{urgent:'🔴 דחוף',medium:'🟡 חשוב',nice:'🟢 בונוס'}[r.priority]+'</div>' +
+        '<div class="rec-head">'+r.title+'</div>' +
+        '<div class="rec-text">'+r.text+'</div>' +
+      '</div>' +
+    '</div>';
+  });
+  document.getElementById('rec-section').innerHTML = recHTML;
+  document.getElementById('results-page').scrollIntoView({behavior:'smooth'});
+}
+
+function buildRecs(catScores, catMax, totalPct) {
+  var recs = [];
+  var techPct = Math.round((catScores.tech||0)/(catMax.tech||1)*100);
+  var processPct = Math.round((catScores.process||0)/(catMax.process||1)*100);
+  var mgmtPct = Math.round((catScores.management||0)/(catMax.management||1)*100);
+  var dataPct = Math.round((catScores.data||0)/(catMax.data||1)*100);
+
+  if (techPct < 50)
+    recs.push({icon:'☁️', priority:'urgent', title:'עבור לענן קודם', text:'תחילה ודא שהכלים המרכזיים שלך (מייל, קבצים, CRM) בענן. Google Workspace או Microsoft 365 הם הצעד הראשון לפני AI.'});
+  if (processPct >= 60)
+    recs.push({icon:'🤖', priority:'urgent', title:'אוטומציה של תהליכים חוזרים', text:'זיהית תהליכים חוזרים — זה בדיוק מה ש-AI יכול לפתור. התחל עם ChatGPT לכתיבת מיילים ותגובות שירות לקוחות.'});
+  if (mgmtPct < 50)
+    recs.push({icon:'📢', priority:'urgent', title:'בנה case לניהול', text:'הצג דוגמאות מוצלחות מהתחום שלך. כלים כמו ChatGPT חינמיים — הראה חיסכון של שעה ביום וקבל אישור בקלות.'});
+  if (dataPct < 50)
+    recs.push({icon:'📊', priority:'medium', title:'ארגן את הנתונים שלך', text:'AI הוא רק כמה טוב כנתונים שמזינים אותו. השקע שבועיים בסידור הנתונים ב-Google Sheets לפני שמתחילים.'});
+  recs.push({icon:'🎯', priority:'medium', title:'התחל עם ניצחון קטן', text:'בחר משימה אחת חוזרת שלוקחת 30+ דקות ביום — כתיבת מיילים, יצירת תוכן, מענה ללקוחות — ואוטומט אותה תחילה.'});
+  if (totalPct >= 60)
+    recs.push({icon:'🚀', priority:'nice', title:'שקול כלים מתקדמים', text:'עם הבסיס שיש לך, אפשר לשקול Make.com לאוטומציה, ChatGPT API לאינטגרציה עם המערכות שלך, ו-Claude לכתיבת תוכן מקצועי.'});
+  recs.push({icon:'📚', priority:'nice', title:'הכשרת הצוות', text:'הקדש פגישה חודשית של שעה להדגמת כלי AI חדש. צוות שמיומן ב-AI שווה לעסק שלך הרבה יותר מכל כלי בודד.'});
+
+  return recs.slice(0, 5);
+}
+
+function restartQuiz() {
+  answers = []; current = 0;
+  document.getElementById('results-page').style.display = 'none';
+  document.getElementById('quiz-page').style.display = 'block';
+  renderQuestion();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+renderQuestion();
+</script>
+</body>
+</html>
