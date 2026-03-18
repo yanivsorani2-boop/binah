@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('binah-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="צור קשר עם צוות בינה — שאלות על AI לעסקים, שיתופי פעולה ומשוב על האתר.">
+  <meta name="robots" content="index, follow">
+  <title>צור קשר | בינה</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- GA4_CODE_HERE -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+  <style>
+    .contact-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 0 80px;
+    }
+    .contact-intro {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .contact-intro h2 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+    .contact-intro p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .contact-form {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    @media (max-width: 600px) {
+      .contact-form { padding: 24px 20px; }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 1rem;
+      color: var(--text);
+      font-family: inherit;
+      direction: rtl;
+      transition: border-color 0.2s;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+    }
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    .form-submit {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 32px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .form-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+    .contact-info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .contact-info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .contact-info-card .ci-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .contact-info-card .ci-label { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px; }
+    .contact-info-card .ci-value { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--primary);
+    }
+    .form-success .success-icon { font-size: 3rem; margin-bottom: 12px; }
+    .form-success h3 { font-size: 1.4rem; margin-bottom: 8px; }
+    .form-success p { color: var(--text-muted); }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">בינה ✦</a>
+      <nav id="main-nav">
+        <a href="index.html">ראשי</a>
+        <a href="index.html#articles">כתבות</a>
+        <a href="guides.html">מדריכים</a>
+        <a href="tools.html">כלים</a>
+        <a href="quiz.html">בחר AI</a>
+        <a href="business.html">AI לעסקים</a>
+        <a href="weekly-news.html">חדשות</a>
+        <a href="ai-crazy.html">AI מטורף</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+          <span class="icon-dark">🌙 כהה</span>
+          <span class="icon-light">☀️ בהיר</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding:48px 0 32px">
+  <div class="container hero-content text-center">
+    <h1>צור<br><span class="gradient-text">קשר</span></h1>
+    <p>שאלה על AI לעסק שלך? רעיון למאמר? שיתוף פעולה? נשמח לשמוע.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="contact-wrap">
+
+    <div class="contact-intro">
+      <h2>השאר הודעה ונחזור אליך</h2>
+      <p>ממלאים את הפרטים למטה ואנחנו נחזור אליך בהקדם. אפשר להשאיר מספר טלפון אם מעדיפים שנחזור בשיחה.</p>
+    </div>
+
+    <!-- Netlify Form -->
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="contact-form"
+      id="contact-form"
+      onsubmit="handleSubmit(event)"
+    >
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none"><label>אל תמלא שדה זה: <input name="bot-field"></label></p>
+
+      <div class="form-group">
+        <label for="name">שם מלא *</label>
+        <input type="text" id="name" name="name" placeholder="ישראל ישראלי" required autocomplete="name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">אימייל *</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">מספר טלפון</label>
+        <input type="tel" id="phone" name="phone" placeholder="050-0000000" autocomplete="tel">
+      </div>
+
+      <div class="form-group">
+        <label for="subject">נושא</label>
+        <select id="subject" name="subject">
+          <option value="">בחר נושא...</option>
+          <option value="ai-business">שאלה על AI לעסק שלי</option>
+          <option value="article">הצעה לנושא מאמר</option>
+          <option value="collaboration">שיתוף פעולה</option>
+          <option value="advertising">פרסום באתר</option>
+          <option value="feedback">משוב על האתר</option>
+          <option value="other">אחר</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">הודעה *</label>
+        <textarea id="message" name="message" placeholder="כתוב כאן את הודעתך..." required></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">שלח הודעה ←</button>
+    </form>
+
+    <div class="form-success" id="form-success">
+      <div class="success-icon">✅</div>
+      <h3>ההודעה נשלחה בהצלחה!</h3>
+      <p>נחזור אליך בהקדם האפשרי — בדרך כלל תוך 24 שעות.</p>
+      <br>
+      <a href="index.html" class="btn-primary">חזרה לעמוד הראשי</a>
+    </div>
+
+    <div class="contact-info-cards">
+      <div class="contact-info-card">
+        <div class="ci-icon">📬</div>
+        <div class="ci-label">זמן תגובה</div>
+        <div class="ci-value">עד 24 שעות</div>
+      </div>
+      <div class="contact-info-card">
+        <div class="ci-icon">🇮🇱</div>
+        <div class="ci-label">שפה</div>
+        <div class="ci-value">עברית ואנגלית</div>
+      </div>
+      <div class="contact-info-card">
+        <div class="ci-icon">💼</div>
+        <div class="ci-label">התמחות</div>
+        <div class="ci-value">AI לעסקים קטנים</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="index.html">ראשי</a></li>
+        <li><a href="guides.html">מדריכים</a></li>
+        <li><a href="tools.html">כלים</a></li>
+        <li><a href="business.html">AI לעסקים</a></li>
+        <li><a href="weekly-news.html">חדשות</a></li>
+        <li><a href="ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="חזרה לראש" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="site.js"></script>
+<script src="header-bg.js"></script>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  var form = document.getElementById('contact-form');
+  var data = new FormData(form);
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(function() {
+    form.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  })
+  .catch(function() {
+    // Fallback — let native form submission handle it
+    form.submit();
+  });
+}
+</script>
+</body>
+</html>
