@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0018"/>
+      <stop offset="100%" style="stop-color:#1a0533"/>
+    </linearGradient>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:0.8"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Frame bridge and temples -->
+  <rect x="50" y="195" width="700" height="14" rx="7" fill="#2a2a3e"/>
+  <!-- Left lens -->
+  <rect x="60" y="150" width="300" height="130" rx="20" fill="url(#lens)" stroke="#7c3aed" stroke-width="2.5"/>
+  <!-- Right lens -->
+  <rect x="440" y="150" width="300" height="130" rx="20" fill="url(#lens)" stroke="#7c3aed" stroke-width="2.5"/>
+  <!-- Lens shine -->
+  <ellipse cx="160" cy="185" rx="60" ry="20" fill="rgba(255,255,255,0.05)"/>
+  <ellipse cx="540" cy="185" rx="60" ry="20" fill="rgba(255,255,255,0.05)"/>
+  <!-- AI dot indicator on right temple -->
+  <circle cx="755" cy="202" r="6" fill="#06b6d4" filter="url(#glow)"/>
+  <!-- Camera dot on left temple -->
+  <circle cx="45" cy="202" r="5" fill="#7c3aed" filter="url(#glow)"/>
+  <!-- Meta wordmark -->
+  <text x="400" y="340" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="white" text-anchor="middle" opacity="0.9">Meta Ray-Ban AI</text>
+  <text x="400" y="370" font-family="Arial,sans-serif" font-size="15" fill="#a78bfa" text-anchor="middle">Powered by GPT-4o</text>
+</svg>

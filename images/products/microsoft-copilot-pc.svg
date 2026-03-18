@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050d1a"/>
+      <stop offset="100%" style="stop-color:#0a1628"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1f3d"/>
+      <stop offset="100%" style="stop-color:#051226"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Laptop body -->
+  <rect x="140" y="80" width="520" height="320" rx="12" fill="#1a1f2e" stroke="#2a3050" stroke-width="2"/>
+  <!-- Screen bezel -->
+  <rect x="160" y="95" width="480" height="270" rx="6" fill="url(#screen)"/>
+  <!-- Windows logo -->
+  <rect x="320" y="155" width="55" height="55" rx="3" fill="#0078d4" opacity="0.9"/>
+  <rect x="382" y="155" width="55" height="55" rx="3" fill="#0078d4" opacity="0.7"/>
+  <rect x="320" y="217" width="55" height="55" rx="3" fill="#0078d4" opacity="0.7"/>
+  <rect x="382" y="217" width="55" height="55" rx="3" fill="#0078d4" opacity="0.9"/>
+  <!-- Copilot shimmer -->
+  <ellipse cx="480" cy="195" rx="40" ry="40" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.6"/>
+  <ellipse cx="480" cy="195" rx="25" ry="25" fill="rgba(124,58,237,0.15)"/>
+  <text x="480" y="200" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#a78bfa" text-anchor="middle">✦</text>
+  <!-- Text -->
+  <text x="400" y="390" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="white" text-anchor="middle">Microsoft Copilot+ PC</text>
+  <text x="400" y="415" font-family="Arial,sans-serif" font-size="13" fill="#67e8f9" text-anchor="middle">AI-Powered · NPU · Windows 11</text>
+</svg>

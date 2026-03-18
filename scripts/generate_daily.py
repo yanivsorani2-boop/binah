@@ -31,11 +31,57 @@ def ask_claude(prompt, max_tokens=4000):
     return msg.content[0].text
 
 def parse_json(raw):
+    """Robust JSON parser that handles Claude's occasional formatting issues."""
     raw = raw.strip()
-    raw = re.sub(r'^```json\s*', '', raw)
-    raw = re.sub(r'^```\s*',     '', raw)
+    # Strip markdown code fences
+    raw = re.sub(r'^```json\s*', '', raw, flags=re.MULTILINE)
+    raw = re.sub(r'^```\s*',     '', raw, flags=re.MULTILINE)
     raw = re.sub(r'```\s*$',     '', raw)
-    return json.loads(raw.strip())
+    raw = raw.strip()
+
+    # First try direct parse
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        pass
+
+    # Strategy: extract body_html separately, then parse the rest
+    try:
+        body_match = re.search(r'"body_html"\s*:\s*"(.*?)"(?=\s*[,}])', raw, re.DOTALL)
+        if body_match:
+            body_html = body_match.group(1)
+            # Replace the body_html value with a placeholder
+            placeholder = '__BODY_HTML_PLACEHOLDER__'
+            safe_raw = raw[:body_match.start(1)] + placeholder + raw[body_match.end(1):]
+            data = json.loads(safe_raw)
+            data['body_html'] = body_html.encode().decode('unicode_escape') if '\\n' in body_html else body_html
+            return data
+    except Exception:
+        pass
+
+    # Last resort: extract fields with regex
+    def extract(key):
+        m = re.search(rf'"{key}"\s*:\s*"(.*?)"(?=\s*[,}}])', raw, re.DOTALL)
+        return m.group(1) if m else ''
+    def extract_list(key):
+        m = re.search(rf'"{key}"\s*:\s*\[(.*?)\]', raw, re.DOTALL)
+        if not m: return []
+        return re.findall(r'"([^"]+)"', m.group(1))
+    def extract_html(key):
+        # body_html may span many lines
+        m = re.search(rf'"{key}"\s*:\s*"([\s\S]+?)"(?=\s*\n?\s*[}},])', raw)
+        return m.group(1) if m else ''
+
+    return {
+        'slug':       extract('slug'),
+        'title':      extract('title'),
+        'category':   extract('category'),
+        'cat_key':    extract('cat_key'),
+        'excerpt':    extract('excerpt'),
+        'read_time':  extract('read_time'),
+        'tags':       extract_list('tags'),
+        'body_html':  extract_html('body_html'),
+    }
 
 
 # ── Niche definitions ───────────────────────────────────────────────────────
@@ -130,7 +176,7 @@ def generate_niche_article(niche, date_str):
     return parse_json(ask_claude(prompt, 4500))
 
 
-def build_article_html(data, date_str):
+def build_article_html(data, date_str, slug=''):
     tags_html = ''.join(f'<span class="tag">{t}</span>' for t in data['tags'])
     return f"""<!DOCTYPE html>
 <html lang="he" dir="rtl">
@@ -143,8 +189,14 @@ def build_article_html(data, date_str):
   <meta property="og:type" content="article">
   <meta name="robots" content="index, follow">
   <title>{data['title']} | בינה</title>
-  <link rel="stylesheet" href="../styles.css">
-  <!-- GA4_CODE_HERE -->
+  <link rel="stylesheet" href="../styles.min.css">
+  <link rel="canonical" href="https://binah.co.il/articles/{slug}.html">
+  <meta property="og:url" content="https://binah.co.il/articles/{slug}.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="בינה">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-MG65DD6GYJ');</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -154,10 +206,12 @@ def build_article_html(data, date_str):
       <a href="../index.html" class="logo">בינה ✦</a>
       <nav id="main-nav">
         <a href="../index.html">ראשי</a>
-        <a href="../index.html#articles">כתבות</a>
+        <a href="../index.html#articles">מאמרים</a>
         <a href="../guides.html">מדריכים</a>
         <a href="../tools.html">כלים</a>
         <a href="../quiz.html">בחר AI</a>
+        <a href="../business.html">AI לעסקים</a>
+        <a href="../ai-products.html">מוצרי AI</a>
         <a href="../weekly-news.html">חדשות</a>
         <a href="../ai-crazy.html">AI מטורף</a>
       </nav>
@@ -175,7 +229,7 @@ def build_article_html(data, date_str):
 </header>
 
 <div class="container">
-  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+  <div class="ad-zone ad-banner"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({{}});</script></div>
 </div>
 
 <div class="container">
@@ -246,8 +300,9 @@ def build_article_html(data, date_str):
 </footer>
 
 <button id="back-to-top" aria-label="חזרה לראש" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">↑</button>
-<script src="../site.js"></script>
-<script src="../header-bg.js"></script>
+<script src="../site.min.js"></script>
+<script src="../header-bg.min.js"></script>
+<script src="/tracker.js"></script>
 </body>
 </html>"""
 
@@ -395,7 +450,10 @@ def build_weekly_html(data, date_str, week_slug):
   <meta name="description" content="גיליון שבועי {date_str} — {data['issue_sub']}">
   <meta name="robots" content="index, follow">
   <title>{data['issue_title']} | בינה</title>
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles.min.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-MG65DD6GYJ');</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -405,10 +463,12 @@ def build_weekly_html(data, date_str, week_slug):
       <a href="../index.html" class="logo">בינה ✦</a>
       <nav id="main-nav">
         <a href="../index.html">ראשי</a>
-        <a href="../index.html#articles">כתבות</a>
+        <a href="../index.html#articles">מאמרים</a>
         <a href="../guides.html">מדריכים</a>
         <a href="../tools.html">כלים</a>
         <a href="../quiz.html">בחר AI</a>
+        <a href="../business.html">AI לעסקים</a>
+        <a href="../ai-products.html">מוצרי AI</a>
         <a href="../weekly-news.html" class="active">חדשות</a>
         <a href="../ai-crazy.html">AI מטורף</a>
       </nav>
@@ -479,9 +539,10 @@ def build_weekly_html(data, date_str, week_slug):
   </div>
 </footer>
 <button id="back-to-top" aria-label="חזרה לראש" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">↑</button>
-<script src="../site.js"></script>
-<script src="../header-bg.js"></script>
-<script src="../card-bg.js"></script>
+<script src="../site.min.js"></script>
+<script src="../header-bg.min.js"></script>
+<script src="/tracker.js"></script>
+<script src="../card-bg.min.js"></script>
 </body>
 </html>"""
 
@@ -549,7 +610,7 @@ def main():
     print("📝 מייצר כתבה יומית כללית...")
     article = generate_article(date_str)
     slug    = f"{TODAY_STR}-{article['slug']}"
-    (ROOT / 'articles' / f"{slug}.html").write_text(build_article_html(article, date_str))
+    (ROOT / 'articles' / f"{slug}.html").write_text(build_article_html(article, date_str, slug))
     inject_article_index(article, slug, date_str)
     print(f"   ✅ articles/{slug}.html")
 
@@ -558,7 +619,7 @@ def main():
         print(f"📝 מייצר כתבה לנישה: {niche['name']}...")
         ndata = generate_niche_article(niche, date_str)
         nslug = f"{TODAY_STR}-{niche['key']}-{ndata['slug']}"
-        (ROOT / 'articles' / f"{nslug}.html").write_text(build_article_html(ndata, date_str))
+        (ROOT / 'articles' / f"{nslug}.html").write_text(build_article_html(ndata, date_str, nslug))
         inject_article_index(ndata, nslug, date_str)
         print(f"   ✅ articles/{nslug}.html")
 
@@ -567,7 +628,7 @@ def main():
             print(f"   📰 יום שבועי לנישה {niche['name']} — מייצר סיכום שבועי...")
             wdata = generate_niche_weekly(niche, date_str)
             wslug = f"{TODAY_STR}-{niche['key']}-{wdata['slug']}"
-            (ROOT / 'articles' / f"{wslug}.html").write_text(build_article_html(wdata, date_str))
+            (ROOT / 'articles' / f"{wslug}.html").write_text(build_article_html(wdata, date_str, wslug))
             inject_article_index(wdata, wslug, date_str)
             print(f"   ✅ articles/{wslug}.html")
 

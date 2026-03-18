@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f0f"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    <radialGradient id="proj" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Device body -->
+  <rect x="320" y="120" width="160" height="180" rx="18" fill="#222" stroke="#444" stroke-width="1.5"/>
+  <!-- Camera lens -->
+  <circle cx="400" cy="175" r="28" fill="#111" stroke="#333" stroke-width="2"/>
+  <circle cx="400" cy="175" r="18" fill="#0a0a0a" stroke="#555" stroke-width="1"/>
+  <circle cx="400" cy="175" r="10" fill="#1a1a1a"/>
+  <circle cx="393" cy="168" r="3" fill="rgba(255,255,255,0.15)"/>
+  <!-- Projector beam -->
+  <ellipse cx="400" cy="360" rx="120" ry="30" fill="url(#proj)"/>
+  <line x1="400" y1="300" x2="280" y2="390" stroke="#06b6d4" stroke-width="1" opacity="0.2"/>
+  <line x1="400" y1="300" x2="520" y2="390" stroke="#06b6d4" stroke-width="1" opacity="0.2"/>
+  <!-- Projected UI dots -->
+  <text x="400" y="375" font-family="monospace" font-size="11" fill="#06b6d4" text-anchor="middle" opacity="0.7">● ● ●</text>
+  <!-- Status LED -->
+  <circle cx="400" cy="260" r="5" fill="#ef4444" filter="url(#glow)" opacity="0.8"/>
+  <!-- Label -->
+  <text x="400" y="415" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="white" text-anchor="middle">Humane AI Pin</text>
+  <text x="400" y="438" font-family="Arial,sans-serif" font-size="12" fill="#f87171" text-anchor="middle">$699 · Discontinued</text>
+</svg>
