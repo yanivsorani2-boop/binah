@@ -8,6 +8,7 @@
   <meta name="robots" content="index, follow">
   <title>איזה AI מתאים לך? — שאלון | בינה</title>
   <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="hero-banner.css">
   <!-- GA4_CODE_HERE -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
 </head>
@@ -38,12 +39,10 @@
   </div>
 </header>
 
-<section class="hero" style="padding:48px 0 32px">
-  <div class="container hero-content text-center">
-    <h1>איזה AI<br><span class="gradient-text">מתאים לך?</span></h1>
-    <p>5 שאלות קצרות ונמצא את כלי ה-AI המושלם עבורך.</p>
-  </div>
-</section>
+<div class="hero-banner"
+     data-theme="quiz"
+     data-title="איזה AI&lt;br&gt;מתאים לך?"
+     data-subtitle="5 שאלות קצרות ונמצא את כלי ה-AI המושלם עבורך."></div>
 
 <div class="container">
   <div class="quiz-wrap">
@@ -134,7 +133,8 @@
         <li><a href="index.html">ראשי</a></li>
         <li><a href="guides.html">מדריכים</a></li>
         <li><a href="tools.html">כלים</a></li>
-        <li><a href="business.html">AI לעסקים</a></li>
+        <li><a href="business.html">AI לעסקים</a>
+        <a href="ai-products.html">מוצרי AI</a></li>
         <li><a href="weekly-news.html">חדשות</a></li>
       </ul></div>
       <div class="footer-col"><h4>מידע</h4><ul>
@@ -216,5 +216,6 @@ function restart() {
   document.getElementById('progress').style.width = '20%';
 }
 </script>
+<script src="page-canvas.js"></script>
 </body>
 </html>

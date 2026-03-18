@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('binah-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="מוצרי AI — ביקורות וסקירות של מוצרים אמיתיים עם בינה מלאכותית מובנית: משקפי AI, טלפונים חכמים, מחשבים, רכבים ועוד. מתעדכן כל שבוע.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="מוצרי AI — ביקורות מוצרים עם בינה מלאכותית | בינה">
+  <meta property="og:type" content="website">
+  <title>מוצרי AI — ביקורות מוצרים חכמים | בינה</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- GA4_CODE_HERE -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://binah.co.il/ai-products.html",
+    "name": "מוצרי AI — ביקורות ומדריכים",
+    "description": "ביקורות וסקירות של מוצרים אמיתיים עם בינה מלאכותית מובנית",
+    "inLanguage": "he",
+    "publisher": { "@type": "Organization", "name": "בינה", "url": "https://binah.co.il" }
+  }
+  </script>
+  <style>
+    /* ── Products hero canvas ── */
+    .products-hero {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #products-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .products-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .products-hero-content h1 {
+      font-size: clamp(2.6rem, 7vw, 4.4rem);
+      font-weight: 900;
+      margin: 0 0 14px;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #fff 10%, var(--primary) 45%, var(--accent) 80%, #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 22px rgba(124,58,237,0.65));
+      white-space: nowrap;
+    }
+    .products-hero-content p {
+      color: rgba(255,255,255,0.78);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 20px;
+    }
+    .products-hero-content .hero-btns { justify-content: center; }
+    /* update badge */
+    .update-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(0,255,136,0.12);
+      border: 1px solid rgba(0,255,136,0.3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #00ff88;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .update-dot {
+      width: 7px; height: 7px;
+      background: #00ff88;
+      border-radius: 50%;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.4; transform:scale(0.7); }
+    }
+  </style>
+<link rel="stylesheet" href="hero-banner.css">
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">בינה ✦</a>
+      <nav id="main-nav">
+        <a href="index.html">ראשי</a>
+        <a href="index.html#articles">כתבות</a>
+        <a href="guides.html">מדריכים</a>
+        <a href="tools.html">כלים</a>
+        <a href="quiz.html">בחר AI</a>
+        <a href="business.html">AI לעסקים</a>
+        <a href="ai-products.html" class="active">מוצרי AI</a>
+        <a href="weekly-news.html">חדשות</a>
+        <a href="ai-crazy.html">AI מטורף</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+          <span class="icon-dark">🌙 כהה</span>
+          <span class="icon-light">☀️ בהיר</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO BANNER ── -->
+<div class="hero-banner"
+     data-theme="products"
+     data-title="מוצרי AI"
+     data-subtitle="ביקורות וסקירות של מוצרים אמיתיים עם בינה מלאכותית מובנית — ממשקפיים חכמות ועד רכבים אוטונומיים."
+     data-badge="מתעדכן כל שבוע"
+     data-badge-color="green"
+     data-btn1="כל המוצרים ←" data-btn1-href="#products"
+     data-btn2="איזה AI מתאים לי?" data-btn2-href="quiz.html"></div>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+</div>
+
+<!-- ── PRODUCTS GRID ── -->
+<section id="products" style="padding:0 0 80px">
+  <div class="container">
+
+    <div class="news-section-header reveal">
+      <span class="section-num">01</span>
+      <h2>ביקורות מוצרים</h2>
+    </div>
+
+    <div class="guides-grid" style="margin-top:32px">
+
+      <!-- NEW_PRODUCTS_HERE -->
+
+      <div class="guide-card has-thumb reveal" data-cat="tools">
+        <div class="guide-thumb">
+          <a href="articles/product-meta-ray-ban-ai.html" class="thumb-title">Meta Ray-Ban חכמות עם AI — ביקורת מלאה</a>
+        </div>
+        <div class="guide-body">
+          <p class="guide-excerpt">משקפי Ray-Ban עם GPT-4 מובנה — מצלמים, שואלים ועונים קוליים. האם $299 שווה?</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+            <span class="tag" style="font-size:0.75rem">Meta</span>
+            <span class="tag" style="font-size:0.75rem">$299</span>
+          </div>
+          <a href="articles/product-meta-ray-ban-ai.html" class="read-more">קרא ביקורת ←</a>
+        </div>
+      </div>
+
+      <div class="guide-card has-thumb reveal" data-cat="analysis">
+        <div class="guide-thumb">
+          <a href="articles/product-apple-intelligence.html" class="thumb-title">Apple Intelligence ב-iPhone 16 — AI של אפל מוסבר</a>
+        </div>
+        <div class="guide-body">
+          <p class="guide-excerpt">כתיבה חכמה, סיכום הודעות, Siri עם GPT. כל יכולות ה-AI של אפל בעברית.</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+            <span class="tag" style="font-size:0.75rem">Apple</span>
+            <span class="tag" style="font-size:0.75rem">iPhone 16</span>
+          </div>
+          <a href="articles/product-apple-intelligence.html" class="read-more">קרא ביקורת ←</a>
+        </div>
+      </div>
+
+      <div class="guide-card has-thumb reveal" data-cat="guide">
+        <div class="guide-thumb">
+          <a href="articles/product-microsoft-copilot-pc.html" class="thumb-title">Microsoft Copilot+ PC — מחשבים עם AI מובנה</a>
+        </div>
+        <div class="guide-body">
+          <p class="guide-excerpt">NPU ייעודי, Recall, AI מקומי — מה זה Copilot+ ולמה זה עניין ב-2026.</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+            <span class="tag" style="font-size:0.75rem">Microsoft</span>
+            <span class="tag" style="font-size:0.75rem">Windows 11</span>
+          </div>
+          <a href="articles/product-microsoft-copilot-pc.html" class="read-more">קרא ביקורת ←</a>
+        </div>
+      </div>
+
+      <div class="guide-card has-thumb reveal" data-cat="compare">
+        <div class="guide-thumb">
+          <a href="articles/product-samsung-galaxy-ai.html" class="thumb-title">Samsung Galaxy AI — כל יכולות ה-AI של Galaxy S25</a>
+        </div>
+        <div class="guide-body">
+          <p class="guide-excerpt">עריכת תמונות, תרגום שיחות בזמן אמת, סיכום אוטומטי — Galaxy AI מוסבר.</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+            <span class="tag" style="font-size:0.75rem">Samsung</span>
+            <span class="tag" style="font-size:0.75rem">Galaxy S25</span>
+          </div>
+          <a href="articles/product-samsung-galaxy-ai.html" class="read-more">קרא ביקורת ←</a>
+        </div>
+      </div>
+
+      <div class="guide-card has-thumb reveal" data-cat="news">
+        <div class="guide-thumb">
+          <a href="articles/product-tesla-fsd.html" class="thumb-title">Tesla Full Self-Driving — האם ה-AI של טסלה נוהג לבד?</a>
+        </div>
+        <div class="guide-body">
+          <p class="guide-excerpt">FSD v13 עם AI נוירלי — מה יכול, מה לא יכול, ומה זה אומר לישראלים.</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+            <span class="tag" style="font-size:0.75rem">Tesla</span>
+            <span class="tag" style="font-size:0.75rem">נהיגה עצמאית</span>
+          </div>
+          <a href="articles/product-tesla-fsd.html" class="read-more">קרא ביקורת ←</a>
+        </div>
+      </div>
+
+      <div class="guide-card has-thumb reveal" data-cat="analysis">
+        <div class="guide-thumb">
+          <a href="articles/product-rabbit-r1.html" class="thumb-title">Rabbit R1 — גאדג'ט ה-AI שאמור להחליף את הסמארטפון</a>
+        </div>
+        <div class="guide-body">
+          <p class="guide-excerpt">מכשיר AI ייעודי ב-$199. ביקורת כנה — מה עובד, מה לא, מה ניתן ללמוד.</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+            <span class="tag" style="font-size:0.75rem">Rabbit R1</span>
+            <span class="tag" style="font-size:0.75rem">$199</span>
+          </div>
+          <a href="articles/product-rabbit-r1.html" class="read-more">קרא ביקורת ←</a>
+        </div>
+      </div>
+
+      <div class="guide-card has-thumb reveal" data-cat="tools">
+        <div class="guide-thumb">
+          <a href="articles/product-google-pixel-9-ai.html" class="thumb-title">Google Pixel 9 — הטלפון שנבנה סביב Gemini AI</a>
+        </div>
+        <div class="guide-body">
+          <p class="guide-excerpt">Gemini Nano מקומי, Magic Eraser, Best Take, Add Me — כל פיצ'רי ה-AI.</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+            <span class="tag" style="font-size:0.75rem">Google</span>
+            <span class="tag" style="font-size:0.75rem">Pixel 9</span>
+          </div>
+          <a href="articles/product-google-pixel-9-ai.html" class="read-more">קרא ביקורת ←</a>
+        </div>
+      </div>
+
+      <div class="guide-card has-thumb reveal" data-cat="news">
+        <div class="guide-thumb">
+          <a href="articles/product-amazon-echo-alexa-ai.html" class="thumb-title">Amazon Echo עם Alexa+ — בית חכם עם AI שמבין שיחה</a>
+        </div>
+        <div class="guide-body">
+          <p class="guide-excerpt">Alexa+ עם LLM ו-Claude מובנה — בית חכם שסוף סוף מבין הקשר שלם.</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+            <span class="tag" style="font-size:0.75rem">Amazon</span>
+            <span class="tag" style="font-size:0.75rem">בית חכם</span>
+          </div>
+          <a href="articles/product-amazon-echo-alexa-ai.html" class="read-more">קרא ביקורת ←</a>
+        </div>
+      </div>
+
+      <div class="guide-card has-thumb reveal" data-cat="analysis">
+        <div class="guide-thumb">
+          <a href="articles/product-humane-ai-pin.html" class="thumb-title">Humane AI Pin — ה-$699 שכישל: מה ניתן ללמוד?</a>
+        </div>
+        <div class="guide-body">
+          <p class="guide-excerpt">פרוייקטור לביש עם GPT-4 שנכשל. כישלון חשוב שמלמד על גבולות ה-AI.</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+            <span class="tag" style="font-size:0.75rem">Humane</span>
+            <span class="tag" style="font-size:0.75rem">Wearable</span>
+          </div>
+          <a href="articles/product-humane-ai-pin.html" class="read-more">קרא ביקורת ←</a>
+        </div>
+      </div>
+
+      <div class="guide-card has-thumb reveal" data-cat="tools">
+        <div class="guide-thumb">
+          <a href="articles/product-nvidia-rtx-ai-pc.html" class="thumb-title">Nvidia RTX AI PC — כרטיסי מסך שמריצים AI מקומי</a>
+        </div>
+        <div class="guide-body">
+          <p class="guide-excerpt">RTX 5090/4090 עם TensorRT-LLM — Stable Diffusion, Whisper, LLaMA מקומית.</p>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+            <span class="tag" style="font-size:0.75rem">Nvidia</span>
+            <span class="tag" style="font-size:0.75rem">GPU</span>
+          </div>
+          <a href="articles/product-nvidia-rtx-ai-pc.html" class="read-more">קרא ביקורת ←</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="index.html">ראשי</a></li>
+        <li><a href="guides.html">מדריכים</a></li>
+        <li><a href="tools.html">כלים</a></li>
+        <li><a href="business.html">AI לעסקים</a></li>
+        <li><a href="ai-products.html">מוצרי AI</a></li>
+        <li><a href="weekly-news.html">חדשות</a></li>
+        <li><a href="ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="חזרה לראש" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="site.js"></script>
+<script src="header-bg.js"></script>
+<script src="card-bg.js"></script>
+
+<script src="page-canvas.js"></script>
+</body>
+</html>
