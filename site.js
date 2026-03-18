@@ -41,24 +41,15 @@ function toggleMenu() {
   if (btn) btn.classList.toggle('open');
 }
 
-/* Close menu when nav link is tapped */
+/* Close mobile menu when a nav link is tapped */
 document.addEventListener('DOMContentLoaded', function() {
   var nav = document.getElementById('main-nav');
   var btn = document.getElementById('hamburger');
-  if (nav) {
-    nav.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() {
-        nav.classList.remove('open');
-        if (btn) btn.classList.remove('open');
-      });
-    });
-  }
-  /* Close menu on outside tap */
-  document.addEventListener('click', function(e) {
-    if (nav && nav.classList.contains('open') &&
-        !nav.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
+  if (!nav || !btn) return;
+  nav.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
       nav.classList.remove('open');
-      if (btn) btn.classList.remove('open');
-    }
+      btn.classList.remove('open');
+    });
   });
 });
