@@ -878,7 +878,7 @@ function clearContacts() {
 /* ── Login ── */
 // SHA-256 hash of the password (default: "binah2025")
 // To change password: run `echo -n "NEWPASS" | shasum -a 256` and replace the hash below
-var PASS_HASH = 'b8df9272d6841a92f2b48c4624c632ea03e20ecef8b108ce1736deec380b54d2';
+var PASS_HASH = '6911994ef818c6df74c64c2bb154d7d4f18b6b1aa2aeeb6f25e295d3116a6e7a';
 
 async function hashStr(str) {
   var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
