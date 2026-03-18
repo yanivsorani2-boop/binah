@@ -167,19 +167,12 @@ nav a:hover, nav a.active {
    AD ZONES
 ══════════════════════════════ */
 .ad-zone {
-  background: var(--bg-card);
-  border: 1px dashed var(--border);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 0.75rem;
   overflow: hidden;
+  text-align: center;
 }
-
-.ad-banner { width: 100%; min-height: 90px; margin: 24px 0; }
-.ad-rectangle { width: 100%; min-height: 250px; margin: 20px 0; }
+.ad-zone:empty { display: none; }
+.ad-banner { width: 100%; margin: 16px 0; }
+.ad-rectangle { width: 100%; margin: 16px 0; }
 
 /* ══════════════════════════════
    MAIN LAYOUT (index)
