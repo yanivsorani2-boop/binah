@@ -444,6 +444,20 @@ function handleSubmit(e) {
   var form = document.getElementById('contact-form');
   var data = new FormData(form);
 
+  // Save to localStorage for CRM
+  try {
+    var contacts = JSON.parse(localStorage.getItem('binah_contacts') || '[]');
+    contacts.push({
+      ts:      Date.now(),
+      name:    data.get('name')    || '',
+      email:   data.get('email')   || '',
+      phone:   data.get('phone')   || '',
+      subject: data.get('subject') || '',
+      message: data.get('message') || ''
+    });
+    localStorage.setItem('binah_contacts', JSON.stringify(contacts));
+  } catch(err) {}
+
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -455,10 +469,12 @@ function handleSubmit(e) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   })
   .catch(function() {
-    // Fallback — let native form submission handle it
-    form.submit();
+    form.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 </script>
+<script src="/tracker.js"></script>
 </body>
 </html>
