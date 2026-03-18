@@ -6,6 +6,85 @@
   <meta name="robots" content="noindex, nofollow">
   <title>בינה CRM</title>
   <style>
+    /* ── Login Screen ── */
+    #login-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #0d0a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-box {
+      background: #1a1730;
+      border: 1px solid rgba(124,58,237,0.25);
+      border-radius: 18px;
+      padding: 44px 40px;
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.7);
+    }
+    .login-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #7c3aed, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .login-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba(226,226,240,0.7);
+      text-align: center;
+      margin-top: -10px;
+    }
+    .login-input {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(124,58,237,0.25);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 1rem;
+      color: #e2e2f0;
+      font-family: inherit;
+      text-align: center;
+      letter-spacing: 2px;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .login-input:focus { border-color: rgba(124,58,237,0.6); }
+    .login-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #7c3aed, #06b6d4);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .login-btn:hover { opacity: 0.88; }
+    .login-error {
+      font-size: 12px;
+      color: #f87171;
+      min-height: 16px;
+      text-align: center;
+    }
+    .login-shake { animation: shake 0.35s ease; }
+    @keyframes shake {
+      0%,100%{transform:translateX(0)}
+      25%{transform:translateX(-8px)}
+      75%{transform:translateX(8px)}
+    }
+  </style>
+  <style>
     :root {
       --os-bg: #1e1e2e;
       --os-sidebar: #161622;
@@ -430,6 +509,24 @@
 </head>
 <body>
 
+<!-- Login Screen -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">בינה ✦</div>
+    <div class="login-title">כניסה ל-CRM</div>
+    <input
+      type="password"
+      class="login-input"
+      id="login-pass"
+      placeholder="סיסמה"
+      autocomplete="current-password"
+      onkeydown="if(event.key==='Enter')doLogin()"
+    >
+    <div class="login-error" id="login-error"></div>
+    <button class="login-btn" onclick="doLogin()">כניסה</button>
+  </div>
+</div>
+
 <!-- Title Bar -->
 <div class="titlebar">
   <div class="tb-dots">
@@ -778,8 +875,40 @@ function clearContacts() {
   showToast('כל הפניות נמחקו');
 }
 
+/* ── Login ── */
+// SHA-256 hash of the password (default: "binah2025")
+// To change password: run `echo -n "NEWPASS" | shasum -a 256` and replace the hash below
+var PASS_HASH = 'b8df9272d6841a92f2b48c4624c632ea03e20ecef8b108ce1736deec380b54d2';
+
+async function hashStr(str) {
+  var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+}
+
+async function doLogin() {
+  var pass = document.getElementById('login-pass').value;
+  var hash = await hashStr(pass);
+  if (hash === PASS_HASH) {
+    sessionStorage.setItem('crm_auth', '1');
+    document.getElementById('login-screen').style.display = 'none';
+    loadAnalytics();
+  } else {
+    var box = document.querySelector('.login-box');
+    box.classList.remove('login-shake');
+    void box.offsetWidth; // reflow
+    box.classList.add('login-shake');
+    document.getElementById('login-error').textContent = 'סיסמה שגויה';
+    document.getElementById('login-pass').value = '';
+    document.getElementById('login-pass').focus();
+  }
+}
+
+// Check if already authenticated in this session
+if (sessionStorage.getItem('crm_auth') === '1') {
+  document.getElementById('login-screen').style.display = 'none';
+}
+
 /* ── Init ── */
-loadAnalytics();
 </script>
 </body>
 </html>
