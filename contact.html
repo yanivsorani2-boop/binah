@@ -10,7 +10,57 @@
   <link rel="stylesheet" href="styles.css">
   <!-- GA4_CODE_HERE -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://binah.co.il/contact.html",
+    "name": "צור קשר — בינה",
+    "url": "https://binah.co.il/contact.html",
+    "description": "צור קשר עם צוות בינה — שאלות על AI לעסקים, שיתופי פעולה ומשוב",
+    "publisher": { "@type": "Organization", "name": "בינה", "url": "https://binah.co.il" }
+  }
+  </script>
   <style>
+    /* Contact hero canvas */
+    .contact-hero {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #contact-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .contact-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .contact-hero-content h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 900;
+      margin: 0 0 12px;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #fff 20%, var(--primary) 55%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 18px rgba(124,58,237,0.55));
+      white-space: nowrap;
+    }
+    .contact-hero-content p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.05rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
     .contact-wrap {
       max-width: 680px;
       margin: 0 auto;
@@ -145,12 +195,13 @@
   </div>
 </header>
 
-<section class="hero" style="padding:48px 0 32px">
-  <div class="container hero-content text-center">
-    <h1>צור<br><span class="gradient-text">קשר</span></h1>
+<div class="contact-hero">
+  <canvas id="contact-canvas"></canvas>
+  <div class="contact-hero-content">
+    <h1>צור קשר</h1>
     <p>שאלה על AI לעסק שלך? רעיון למאמר? שיתוף פעולה? נשמח לשמוע.</p>
   </div>
-</section>
+</div>
 
 <div class="container">
   <div class="contact-wrap">
@@ -262,6 +313,124 @@
 <button id="back-to-top" aria-label="חזרה לראש" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script src="site.js"></script>
 <script src="header-bg.js"></script>
+<script>
+/* ── Contact Hero Canvas — Communication Theme ── */
+(function(){
+  var canvas = document.getElementById('contact-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W, H, nodes, scanY = 0;
+  var SYMBOLS = ['✉','@','💬','📡','📱','🔔','💌','📲'];
+  var PRIMARY = '#7c3aed', ACCENT = '#06b6d4';
+
+  function resize(){
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+    init();
+  }
+
+  function init(){
+    nodes = [];
+    for(var i = 0; i < 22; i++){
+      nodes.push({
+        x: Math.random()*W,
+        y: Math.random()*H,
+        vx: (Math.random()-0.5)*0.5,
+        vy: (Math.random()-0.5)*0.5,
+        r:  Math.random()*2.5+1.5,
+        sym: Math.random()<0.35 ? SYMBOLS[Math.floor(Math.random()*SYMBOLS.length)] : null,
+        pulse: Math.random()*Math.PI*2,
+        ring: Math.random()<0.3,
+        ringR: 0
+      });
+    }
+  }
+
+  function draw(){
+    /* background */
+    var grad = ctx.createLinearGradient(0,0,W,H);
+    grad.addColorStop(0,'#06020f');
+    grad.addColorStop(0.5,'#0d0520');
+    grad.addColorStop(1,'#030818');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0,0,W,H);
+
+    /* grid */
+    ctx.strokeStyle = 'rgba(124,58,237,0.06)';
+    ctx.lineWidth = 1;
+    var gs = 40;
+    for(var x=0;x<W;x+=gs){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
+    for(var y=0;y<H;y+=gs){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
+
+    /* connection lines */
+    for(var i=0;i<nodes.length;i++){
+      for(var j=i+1;j<nodes.length;j++){
+        var dx=nodes[j].x-nodes[i].x, dy=nodes[j].y-nodes[i].y;
+        var dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<130){
+          var alpha=(1-dist/130)*0.35;
+          var gline=ctx.createLinearGradient(nodes[i].x,nodes[i].y,nodes[j].x,nodes[j].y);
+          gline.addColorStop(0,'rgba(124,58,237,'+alpha+')');
+          gline.addColorStop(1,'rgba(6,182,212,'+alpha+')');
+          ctx.strokeStyle=gline; ctx.lineWidth=1;
+          ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.stroke();
+        }
+      }
+    }
+
+    /* nodes + symbols */
+    nodes.forEach(function(n){
+      n.pulse += 0.04;
+      var glow = Math.sin(n.pulse)*0.4+0.6;
+
+      /* signal ring */
+      if(n.ring){
+        n.ringR = (n.ringR+0.8) % 30;
+        ctx.beginPath();
+        ctx.arc(n.x,n.y,n.ringR,0,Math.PI*2);
+        ctx.strokeStyle='rgba(6,182,212,'+(0.4*(1-n.ringR/30))+')';
+        ctx.lineWidth=1;
+        ctx.stroke();
+      }
+
+      /* dot */
+      var gnode=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*3);
+      gnode.addColorStop(0,'rgba(124,58,237,'+glow+')');
+      gnode.addColorStop(1,'rgba(124,58,237,0)');
+      ctx.fillStyle=gnode;
+      ctx.beginPath();ctx.arc(n.x,n.y,n.r*3,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,0.9)';
+      ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fill();
+
+      /* symbol */
+      if(n.sym){
+        ctx.font='16px sans-serif';
+        ctx.globalAlpha=0.55*glow;
+        ctx.fillText(n.sym, n.x-8, n.y-12);
+        ctx.globalAlpha=1;
+      }
+
+      n.x+=n.vx; n.y+=n.vy;
+      if(n.x<0||n.x>W) n.vx*=-1;
+      if(n.y<0||n.y>H) n.vy*=-1;
+    });
+
+    /* scan line */
+    scanY=(scanY+1.2)%H;
+    var sg=ctx.createLinearGradient(0,scanY-8,0,scanY+8);
+    sg.addColorStop(0,'rgba(124,58,237,0)');
+    sg.addColorStop(0.5,'rgba(6,182,212,0.18)');
+    sg.addColorStop(1,'rgba(124,58,237,0)');
+    ctx.fillStyle=sg;ctx.fillRect(0,scanY-8,W,16);
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize',resize);
+  resize();
+  draw();
+})();
+</script>
 <script>
 function handleSubmit(e) {
   e.preventDefault();

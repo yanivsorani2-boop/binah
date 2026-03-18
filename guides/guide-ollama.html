@@ -17,6 +17,29 @@
   <link rel="stylesheet" href="../styles.css">
   <!-- GA4_CODE_HERE -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "מה זה Ollama?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ollama הוא כלי קוד פתוח שמאפשר להריץ מודלי AI גדולים (כמו Llama, Mistral, Gemma) ישירות על המחשב שלך — ללא אינטרנט, ללא עלות חודשית, עם פרטיות מלאה." }
+    },
+    {
+      "@type": "Question",
+      "name": "האם צריך מחשב חזק להריץ Ollama?",
+      "acceptedAnswer": { "@type": "Answer", "text": "תלוי במודל. מודלים קטנים (7B פרמטרים) רצים על מחשב עם 8GB RAM. מודלים גדולים יותר דורשים 16GB RAM ומעלה. כרטיס גרפיקה מאיץ משמעותית את המהירות אך אינו חובה." }
+    },
+    {
+      "@type": "Question",
+      "name": "האם Ollama חינמי?",
+      "acceptedAnswer": { "@type": "Answer", "text": "כן, Ollama הוא חינמי לחלוטין וקוד פתוח. גם המודלים שאפשר להוריד אליו (Llama, Mistral ועוד) הם חינמיים." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header>
@@ -190,6 +213,28 @@ ollama show llama3.2
 
 # הרצה עם פרמטרים
 ollama run llama3.2 --verbose</code></pre>
+
+      <h2>שאלות נפוצות על Ollama</h2>
+<div itemscope itemtype="https://schema.org/FAQPage">
+  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">מה זה Ollama ולמה זה שימושי?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">Ollama הוא כלי קוד פתוח שמאפשר להריץ מודלי AI על המחשב שלך — ללא אינטרנט, ללא עלות חודשית, עם פרטיות מלאה. מושלם למי שעובד עם מידע רגיש או רוצה AI בחינם.</p>
+    </div>
+  </div>
+  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">האם צריך מחשב חזק להריץ Ollama?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">מודלים קטנים (7B פרמטרים) רצים על 8GB RAM. מודלים גדולים דורשים 16GB+. כרטיס גרפיקה מאיץ משמעותית אך אינו חובה. Mac M1/M2/M3 עובד מצוין.</p>
+    </div>
+  </div>
+  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+    <h3 itemprop="name">איזה מודל AI עדיף להוריד ב-Ollama?</h3>
+    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+      <p itemprop="text">למתחילים: llama3.2 (8B) — מהיר ואיכותי. לעבודה עם קוד: codellama. לעברית: mistral עם פרומפט בעברית עובד סבירות. לביצועים מקסימליים: llama3.1:70b (דורש 40GB+ RAM).</p>
+    </div>
+  </div>
+</div>
 
       <div class="related-section">
         <h2>
