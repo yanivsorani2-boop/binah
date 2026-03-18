@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('binah-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="השוואה מלאה: ChatGPT vs Claude vs Gemini vs Perplexity 2025 — מחיר, יכולות, עברית, מי מתאים לך?">
+  <meta name="robots" content="index, follow">
+  <title>ChatGPT vs Claude vs Gemini — השוואה מלאה 2025 | בינה</title>
+  <link rel="canonical" href="https://binah.co.il/ai-compare.html">
+  <meta property="og:url" content="https://binah.co.il/ai-compare.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ChatGPT vs Claude vs Gemini — השוואה מלאה 2025 | בינה">
+  <meta property="og:description" content="השוואה מלאה: ChatGPT vs Claude vs Gemini vs Perplexity — מחיר, יכולות, עברית, מי מתאים לך?">
+  <meta property="og:site_name" content="בינה">
+  <link rel="stylesheet" href="styles.min.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MG65DD6GYJ');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+  <style>
+    .cmp-hero {
+      background: linear-gradient(135deg, #0d0520 0%, #08080f 60%, #030d18 100%);
+      padding: 64px 24px 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .cmp-hero h1 {
+      font-size: clamp(1.7rem, 4.5vw, 2.8rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #fff 20%, #a78bfa 55%, #67e8f9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .cmp-hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .updated-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.2);
+      color: #4ade80;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 99px;
+      margin-bottom: 18px;
+    }
+
+    .cmp-wrap { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* Filter tabs */
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      justify-content: center;
+    }
+    .ftab {
+      padding: 8px 20px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+    .ftab:hover { border-color: rgba(124,58,237,0.4); color: #a78bfa; }
+    .ftab.active { background: rgba(124,58,237,0.15); border-color: rgba(124,58,237,0.4); color: #a78bfa; }
+
+    /* Cards grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .ai-card {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .ai-card:hover { border-color: rgba(124,58,237,0.35); }
+    .ai-card.winner { border-color: #7c3aed; }
+    .winner-badge {
+      position: absolute;
+      top: -11px;
+      right: 20px;
+      background: linear-gradient(135deg, #7c3aed, #06b6d4);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 99px;
+    }
+    .card-logo {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .card-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .card-maker {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .card-price {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .price-free {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #4ade80;
+    }
+    .price-paid {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Score bars */
+    .scores { margin-bottom: 18px; }
+    .score-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .score-label { font-size: 0.78rem; color: var(--text-muted); width: 80px; flex-shrink: 0; }
+    .score-bar-wrap { flex: 1; background: var(--bg); border-radius: 99px; height: 6px; overflow: hidden; }
+    .score-bar { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
+    .score-num { font-size: 0.78rem; font-weight: 700; width: 28px; text-align: left; color: var(--text); }
+
+    /* Tags */
+    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .ctag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 99px;
+    }
+    .ctag-g { background: rgba(34,197,94,0.12); color: #4ade80; }
+    .ctag-b { background: rgba(239,68,68,0.1); color: #f87171; }
+    .ctag-n { background: rgba(124,58,237,0.12); color: #a78bfa; }
+
+    .card-verdict {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .verdict-bold { font-weight: 700; color: var(--text); }
+
+    /* Comparison Table */
+    .table-section { margin-bottom: 48px; }
+    .section-heading {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cmp-table-wrap { overflow-x: auto; border-radius: 16px; border: 1px solid var(--border); }
+    .cmp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .cmp-table th {
+      background: var(--card-bg);
+      padding: 14px 18px;
+      font-weight: 700;
+      text-align: right;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .cmp-table th:first-child { color: var(--text-muted); font-weight: 600; }
+    .cmp-table td {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .cmp-table tr:last-child td { border-bottom: none; }
+    .cmp-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .cmp-table td:first-child { font-weight: 700; color: var(--text-muted); white-space: nowrap; }
+    .t-yes { color: #4ade80; font-weight: 700; }
+    .t-no  { color: #f87171; }
+    .t-partial { color: #fbbf24; }
+    .t-best { color: #a78bfa; font-weight: 700; }
+
+    /* Who is it for */
+    .for-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .for-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .for-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .for-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; }
+    .for-rec {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(124,58,237,0.12);
+      color: #a78bfa;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+      margin-bottom: 8px;
+    }
+    .for-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* CTA */
+    .cmp-cta {
+      background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(6,182,212,0.06));
+      border: 1px solid rgba(124,58,237,0.2);
+      border-radius: 18px;
+      padding: 36px 32px;
+      text-align: center;
+    }
+    .cmp-cta h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; }
+    .cmp-cta p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 22px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 600px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .for-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ChatGPT vs Claude vs Gemini — השוואה מלאה 2025",
+    "description": "השוואה מלאה של כלי ה-AI המובילים: ChatGPT, Claude, Gemini, Perplexity — מחיר, יכולות, עברית",
+    "url": "https://binah.co.il/ai-compare.html",
+    "dateModified": "2025-03-18",
+    "publisher": { "@type": "Organization", "name": "בינה", "url": "https://binah.co.il" }
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">בינה ✦</a>
+      <nav id="main-nav">
+        <a href="index.html">ראשי</a>
+        <a href="index.html#articles">מאמרים</a>
+        <a href="guides.html">מדריכים</a>
+        <a href="tools.html">כלים</a>
+        <a href="quiz.html">בחר AI</a>
+        <a href="business.html">AI לעסקים</a>
+        <a href="ai-products.html">מוצרי AI</a>
+        <a href="weekly-news.html">חדשות</a>
+        <a href="ai-crazy.html">AI מטורף</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+          <span class="icon-dark">🌙 כהה</span>
+          <span class="icon-light">☀️ בהיר</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="cmp-hero">
+  <div class="updated-badge">✅ עודכן מרץ 2025</div>
+  <h1>ChatGPT vs Claude vs Gemini<br>השוואה מלאה 2025</h1>
+  <p>כל מה שצריך לדעת כדי לבחור את כלי ה-AI הנכון עבורך — מחיר, יכולות, תמיכה בעברית ועוד.</p>
+</div>
+
+<div class="cmp-wrap">
+
+  <!-- Cards -->
+  <div class="cards-grid">
+
+    <!-- ChatGPT -->
+    <div class="ai-card winner">
+      <div class="winner-badge">🏆 הפופולרי ביותר</div>
+      <div class="card-logo">🤖</div>
+      <div class="card-name">ChatGPT</div>
+      <div class="card-maker">OpenAI • GPT-4o</div>
+      <div class="card-price">
+        <span class="price-free">חינם</span>
+        <span class="price-paid">/ Plus $20/חודש</span>
+      </div>
+      <div class="scores">
+        <div class="score-row">
+          <span class="score-label">כתיבה</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:92%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div>
+          <span class="score-num">9.2</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">קוד</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:95%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div>
+          <span class="score-num">9.5</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">עברית</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:85%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div>
+          <span class="score-num">8.5</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">תמונות</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:88%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div>
+          <span class="score-num">8.8</span>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="ctag ctag-g">✓ חינם זמין</span>
+        <span class="ctag ctag-g">✓ GPTs & Plugins</span>
+        <span class="ctag ctag-g">✓ יצירת תמונות</span>
+        <span class="ctag ctag-b">✗ הגבלת שימוש</span>
+      </div>
+      <div class="card-verdict">
+        <span class="verdict-bold">מתאים ל:</span> כמעט הכל. הכי רב-תכליתי, הכי גדול, הכי נרחב מבחינת אינטגרציות.
+      </div>
+    </div>
+
+    <!-- Claude -->
+    <div class="ai-card">
+      <div class="card-logo">🎭</div>
+      <div class="card-name">Claude</div>
+      <div class="card-maker">Anthropic • Claude 3.5 Sonnet</div>
+      <div class="card-price">
+        <span class="price-free">חינם</span>
+        <span class="price-paid">/ Pro $20/חודש</span>
+      </div>
+      <div class="scores">
+        <div class="score-row">
+          <span class="score-label">כתיבה</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:97%;background:linear-gradient(90deg,#d97706,#f59e0b)"></div></div>
+          <span class="score-num">9.7</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">קוד</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:96%;background:linear-gradient(90deg,#d97706,#f59e0b)"></div></div>
+          <span class="score-num">9.6</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">עברית</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:82%;background:linear-gradient(90deg,#d97706,#f59e0b)"></div></div>
+          <span class="score-num">8.2</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">תמונות</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:20%;background:linear-gradient(90deg,#d97706,#f59e0b)"></div></div>
+          <span class="score-num">2.0</span>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="ctag ctag-g">✓ כתיבה מעולה</span>
+        <span class="ctag ctag-g">✓ הקשר ארוך</span>
+        <span class="ctag ctag-g">✓ אנליזה עמוקה</span>
+        <span class="ctag ctag-b">✗ אין יצירת תמונות</span>
+      </div>
+      <div class="card-verdict">
+        <span class="verdict-bold">מתאים ל:</span> כתיבה מקצועית, ניתוח מסמכים ארוכים, פיתוח תוכנה.
+      </div>
+    </div>
+
+    <!-- Gemini -->
+    <div class="ai-card">
+      <div class="card-logo">✨</div>
+      <div class="card-name">Gemini</div>
+      <div class="card-maker">Google • Gemini 1.5 Pro</div>
+      <div class="card-price">
+        <span class="price-free">חינם</span>
+        <span class="price-paid">/ Advanced $20/חודש</span>
+      </div>
+      <div class="scores">
+        <div class="score-row">
+          <span class="score-label">כתיבה</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:82%;background:linear-gradient(90deg,#0891b2,#06b6d4)"></div></div>
+          <span class="score-num">8.2</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">קוד</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:85%;background:linear-gradient(90deg,#0891b2,#06b6d4)"></div></div>
+          <span class="score-num">8.5</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">עברית</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:80%;background:linear-gradient(90deg,#0891b2,#06b6d4)"></div></div>
+          <span class="score-num">8.0</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">חיפוש</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:98%;background:linear-gradient(90deg,#0891b2,#06b6d4)"></div></div>
+          <span class="score-num">9.8</span>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="ctag ctag-g">✓ Google Workspace</span>
+        <span class="ctag ctag-g">✓ מידע עדכני</span>
+        <span class="ctag ctag-g">✓ חינם נדיב</span>
+        <span class="ctag ctag-b">✗ פחות יצירתי</span>
+      </div>
+      <div class="card-verdict">
+        <span class="verdict-bold">מתאים ל:</span> משתמשי Google, חיפוש מידע עדכני, Gmail ו-Docs.
+      </div>
+    </div>
+
+    <!-- Perplexity -->
+    <div class="ai-card">
+      <div class="card-logo">🔍</div>
+      <div class="card-name">Perplexity AI</div>
+      <div class="card-maker">Perplexity • מנוע חיפוש AI</div>
+      <div class="card-price">
+        <span class="price-free">חינם</span>
+        <span class="price-paid">/ Pro $20/חודש</span>
+      </div>
+      <div class="scores">
+        <div class="score-row">
+          <span class="score-label">כתיבה</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:72%;background:linear-gradient(90deg,#059669,#10b981)"></div></div>
+          <span class="score-num">7.2</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">קוד</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:65%;background:linear-gradient(90deg,#059669,#10b981)"></div></div>
+          <span class="score-num">6.5</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">עברית</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:70%;background:linear-gradient(90deg,#059669,#10b981)"></div></div>
+          <span class="score-num">7.0</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">חיפוש</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:99%;background:linear-gradient(90deg,#059669,#10b981)"></div></div>
+          <span class="score-num">9.9</span>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="ctag ctag-g">✓ מקורות מצוטטים</span>
+        <span class="ctag ctag-g">✓ מידע בזמן אמת</span>
+        <span class="ctag ctag-b">✗ פחות יצירתי</span>
+        <span class="ctag ctag-b">✗ לא לכתיבה</span>
+      </div>
+      <div class="card-verdict">
+        <span class="verdict-bold">מתאים ל:</span> מחקר, חיפוש מידע עם מקורות, תשובות עדכניות.
+      </div>
+    </div>
+
+    <!-- Copilot -->
+    <div class="ai-card">
+      <div class="card-logo">🪟</div>
+      <div class="card-name">Microsoft Copilot</div>
+      <div class="card-maker">Microsoft • GPT-4o</div>
+      <div class="card-price">
+        <span class="price-free">חינם</span>
+        <span class="price-paid">/ Pro $20/חודש</span>
+      </div>
+      <div class="scores">
+        <div class="score-row">
+          <span class="score-label">כתיבה</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:84%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div>
+          <span class="score-num">8.4</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">קוד</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:90%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div>
+          <span class="score-num">9.0</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">עברית</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:80%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div>
+          <span class="score-num">8.0</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Office</span>
+          <div class="score-bar-wrap"><div class="score-bar" style="width:99%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div>
+          <span class="score-num">9.9</span>
+        </div>
+      </div>
+      <div class="card-tags">
+        <span class="ctag ctag-g">✓ מובנה ב-Windows</span>
+        <span class="ctag ctag-g">✓ Word/Excel/Teams</span>
+        <span class="ctag ctag-b">✗ פחות גמיש</span>
+      </div>
+      <div class="card-verdict">
+        <span class="verdict-bold">מתאים ל:</span> משתמשי Microsoft 365, Office, Teams.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="table-section">
+    <div class="section-heading">📋 טבלת השוואה מלאה</div>
+    <div class="cmp-table-wrap">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>קריטריון</th>
+            <th>ChatGPT</th>
+            <th>Claude</th>
+            <th>Gemini</th>
+            <th>Perplexity</th>
+            <th>Copilot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>גרסה חינמית</td>
+            <td class="t-yes">✓ GPT-4o mini</td>
+            <td class="t-partial">⚡ מוגבל</td>
+            <td class="t-yes">✓ נדיב</td>
+            <td class="t-yes">✓ נדיב</td>
+            <td class="t-yes">✓ GPT-4o</td>
+          </tr>
+          <tr>
+            <td>מחיר Pro</td>
+            <td>$20/חודש</td>
+            <td>$20/חודש</td>
+            <td>$20/חודש</td>
+            <td>$20/חודש</td>
+            <td>$20/חודש</td>
+          </tr>
+          <tr>
+            <td>תמיכה בעברית</td>
+            <td class="t-yes">✓ טובה</td>
+            <td class="t-partial">⚡ בינונית</td>
+            <td class="t-yes">✓ טובה</td>
+            <td class="t-partial">⚡ בסיסית</td>
+            <td class="t-yes">✓ טובה</td>
+          </tr>
+          <tr>
+            <td>יצירת תמונות</td>
+            <td class="t-yes">✓ DALL·E 3</td>
+            <td class="t-no">✗ לא</td>
+            <td class="t-yes">✓ Imagen 3</td>
+            <td class="t-no">✗ לא</td>
+            <td class="t-yes">✓ Designer</td>
+          </tr>
+          <tr>
+            <td>גלישה באינטרנט</td>
+            <td class="t-yes">✓ Plus</td>
+            <td class="t-yes">✓ Pro</td>
+            <td class="t-yes">✓ תמיד</td>
+            <td class="t-best">⭐ הכי טוב</td>
+            <td class="t-yes">✓ תמיד</td>
+          </tr>
+          <tr>
+            <td>ניתוח קבצים</td>
+            <td class="t-yes">✓ PDF, Word</td>
+            <td class="t-best">⭐ הכי טוב</td>
+            <td class="t-yes">✓ Drive</td>
+            <td class="t-partial">⚡ מוגבל</td>
+            <td class="t-yes">✓ Office</td>
+          </tr>
+          <tr>
+            <td>כתיבה יצירתית</td>
+            <td class="t-yes">✓ מצוין</td>
+            <td class="t-best">⭐ הכי טוב</td>
+            <td class="t-partial">⚡ בינוני</td>
+            <td class="t-no">✗ לא</td>
+            <td class="t-partial">⚡ בינוני</td>
+          </tr>
+          <tr>
+            <td>קוד ופיתוח</td>
+            <td class="t-best">⭐ מעולה</td>
+            <td class="t-best">⭐ מעולה</td>
+            <td class="t-yes">✓ טוב</td>
+            <td class="t-no">✗ לא</td>
+            <td class="t-yes">✓ GitHub</td>
+          </tr>
+          <tr>
+            <td>אינטגרציות</td>
+            <td class="t-best">⭐ הכי הרבה</td>
+            <td class="t-partial">⚡ מוגבל</td>
+            <td class="t-yes">✓ Google</td>
+            <td class="t-partial">⚡ בסיסי</td>
+            <td class="t-yes">✓ Microsoft</td>
+          </tr>
+          <tr>
+            <td>API זמין</td>
+            <td class="t-yes">✓</td>
+            <td class="t-yes">✓</td>
+            <td class="t-yes">✓</td>
+            <td class="t-yes">✓</td>
+            <td class="t-yes">✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Who is it for -->
+  <div class="section-heading">🎯 מי צריך מה?</div>
+  <div class="for-grid">
+    <div class="for-card">
+      <div class="for-icon">✍️</div>
+      <div class="for-title">כותבים ויוצרי תוכן</div>
+      <div class="for-rec">⭐ Claude</div>
+      <div class="for-desc">הכתיבה של Claude היא הטובה ביותר — טקסטים טבעיים, יצירתיים ומדויקים.</div>
+    </div>
+    <div class="for-card">
+      <div class="for-icon">💻</div>
+      <div class="for-title">מפתחים</div>
+      <div class="for-rec">⭐ Claude / ChatGPT</div>
+      <div class="for-desc">שניהם מעולים. Claude טוב יותר להסברים, ChatGPT לאינטגרציות ו-Copilot לכתיבת קוד ב-VS Code.</div>
+    </div>
+    <div class="for-card">
+      <div class="for-icon">🔬</div>
+      <div class="for-title">מחקר וחיפוש</div>
+      <div class="for-rec">⭐ Perplexity</div>
+      <div class="for-desc">Perplexity נותן מקורות ומידע עדכני — הכי טוב לחקירת נושאים ומחקר אקדמי.</div>
+    </div>
+    <div class="for-card">
+      <div class="for-icon">🏢</div>
+      <div class="for-title">עסקים עם Office 365</div>
+      <div class="for-rec">⭐ Copilot</div>
+      <div class="for-desc">אם הצוות כבר על Microsoft — Copilot מובנה ב-Word, Excel, Teams וחוסך זמן.</div>
+    </div>
+    <div class="for-card">
+      <div class="for-icon">📱</div>
+      <div class="for-title">שימוש כללי יומיומי</div>
+      <div class="for-rec">⭐ ChatGPT</div>
+      <div class="for-desc">הכי רב-תכליתי, הכי מוכר, הכי קל להתחיל — מתאים לכמעט כל משימה.</div>
+    </div>
+    <div class="for-card">
+      <div class="for-icon">📧</div>
+      <div class="for-title">משתמשי Gmail ו-Drive</div>
+      <div class="for-rec">⭐ Gemini</div>
+      <div class="for-desc">Gemini מובנה ב-Gmail, Docs ו-Drive — עונה על שאלות מתוך המיילים שלך.</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cmp-cta">
+    <h2>עדיין לא בטוח מה מתאים לך?</h2>
+    <p>ענה על כמה שאלות קצרות — ונמליץ לך על הכלי המושלם לצרכים שלך.</p>
+    <div class="cta-btns">
+      <a href="quiz.html" class="btn-primary">בחר AI — שאלון אישי</a>
+      <a href="ai-cost-calculator.html" class="btn-primary" style="background:linear-gradient(135deg,#0891b2,#06b6d4)">💰 חשב עלות לעסק שלך</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="index.html">ראשי</a></li>
+        <li><a href="guides.html">מדריכים</a></li>
+        <li><a href="tools.html">כלים</a></li>
+        <li><a href="ai-products.html">מוצרי AI</a></li>
+        <li><a href="weekly-news.html">חדשות</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+
+<script src="site.min.js"></script>
+<script src="/tracker.js"></script>
+</body>
+</html>
