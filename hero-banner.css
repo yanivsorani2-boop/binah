@@ -198,6 +198,22 @@
   color: rgba(30,20,60,0.72);
 }
 
+/* ══════════════════
+   MOBILE RESPONSIVE
+══════════════════ */
+@media (max-width: 768px) {
+  .hero-banner { min-height: 280px; }
+  .pc-content, .hb-content { padding: 32px 18px 28px; max-width: 100%; }
+  .pc-title, .hb-title { font-size: clamp(1.7rem, 7vw, 2.8rem); }
+  .pc-sub, .hb-subtitle { font-size: 0.93rem; max-width: 100%; }
+  .pc-badge, .hb-badge { font-size: 0.72rem; padding: 4px 10px; }
+}
+@media (max-width: 400px) {
+  .hero-banner { min-height: 240px; }
+  .pc-content, .hb-content { padding: 24px 12px 22px; }
+  .pc-title, .hb-title { font-size: clamp(1.5rem, 9vw, 2.2rem); }
+}
+
 /* ═══════════════════
    BASE KEYFRAMES
 ═══════════════════ */
