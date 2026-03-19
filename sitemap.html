@@ -128,6 +128,33 @@
     }
     .sm-article-link:hover { border-color: rgba(124,58,237,0.3); color: #c4b5fd; background: rgba(124,58,237,0.06); }
     .sm-article-link .art-icon { flex-shrink: 0; opacity: 0.5; margin-top: 1px; }
+
+    /* ── Light mode ── */
+    [data-theme="light"] .sm-hero {
+      background: linear-gradient(135deg, #f0ebff 0%, #e8f4fd 100%);
+      border-bottom-color: rgba(109,40,217,0.15);
+    }
+    [data-theme="light"] .sm-hero h1 {
+      background: linear-gradient(135deg, #0f172a 20%, #6d28d9 55%, #0891b2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    [data-theme="light"] .sm-hero p { color: #64748b; }
+    [data-theme="light"] .sm-card {
+      background: #ffffff;
+      border-color: rgba(109,40,217,0.15);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    [data-theme="light"] .sm-card:hover { border-color: rgba(109,40,217,0.4); }
+    [data-theme="light"] .sm-card-header { border-bottom-color: rgba(109,40,217,0.1); }
+    [data-theme="light"] .sm-card-title { color: #0f172a; }
+    [data-theme="light"] .sm-card-count { color: #6d28d9; }
+    [data-theme="light"] .sm-links li a { color: #334155; }
+    [data-theme="light"] .sm-links li a:hover { background: rgba(109,40,217,0.07); color: #6d28d9; }
+    [data-theme="light"] .sm-links li a::before { color: rgba(109,40,217,0.4); }
+    [data-theme="light"] .sm-section-title { color: #6d28d9; }
+    [data-theme="light"] .sm-article-link { color: #475569; border-color: rgba(109,40,217,0.12); background: #fafafa; }
+    [data-theme="light"] .sm-article-link:hover { border-color: rgba(109,40,217,0.3); color: #6d28d9; background: rgba(109,40,217,0.04); }
   </style>
 </head>
 <body>
