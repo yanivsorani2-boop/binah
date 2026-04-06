@@ -196,10 +196,24 @@ ARTICLE_WRAPPER = '''<!DOCTYPE html>
   </div>
 </div>
 <div class="container">
+  <div style="max-width:860px;margin:0 auto 8px;padding:0 16px">
+    <div style="background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);border-radius:8px;padding:10px 16px;font-size:0.82rem;color:rgba(180,170,210,0.8)">
+      &#x24D8; מאמר זה עשוי להכיל קישורי שותפות. רכישה דרכם עשויה לזכות אותנו בעמלה, ללא עלות נוספת עבורך.
+    </div>
+  </div>
+</div>
+<div class="container">
   <div class="article-layout">
     <main class="article-body">
 {body}
       <div class="ad-in-article"><!-- ADSENSE_BOTTOM_HERE --><span>פרסומת</span></div>
+      <div style="margin-top:40px;padding:24px;background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);border-radius:12px;display:flex;gap:16px;align-items:flex-start">
+        <div style="width:52px;height:52px;border-radius:50%;background:rgba(124,58,237,0.3);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">✍</div>
+        <div>
+          <div style="font-weight:700;font-size:1rem;margin-bottom:4px;color:#a78bfa">צוות המערכת — בינה</div>
+          <div style="font-size:0.85rem;color:rgba(200,190,230,0.75);line-height:1.6">צוות בינה עוסק במעקב, ניתוח וסקירה של עולם הבינה המלאכותית. אנו מביאים לקוראים הישראלים מידע מעשי, ניתוחים ומדריכים עדכניים על הכלים, המגמות והחדשנות בתחום ה-AI.</div>
+        </div>
+      </div>
     </main>
     <aside class="sidebar sticky-sidebar">
       <div class="ad-zone ad-rectangle"><!-- ADSENSE_SIDEBAR_HERE --><span>פרסומת</span></div>
