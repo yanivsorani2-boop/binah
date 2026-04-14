@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('binah-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="פרומפט טוב הוא ההבדל בין תשובה גנרית לתשובה שממש עוזרת — הנה איך לכתוב אותו נכון, בכל רמת ניסיון.">
+  <meta property="og:title" content="איך לכתוב פרומפטים שעובדים: המדריך המעשי לשימוש נכון ב-ChatGPT">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <title>איך לכתוב פרומפטים שעובדים: המדריך המעשי לשימוש נכון ב-ChatGPT | בינה</title>
+  <link rel="stylesheet" href="../styles.min.css">
+  <link rel="canonical" href="https://binah.co.il/articles/2026-04-14-guide-beginners-guide-to-chatgpt-prompts.html">
+  <meta property="og:url" content="https://binah.co.il/articles/2026-04-14-guide-beginners-guide-to-chatgpt-prompts.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="בינה">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MG65DD6GYJ');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">בינה ✦</a>
+      <nav id="main-nav">
+        <a href="../index.html">ראשי</a>
+        <a href="../index.html#articles">מאמרים</a>
+        <a href="../guides.html">מדריכים</a>
+        <a href="../tools.html">כלים</a>
+        <a href="../quiz.html">בחר AI</a>
+        <a href="../business.html">AI לעסקים</a>
+        <a href="../ai-products.html">מוצרי AI</a>
+        <a href="../weekly-news.html">חדשות</a>
+        <a href="../ai-crazy.html">AI מטורף</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+          <span class="icon-dark">🌙 כהה</span>
+          <span class="icon-light">☀️ בהיר</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</div>
+
+<div class="container">
+  <div class="article-header">
+    <span class="category">מדריך</span>
+    <h1>איך לכתוב פרומפטים שעובדים: המדריך המעשי לשימוש נכון ב-ChatGPT</h1>
+    <div class="meta">
+      <span>📅 14 אפריל 2026</span>
+      <span>⏱ 7 דקות קריאה</span>
+      <span>✍ צוות בינה</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-layout">
+    <main class="article-body">
+      <button class="btn-back" onclick="history.back()">→ חזרה</button>
+      <p>אחת התלונות הנפוצות ביותר שאנחנו שומעים ממשתמשים חדשים בכלי AI היא: <strong>"ניסיתי, אבל זה לא נתן לי מה שרציתי."</strong> ברוב המקרים, הבעיה אינה בכלי עצמו — אלא באופן שבו נוסחה הבקשה. כתיבת פרומפטים (הנחיות לבינה מלאכותית) היא מיומנות שניתן ללמוד, ובמדריך הזה תעשו בדיוק את זה.</p><h2>מה זה בכלל פרומפט?</h2><p>פרומפט הוא הטקסט שאתם מקלידים לכלי AI כמו ChatGPT, Gemini או Claude. זו ההנחיה שמכוונת את המודל מה לעשות. פרומפט יכול להיות שאלה פשוטה, בקשה מורכבת, תפקיד שאתם נותנים לכלי, הקשר רחב — או כל שילוב ביניהם.</p><p>ההבדל בין <em>"כתוב לי מייל"</em> לבין <em>"כתוב מייל מקצועי ותמציתי ללקוח שביקש החזר כספי, בטון אמפתי אך ברור, עם הצעה לפתרון חלופי"</em> הוא עצום — ושתי הדוגמאות ממחישות היטב מדוע.</p><h2>עקרונות הבסיס: ה-4 C של פרומפט טוב</h2><ul><li><strong>Context (הקשר):</strong> תנו לכלי מידע על הרקע. מי אתם? מה המטרה? למי מיועד הפלט?</li><li><strong>Clarity (בהירות):</strong> נסחו את הבקשה במשפטים ברורים וחד-משמעיים. הימנעו מעמימות.</li><li><strong>Constraints (מגבלות):</strong> ציינו פורמט, אורך, סגנון, שפה, טון — כל מה שחשוב לכם.</li><li><strong>Craft (עיצוב):</strong> ככל שתשקיעו יותר בניסוח, כך התוצאה תהיה מדויקת יותר.</li></ul><h2>שלב 1 — למתחילים: הוסיפו הקשר לכל בקשה</h2><p>אם אתם רק מתחילים, כלל אחד פשוט ישפר את התוצאות שלכם מיד: <strong>תמיד הסבירו למה אתם צריכים את מה שאתם מבקשים.</strong></p><p>במקום: <em>"תסביר לי על בינה מלאכותית"</em><br>נסו: <em>"אני מורה לביולוגיה בחטיבת ביניים ואני רוצה להסביר לתלמידים מה זה בינה מלאכותית. תסביר בשפה פשוטה עם דוגמה אחת מהחיים."</em></p><p>ההקשר עוזר למודל לכייל את רמת המורכבות, הסגנון ורמת הפירוט המתאימים.</p><h2>שלב 2 — לרמה בינונית: תנו לכלי תפקיד</h2><p>טכניקה יעילה במיוחד היא לבקש מהכלי לאמץ פרספקטיבה מסוימת. זה נקרא <strong>Role Prompting</strong>.</p><p>לדוגמה: <em>"אתה יועץ שיווקי מנוסה עם התמחות בסטארטאפים. עזור לי לנסח הצעת ערך לאפליקציה לניהול תזונה המיועדת לאנשים אחרי גיל 50."</em></p><p>כאשר הכלי מקבל תפקיד ברור, הוא מייצר תשובות ממוקדות ומקצועיות יותר בתחום הרלוונטי.</p><h2>שלב 3 — למתקדמים: פרומפטים בשרשרת</h2><p>משתמשים מתקדמים יודעים שלא חייבים לקבל הכל בפרומפט אחד. אפשר לבנות שיחה מובנית — זה נקרא <strong>Chain-of-Thought</strong> או פרומפטינג בשרשרת.</p><ul><li>פרומפט 1: בקשו מהכלי להבין את הבעיה ולתאר אותה בחזרה.</li><li>פרומפט 2: בקשו ממנו להציע כמה גישות שונות לפתרון.</li><li>פרומפט 3: בחרו גישה ובקשו פירוט ויישום.</li></ul><p>גישה זו מפחיתה שגיאות ומגדילה את הדיוק, במיוחד במשימות מורכבות כמו ניתוח נתונים, כתיבת קוד או תכנון אסטרטגי.</p><h2>טעויות נפוצות שכדאי להימנע מהן</h2><ul><li><strong>בקשה רחבה מדי:</strong> "תכתוב לי ספר" — התחילו בפרק אחד, בפרק אחד.</li><li><strong>ציפייה לשלמות בפעם הראשונה:</strong> AI הוא כלי איטרטיבי. תמיד אפשר לבקש שיפור.</li><li><strong>שכחת לציין פורמט:</strong> אם אתם רוצים נקודות, טבלה או רשימה ממוספרת — אמרו זאת.</li><li><strong>חוסר משוב:</strong> אם התשובה לא מדויקת, הגידו בדיוק מה חסר — הכלי ישתפר.</li></ul><h2>תבנית עבודה מוכנה לשימוש</h2><p>להלן מבנה שתוכלו להעתיק ולהתאים לכל בקשה:</p><p><em>"אני [מי אתם / תפקידכם]. אני צריך [מה אתם רוצים] בשביל [מטרה]. הקהל הוא [למי מיועד הפלט]. הפורמט המבוקש: [נקודות / פסקאות / טבלה / וכו']. הטון צריך להיות [מקצועי / חברותי / פורמלי]. אורך משוער: [X מילים / X נקודות]."</em></p><h2>לסיכום</h2><p>כתיבת פרומפטים היא מיומנות שמשתפרת עם כל שימוש. אל תתייאשו אם הפעם הראשונה לא הניבה את התוצאה המושלמת — זו ההזדמנות להבין מה לשפר ולנסות שוב. ככל שתתרגלו, תגלו שכלי ה-AI הם שותפים מקצועיים אמיתיים — ולא רק מנוע חיפוש מתוחכם.</p>
+      <div class="article-tags" style="margin-top:32px;display:flex;gap:8px;flex-wrap:wrap">
+        <span class="tag">ChatGPT</span><span class="tag">פרומפטים</span><span class="tag">מדריך למתחילים</span><span class="tag">כלי AI</span><span class="tag">טיפים מעשיים</span>
+      </div>
+    </main>
+    <aside class="article-sidebar">
+      <div class="sidebar-widget">
+        <h3>מדריכים מומלצים</h3>
+        <ul>
+          <li><a href="../guides/guide-chatgpt.html">מדריך ChatGPT</a></li>
+          <li><a href="../guides/guide-prompt-basics.html">Prompt Engineering</a></li>
+          <li><a href="../guides/guide-claude.html">מדריך Claude AI</a></li>
+          <li><a href="../guides/guide-ollama.html">מדריך Ollama</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-widget">
+        <h3>כלים</h3>
+        <ul>
+          <li><a href="../tools.html">כל כלי ה-AI</a></li>
+          <li><a href="../quiz.html">איזה AI מתאים לי?</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-widget">
+        <h3>חדשות שבועיות</h3>
+        <ul>
+          <li><a href="../weekly-news.html">גיליון השבוע</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="../index.html">ראשי</a></li>
+        <li><a href="../guides.html">מדריכים</a></li>
+        <li><a href="../tools.html">כלים</a></li>
+        <li><a href="../weekly-news.html">חדשות</a></li>
+        <li><a href="../ai-crazy.html">AI מטורף</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="../privacy-policy.html">מדיניות פרטיות</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="חזרה לראש" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="../site.min.js"></script>
+<script src="../header-bg.min.js"></script>
+<script src="/tracker.js"></script>
+</body>
+</html>
