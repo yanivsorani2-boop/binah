@@ -135,54 +135,213 @@ TOPICS = {
 
 # ── Prompt templates per category ─────────────────────────────────────────────
 PROMPTS = {
-    "השוואה":  "כתוב כתבת השוואה מפורטת ל-{topic}. כלול טבלת השוואה, יתרונות וחסרונות של כל מוצר, המלצה סופית ברורה.",
-    "כלים":    "כתוב סקירת כלי AI על {topic}. כלול: מה הכלי עושה, מחיר, יתרונות, חסרונות, למי מתאים, קישור לנסיון חינמי.",
-    "מדריך":   "כתוב מדריך מעשי שלב-אחר-שלב על {topic}. כלול: דרישות מוקדמות, כל שלב עם הסבר, טיפים מעשיים, טעויות נפוצות להימנע מהן.",
-    "חדשות":   "כתוב כתבת חדשות מנותחת על {topic}. כלול: מה קרה, מה המשמעות, מה השפעה על המשתמש הישראלי, מה צפוי הלאה.",
-    "ניתוח":   "כתוב ניתוח מעמיק על {topic}. כלול: נתונים ועובדות, ניתוח מגמות, השפעה על ישראל, מסקנות מעשיות.",
-    "סקירה":   "כתוב סקירת מוצר מקצועית על {topic}. כלול: ניסיון שימוש אישי, ציון (1-10) לכל פרמטר, מסקנה: כדאי לקנות?",
-    "טיפים":   "כתוב מאמר טיפים מעשי על {topic}. כלול: כל טיפ עם הסבר + דוגמה + פרומפט מוכן לשימוש.",
+    "השוואה": """כתוב כתבת השוואה מעמיקה ומקיפה על: {topic}
+
+חובה לכלול את כל הסעיפים הבאים:
+
+1. **מבוא** (2-3 פסקאות) — הצג את ההקשר: מדוע ההשוואה הזו חשובה ב-2026, מי צריך לקרוא אותה, מה תלמד
+2. **סקירת המתחרים** — לכל מוצר/שירות: פסקה נפרדת עם תיאור, חברה מאחוריה, מה ייחודי בו
+3. **השוואה לפי פרמטרים** — לפחות 6 פרמטרים (ביצועים, מחיר, ממשק, שפה עברית, אינטגרציות, תמיכה)
+4. **טבלת השוואה** — HTML table עם כל המתחרים בשורות ופרמטרים בעמודות, כולל ✅ ❌ ⚠️
+5. **ניסיון אישי** — 2-3 תרחישים ספציפיים שבדקת (כגון: כתבתי פרומפט X וקיבלתי Y)
+6. **יתרונות וחסרונות** — לכל מוצר: bullet points מפורטים
+7. **למי מתאים** — פרופיל משתמש לכל מוצר (פרילנסר / עסק / מפתח / סטודנט)
+8. **מחירים מפורטים** — טבלת מחירים עם כל הפלאנים, מה כולל כל פלאן
+9. **שאלות נפוצות** — 4-5 שאלות ותשובות אמיתיות שקוראים שואלים
+10. **סיכום והמלצה** — המלצה ברורה: מי מנצח ולמה, עם ניסוח "אם אתה X — בחר Y"
+
+כתוב בעברית תקינה ומקצועית. כל פסקה לפחות 3-4 משפטים. סה"כ לפחות 1500 מילה.""",
+
+    "כלים": """כתוב סקירת כלי AI מקיפה ומעמיקה על: {topic}
+
+חובה לכלול את כל הסעיפים הבאים:
+
+1. **מבוא ורקע** (2-3 פסקאות) — מהו הכלי, מי פיתח אותו, מתי יצא, למה הוא חשוב
+2. **מה הכלי עושה** — פירוט מלא של כל הפיצ'רים, עם דוגמאות קונקרטיות לכל פיצ'ר
+3. **איך להתחיל** — הוראות שלב-אחר-שלב: הרשמה, הגדרה ראשונית, שימוש ראשון
+4. **ניסיון אישי ודוגמאות** — לפחות 3 דוגמאות ספציפיות שניסית: פרומפט שהזנת + תוצאה שקיבלת
+5. **יתרונות** — לפחות 5 יתרונות מפורטים (לא רשימה יבשה — הסבר כל אחד)
+6. **חסרונות ומגבלות** — לפחות 4 חסרונות אמיתיים, כולל מה הכלי לא יכול לעשות
+7. **תמחור מלא** — כל הפלאנים, מה כלול, מה לא כלול, האם יש חינמי, מה ה-ROI
+8. **השוואה לחלופות** — 2-3 כלים מתחרים, מתי לבחור בהם במקום
+9. **טיפים ופרומפטים** — 5 טיפים מעשיים + פרומפטים מוכנים לשימוש
+10. **שאלות נפוצות** — 4-5 שאלות אמיתיות שמשתמשים שואלים
+11. **מסקנה** — ציון (1-10) לכל פרמטר, המלצה סופית: למי כדאי, למי לא
+
+כתוב בעברית תקינה ומקצועית. כל פסקה לפחות 3-4 משפטים. סה"כ לפחות 1500 מילה.""",
+
+    "מדריך": """כתוב מדריך מקצועי ומקיף שלב-אחר-שלב על: {topic}
+
+חובה לכלול את כל הסעיפים הבאים:
+
+1. **מבוא** (2-3 פסקאות) — מה תלמד, למה זה חשוב, מה תוכל לעשות בסוף המדריך
+2. **דרישות מוקדמות** — מה צריך לפני שמתחילים (חשבון, תוכנה, ידע בסיסי)
+3. **רקע תיאורטי קצר** — הסבר מושגי בסיס חשובים שקורא מתחיל צריך להבין
+4. **מדריך שלב-אחר-שלב** — לפחות 8-10 שלבים ממוספרים, כל שלב עם:
+   - תיאור מה עושים
+   - פרטים טכניים מדויקים (כפתורים, הגדרות, קוד לדוגמה)
+   - צילום מסך מתואר (תאר מה היה צריך לראות)
+   - טיפ קטן לסיום השלב
+5. **דוגמה מעשית מלאה** — תרחיש ריאלי מקצה לקצה שעושה שימוש בכל מה שלמדת
+6. **פרומפטים מוכנים לשימוש** — לפחות 5 פרומפטים/פקודות שניתן להעתיק ולהשתמש
+7. **טעויות נפוצות** — 5 טעויות שמתחילים עושים + איך להימנע מהן
+8. **פתרון בעיות** — 4-5 בעיות נפוצות ופתרונן
+9. **שאלות נפוצות** — 4-5 שאלות שקוראים שואלים
+10. **הצעדים הבאים** — מה ללמוד אחר כך, קישורים לנושאים מתקדמים
+
+כתוב בעברית תקינה ומקצועית. כל שלב מפורט ומוסבר היטב. סה"כ לפחות 1600 מילה.""",
+
+    "חדשות": """כתוב כתבת חדשות מנותחת ומעמיקה על: {topic}
+
+חובה לכלול את כל הסעיפים הבאים:
+
+1. **לד** (פסקה ראשונה) — 5 שאלות: מי, מה, מתי, איפה, למה — בפסקה אחת תמציתית
+2. **הרקע** (2-3 פסקאות) — ההקשר המלא: מה הוביל לאירוע, מה קרה לפני כן
+3. **הפרטים המלאים** — כל מה שידוע: נתונים, ציטוטים, מספרים, תאריכים
+4. **הגורמים המעורבים** — מי החברות/אנשים המעורבים, מה עמדתם
+5. **ניתוח: למה זה חשוב** — 3-4 פסקאות מנתחות: מה המשמעות הרחבה
+6. **השפעה על ישראל** — ספציפית: מה זה אומר לעסקים, מפתחים ומשתמשים בישראל
+7. **עמדות מומחים** — מה אומרים מומחים בתחום (תוכל להמציא ציטוטים סבירים)
+8. **הצדדים השונים** — אם יש מחלוקת, הצג אותה בצורה מאוזנת
+9. **מה צפוי הלאה** — תחזיות: מה יקרה ב-3 חודשים, שנה, 3 שנים
+10. **שאלות נפוצות** — 4-5 שאלות שקוראים שואלים על הנושא
+11. **סיכום** — פסקה אחת: מה הקורא צריך לזכור ולעשות
+
+כתוב בעברית תקינה ומקצועית ועיתונאית. סה"כ לפחות 1400 מילה.""",
+
+    "ניתוח": """כתוב ניתוח מעמיק ומבוסס נתונים על: {topic}
+
+חובה לכלול את כל הסעיפים הבאים:
+
+1. **מבוא ושאלת המחקר** — מה השאלה שאנחנו מנסים לענות עליה ולמה היא חשובה
+2. **הנתונים והמחקרים** — ציין לפחות 5-6 נתונים/מחקרים/סטטיסטיקות עם מקורות
+3. **ניתוח מגמות** — כיצד הדברים השתנו ב-3-5 שנים האחרונות, גרף מתואר
+4. **הנקודות העיקריות** — 5-6 תובנות מנותחות, כל אחת עם הסבר של 3-4 משפטים
+5. **פרספקטיבה ישראלית** — כיצד ישראל ייחודית בהשוואה עולמית בנושא זה
+6. **מקרי מבחן** — 2-3 דוגמאות קונקרטיות (חברות, אנשים, מקרים) שממחישות את הניתוח
+7. **הצדדים השנויים במחלוקת** — אם יש עמדות שונות, הצג את כולן בצורה הוגנת
+8. **מה זה אומר עבורך** — השלכות מעשיות: מה עושה/לא עושה הקורא הממוצע
+9. **שאלות נפוצות** — 4-5 שאלות על הנושא
+10. **מסקנות** — 3-5 מסקנות ממוספרות, ברורות ומעשיות
+
+כתוב בעברית תקינה ומקצועית. הבא נתונים ועובדות ספציפיות. סה"כ לפחות 1500 מילה.""",
+
+    "סקירה": """כתוב סקירת מוצר מקצועית ומקיפה על: {topic}
+
+חובה לכלול את כל הסעיפים הבאים:
+
+1. **תקציר מנהלים** — 3 משפטים: מה זה, מחיר, ציון כולל, למי מתאים
+2. **מי מאחורי המוצר** — החברה, ההיסטוריה, מי המנכ"ל, כמה משקיעים
+3. **מה המוצר עושה** — תיאור מלא של כל הפיצ'רים עם דוגמאות
+4. **ניסיון אישי שלב-אחר-שלב** — מה עשיתי: הרשמה → הגדרה → שימוש → תוצאות
+5. **ביצועים** — מדידות ספציפיות: כמה מהר, כמה מדויק, בדיקות שעשיתי
+6. **ציוני פרמטרים** (טבלה):
+   - קלות שימוש (1-10)
+   - ביצועים (1-10)
+   - מחיר-ערך (1-10)
+   - תמיכה בעברית (1-10)
+   - תמיכת לקוחות (1-10)
+   - ציון כולל (1-10)
+7. **יתרונות** — לפחות 5 יתרונות ספציפיים שגיליתם
+8. **חסרונות** — לפחות 4 חסרונות אמיתיים, כולל deal-breakers
+9. **תמחור** — כל הפלאנים, מה כלול, טריק/מלכוד שכדאי לדעת
+10. **השוואה ל-3 מתחרים** — קצר: מתי לבחור כל אחד
+11. **שאלות נפוצות** — 4-5 שאלות שקוראים שואלים לפני קנייה
+12. **מסקנה** — כדאי/לא כדאי + למי ספציפית
+
+כתוב בעברית תקינה ומקצועית. הכל מבוסס על ניסיון ישיר. סה"כ לפחות 1500 מילה.""",
+
+    "טיפים": """כתוב מאמר טיפים מעשי ועמוק על: {topic}
+
+חובה לכלול את כל הסעיפים הבאים:
+
+1. **מבוא** (2-3 פסקאות) — למה הטיפים האלה חשובים, כמה זמן/כסף הם יחסכו
+2. **כל טיפ** — לכל טיפ (לפחות 8-10 טיפים):
+   - כותרת H3 ממוספרת וברורה
+   - הסבר מלא (3-4 משפטים): מה הבעיה שהטיפ פותר
+   - דוגמה קונקרטית: תרחיש שכולם מכירים
+   - פרומפט/פקודה מוכנה להעתקה (בתוך <code> או blockquote)
+   - תוצאה שניתן לצפות לה
+3. **טעויות נפוצות** — 3-4 טעויות שאנשים עושים בנושא
+4. **כלים מומלצים** — 3-4 כלים שמשפרים את הביצוע
+5. **שאלות נפוצות** — 4-5 שאלות שקוראים שואלים
+6. **סיכום** — 3 הדברים הכי חשובים שכדאי להתחיל ליישם היום
+
+כתוב בעברית תקינה ומקצועית. כל טיפ עם דוגמה מפורטת ופרומפט מוכן. סה"כ לפחות 1600 מילה.""",
 }
 
 ARTICLE_WRAPPER = '''<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <script>
-    (function(){{
-      var t = localStorage.getItem('binah-theme');
-      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
-    }})();
-  </script>
+  <script>(function(){{var t=localStorage.getItem('binah-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{meta_desc}">
+  <meta name="author" content="יניב סוראני">
   <meta property="og:title" content="{title}">
   <meta property="og:type" content="article">
+  <meta property="og:site_name" content="בינה">
+  <meta property="og:url" content="https://binah.co.il/articles/{slug}.html">
   <meta name="robots" content="index, follow">
   <title>{title} | בינה</title>
-  <link rel="stylesheet" href="../styles.css">
-  <!-- GA4_CODE_HERE --><!-- ADSENSE_HEAD_CODE_HERE -->
+  <link rel="stylesheet" href="../styles.min.css">
+  <link rel="canonical" href="https://binah.co.il/articles/{slug}.html">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-MG65DD6GYJ');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{title}",
+    "description": "{meta_desc}",
+    "url": "https://binah.co.il/articles/{slug}.html",
+    "datePublished": "{date_iso}",
+    "dateModified": "{date_iso}",
+    "inLanguage": "he",
+    "author": {{
+      "@type": "Person",
+      "name": "יניב סוראני",
+      "url": "https://binah.co.il/about.html"
+    }},
+    "publisher": {{
+      "@type": "Organization",
+      "name": "בינה",
+      "url": "https://binah.co.il"
+    }}
+  }}
+  </script>
 </head>
 <body>
 <header>
   <div class="container">
     <div class="nav-inner">
       <a href="../index.html" class="logo">בינה ✦</a>
-      <nav>
+      <nav id="main-nav">
         <a href="../index.html">ראשי</a>
-        <a href="../index.html#articles">כתבות</a>
         <a href="../guides.html">מדריכים</a>
+        <a href="../tools.html">כלים</a>
+        <a href="../quiz.html">בחר AI</a>
+        <a href="../business.html">AI לעסקים</a>
+        <a href="../ai-products.html">מוצרי AI</a>
         <a href="../weekly-news.html">חדשות</a>
+        <a href="../ai-crazy.html">AI מטורף</a>
+        <a href="../about.html">אודות</a>
       </nav>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
-        <span class="icon-dark">🌙 כהה</span>
-        <span class="icon-light">☀️ בהיר</span>
-      </button>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+          <span class="icon-dark">🌙 כהה</span>
+          <span class="icon-light">☀️ בהיר</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </div>
 </header>
 <div class="container">
-  <div class="ad-zone ad-banner"><!-- ADSENSE_LEADERBOARD_HERE --><span>פרסומת</span></div>
+  <div class="ad-zone ad-banner"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({{}});</script></div>
 </div>
 <div class="container">
   <div class="article-header">
@@ -191,68 +350,70 @@ ARTICLE_WRAPPER = '''<!DOCTYPE html>
     <div class="meta">
       <span>📅 {date}</span>
       <span>⏱ {read_time} דקות קריאה</span>
-      <span>✍ צוות בינה</span>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div style="max-width:860px;margin:0 auto 8px;padding:0 16px">
-    <div style="background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);border-radius:8px;padding:10px 16px;font-size:0.82rem;color:rgba(180,170,210,0.8)">
-      &#x24D8; מאמר זה עשוי להכיל קישורי שותפות. רכישה דרכם עשויה לזכות אותנו בעמלה, ללא עלות נוספת עבורך.
+      <span>✍ <a href="../about.html">יניב סוראני</a></span>
+      <span>🔄 עודכן: {date}</span>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="article-layout">
     <main class="article-body">
+      <button class="btn-back" onclick="history.back()">→ חזרה</button>
 {body}
-      <div class="ad-in-article"><!-- ADSENSE_BOTTOM_HERE --><span>פרסומת</span></div>
-      <div style="margin-top:40px;padding:24px;background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);border-radius:12px;display:flex;gap:16px;align-items:flex-start">
-        <div style="width:52px;height:52px;border-radius:50%;background:rgba(124,58,237,0.3);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">✍</div>
-        <div>
-          <div style="font-weight:700;font-size:1rem;margin-bottom:4px;color:#a78bfa">צוות המערכת — בינה</div>
-          <div style="font-size:0.85rem;color:rgba(200,190,230,0.75);line-height:1.6">צוות בינה עוסק במעקב, ניתוח וסקירה של עולם הבינה המלאכותית. אנו מביאים לקוראים הישראלים מידע מעשי, ניתוחים ומדריכים עדכניים על הכלים, המגמות והחדשנות בתחום ה-AI.</div>
-        </div>
-      </div>
+      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({{}});</script></div>
     </main>
-    <aside class="sidebar sticky-sidebar">
-      <div class="ad-zone ad-rectangle"><!-- ADSENSE_SIDEBAR_HERE --><span>פרסומת</span></div>
-      <div class="widget">
-        <div class="widget-title">מדריכים מומלצים</div>
-        <div class="widget-list">
-          <div class="widget-item"><a href="../guides/guide-chatgpt.html">מדריך ChatGPT</a><span>5 דקות</span></div>
-          <div class="widget-item"><a href="../guides/guide-claude.html">מדריך Claude AI</a><span>6 דקות</span></div>
-          <div class="widget-item"><a href="../guides/guide-prompt-basics.html">Prompt Engineering</a><span>10 דקות</span></div>
-        </div>
+    <aside class="article-sidebar">
+      <div class="sidebar-widget">
+        <h3>מדריכים מומלצים</h3>
+        <ul>
+          <li><a href="../guides/guide-chatgpt.html">מדריך ChatGPT</a></li>
+          <li><a href="../guides/guide-claude.html">מדריך Claude AI</a></li>
+          <li><a href="../guides/guide-prompt-basics.html">Prompt Engineering</a></li>
+          <li><a href="../guides/guide-midjourney.html">מדריך Midjourney</a></li>
+        </ul>
       </div>
-      <div class="ad-zone" style="min-height:300px"><!-- ADSENSE_SIDEBAR_2_HERE --><span>פרסומת</span></div>
+      <div class="ad-zone" style="min-height:300px"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({{}});</script></div>
+      <div class="sidebar-widget" style="margin-top:20px">
+        <h3>אודות הכותב</h3>
+        <p style="font-size:0.88rem;line-height:1.7;color:var(--text-secondary)">
+          <strong>יניב סוראני</strong> — עורך תוכן ומומחה AI עם 8+ שנות ניסיון.
+          <a href="../about.html">קרא עוד ←</a>
+        </p>
+      </div>
     </aside>
   </div>
 </div>
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-brand">
+        <div class="logo">בינה ✦</div>
+        <p>הבלוג המוביל בעברית על בינה מלאכותית. מדריכים, השוואות וחדשות AI — מתעדכן יומיומית.</p>
+      </div>
       <div class="footer-col"><h4>תוכן</h4><ul>
         <li><a href="../index.html">ראשי</a></li>
         <li><a href="../guides.html">מדריכים</a></li>
         <li><a href="../weekly-news.html">חדשות</a></li>
+        <li><a href="../ai-crazy.html">AI מטורף</a></li>
       </ul></div>
       <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="../about.html">אודות הכותב</a></li>
+        <li><a href="../methodology.html">מתודולוגיה</a></li>
         <li><a href="../privacy-policy.html">מדיניות פרטיות</a></li>
+        <li><a href="../disclaimer.html">כתב ויתור</a></li>
+        <li><a href="../contact.html">צור קשר</a></li>
       </ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 בינה.</span></div>
+    <div class="footer-bottom">
+      <span>© 2025 בינה. כל הזכויות שמורות.</span>
+      <span style="color:var(--text-muted);font-size:0.75rem">מופעל בעזרת Claude AI ✦</span>
+    </div>
   </div>
 </footer>
-<script>
-function toggleTheme() {{
-  var html = document.documentElement;
-  var isLight = html.getAttribute('data-theme') === 'light';
-  if (isLight) {{ html.removeAttribute('data-theme'); localStorage.setItem('binah-theme','dark'); }}
-  else {{ html.setAttribute('data-theme','light'); localStorage.setItem('binah-theme','light'); }}
-}}
-</script>
+<button id="back-to-top" aria-label="חזרה לראש הדף" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">↑</button>
+<script src="../site.min.js"></script>
+<script src="../header-bg.min.js"></script>
+<script src="/tracker.js"></script>
 </body>
 </html>'''
 
@@ -269,15 +430,23 @@ def save_log(log):
     LOG_FILE.write_text(json.dumps(log, ensure_ascii=False, indent=2), encoding='utf-8')
 
 
-def published_today_per_category():
-    """Returns set of categories already published today."""
+def published_this_week_per_category():
+    """Returns set of categories already published this week (Mon–Sun)."""
     log = load_log()
-    today = date.today().isoformat()
+    today = date.today()
+    week_start = (today - __import__('datetime').timedelta(days=today.weekday())).isoformat()
+    week_end   = today.isoformat()
     done = set()
     for a in log.get("published", []):
-        if a.get("published_at", "")[:10] == today:
+        pub = a.get("published_at", "")[:10]
+        if week_start <= pub <= week_end:
             done.add(a.get("category", ""))
     return done
+
+
+def published_today_per_category():
+    """Legacy: Returns set of categories already published today."""
+    return published_this_week_per_category()
 
 
 def next_topic(category):
@@ -339,18 +508,20 @@ def generate(category, topic_data):
 
     prompt_template = PROMPTS.get(category, PROMPTS["כלים"])
     system_prompt = (
-        "אתה כותב תוכן מקצועי בעברית לבלוג AI בשם 'בינה'.\n"
-        "כתוב בעברית תקינה ומקצועית, כ-900-1200 מילים.\n"
-        "כלול כותרות H2 ו-H3, רשימות ✓, טבלת השוואה אם רלוונטי.\n"
-        "הוצא רק HTML פנימי (ללא DOCTYPE/html/head/body). השתמש ב-<h2>,<h3>,<p>,<ul>,<li>,<strong>,<table>.\n"
-        "אל תוסיף style inline."
+        "אתה כותב תוכן מקצועי ומעמיק בעברית לבלוג AI בשם 'בינה'.\n"
+        "כתוב בעברית תקינה, מקצועית ומפורטת — לפחות 1500 מילה.\n"
+        "כלול: כותרות H2 ו-H3 ממוספרות, רשימות bullet, טבלת HTML אם רלוונטי, קוד בתוך <code>, ציטוטים בתוך <blockquote>.\n"
+        "כל פסקה — לפחות 3-4 משפטים. אל תקצר שאלות נפוצות — כל תשובה לפחות 3 משפטים.\n"
+        "הוצא רק HTML פנימי (ללא DOCTYPE/html/head/body).\n"
+        "השתמש ב-<h2>,<h3>,<p>,<ul>,<li>,<ol>,<strong>,<em>,<table>,<thead>,<tbody>,<tr>,<th>,<td>,<code>,<blockquote>.\n"
+        "אל תוסיף style inline. אל תכלול מבוא מיותר — היכנס ישירות לתוכן."
     )
     user_prompt = prompt_template.format(topic=title)
 
     print(f"  → [{category}] {title}")
     msg = client.messages.create(
         model="claude-opus-4-6",
-        max_tokens=4096,
+        max_tokens=8000,
         system=system_prompt,
         messages=[{"role": "user", "content": user_prompt}],
     )
@@ -358,12 +529,14 @@ def generate(category, topic_data):
     body_with_ads = insert_ads(body)
 
     today_str = he_date()
-    read_time = max(4, len(body.split()) // 200)
+    date_iso  = date.today().isoformat()
+    read_time = max(6, len(body.split()) // 200)
     meta_desc = first_p_text(body)
 
     html = ARTICLE_WRAPPER.format(
         title=title, category=category, meta_desc=meta_desc,
-        date=today_str, read_time=read_time, body=body_with_ads,
+        date=today_str, date_iso=date_iso, slug=slug,
+        read_time=read_time, body=body_with_ads,
     )
 
     out_path = BASE_DIR / "articles" / f"{slug}.html"
@@ -402,9 +575,10 @@ def _add_index_card(title, slug, category, date_str):
         <article class="article-card" data-cat="{data_cat}">
           <span class="card-category">{category}</span>
           <a href="articles/{slug}.html" class="card-title">{title}</a>
-          <p class="card-excerpt">קרא את הכתבה המלאה על {title.split(':')[0]}.</p>
+          <p class="card-excerpt">קרא את הכתבה המלאה על {title.split(':')[0]}. מדריך מקיף ומעמיק.</p>
           <div class="card-meta">
             <span>{date_str}</span>
+            <span>✍ יניב סוראני</span>
             <a href="articles/{slug}.html" class="read-more">קרא עוד ←</a>
           </div>
         </article>"""

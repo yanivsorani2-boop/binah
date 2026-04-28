@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-scheduler.py — בינה Daily Scheduler
-Runs every day. Generates one article per category (7 categories = 7 articles/day).
+scheduler.py — בינה Weekly Scheduler
+Runs every Monday. Generates one article per category (7 categories = 7 articles/week).
 
 Setup (macOS, run once):
   python3 scheduler.py --setup-cron
@@ -95,9 +95,10 @@ def setup_cron():
         <string>REPLACE_WITH_YOUR_API_KEY</string>
     </dict>
 
-    <!-- Run every day at 08:00 -->
+    <!-- Run every Monday at 08:00 -->
     <key>StartCalendarInterval</key>
     <dict>
+        <key>Weekday</key><integer>1</integer>
         <key>Hour</key><integer>8</integer>
         <key>Minute</key><integer>0</integer>
     </dict>
