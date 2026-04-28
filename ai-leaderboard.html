@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var t=localStorage.getItem('binah-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="לוח מודלי AI 2026 — דירוג והשוואה של כל המודלים המובילים: Claude, GPT-4o, Gemini, Llama, DeepSeek ועוד. עדכון שוטף.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="דניאל לוי">
+  <title>לוח מודלי AI 2026 — דירוג חי ועדכני | בינה</title>
+  <link rel="stylesheet" href="styles.min.css">
+  <link rel="canonical" href="https://binah.co.il/ai-leaderboard.html">
+  <meta property="og:title" content="לוח מודלי AI 2026 — דירוג חי ועדכני | בינה">
+  <meta property="og:description" content="השוואה ודירוג של כל מודלי ה-AI המובילים — כתיבה, קידוד, עברית, מחיר.">
+  <meta property="og:url" content="https://binah.co.il/ai-leaderboard.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="בינה">
+  <meta property="og:image" content="https://binah.co.il/images/og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@BinahAI">
+  <meta name="twitter:image" content="https://binah.co.il/images/og-default.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "לוח מודלי AI 2026",
+    "description": "דירוג והשוואה של מודלי AI מובילים",
+    "url": "https://binah.co.il/ai-leaderboard.html",
+    "author": {"@type": "Person", "name": "דניאל לוי"},
+    "publisher": {"@type": "Organization", "name": "בינה", "url": "https://binah.co.il"},
+    "dateModified": "2026-04-29",
+    "inLanguage": "he"
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MG65DD6GYJ');</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9475752562192165" crossorigin="anonymous"></script>
+  <style>
+    .lb-hero { padding: 56px 0 40px; text-align: center; }
+    .lb-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 900; margin-bottom: 12px; }
+    .lb-hero p  { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; margin: 0 auto 24px; }
+    .lb-meta { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-bottom: 8px; }
+    .lb-meta span { font-size:0.82rem; color:var(--text-muted); }
+    .lb-meta strong { color: #a78bfa; }
+
+    /* Filters */
+    .lb-filters { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin: 24px 0 32px; }
+    .lb-filters button {
+      padding: 7px 18px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.12);
+      background: transparent; color: var(--text-muted); font-size:0.85rem; cursor:pointer;
+      transition: all 0.2s; font-family: inherit;
+    }
+    .lb-filters button:hover { border-color: rgba(124,58,237,0.5); color: #a78bfa; }
+    .lb-filters button.active { background: rgba(124,58,237,0.2); border-color: #7c3aed; color: #a78bfa; font-weight:600; }
+
+    /* Sort bar */
+    .lb-sort { display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+    .lb-sort span { font-size:0.82rem; color:var(--text-muted); }
+    .lb-sort button {
+      padding:5px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);
+      background:transparent; color:var(--text-muted); font-size:0.78rem; cursor:pointer;
+      transition:all 0.2s; font-family:inherit;
+    }
+    .lb-sort button.active { background:rgba(124,58,237,0.15); color:#a78bfa; border-color:rgba(124,58,237,0.4); }
+
+    /* Table */
+    .lb-table { width:100%; border-collapse:collapse; }
+    .lb-table th {
+      padding:12px 16px; text-align:right; font-size:0.78rem; font-weight:700;
+      color:var(--text-muted); border-bottom:1px solid rgba(255,255,255,0.08);
+      white-space:nowrap; cursor:pointer; user-select:none;
+    }
+    .lb-table th:hover { color:#a78bfa; }
+    .lb-table td { padding:14px 16px; border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:middle; }
+    .lb-table tr:hover td { background:rgba(124,58,237,0.04); }
+
+    .rank-num { font-size:1.1rem; font-weight:900; color:var(--text-muted); min-width:32px; text-align:center; }
+    .rank-1 { color:#FFD700; }
+    .rank-2 { color:#C0C0C0; }
+    .rank-3 { color:#CD7F32; }
+
+    .model-name { font-weight:800; font-size:0.97rem; }
+    .model-company { font-size:0.75rem; color:var(--text-muted); margin-top:2px; }
+    .model-badge {
+      display:inline-block; padding:2px 8px; border-radius:10px;
+      font-size:0.68rem; font-weight:700; margin-right:6px; margin-top:4px;
+    }
+    .badge-new  { background:rgba(16,185,129,0.15); color:#34d399; border:1px solid rgba(16,185,129,0.25); }
+    .badge-hot  { background:rgba(239,68,68,0.15);  color:#f87171; border:1px solid rgba(239,68,68,0.25); }
+    .badge-free { background:rgba(59,130,246,0.15); color:#60a5fa; border:1px solid rgba(59,130,246,0.25); }
+    .badge-open { background:rgba(245,158,11,0.15); color:#fbbf24; border:1px solid rgba(245,158,11,0.25); }
+
+    .score-bar { display:flex; align-items:center; gap:8px; }
+    .score-track { flex:1; height:6px; background:rgba(255,255,255,0.08); border-radius:3px; min-width:60px; }
+    .score-fill  { height:100%; border-radius:3px; transition:width 0.4s; }
+    .score-num   { font-size:0.8rem; font-weight:700; min-width:28px; text-align:left; }
+
+    .cat-score { display:flex; flex-direction:column; gap:4px; }
+    .cat-row   { display:flex; align-items:center; gap:6px; font-size:0.72rem; }
+    .cat-label { color:var(--text-muted); min-width:40px; }
+    .cat-dots  { display:flex; gap:2px; }
+    .dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.1); }
+    .dot.on { background: #7c3aed; }
+    .dot.half { background: rgba(124,58,237,0.4); }
+
+    .price-tag {
+      display:inline-block; padding:3px 10px; border-radius:8px; font-size:0.75rem; font-weight:600;
+    }
+    .price-free   { background:rgba(16,185,129,0.12); color:#34d399; }
+    .price-paid   { background:rgba(124,58,237,0.12); color:#a78bfa; }
+    .price-api    { background:rgba(245,158,11,0.12);  color:#fbbf24; }
+    .price-both   { background:rgba(59,130,246,0.12);  color:#60a5fa; }
+
+    .heb-support { font-size:1rem; }
+
+    .lb-link {
+      display:inline-flex; align-items:center; gap:4px; padding:5px 12px;
+      border-radius:8px; border:1px solid rgba(124,58,237,0.3); color:#a78bfa;
+      font-size:0.75rem; text-decoration:none; transition:all 0.2s; white-space:nowrap;
+    }
+    .lb-link:hover { background:rgba(124,58,237,0.15); border-color:#7c3aed; }
+
+    .lb-wrapper { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.07); border-radius:16px; overflow:hidden; }
+    .lb-scroll  { overflow-x:auto; }
+
+    /* Legend */
+    .legend { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:24px; }
+    .legend-item { display:flex; align-items:center; gap:6px; font-size:0.75rem; color:var(--text-muted); }
+    .legend-dot { width:10px; height:10px; border-radius:50%; }
+
+    /* FAQ */
+    .faq-section { margin-top:64px; }
+    .faq-item { border-bottom:1px solid rgba(255,255,255,0.07); }
+    .faq-q {
+      padding:18px 0; font-weight:700; cursor:pointer; display:flex;
+      justify-content:space-between; align-items:center; font-size:0.97rem;
+    }
+    .faq-q:hover { color:#a78bfa; }
+    .faq-a { padding-bottom:16px; color:var(--text-muted); font-size:0.9rem; line-height:1.8; display:none; }
+    .faq-a.open { display:block; }
+    .faq-arrow { transition:transform 0.2s; font-size:0.8rem; }
+    .faq-arrow.open { transform:rotate(180deg); }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .lb-table th:nth-child(n+5), .lb-table td:nth-child(n+5) { display:none; }
+    }
+    @media(max-width:560px){
+      .lb-table th:nth-child(n+4), .lb-table td:nth-child(n+4) { display:none; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">בינה ✦</a>
+      <nav id="main-nav">
+        <a href="index.html">ראשי</a>
+        <a href="guides.html">מדריכים</a>
+        <a href="tools.html">כלים</a>
+        <a href="ai-leaderboard.html" class="active">לוח מודלים</a>
+        <a href="ai-directory.html">ספריית כלים</a>
+        <a href="quiz.html">בחר AI</a>
+        <a href="business.html">AI לעסקים</a>
+        <a href="weekly-news.html">חדשות</a>
+        <a href="ai-crazy.html">AI מטורף</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="החלף ערכת נושא">
+          <span class="icon-dark">🌙 כהה</span>
+          <span class="icon-light">☀️ בהיר</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="תפריט" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <section class="lb-hero">
+    <div class="live-badge"><span class="live-dot"></span> מתעדכן שבועית</div>
+    <h1>לוח מודלי AI — <span class="gradient-text">דירוג חי 2026</span></h1>
+    <p>השוואה מלאה של כל מודלי ה-AI המובילים — ציונים בכתיבה, קידוד, עברית ומחיר. מתעדכן בכל שבוע.</p>
+    <div class="lb-meta">
+      <span>עדכון אחרון: <strong>29 אפריל 2026</strong></span>
+      <span>מודלים: <strong>15</strong></span>
+      <span>קטגוריות: <strong>5</strong></span>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <div class="ad-zone ad-banner"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</div>
+
+<section style="padding:0 0 80px">
+  <div class="container">
+
+    <!-- Filters -->
+    <div class="lb-filters">
+      <button class="active" onclick="filterLB('all',this)">🏆 כולם</button>
+      <button onclick="filterLB('chat',this)">💬 צ'אט</button>
+      <button onclick="filterLB('code',this)">💻 קידוד</button>
+      <button onclick="filterLB('image',this)">🎨 תמונות</button>
+      <button onclick="filterLB('free',this)">🆓 חינמי</button>
+      <button onclick="filterLB('heb',this)">🇮🇱 עברית טובה</button>
+      <button onclick="filterLB('open',this)">🔓 קוד פתוח</button>
+    </div>
+
+    <!-- Sort -->
+    <div class="lb-sort">
+      <span>מיין לפי:</span>
+      <button class="active" onclick="sortLB('overall',this)">ציון כולל</button>
+      <button onclick="sortLB('writing',this)">כתיבה</button>
+      <button onclick="sortLB('coding',this)">קידוד</button>
+      <button onclick="sortLB('hebrew',this)">עברית</button>
+      <button onclick="sortLB('price',this)">מחיר</button>
+    </div>
+
+    <div class="lb-wrapper">
+      <div class="lb-scroll">
+        <table class="lb-table" id="lb-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>מודל</th>
+              <th onclick="sortLB('overall',null)">ציון כולל ↕</th>
+              <th onclick="sortLB('writing',null)">כתיבה ↕</th>
+              <th onclick="sortLB('coding',null)">קידוד ↕</th>
+              <th onclick="sortLB('reasoning',null)">הסקה ↕</th>
+              <th onclick="sortLB('hebrew',null)">עברית ↕</th>
+              <th>מחיר</th>
+              <th>קישור</th>
+            </tr>
+          </thead>
+          <tbody id="lb-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend" style="margin-top:16px">
+      <div class="legend-item"><div class="legend-dot" style="background:#FFD700"></div> מקום 1</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#C0C0C0"></div> מקום 2</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#CD7F32"></div> מקום 3</div>
+      <div class="legend-item"><span class="model-badge badge-new">חדש</span> שוחרר ב-2026</div>
+      <div class="legend-item"><span class="model-badge badge-hot">🔥 חם</span> טרנדי עכשיו</div>
+      <div class="legend-item"><span class="model-badge badge-open">פתוח</span> קוד פתוח</div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:24px">שאלות נפוצות על מודלי AI</h2>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"איזה מודל AI הכי טוב ב-2026?","acceptedAnswer":{"@type":"Answer","text":"נכון לאפריל 2026, Claude Opus 4.6 ו-GPT-4o נחשבים למובילים בכתיבה והסקה, בעוד Gemini 2.5 Pro מצטיין בניתוח ארוך. הבחירה תלויה בשימוש: לקידוד — Claude Sonnet או GPT-4o; לעברית — Claude או Gemini; לתמונות — GPT-4o עם DALL-E 3."}},
+          {"@type":"Question","name":"איזה מודל AI תומך הכי טוב בעברית?","acceptedAnswer":{"@type":"Answer","text":"Claude (Anthropic) ו-Gemini (Google) מציגים את התמיכה הטובה ביותר בעברית נכון ל-2026. ChatGPT גם תומך בעברית היטב, אך Claude נחשב מדויק יותר בניואנסים. Llama 4 של Meta גם שיפר את תמיכת העברית משמעותית."}},
+          {"@type":"Question","name":"מה ההבדל בין GPT-4o ל-Claude Sonnet?","acceptedAnswer":{"@type":"Answer","text":"GPT-4o של OpenAI חזק יותר בתמונות ובמולטימידיה, בעוד Claude Sonnet 4.6 של Anthropic מצטיין בכתיבה ארוכה, ניתוח מסמכים ועמידה בהוראות מורכבות. לרוב השימושים היומיומיים — שניהם מצוינים. Claude נחשב בטוח יותר ופחות 'הזוי'."}},
+          {"@type":"Question","name":"מה זה Llama 4 ואיך הוא שונה?","acceptedAnswer":{"@type":"Answer","text":"Llama 4 הוא המודל הפתוח של Meta, שוחרר בתחילת 2026. הוא קוד פתוח — כלומר אפשר להריץ אותו בחינם על מחשב אישי (עם GPU מתאים) או דרך שירותי ענן. הוא לא מגיע בביצועים של GPT-4o או Claude, אבל לשימושים רבים — מספיק, ובעלות אפסית."}},
+          {"@type":"Question","name":"האם DeepSeek V3 טוב כמו ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"DeepSeek V3 הסיני הפתיע את השוק בביצועים גבוהים במחיר נמוך מאוד — במיוחד בקידוד ובמתמטיקה. הוא לא מגיע לרמת Claude Opus או GPT-4o בכתיבה יצירתית, אבל לשימושים טכניים הוא מצוין וכמעט חינמי דרך ה-API."}},
+          {"@type":"Question","name":"כמה עולה להשתמש ב-Claude API?","acceptedAnswer":{"@type":"Answer","text":"Claude Sonnet 4.6 עולה $3 ל-1M tokens קלט ו-$15 ל-1M tokens פלט. לשימוש יומיומי עם 100 שאלות בינוניות — מדובר בכ-$1-3 לחודש. Claude Haiku, הגרסה הקלה, עולה הרבה פחות — $0.25 ל-1M tokens קלט."}}
+        ]
+      }
+      </script>
+      <div id="faq-list"></div>
+    </div>
+
+    <div style="margin-top:48px;padding:24px;background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.15);border-radius:14px;text-align:center">
+      <p style="margin:0 0 12px;font-weight:600">רוצה לדעת איזה AI מתאים לך?</p>
+      <a href="quiz.html" class="btn-primary" style="margin-left:12px">קח את השאלון ←</a>
+      <a href="ai-directory.html" class="btn-outline">ספריית כלי AI</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">בינה ✦</div><p>הבלוג המוביל בעברית על בינה מלאכותית.</p></div>
+      <div class="footer-col"><h4>תוכן</h4><ul>
+        <li><a href="index.html">ראשי</a></li>
+        <li><a href="guides.html">מדריכים</a></li>
+        <li><a href="tools.html">כלים</a></li>
+        <li><a href="ai-leaderboard.html">לוח מודלים</a></li>
+        <li><a href="ai-directory.html">ספריית כלים</a></li>
+        <li><a href="weekly-news.html">חדשות</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="about.html">אודות</a></li>
+        <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+        <li><a href="disclaimer.html">הצהרת אחריות</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 בינה. כל הזכויות שמורות.</span></div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="חזרה לראש" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="site.min.js"></script>
+<script src="header-bg.min.js"></script>
+<script src="/tracker.js"></script>
+<script>
+// ── Data ──────────────────────────────────────────────────────────────────
+// עדכון אחרון: 2026-04-29
+var MODELS = [
+  {
+    id:'claude-opus', name:'Claude Opus 4.6', company:'Anthropic', year:2026,
+    tags:['chat','heb'],
+    badges:[{cls:'badge-hot',txt:'🔥 חם'},{cls:'badge-new',txt:'חדש'}],
+    overall:96, writing:98, coding:92, reasoning:97, image:0, hebrew:95,
+    price:'paid', priceLabel:'$20/חודש', priceNote:'API בנוסף',
+    link:'https://claude.ai', linkTxt:'claude.ai'
+  },
+  {
+    id:'gpt4o', name:'GPT-4o', company:'OpenAI', year:2024,
+    tags:['chat','code','image','heb'],
+    badges:[{cls:'badge-hot',txt:'🔥 חם'}],
+    overall:95, writing:94, coding:93, reasoning:95, image:96, hebrew:90,
+    price:'both', priceLabel:'חינמי / $20', priceNote:'חינמי עם מגבלות',
+    link:'https://chat.openai.com', linkTxt:'ChatGPT'
+  },
+  {
+    id:'claude-sonnet', name:'Claude Sonnet 4.6', company:'Anthropic', year:2026,
+    tags:['chat','code','heb'],
+    badges:[{cls:'badge-new',txt:'חדש'}],
+    overall:93, writing:95, coding:91, reasoning:93, image:0, hebrew:93,
+    price:'both', priceLabel:'חינמי / API', priceNote:'$3 לM tokens',
+    link:'https://claude.ai', linkTxt:'claude.ai'
+  },
+  {
+    id:'gemini-25', name:'Gemini 2.5 Pro', company:'Google', year:2026,
+    tags:['chat','code','image','heb'],
+    badges:[{cls:'badge-new',txt:'חדש'},{cls:'badge-hot',txt:'🔥 חם'}],
+    overall:93, writing:90, coding:94, reasoning:95, image:88, hebrew:91,
+    price:'both', priceLabel:'חינמי / API', priceNote:'ב-Google AI Studio',
+    link:'https://gemini.google.com', linkTxt:'Gemini'
+  },
+  {
+    id:'gpt45', name:'GPT-4.5', company:'OpenAI', year:2026,
+    tags:['chat','code','image'],
+    badges:[{cls:'badge-new',txt:'חדש'}],
+    overall:91, writing:91, coding:90, reasoning:92, image:90, hebrew:86,
+    price:'paid', priceLabel:'ChatGPT Pro', priceNote:'$200/חודש',
+    link:'https://chat.openai.com', linkTxt:'ChatGPT Pro'
+  },
+  {
+    id:'grok3', name:'Grok 3', company:'xAI', year:2026,
+    tags:['chat','code'],
+    badges:[{cls:'badge-new',txt:'חדש'},{cls:'badge-hot',txt:'🔥 חם'}],
+    overall:90, writing:88, coding:91, reasoning:92, image:0, hebrew:80,
+    price:'paid', priceLabel:'$30/חודש', priceNote:'X Premium+',
+    link:'https://grok.com', linkTxt:'Grok'
+  },
+  {
+    id:'llama4-maverick', name:'Llama 4 Maverick', company:'Meta', year:2026,
+    tags:['chat','code','open'],
+    badges:[{cls:'badge-open',txt:'פתוח'},{cls:'badge-new',txt:'חדש'}],
+    overall:88, writing:85, coding:89, reasoning:88, image:0, hebrew:82,
+    price:'free', priceLabel:'חינמי', priceNote:'קוד פתוח',
+    link:'https://llama.meta.com', linkTxt:'Meta Llama'
+  },
+  {
+    id:'deepseek-v3', name:'DeepSeek V3', company:'DeepSeek', year:2025,
+    tags:['chat','code','open'],
+    badges:[{cls:'badge-open',txt:'פתוח'}],
+    overall:86, writing:82, coding:92, reasoning:87, image:0, hebrew:72,
+    price:'free', priceLabel:'חינמי / API זול', priceNote:'$0.27 לM tokens',
+    link:'https://chat.deepseek.com', linkTxt:'DeepSeek'
+  },
+  {
+    id:'gemini-flash', name:'Gemini 2.0 Flash', company:'Google', year:2025,
+    tags:['chat','code','image','heb','free'],
+    badges:[{cls:'badge-free',txt:'חינמי'}],
+    overall:84, writing:82, coding:85, reasoning:83, image:80, hebrew:88,
+    price:'free', priceLabel:'חינמי', priceNote:'דרך Google AI Studio',
+    link:'https://gemini.google.com', linkTxt:'Gemini'
+  },
+  {
+    id:'claude-haiku', name:'Claude Haiku 4.5', company:'Anthropic', year:2025,
+    tags:['chat','heb','free'],
+    badges:[{cls:'badge-free',txt:'מהיר'}],
+    overall:82, writing:84, coding:80, reasoning:81, image:0, hebrew:90,
+    price:'api', priceLabel:'API בלבד', priceNote:'$0.25 לM tokens',
+    link:'https://claude.ai', linkTxt:'claude.ai'
+  },
+  {
+    id:'llama4-scout', name:'Llama 4 Scout', company:'Meta', year:2026,
+    tags:['chat','open','free'],
+    badges:[{cls:'badge-open',txt:'פתוח'},{cls:'badge-free',txt:'חינמי'}],
+    overall:81, writing:79, coding:82, reasoning:80, image:0, hebrew:75,
+    price:'free', priceLabel:'חינמי', priceNote:'קוד פתוח',
+    link:'https://llama.meta.com', linkTxt:'Meta Llama'
+  },
+  {
+    id:'mistral-large', name:'Mistral Large 2', company:'Mistral', year:2025,
+    tags:['chat','code','open'],
+    badges:[{cls:'badge-open',txt:'פתוח'}],
+    overall:80, writing:78, coding:83, reasoning:80, image:0, hebrew:68,
+    price:'api', priceLabel:'API', priceNote:'$3 לM tokens',
+    link:'https://mistral.ai', linkTxt:'Mistral'
+  },
+  {
+    id:'copilot', name:'Microsoft Copilot', company:'Microsoft', year:2024,
+    tags:['chat','code','image','heb'],
+    badges:[],
+    overall:79, writing:78, coding:80, reasoning:78, image:75, hebrew:82,
+    price:'both', priceLabel:'חינמי / $30', priceNote:'Microsoft 365',
+    link:'https://copilot.microsoft.com', linkTxt:'Copilot'
+  },
+  {
+    id:'gemma3', name:'Gemma 3', company:'Google', year:2025,
+    tags:['open','code','free'],
+    badges:[{cls:'badge-open',txt:'פתוח'}],
+    overall:75, writing:72, coding:78, reasoning:74, image:0, hebrew:65,
+    price:'free', priceLabel:'חינמי', priceNote:'קוד פתוח',
+    link:'https://ai.google.dev/gemma', linkTxt:'Google Gemma'
+  },
+  {
+    id:'perplexity', name:'Perplexity AI', company:'Perplexity', year:2024,
+    tags:['chat','heb','free'],
+    badges:[],
+    overall:73, writing:70, coding:65, reasoning:72, image:0, hebrew:70,
+    price:'both', priceLabel:'חינמי / $20', priceNote:'מנוי Pro',
+    link:'https://perplexity.ai', linkTxt:'Perplexity'
+  }
+];
+
+var FAQS = [
+  {q:'איזה מודל AI הכי טוב ב-2026?', a:'נכון לאפריל 2026, Claude Opus 4.6 ו-GPT-4o נחשבים למובילים בכתיבה והסקה, בעוד Gemini 2.5 Pro מצטיין בניתוח ארוך ובקידוד. הבחירה תלויה בשימוש — אין "הכי טוב" אחד.'},
+  {q:'איזה מודל AI תומך הכי טוב בעברית?', a:'Claude (Anthropic) ו-Gemini (Google) מציגים את התמיכה הטובה ביותר בעברית. Claude Haiku גם מצוין לעברית ומהיר מאוד. ChatGPT גם עובד טוב בעברית אבל פחות מדויק.'},
+  {q:'מה ההבדל בין GPT-4o ל-Claude Sonnet?', a:'GPT-4o חזק בתמונות ומולטימידיה. Claude Sonnet מצטיין בכתיבה ארוכה וניתוח מסמכים. לרוב השימושים — שניהם מצוינים. Claude נחשב פחות "הזוי" ויותר עקבי.'},
+  {q:'מה זה Llama 4 ואיך הוא שונה?', a:'Llama 4 של Meta הוא קוד פתוח — ניתן להריץ אותו בחינם מקומית עם GPU מתאים. ביצועים טובים מאוד ביחס לעלות (אפסית), אבל לא מגיע לרמת Claude Opus או GPT-4.5.'},
+  {q:'האם DeepSeek V3 טוב כמו ChatGPT?', a:'בקידוד ומתמטיקה — כן, לרוב. בכתיבה יצירתית ועברית — פחות. המחיר שלו נמוך בהרבה דרך ה-API, מה שהופך אותו לאטרקטיבי לפיתוח.'},
+  {q:'כמה עולה להשתמש ב-Claude API?', a:'Claude Sonnet 4.6 עולה $3 ל-1M tokens קלט ו-$15 ל-1M tokens פלט. לשימוש יומיומי — כ-$1-3 לחודש. Claude Haiku זול הרבה יותר ב-$0.25 ל-1M tokens.'}
+];
+
+// ── Render ─────────────────────────────────────────────────────────────────
+var currentFilter = 'all', currentSort = 'overall';
+
+function scoreColor(s) {
+  if (s >= 93) return '#34d399';
+  if (s >= 85) return '#60a5fa';
+  if (s >= 75) return '#fbbf24';
+  return '#f87171';
+}
+
+function scoreBar(val, max) {
+  if (!val) return '<span style="color:var(--text-muted);font-size:0.75rem">—</span>';
+  var pct = Math.round(val / max * 100);
+  return '<div class="score-bar"><div class="score-track"><div class="score-fill" style="width:' + pct + '%;background:' + scoreColor(val) + '"></div></div><span class="score-num" style="color:' + scoreColor(val) + '">' + val + '</span></div>';
+}
+
+function renderTable() {
+  var data = MODELS.filter(function(m){
+    if (currentFilter === 'all')  return true;
+    if (currentFilter === 'free') return m.price === 'free' || m.price === 'both';
+    if (currentFilter === 'open') return m.tags.indexOf('open') > -1;
+    if (currentFilter === 'heb')  return m.hebrew >= 88;
+    return m.tags.indexOf(currentFilter) > -1;
+  });
+
+  data.sort(function(a,b){ return b[currentSort] - a[currentSort]; });
+
+  var maxOverall = 100;
+  var html = '';
+  data.forEach(function(m, i) {
+    var rank = i + 1;
+    var rankCls = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+    var badges = m.badges.map(function(b){ return '<span class="model-badge ' + b.cls + '">' + b.txt + '</span>'; }).join('');
+    var priceClass = m.price === 'free' ? 'price-free' : m.price === 'paid' ? 'price-paid' : m.price === 'api' ? 'price-api' : 'price-both';
+
+    html += '<tr data-tags="' + m.tags.join(',') + '">' +
+      '<td><span class="rank-num ' + rankCls + '">' + (rank <= 3 ? ['🥇','🥈','🥉'][rank-1] : rank) + '</span></td>' +
+      '<td><div class="model-name">' + m.name + '</div><div class="model-company">' + m.company + ' · ' + m.year + '</div><div>' + badges + '</div></td>' +
+      '<td>' + scoreBar(m.overall, maxOverall) + '</td>' +
+      '<td>' + scoreBar(m.writing, maxOverall) + '</td>' +
+      '<td>' + scoreBar(m.coding, maxOverall) + '</td>' +
+      '<td>' + scoreBar(m.reasoning, maxOverall) + '</td>' +
+      '<td>' + scoreBar(m.hebrew, maxOverall) + '</td>' +
+      '<td><span class="price-tag ' + priceClass + '" title="' + m.priceNote + '">' + m.priceLabel + '</span></td>' +
+      '<td><a href="' + m.link + '" target="_blank" rel="noopener" class="lb-link">פתח ↗</a></td>' +
+      '</tr>';
+  });
+  document.getElementById('lb-body').innerHTML = html;
+}
+
+function filterLB(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.lb-filters button').forEach(function(b){ b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+  renderTable();
+}
+
+function sortLB(s, btn) {
+  currentSort = s;
+  document.querySelectorAll('.lb-sort button').forEach(function(b){ b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+  renderTable();
+}
+
+// FAQ
+function renderFAQ() {
+  var html = FAQS.map(function(f, i){
+    return '<div class="faq-item">' +
+      '<div class="faq-q" onclick="toggleFAQ(' + i + ')">' +
+        '<span>' + f.q + '</span>' +
+        '<span class="faq-arrow" id="arrow-' + i + '">▼</span>' +
+      '</div>' +
+      '<div class="faq-a" id="faq-' + i + '">' + f.a + '</div>' +
+    '</div>';
+  }).join('');
+  document.getElementById('faq-list').innerHTML = html;
+}
+
+function toggleFAQ(i) {
+  var el = document.getElementById('faq-' + i);
+  var arrow = document.getElementById('arrow-' + i);
+  var open = el.classList.toggle('open');
+  arrow.classList.toggle('open', open);
+}
+
+renderTable();
+renderFAQ();
+</script>
+</body>
+</html>
