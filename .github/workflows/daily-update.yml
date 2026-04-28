@@ -2,7 +2,7 @@ name: Daily Content Update
 
 on:
   schedule:
-    # 05:00 UTC = 07:00 Israel (UTC+2) / 08:00 summer (UTC+3)
+    # 05:00 UTC = 08:00 Israel summer (UTC+3)
     - cron: '0 5 * * *'
   workflow_dispatch: # allow manual trigger from GitHub UI
 
@@ -24,6 +24,16 @@ jobs:
       - name: Install dependencies
         run: pip install anthropic
 
+      - name: Verify API key exists
+        run: |
+          if [ -z "$CLAUDE_API_KEY" ]; then
+            echo "❌ CLAUDE_API_KEY is not set in GitHub Secrets!"
+            exit 1
+          fi
+          echo "✅ API key found"
+        env:
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+
       - name: Generate daily content
         env:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
@@ -34,5 +44,10 @@ jobs:
           git config --global user.name  "binah-bot"
           git config --global user.email "bot@binah.co.il"
           git add -A
-          git diff --staged --quiet || git commit -m "🤖 עדכון יומי — $(date +'%Y-%m-%d')"
-          git push
+          git diff --staged --quiet && echo "⏭ אין שינויים לדחוף" || (git commit -m "🤖 עדכון יומי — $(date +'%Y-%m-%d')" && git push)
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### תוצאת עדכון יומי 🤖" >> $GITHUB_STEP_SUMMARY
+          echo "תאריך: $(date +'%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY

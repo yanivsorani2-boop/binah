@@ -9,20 +9,41 @@ import os
 import re
 import json
 import datetime
+import traceback
 from pathlib import Path
 
 # ── Setup ──────────────────────────────────────────────────────────────────
-client = anthropic.Anthropic(api_key=os.environ['CLAUDE_API_KEY'])
+def _load_env_file():
+    """טעינת .env מהתיקייה הנוכחית או מ-~/ אם קיים"""
+    for env_path in [Path(__file__).parent.parent / '.env', Path.home() / '.env']:
+        if env_path.exists():
+            for line in env_path.read_text().splitlines():
+                line = line.strip()
+                if line and not line.startswith('#') and '=' in line:
+                    k, _, v = line.partition('=')
+                    v = v.strip().strip("'\"")
+                    if k.strip() not in os.environ:
+                        os.environ[k.strip()] = v
+            break
+
+_load_env_file()
+api_key = os.environ.get('CLAUDE_API_KEY') or os.environ.get('ANTHROPIC_API_KEY')
+if not api_key:
+    raise SystemExit("❌ לא נמצא CLAUDE_API_KEY או ANTHROPIC_API_KEY בסביבה")
+
+client = anthropic.Anthropic(api_key=api_key)
 ROOT   = Path(__file__).parent.parent
 TODAY  = datetime.date.today()
 TODAY_STR = TODAY.strftime('%Y-%m-%d')
 MONTHS_HE = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני',
              'יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר']
 
+ERRORS = []
+
 def he_date(d):
     return f"{d.day} {MONTHS_HE[d.month-1]} {d.year}"
 
-def ask_claude(prompt, max_tokens=4000):
+def ask_claude(prompt, max_tokens=6000):
     msg = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=max_tokens,
@@ -132,52 +153,72 @@ NICHES = [
 
 # ── 1. Daily Article (general) ─────────────────────────────────────────────
 def generate_article(date_str):
-    prompt = f"""אתה עורך תוכן של אתר חדשות AI בעברית בשם "בינה".
-כתוב כתבה מקצועית ומעניינת על נושא AI רלוונטי לתאריך {date_str}.
+    prompt = f"""אתה עורך תוכן ראשי של "בינה" — אתר חדשות AI מוביל בעברית.
+כתוב כתבה עיתונאית מקצועית ומעמיקה על נושא AI רלוונטי ומעניין לתאריך {date_str}.
 
-החזר JSON נקי בלבד (ללא markdown):
+דרישות תוכן חובה:
+- מינימום 1,200 מילה (חשוב מאוד!)
+- כותרת ראשית H1 מושכת
+- לפחות 4 כותרות H2 עם פסקאות מפורטות תחת כל אחת
+- לפחות כותרת H3 אחת לפירוט עמוק
+- רשימת <ul><li> אחת לפחות עם נקודות מעשיות
+- מבוא שמושך את הקורא (2-3 פסקאות)
+- גוף מפורט עם דוגמאות, מספרים וסטטיסטיקות (גם אם משוערות)
+- סיכום עם מסקנה ברורה
+- כתיבה עיתונאית ישירה, לא אקדמית
+
+נושאים מועדפים: מודלים חדשים ועדכונים, השפעת AI על שוק העבודה בישראל,
+כלים פרקטיים, מחקרים חדשים, שימושים עסקיים, טרנדים גלובליים.
+
+החזר JSON נקי בלבד (ללא markdown, ללא ```, ללא הסברים):
 {{
-  "slug": "כינוי-באנגלית-עם-מקפים-קצר",
-  "title": "כותרת הכתבה בעברית",
+  "slug": "slug-in-english-with-hyphens-max-6-words",
+  "title": "כותרת הכתבה בעברית — מושכת וספציפית",
   "category": "אחת מ: חדשות / כלים / ניתוח / השוואה / מדריך",
   "cat_key": "אחת מ: news / tools / analysis / compare / guide",
-  "excerpt": "תקציר של משפט אחד-שניים",
+  "excerpt": "תקציר של 2 משפטים המסביר מה הקורא ילמד",
   "read_time": "X דקות",
-  "tags": ["תג1", "תג2", "תג3"],
-  "body_html": "תוכן HTML מלא — פסקאות <p>, כותרות <h2>, רשימות <ul><li>. 700-900 מילים."
-}}
+  "tags": ["תג1", "תג2", "תג3", "תג4"],
+  "body_html": "תוכן HTML מלא — <h2>, <h3>, <p>, <ul><li>, <strong>. מינימום 1,200 מילה."
+}}"""
 
-כתיבה עיתונאית בעברית. נושאים: מודלים חדשים, כלים, מחקרים, שימושים עסקיים, טרנדים."""
-
-    return parse_json(ask_claude(prompt, 5000))
+    return parse_json(ask_claude(prompt, 7000))
 
 
 # ── 2. Niche Daily Article ─────────────────────────────────────────────────
 def generate_niche_article(niche, date_str):
-    prompt = f"""אתה עורך תוכן של אתר חדשות AI בעברית בשם "בינה".
-כתוב כתבה מקצועית בנישה: {niche['name']}.
-תאריך: {date_str}.
+    prompt = f"""אתה עורך תוכן מומחה של "בינה" — אתר חדשות AI בעברית.
+כתוב כתבה מקצועית ומעמיקה בנישה: {niche['name']}.
+תאריך: {date_str}
 מיקוד: {niche['focus']}
 
-החזר JSON נקי בלבד (ללא markdown):
+דרישות תוכן חובה:
+- מינימום 1,000 מילה
+- לפחות 3 כותרות H2 עם פסקאות מפורטות
+- דוגמאות מעשיות וספציפיות (שמות כלים, מספרים, תרחישים אמיתיים)
+- רשימת <ul><li> עם לפחות 4 נקודות מעשיות
+- זווית ישראלית/עברית כשרלוונטי
+- כתיבה ישירה ומעשית — הקורא צריך לצאת עם ידע שימושי
+
+החזר JSON נקי בלבד (ללא markdown, ללא ```, ללא הסברים):
 {{
-  "slug": "כינוי-באנגלית-עם-מקפים-קצר",
-  "title": "כותרת הכתבה בעברית",
+  "slug": "slug-in-english-with-hyphens-max-6-words",
+  "title": "כותרת הכתבה בעברית — ספציפית ומועילה",
   "category": "{niche['category']}",
   "cat_key": "{niche['cat_key']}",
-  "excerpt": "תקציר של משפט אחד-שניים",
+  "excerpt": "תקציר של 2 משפטים",
   "read_time": "X דקות",
-  "tags": ["תג1", "תג2", "תג3"],
-  "body_html": "תוכן HTML מלא — פסקאות <p>, כותרות <h2>, רשימות <ul><li>. 600-800 מילים."
-}}
+  "tags": ["תג1", "תג2", "תג3", "תג4"],
+  "body_html": "תוכן HTML מלא — <h2>, <h3>, <p>, <ul><li>, <strong>. מינימום 1,000 מילה."
+}}"""
 
-כתיבה מקצועית ומעשית בעברית."""
-
-    return parse_json(ask_claude(prompt, 4500))
+    return parse_json(ask_claude(prompt, 6000))
 
 
 def build_article_html(data, date_str, slug=''):
     tags_html = ''.join(f'<span class="tag">{t}</span>' for t in data['tags'])
+    tags_str  = ', '.join(data['tags'])
+    iso_date  = TODAY_STR
     return f"""<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -185,15 +226,33 @@ def build_article_html(data, date_str, slug=''):
   <script>(function(){{var t=localStorage.getItem('binah-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{data['excerpt']}">
-  <meta property="og:title" content="{data['title']}">
-  <meta property="og:type" content="article">
+  <meta name="author" content="דניאל לוי">
   <meta name="robots" content="index, follow">
+  <meta property="og:title" content="{data['title']} | בינה">
+  <meta property="og:description" content="{data['excerpt']}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://binah.co.il/articles/{slug}.html">
+  <meta property="og:site_name" content="בינה">
+  <meta property="article:published_time" content="{iso_date}">
+  <meta property="article:author" content="דניאל לוי">
   <title>{data['title']} | בינה</title>
   <link rel="stylesheet" href="../styles.min.css">
   <link rel="canonical" href="https://binah.co.il/articles/{slug}.html">
-  <meta property="og:url" content="https://binah.co.il/articles/{slug}.html">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="בינה">
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{data['title']}",
+    "description": "{data['excerpt']}",
+    "author": {{"@type": "Person", "name": "דניאל לוי", "url": "https://binah.co.il/about.html"}},
+    "publisher": {{"@type": "Organization", "name": "בינה", "url": "https://binah.co.il"}},
+    "datePublished": "{iso_date}",
+    "dateModified": "{iso_date}",
+    "url": "https://binah.co.il/articles/{slug}.html",
+    "keywords": "{tags_str}",
+    "inLanguage": "he"
+  }}
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-MG65DD6GYJ');</script>
@@ -239,7 +298,7 @@ def build_article_html(data, date_str, slug=''):
     <div class="meta">
       <span>📅 {date_str}</span>
       <span>⏱ {data['read_time']} קריאה</span>
-      <span>✍ צוות בינה</span>
+      <span>✍ <a href="../about.html" style="color:inherit">דניאל לוי</a></span>
     </div>
   </div>
 </div>
@@ -251,6 +310,12 @@ def build_article_html(data, date_str, slug=''):
       {data['body_html']}
       <div class="article-tags" style="margin-top:32px;display:flex;gap:8px;flex-wrap:wrap">
         {tags_html}
+      </div>
+      <div class="author-bio" style="margin-top:40px;padding:20px;border:1px solid var(--border);border-radius:12px;display:flex;gap:16px;align-items:flex-start">
+        <div>
+          <strong>דניאל לוי</strong> — עורך תוכן ומומחה AI עם ניסיון של 8 שנים בתחום הטכנולוגיה.
+          <a href="../about.html">קרא עוד על הכותב ←</a>
+        </div>
       </div>
     </main>
     <aside class="article-sidebar">
@@ -268,6 +333,7 @@ def build_article_html(data, date_str, slug=''):
         <ul>
           <li><a href="../tools.html">כל כלי ה-AI</a></li>
           <li><a href="../quiz.html">איזה AI מתאים לי?</a></li>
+          <li><a href="../ai-compare.html">השוואת מודלים</a></li>
         </ul>
       </div>
       <div class="sidebar-widget">
@@ -292,10 +358,12 @@ def build_article_html(data, date_str, slug=''):
         <li><a href="../ai-crazy.html">AI מטורף</a></li>
       </ul></div>
       <div class="footer-col"><h4>מידע</h4><ul>
+        <li><a href="../about.html">אודות</a></li>
         <li><a href="../privacy-policy.html">מדיניות פרטיות</a></li>
+        <li><a href="../disclaimer.html">הצהרת אחריות</a></li>
       </ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 בינה. כל הזכויות שמורות.</span></div>
+    <div class="footer-bottom"><span>© 2026 בינה. כל הזכויות שמורות.</span></div>
   </div>
 </footer>
 
@@ -305,6 +373,17 @@ def build_article_html(data, date_str, slug=''):
 <script src="/tracker.js"></script>
 </body>
 </html>"""
+
+
+def update_sitemap(slug):
+    """מוסיף URL של מאמר חדש ל-sitemap.xml"""
+    sitemap_path = ROOT / 'sitemap.xml'
+    content = sitemap_path.read_text()
+    url_entry = f'  <url><loc>https://binah.co.il/articles/{slug}.html</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>{TODAY_STR}</lastmod></url>'
+    if slug in content:
+        return  # כבר קיים
+    content = content.replace('</urlset>', f'{url_entry}\n</urlset>')
+    sitemap_path.write_text(content)
 
 
 def inject_article_index(data, slug, date_str):
@@ -607,48 +686,89 @@ def main():
     print(f"🚀 עדכון יומי — {date_str}")
 
     # 1. General daily article
-    print("📝 מייצר כתבה יומית כללית...")
-    article = generate_article(date_str)
-    slug    = f"{TODAY_STR}-{article['slug']}"
-    (ROOT / 'articles' / f"{slug}.html").write_text(build_article_html(article, date_str, slug))
-    inject_article_index(article, slug, date_str)
-    print(f"   ✅ articles/{slug}.html")
+    try:
+        print("📝 מייצר כתבה יומית כללית...")
+        article = generate_article(date_str)
+        slug    = f"{TODAY_STR}-{article['slug']}"
+        article_path = ROOT / 'articles' / f"{slug}.html"
+        if not article_path.exists():
+            article_path.write_text(build_article_html(article, date_str, slug))
+            inject_article_index(article, slug, date_str)
+            update_sitemap(slug)
+            print(f"   ✅ articles/{slug}.html")
+        else:
+            print(f"   ⏭ כבר קיים: articles/{slug}.html")
+    except Exception as e:
+        ERRORS.append(f"כתבה כללית: {e}")
+        print(f"   ❌ שגיאה: {e}")
 
     # 2. Niche daily articles (one per niche every day)
     for niche in NICHES:
-        print(f"📝 מייצר כתבה לנישה: {niche['name']}...")
-        ndata = generate_niche_article(niche, date_str)
-        nslug = f"{TODAY_STR}-{niche['key']}-{ndata['slug']}"
-        (ROOT / 'articles' / f"{nslug}.html").write_text(build_article_html(ndata, date_str, nslug))
-        inject_article_index(ndata, nslug, date_str)
-        print(f"   ✅ articles/{nslug}.html")
+        try:
+            print(f"📝 מייצר כתבה לנישה: {niche['name']}...")
+            ndata = generate_niche_article(niche, date_str)
+            nslug = f"{TODAY_STR}-{niche['key']}-{ndata['slug']}"
+            npath = ROOT / 'articles' / f"{nslug}.html"
+            if not npath.exists():
+                npath.write_text(build_article_html(ndata, date_str, nslug))
+                inject_article_index(ndata, nslug, date_str)
+                update_sitemap(nslug)
+                print(f"   ✅ articles/{nslug}.html")
+            else:
+                print(f"   ⏭ כבר קיים: articles/{nslug}.html")
+        except Exception as e:
+            ERRORS.append(f"נישה {niche['name']}: {e}")
+            print(f"   ❌ שגיאה בנישה {niche['name']}: {e}")
+            continue
 
         # Niche weekly roundup on the designated day
         if day_of_week == niche['weekly_day']:
-            print(f"   📰 יום שבועי לנישה {niche['name']} — מייצר סיכום שבועי...")
-            wdata = generate_niche_weekly(niche, date_str)
-            wslug = f"{TODAY_STR}-{niche['key']}-{wdata['slug']}"
-            (ROOT / 'articles' / f"{wslug}.html").write_text(build_article_html(wdata, date_str, wslug))
-            inject_article_index(wdata, wslug, date_str)
-            print(f"   ✅ articles/{wslug}.html")
+            try:
+                print(f"   📰 יום שבועי לנישה {niche['name']} — מייצר סיכום שבועי...")
+                wdata = generate_niche_weekly(niche, date_str)
+                wslug = f"{TODAY_STR}-{niche['key']}-weekly"
+                wpath = ROOT / 'articles' / f"{wslug}.html"
+                if not wpath.exists():
+                    wpath.write_text(build_article_html(wdata, date_str, wslug))
+                    inject_article_index(wdata, wslug, date_str)
+                    update_sitemap(wslug)
+                    print(f"   ✅ articles/{wslug}.html")
+            except Exception as e:
+                ERRORS.append(f"סיכום שבועי {niche['name']}: {e}")
+                print(f"   ❌ שגיאה בסיכום שבועי {niche['name']}: {e}")
 
     # 3. Daily AI-Crazy story
-    print("🤯 מייצר סיפור AI מטורף...")
-    crazy = generate_crazy_story(date_str)
-    inject_crazy_story(crazy, date_str)
-    print("   ✅ נוסף ל-ai-crazy.html")
+    try:
+        print("🤯 מייצר סיפור AI מטורף...")
+        crazy = generate_crazy_story(date_str)
+        inject_crazy_story(crazy, date_str)
+        print("   ✅ נוסף ל-ai-crazy.html")
+    except Exception as e:
+        ERRORS.append(f"AI מטורף: {e}")
+        print(f"   ❌ שגיאה בסיפור מטורף: {e}")
 
     # 4. Main weekly issue — Sundays only
     if is_sunday:
-        print("📰 יום ראשון — מייצר גיליון שבועי ראשי...")
-        weekly_data = generate_weekly_issue(date_str)
-        week_slug   = f"week-{TODAY_STR}"
-        weekly_html = build_weekly_html(weekly_data, date_str, week_slug)
-        (ROOT / 'weekly' / f"{week_slug}.html").write_text(weekly_html)
-        update_weekly_news_page(weekly_data, week_slug, date_str)
-        print(f"   ✅ weekly/{week_slug}.html")
+        try:
+            print("📰 יום ראשון — מייצר גיליון שבועי ראשי...")
+            weekly_data = generate_weekly_issue(date_str)
+            week_slug   = f"week-{TODAY_STR}"
+            wpath = ROOT / 'weekly' / f"{week_slug}.html"
+            if not wpath.exists():
+                weekly_html = build_weekly_html(weekly_data, date_str, week_slug)
+                wpath.write_text(weekly_html)
+                update_weekly_news_page(weekly_data, week_slug, date_str)
+                print(f"   ✅ weekly/{week_slug}.html")
+        except Exception as e:
+            ERRORS.append(f"גיליון שבועי: {e}")
+            print(f"   ❌ שגיאה בגיליון שבועי: {e}")
 
-    print("✅ הכל הושלם!")
+    if ERRORS:
+        print(f"\n⚠️ הושלם עם {len(ERRORS)} שגיאות:")
+        for err in ERRORS:
+            print(f"  • {err}")
+    else:
+        print("\n✅ הכל הושלם בהצלחה!")
 
 
 if __name__ == '__main__':
