@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /crm/
+Disallow: /scripts/
+Disallow: /node_modules/
+Disallow: /.netlify/
 
 Sitemap: https://binah.co.il/sitemap.xml
