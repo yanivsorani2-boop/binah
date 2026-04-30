@@ -186,11 +186,16 @@ def generate_article(date_str):
 
 
 # ── 2. Niche Daily Article ─────────────────────────────────────────────────
-def generate_niche_article(niche, date_str):
+def generate_niche_article(niche, date_str, existing_slugs=None):
+    avoid = ""
+    if existing_slugs:
+        sample = existing_slugs[-30:]  # last 30 slugs
+        avoid = f"\n\nנושאים שכבר כוסו — אל תחזור עליהם:\n" + "\n".join(f"- {s}" for s in sample)
+
     prompt = f"""אתה עורך תוכן מומחה של "בינה" — אתר חדשות AI בעברית.
 כתוב כתבה מקצועית ומעמיקה בנישה: {niche['name']}.
 תאריך: {date_str}
-מיקוד: {niche['focus']}
+מיקוד: {niche['focus']}{avoid}
 
 דרישות תוכן חובה:
 - מינימום 1,000 מילה
@@ -702,11 +707,14 @@ def main():
         ERRORS.append(f"כתבה כללית: {e}")
         print(f"   ❌ שגיאה: {e}")
 
-    # 2. Niche daily articles (one per niche every day)
-    for niche in NICHES:
+    # 2. Niche article — only on the niche's designated day (one article per day max)
+    todays_niche = next((n for n in NICHES if n['weekly_day'] == day_of_week), None)
+    if todays_niche:
+        niche = todays_niche
         try:
-            print(f"📝 מייצר כתבה לנישה: {niche['name']}...")
-            ndata = generate_niche_article(niche, date_str)
+            print(f"📝 מייצר כתבה לנישה: {niche['name']} (יום מוגדר)...")
+            existing_slugs = [f.stem for f in (ROOT / 'articles').glob(f"*-{niche['key']}-*.html")]
+            ndata = generate_niche_article(niche, date_str, existing_slugs)
             nslug = f"{TODAY_STR}-{niche['key']}-{ndata['slug']}"
             npath = ROOT / 'articles' / f"{nslug}.html"
             if not npath.exists():
@@ -719,23 +727,6 @@ def main():
         except Exception as e:
             ERRORS.append(f"נישה {niche['name']}: {e}")
             print(f"   ❌ שגיאה בנישה {niche['name']}: {e}")
-            continue
-
-        # Niche weekly roundup on the designated day
-        if day_of_week == niche['weekly_day']:
-            try:
-                print(f"   📰 יום שבועי לנישה {niche['name']} — מייצר סיכום שבועי...")
-                wdata = generate_niche_weekly(niche, date_str)
-                wslug = f"{TODAY_STR}-{niche['key']}-weekly"
-                wpath = ROOT / 'articles' / f"{wslug}.html"
-                if not wpath.exists():
-                    wpath.write_text(build_article_html(wdata, date_str, wslug))
-                    inject_article_index(wdata, wslug, date_str)
-                    update_sitemap(wslug)
-                    print(f"   ✅ articles/{wslug}.html")
-            except Exception as e:
-                ERRORS.append(f"סיכום שבועי {niche['name']}: {e}")
-                print(f"   ❌ שגיאה בסיכום שבועי {niche['name']}: {e}")
 
     # 3. Daily AI-Crazy story
     try:
