@@ -17,16 +17,26 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# HTML — no cache (תוכן משתנה)
+# HTML — revalidate every hour at CDN, no browser cache
 [[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
+    Cache-Control = "public, max-age=0, must-revalidate, s-maxage=3600"
 
 [[headers]]
   for = "/articles/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
+    Cache-Control = "public, max-age=0, must-revalidate, s-maxage=3600"
+
+[[headers]]
+  for = "/guides/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate, s-maxage=3600"
+
+[[headers]]
+  for = "/weekly/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate, s-maxage=3600"
 
 # Sitemap — טרי
 [[headers]]
@@ -41,19 +51,64 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com https://ep2.adtrafficquality.google https://tpc.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; font-src 'self' https://fonts.gstatic.com"
+
+# Hub pages clean URLs
+[[redirects]]
+  from = "/comparisons"
+  to = "/comparisons.html"
+  status = 200
+
+[[redirects]]
+  from = "/השוואות"
+  to = "/comparisons.html"
+  status = 301
+
+# URL canonicalization — strip .html (301)
+[[redirects]]
+  from = "/articles/*.html"
+  to = "/articles/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/guides/*.html"
+  to = "/guides/:splat"
+  status = 301
 
 # Redirects — legacy article URLs
 [[redirects]]
   from = "/article_claude_vs_gpt4o.html"
-  to = "/articles/claude-vs-gpt4o.html"
+  to = "/articles/claude-vs-gpt4o"
   status = 301
 
 [[redirects]]
   from = "/article2_ai_video_tools.html"
-  to = "/articles/ai-video-tools.html"
+  to = "/articles/ai-video-tools"
   status = 301
 
 [[redirects]]
   from = "/article3_vibe_coding.html"
-  to = "/articles/vibe-coding.html"
+  to = "/articles/vibe-coding"
+  status = 301
+
+# SEO consolidation redirects — 2026-05-01
+[[redirects]]
+  from = "/guides/guide-midjourney.html"
+  to = "/articles/midjourney-beginners"
+  status = 301
+
+[[redirects]]
+  from = "/guides/guide-ollama.html"
+  to = "/articles/ollama-guide"
+  status = 301
+
+[[redirects]]
+  from = "/articles/gemini-2025.html"
+  to = "/articles/claude-vs-gpt4o"
+  status = 301
+
+[[redirects]]
+  from = "/articles/deepseek-r2.html"
+  to = "/articles/claude-vs-gpt4o"
   status = 301

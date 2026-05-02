@@ -9,12 +9,17 @@
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ollama — כיצד להריץ AI בחינם ובפרטיות על המחשב שלך. מה זה Ollama, התקנה, מודלים מומלצים וביצועים.">
+  <meta name="description" content="Ollama — כיצד להריץ AI בחינם ובפרטיות על המחשב שלך. דרישות מערכת, התקנה Mac/Windows כולל Homebrew, השוואת מודלים, פקודות CLI ו-Open WebUI.">
   <meta property="og:title" content="Ollama: כיצד להריץ AI בחינם על המחשב שלך">
   <meta property="og:type" content="article">
   <meta name="robots" content="index, follow">
   <title>Ollama: כיצד להריץ AI בחינם על המחשב שלך | בינה</title>
-  <link rel="stylesheet" href="../styles.min.css">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style id="critical-css">@keyframes pulse-badge{0%,to{opacity:1}50%{opacity:.7}}@keyframes blink{0%,to{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.8)}}:root{--bg:#0a0a12;--bg-card:#12121f;--bg-code:#0d1117;--border:#1e1e32;--primary:#7c3aed;--primary-h:#9333ea;--accent:#06b6d4;--accent-h:#0891b2;--text:#e2e8f0;--text-muted:#64748b;--heading:#f8fafc;--tag-bg:#1e1e3a;--radius:12px;--font:'Segoe UI', 'Arial', sans-serif;--max-w:1200px;--shadow:0 4px 24px rgba(0,0,0,0.4)}[data-theme=light]{--bg:#f8fafc;--bg-card:#ffffff;--bg-code:#f1f5f9;--border:#e2e8f0;--primary:#6d28d9;--primary-h:#7c3aed;--accent:#0891b2;--accent-h:#0e7490;--text:#1e293b;--text-muted:#64748b;--heading:#0f172a;--tag-bg:#e8eaf6;--shadow:0 4px 24px rgba(0,0,0,0.08)}*,::after,::before{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font);background:var(--bg);color:var(--text);direction:rtl;line-height:1.7;font-size:16px}a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-h)}img{max-width:100%;height:auto;display:block}.container{max-width:var(--max-w);margin:0 auto;padding:0 20px}header{background:#08080f;border-bottom:1px solid rgba(124,58,237,.35);position:sticky;top:0;z-index:100;overflow:visible}#header-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}[data-theme=light] header{background:#08080f;border-bottom-color:rgba(124,58,237,.4)}.nav-inner,nav{display:flex;align-items:center}.nav-inner{justify-content:space-between;height:64px;gap:20px;position:relative;z-index:1}.logo{font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#c4b5fd,#a78bfa 40%,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px;filter:drop-shadow(0 0 10px rgba(124,58,237,.45))}nav{gap:4px}nav a{color:rgba(200,195,230,.7);padding:7px 13px;border-radius:8px;font-size:.88rem;font-weight:500;letter-spacing:.2px;transition:all .18s;position:relative;white-space:nowrap}nav a::after{content:"";position:absolute;bottom:2px;left:50%;transform:translateX(-50%) scaleX(0);width:60%;height:2px;background:linear-gradient(90deg,#7c3aed,#06b6d4);border-radius:99px;transition:transform .2s ease}nav a:hover{color:#fff;background:rgba(124,58,237,.12);text-shadow:0 0 12px rgba(167,139,250,.4)}nav a.active::after,nav a:hover::after{transform:translateX(-50%) scaleX(1)}nav a.active{color:#fff;background:linear-gradient(135deg,rgba(124,58,237,.25),rgba(6,182,212,.15));box-shadow:0 0 0 1px rgba(124,58,237,.3),inset 0 1px 0 rgba(255,255,255,.06)}.hero{padding:80px 0 60px;text-align:center;background:radial-gradient(ellipse at 50%0,rgba(124,58,237,.15)0,transparent 70%)}.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--tag-bg);border:1px solid var(--primary);color:var(--primary);padding:4px 14px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:20px}.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--heading);line-height:1.2;margin-bottom:16px;letter-spacing:-1px}.hero p{font-size:1.15rem;color:var(--text-muted);max-width:600px;margin:0 auto 32px}.ad-zone{overflow:hidden;text-align:center}.ad-zone:empty{display:none}.ad-banner,.ad-rectangle{width:100%;margin:16px 0}.main-layout{display:grid;grid-template-columns:1fr 300px;gap:32px;padding:40px 0 80px}@media (max-width:900px){.main-layout{grid-template-columns:1fr}}.section-title{font-size:1.2rem;font-weight:700;color:var(--heading);margin-bottom:20px;p.article-body{padding-top:40px;font-size:1.06rem;line-height:1.88}</style>
+  <link rel="preload" href="../styles.min.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../styles.min.css"></noscript>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
 <script>
@@ -27,21 +32,21 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": "Ollama: כיצד להריץ AI בחינם על המחשב שלך",
   "description": "Ollama — כיצד להריץ AI בחינם ובפרטיות על המחשב שלך. מה זה Ollama, התקנה, מודלים מומלצים וביצועים.",
-  "url": "https://binah.co.il/articles/ollama-guide.html",
+  "url": "https://binah.co.il/articles/ollama-guide",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://binah.co.il/articles/ollama-guide.html"
+    "@id": "https://binah.co.il/articles/ollama-guide"
   },
   "inLanguage": "he",
   "datePublished": "2026-03-18",
-  "dateModified": "2026-03-18",
+  "dateModified": "2026-05-01",
   "author": {
-    "@type": "Organization",
-    "name": "בינה",
-    "url": "https://binah.co.il"
+    "@type": "Person",
+    "name": "יניב סוראני",
+    "url": "https://binah.co.il/about.html"
   },
   "publisher": {
     "@type": "Organization",
@@ -51,18 +56,35 @@
       "@type": "ImageObject",
       "url": "https://binah.co.il/favicon.ico"
     }
-  }
+  },
+  "image": {"@type": "ImageObject", "url": "https://binah.co.il/images/og/ollama-guide.jpg"},
+  "wordCount": 1018,
+  "articleSection": "מדריכים"
 }
 </script>
-  <link rel="canonical" href="https://binah.co.il/articles/ollama-guide.html">
-  <meta property="og:url" content="https://binah.co.il/articles/ollama-guide.html">
-  <meta property="og:description" content="Ollama — כיצד להריץ AI בחינם ובפרטיות על המחשב שלך. מה זה Ollama, התקנה, מודלים מומלצים וביצועים.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"מה זה Ollama?","acceptedAnswer":{"@type":"Answer","text":"Ollama הוא כלי קוד פתוח שמאפשר להריץ מודלי AI גדולים (כמו Llama, Mistral, Gemma) ישירות על המחשב שלך — ללא אינטרנט, ללא עלות חודשית, עם פרטיות מלאה."}},
+    {"@type":"Question","name":"האם צריך מחשב חזק להריץ Ollama?","acceptedAnswer":{"@type":"Answer","text":"מודלים קטנים (7B פרמטרים) רצים על 8GB RAM. מודלים גדולים דורשים 16GB+. כרטיס גרפיקה מאיץ משמעותית אך אינו חובה. Mac M1/M2/M3 עובד מצוין."}},
+    {"@type":"Question","name":"האם Ollama חינמי?","acceptedAnswer":{"@type":"Answer","text":"כן, Ollama הוא חינמי לחלוטין וקוד פתוח. גם המודלים שאפשר להוריד (Llama, Mistral ועוד) הם חינמיים."}},
+    {"@type":"Question","name":"איזה מודל AI עדיף להוריד ב-Ollama?","acceptedAnswer":{"@type":"Answer","text":"למתחילים: llama3.2:3b אם יש 8GB RAM, llama3.2:8b אם יש 16GB. לקוד: codellama. למחשבים חלשים: phi3:mini (4GB RAM בלבד)."}}
+  ]
+}
+</script>
+  <link rel="canonical" href="https://binah.co.il/articles/ollama-guide">
+  <meta property="og:url" content="https://binah.co.il/articles/ollama-guide">
+  <meta property="og:description" content="Ollama — כיצד להריץ AI בחינם ובפרטיות על המחשב שלך. דרישות מערכת, התקנה Mac/Windows כולל Homebrew, השוואת מודלים, פקודות CLI ו-Open WebUI.">
   <meta property="og:site_name" content="בינה">
-  <meta name="author" content="דניאל לוי">
-  <meta property="og:image" content="https://binah.co.il/images/og-default.jpg">
+  <meta name="author" content="יניב סוראני">
+  <meta property="og:image" content="https://binah.co.il/images/og/ollama-guide.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ollama: כיצד להריץ AI בחינם על המחשב שלך">
+  <meta name="twitter:description" content="Ollama — כיצד להריץ AI בחינם ובפרטיות על המחשב שלך. דרישות מערכת, התקנה Mac/Windows כולל Homebrew, השוואת מודלים, פקודות CLI ו-Open WebUI.">
   <meta name="twitter:site" content="@BinahAI">
-  <meta name="twitter:image" content="https://binah.co.il/images/og-default.jpg">
+  <meta name="twitter:image" content="https://binah.co.il/images/og/ollama-guide.jpg">
 </head>
 <body>
 <header>
@@ -87,7 +109,7 @@
 </header>
 
 <div class="container">
-  <div class="ad-zone ad-banner"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+  <div class="ad-zone ad-banner"><ins class="adsbygoogle" style="display:block;min-height:90px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 </div>
 
 <div class="container">
@@ -95,9 +117,9 @@
     <span class="category">מדריך</span>
     <h1>Ollama: כיצד להריץ AI בחינם על המחשב שלך</h1>
     <div class="meta">
-      <span>📅 מרץ 2025</span>
+      <span>📅 מרץ 2026</span>
       <span>⏱ 6 דקות קריאה</span>
-      <span>✍ <a href="../about.html">דניאל לוי</a></span>
+      <span>✍ <a href="../about.html">יניב סוראני</a></span>
     </div>
   </div>
 </div>
@@ -124,7 +146,7 @@
 </div>
 
     <main class="article-body">
-<div class="container"><button class="btn-back" onclick="history.back()">→ חזרה</button></div>
+<div class="container"><a href="../guides.html" class="btn-back">→ חזרה</a></div>
 
       <p>ChatGPT עולה $20 לחודש. Claude Pro עולה $20 לחודש. אבל מה אם תוכלו לקבל חוויה דומה — <strong>בחינם לחלוטין, עם פרטיות מלאה, ומבלי לשלוח נתונים לאף שרת?</strong> Ollama הופך את זה לאפשרי.</p>
 
@@ -137,7 +159,7 @@
       </ul>
 
       <h2>
-      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 מה זה Ollama?</h2>
       <p>Ollama הוא <strong>כלי קוד פתוח</strong> שמאפשר להוריד ולהריץ מודלי AI גדולים (LLMs) על המחשב האישי. הוא מנהל את ההורדה, האחסון, ומספק ממשק פשוט להרצת מודלים.</p>
 
@@ -149,7 +171,22 @@
         <li>תומך ב-50+ מודלים מובילים</li>
       </ul>
 
+      <h2>דרישות מערכת</h2>
+      <table>
+        <thead>
+          <tr><th>רכיב</th><th>מינימום</th><th>מומלץ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>RAM</td><td>8GB</td><td>16GB+</td></tr>
+          <tr><td>אחסון פנוי</td><td>10GB</td><td>50GB+</td></tr>
+          <tr><td>GPU</td><td>אופציונלי</td><td>NVIDIA 8GB VRAM</td></tr>
+          <tr><td>מעבד</td><td>Intel/AMD מודרני</td><td>Apple Silicon (M1+)</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Apple Silicon (M1–M4)</strong> הוא הפלטפורמה הטובה ביותר ל-Ollama — GPU משותף עם RAM מאפשר ביצועים מצוינים גם ב-8GB.</p>
+
       <h2>שלבי התקנה — Mac</h2>
+      <h3>דרך 1 — הורדה ישירה</h3>
       <ol>
         <li>היכנסו ל-<strong>ollama.com</strong> ולחצו "Download for Mac"</li>
         <li>גררו את Ollama.app לתיקיית Applications</li>
@@ -158,8 +195,13 @@
       </ol>
       <pre><code>ollama pull llama3.2</code></pre>
 
+      <h3>דרך 2 — Homebrew (למי שמכיר)</h3>
+      <pre><code>brew install ollama</code></pre>
+      <p>לאחר ההתקנה הפעילו את ה-daemon:</p>
+      <pre><code>ollama serve</code></pre>
+
       <h2>
-      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 שלבי התקנה — Windows</h2>
       <ol>
         <li>הורידו מ-ollama.com את installer ל-Windows</li>
@@ -180,12 +222,13 @@
           <tr><td>llama3.2:8b</td><td>5GB</td><td>הכל-תכליתי</td><td>16GB RAM</td></tr>
           <tr><td>mistral:7b</td><td>4.1GB</td><td>הוראות, קוד</td><td>8GB RAM</td></tr>
           <tr><td>codellama:13b</td><td>7.4GB</td><td>כתיבת קוד</td><td>16GB RAM</td></tr>
-          <tr><td>gemma2:9b</td><td>5.4GB</td><td>שפות רבות</td><td>16GB RAM</td></tr>
+          <tr><td>phi3:mini</td><td>2.3GB</td><td>מהיר מאוד, מחשבים חלשים</td><td>4GB RAM</td></tr>
+          <tr><td>gemma2:9b</td><td>5.4GB</td><td>שפות רבות, כולל עברית</td><td>16GB RAM</td></tr>
         </tbody>
       </table>
 
       <h2>
-      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 ביצועים מה לצפות?</h2>
       <p>הציפיות חשובות — Ollama מהיר, אבל לא תמיד במהירות ChatGPT:</p>
       <ul>
@@ -201,45 +244,81 @@
   --add-host=host.docker.internal:host-gateway \
   -v open-webui:/app/backend/data \
   --name open-webui \
+  --restart always \
   ghcr.io/open-webui/open-webui:main</code></pre>
-      <p>גשו ל-<code>localhost:3000</code> — ממשק ChatGPT מלא לחלוטין, מקומי.</p>
+      <p>גשו ל-<code>localhost:3000</code> — ממשק ChatGPT מלא לחלוטין, מקומי. הדגל <code>--restart always</code> מבטיח שהממשק יקום מחדש אוטומטית לאחר הפעלת המחשב.</p>
 
       <h2>
-      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 Ollama עם n8n — אוטומציה מקומית</h2>
       <p>אחד השימושים המגניבים: חיבור Ollama ל-n8n (כלי אוטומציה). תוכלו לבנות workflows AI שרצים לגמרי מקומית — ללא API, ללא תשלום.</p>
 
-      <div class="related-section">
-        <h2>מדריכים קשורים</h2>
-        <div class="related-grid">
-          <div class="related-card">
-            <span class="pill-tag">מדריך מפורט</span>
-            <h4>מדריך Ollama — כל הפקודות והטיפים</h4>
-            <a href="../guides/guide-ollama.html">קרא עוד ←</a>
+      <h2>פקודות CLI שימושיות</h2>
+      <pre><code># רשימת מודלים מותקנים
+ollama list
+
+# מחיקת מודל
+ollama rm mistral
+
+# מידע על מודל
+ollama show llama3.2
+
+# הרצה עם פרמטרים
+ollama run llama3.2 --verbose</code></pre>
+
+      <h2>שאלות נפוצות</h2>
+      <div itemscope itemtype="https://schema.org/FAQPage">
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">מה זה Ollama ולמה זה שימושי?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Ollama הוא כלי קוד פתוח שמאפשר להריץ מודלי AI על המחשב שלך — ללא אינטרנט, ללא עלות חודשית, עם פרטיות מלאה. מושלם למי שעובד עם מידע רגיש או רוצה AI בחינם.</p>
           </div>
+        </div>
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">האם צריך מחשב חזק להריץ Ollama?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">מודלים קטנים (7B פרמטרים) רצים על 8GB RAM. מודלים גדולים דורשים 16GB+. כרטיס גרפיקה מאיץ משמעותית אך אינו חובה. Mac M1/M2/M3 עובד מצוין.</p>
+          </div>
+        </div>
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">איזה מודל AI עדיף להוריד ב-Ollama?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">למתחילים: llama3.2:3b אם יש 8GB RAM, llama3.2:8b אם יש 16GB. לקוד: codellama. למחשבים חלשים: phi3:mini (4GB RAM בלבד).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="related-section">
+        <h2>מאמרים קשורים</h2>
+        <div class="related-grid">
           <div class="related-card">
             <span class="pill-tag">מאמר</span>
             <h4>DeepSeek R2 — המודל שניתן גם להריץ מקומית</h4>
             <a href="deepseek-r2.html">קרא עוד ←</a>
           </div>
+          <div class="related-card">
+            <span class="pill-tag">מדריך</span>
+            <h4>Vibe Coding — לבנות אפליקציה בלי לדעת לתכנת</h4>
+            <a href="vibe-coding.html">קרא עוד ←</a>
+          </div>
         </div>
       </div>
-      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
     <div class="share-bar">
   <span class="share-label">שתפו:</span>
-  <a class="share-btn whatsapp" href="https://wa.me/?text=Ollama%20כיצד%20להריץ%20AI%20בחינם%20על%20המחשב%20שלך%20https://binah.co.il/articles/ollama-guide.html" target="_blank" rel="noopener" aria-label="שתף בוואטסאפ">
+  <a class="share-btn whatsapp" href="https://wa.me/?text=Ollama%20כיצד%20להריץ%20AI%20בחינם%20על%20המחשב%20שלך%20https://binah.co.il/articles/ollama-guide" target="_blank" rel="noopener" aria-label="שתף בוואטסאפ">
     <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.852L.057 23.03a.75.75 0 0 0 .914.914l5.233-1.464A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.493-5.177-1.355l-.371-.214-3.854 1.079 1.094-3.767-.232-.38A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
     וואטסאפ
   </a>
-  <a class="share-btn twitter" href="https://twitter.com/intent/tweet?text=Ollama%20כיצד%20להריץ%20AI%20בחינם%20על%20המחשב%20שלך&url=https://binah.co.il/articles/ollama-guide.html" target="_blank" rel="noopener" aria-label="שתף בטוויטר">
+  <a class="share-btn twitter" href="https://twitter.com/intent/tweet?text=Ollama%20כיצד%20להריץ%20AI%20בחינם%20על%20המחשב%20שלך&url=https://binah.co.il/articles/ollama-guide" target="_blank" rel="noopener" aria-label="שתף בטוויטר">
     <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     X
   </a>
-  <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://binah.co.il/articles/ollama-guide.html" target="_blank" rel="noopener" aria-label="שתף בפייסבוק">
+  <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://binah.co.il/articles/ollama-guide" target="_blank" rel="noopener" aria-label="שתף בפייסבוק">
     <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
     פייסבוק
   </a>
-  <button class="share-btn copy" onclick="navigator.clipboard.writeText('https://binah.co.il/articles/ollama-guide.html').then(function(){this.textContent='✓ הועתק!'}.bind(this))" aria-label="העתק קישור">
+  <button class="share-btn copy" onclick="navigator.clipboard.writeText('https://binah.co.il/articles/ollama-guide').then(function(){this.textContent='✓ הועתק!'}.bind(this))" aria-label="העתק קישור">
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
     העתק קישור
   </button>
@@ -253,40 +332,18 @@ Ollama עם n8n — אוטומציה מקומית</h2>
   </div>
 </div>
     
-<h2>מדריך מקיף לשימוש יעיל בבינה מלאכותית</h2>
-<p>כלי AI הפכו לחלק בלתי נפרד מחיי העבודה והיצירה בשנת 2026. בין אם אתם מתחילים שרק שמעו על ChatGPT ובין אם אתם משתמשים קבועים שרוצים להעמיק — המדריך שלפניכם מציע מפה ברורה לניווט בעולם ה-AI.</p>
-
-<h2>למי מיועד המדריך הזה?</h2>
-<ul>
-  <li><strong>מתחילים:</strong> שרוצים להבין את הבסיס ולהתחיל להשתמש בכלים</li>
-  <li><strong>משתמשים בינוניים:</strong> שרוצים לשפר את היעילות שלהם</li>
-  <li><strong>מקצוענים:</strong> שרוצים לשלב AI בתהליכי עבודה</li>
-  <li><strong>בעלי עסקים:</strong> שמחפשים כיצד AI יכול לשפר את העסק</li>
-</ul>
-
-<h2>שלב 1: הבנת הבסיס</h2>
-<p>לפני שצוללים לכלים ספציפיים, חשוב להבין את עקרונות הפעולה הבסיסיים. מודלי שפה גדולים (LLMs) כמו ChatGPT ו-Claude אינם "מחשבים" — הם מייצרים טקסט על בסיס דפוסים שלמדו. הם מצטיינים בניסוח, יצירתיות ולמידה מדוגמאות, אך יכולים להיות לא מדויקים בעובדות.</p>
-
-<h2>שלב 2: בחירת הכלי המתאים</h2>
-<ul>
-  <li>לכתיבה ויצירתיות: Claude, ChatGPT Plus</li>
-  <li>למחקר ועובדות: Perplexity AI, Gemini עם גישה לאינטרנט</li>
-  <li>לתכנות: GitHub Copilot, Cursor</li>
-  <li>לעיצוב: Midjourney, DALL-E 3, Adobe Firefly</li>
-</ul>
-
-<h2>שלב 3: ניסוח בקשות אפקטיביות</h2>
-<p>הכלל הזהב: היו ספציפיים כמה שיותר. במקום "עזור לי עם המכתב", נסו "כתוב מכתב רשמי לרשות המקומית בבקשה להנחה בארנונה עבור עסק קטן. טון מנומס ומקצועי, עד 200 מילה".</p>
-
-<h2>שלב 4: שיפור איטרטיבי</h2>
-<p>לעיתים נדירות הפרומפט הראשון מייצר את התוצאה המושלמת. הדרך הנכונה היא לקבל תוצאה ראשונה, לזהות מה חסר, ולבקש שיפורים ספציפיים. "הפוך את הטון ליותר חם", "קצר את הפסקה השנייה", "הוסף דוגמה".</p>
-
-<h2>שלב 5: אבטחה ופרטיות</h2>
-<p>אל תשתפו מידע אישי רגיש, נתוני לקוחות, או סודות עסקיים עם כלי AI ציבוריים. לצרכים ארגוניים רגישים, בחרו פתרונות Enterprise עם הסכמי אי-גילוי מתאימים.</p>
-
-      </main>
+      
+<div class="author-box" style="background:var(--card-bg,#1a1a2e);border:1px solid var(--border,#2a2a4a);border-radius:12px;padding:20px 24px;margin:40px 0 0;display:flex;gap:16px;align-items:flex-start">
+  <img loading="lazy" decoding="async" src="../images/yaniv-sorani.jpg" alt="יניב סוראני" width="64" height="64" style="border-radius:50%;flex-shrink:0;object-fit:cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;64&quot; height=&quot;64&quot; viewBox=&quot;0 0 64 64&quot;%3E%3Ccircle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;32&quot; fill=&quot;%237b6cf6&quot;/%3E%3Ctext x=&quot;50%25&quot; y=&quot;55%25&quot; text-anchor=&quot;middle&quot; fill=&quot;white&quot; font-size=&quot;28&quot;%3E&#129504;%3C/text%3E%3C/svg%3E'">
+  <div>
+    <p style="margin:0 0 4px;font-weight:700;font-size:0.95rem">יניב סוראני</p>
+    <p style="margin:0 0 8px;font-size:0.82rem;color:var(--text-muted,#888)">מפתח ומומחה כלי בינה מלאכותית | מייסד בינה.co.il</p>
+    <p style="margin:0;font-size:0.85rem;line-height:1.6">20+ שנות ניסיון בטכנולוגיה. בוחן ומשתמש בכלי AI מדי יום. כל תוכן באתר נכתב, נבדק ועורך ידנית.</p>
+  </div>
+</div>
+</main>
     <aside class="sidebar sticky-sidebar">
-      <div class="ad-zone ad-rectangle"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+      <div class="ad-zone ad-rectangle"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
       <div class="widget">
         <div class="widget-title">מדריכים מומלצים</div>
         <div class="widget-list">
@@ -317,6 +374,8 @@ Ollama עם n8n — אוטומציה מקומית</h2>
           <li><a href="../methodology.html">מתודולוגיה</a></li>
           <li><a href="../privacy-policy.html">מדיניות פרטיות</a></li>
           <li><a href="../disclaimer.html">כתב ויתור</a></li>
+          <li><a href="../ai-disclosure.html">גילוי נאות AI</a></li>
+          <li><a href="../terms.html">תנאי שימוש</a></li>
           <li><a href="../contact.html">צור קשר</a></li>
         </ul>
       </div>

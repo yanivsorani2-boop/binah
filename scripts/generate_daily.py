@@ -384,7 +384,7 @@ def update_sitemap(slug):
     """מוסיף URL של מאמר חדש ל-sitemap.xml"""
     sitemap_path = ROOT / 'sitemap.xml'
     content = sitemap_path.read_text()
-    url_entry = f'  <url><loc>https://binah.co.il/articles/{slug}.html</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>{TODAY_STR}</lastmod></url>'
+    url_entry = f'  <url><loc>https://binah.co.il/articles/{slug}</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>{TODAY_STR}</lastmod></url>'
     if slug in content:
         return  # כבר קיים
     content = content.replace('</urlset>', f'{url_entry}\n</urlset>')
