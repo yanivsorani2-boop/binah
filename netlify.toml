@@ -1838,18 +1838,22 @@
   from = "/guides/guide-midjourney.html"
   to = "/articles/midjourney-beginners"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/guides/guide-ollama.html"
   to = "/articles/ollama-guide"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/articles/gemini-2025.html"
   to = "/articles/claude-vs-gpt4o"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/articles/deepseek-r2.html"
   to = "/articles/claude-vs-gpt4o"
   status = 301
+  force = true
