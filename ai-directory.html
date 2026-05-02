@@ -102,7 +102,7 @@
     }
     #dir-search {
       width:100%; padding:13px 48px 13px 16px; border-radius:14px;
-      border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.04);
+      border:1px solid var(--border); background:var(--bg-card);
       color:var(--text); font-size:0.95rem; font-family:inherit;
       transition:border-color 0.2s; outline:none;
       box-sizing:border-box;
@@ -113,7 +113,7 @@
     /* Category tabs */
     .dir-cats { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:16px; }
     .dir-cats button {
-      padding:8px 18px; border-radius:20px; border:1px solid rgba(255,255,255,0.12);
+      padding:8px 18px; border-radius:20px; border:1px solid var(--border);
       background:transparent; color:var(--text-muted); font-size:0.85rem; cursor:pointer;
       transition:all 0.2s; font-family:inherit; display:flex; align-items:center; gap:5px;
     }
@@ -124,7 +124,7 @@
     .dir-price { display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:32px; flex-wrap:wrap; }
     .dir-price span { font-size:0.82rem; color:var(--text-muted); }
     .dir-price button {
-      padding:5px 14px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);
+      padding:5px 14px; border-radius:8px; border:1px solid var(--border);
       background:transparent; color:var(--text-muted); font-size:0.78rem; cursor:pointer;
       transition:all 0.2s; font-family:inherit;
     }
@@ -144,7 +144,7 @@
 
     /* Tool card */
     .tool-card {
-      background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07);
+      background:var(--bg-card); border:1px solid var(--border);
       border-radius:14px; padding:20px; display:flex; flex-direction:column;
       gap:12px; transition:all 0.2s; position:relative; overflow:hidden;
     }
@@ -156,7 +156,7 @@
     .tool-icon {
       width:44px; height:44px; border-radius:10px; display:flex; align-items:center;
       justify-content:center; font-size:1.4rem; flex-shrink:0;
-      background:rgba(255,255,255,0.06);
+      background:var(--tag-bg);
     }
     .tool-info { flex:1; min-width:0; }
     .tool-name { font-weight:800; font-size:0.97rem; margin-bottom:2px; }
@@ -216,7 +216,7 @@
 
     /* FAQ */
     .faq-section { margin-top:64px; }
-    .faq-item { border-bottom:1px solid rgba(255,255,255,0.07); }
+    .faq-item { border-bottom:1px solid var(--border); }
     .faq-q {
       padding:18px 0; font-weight:700; cursor:pointer; display:flex;
       justify-content:space-between; align-items:center; font-size:0.97rem;
@@ -323,7 +323,7 @@
     </div>
 
     <!-- Static SEO content -->
-    <div style="margin-top:56px;padding:32px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:16px">
+    <div style="margin-top:56px;padding:32px;background:var(--bg-card);border:1px solid var(--border);border-radius:16px">
       <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:20px">מדריך לבחירת כלי AI — לפי קטגוריה</h2>
       <p style="color:var(--text-muted);line-height:1.8;margin-bottom:24px">ב-2026 קיימים מאות כלי AI בשוק — לכל מטרה קיים כלי ייעודי. המדריך הזה עוזר לך לנווט בין הכלים המובילים ולמצוא את הכלי הנכון לצורך שלך.</p>
 

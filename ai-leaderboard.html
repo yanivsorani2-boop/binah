@@ -58,7 +58,7 @@
     /* Filters */
     .lb-filters { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin: 24px 0 32px; }
     .lb-filters button {
-      padding: 7px 18px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.12);
+      padding: 7px 18px; border-radius: 20px; border: 1px solid var(--border);
       background: transparent; color: var(--text-muted); font-size:0.85rem; cursor:pointer;
       transition: all 0.2s; font-family: inherit;
     }
@@ -69,7 +69,7 @@
     .lb-sort { display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
     .lb-sort span { font-size:0.82rem; color:var(--text-muted); }
     .lb-sort button {
-      padding:5px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);
+      padding:5px 12px; border-radius:8px; border:1px solid var(--border);
       background:transparent; color:var(--text-muted); font-size:0.78rem; cursor:pointer;
       transition:all 0.2s; font-family:inherit;
     }
@@ -79,11 +79,11 @@
     .lb-table { width:100%; border-collapse:collapse; }
     .lb-table th {
       padding:12px 16px; text-align:right; font-size:0.78rem; font-weight:700;
-      color:var(--text-muted); border-bottom:1px solid rgba(255,255,255,0.08);
+      color:var(--text-muted); border-bottom:1px solid var(--border);
       white-space:nowrap; cursor:pointer; user-select:none;
     }
     .lb-table th:hover { color:#a78bfa; }
-    .lb-table td { padding:14px 16px; border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:middle; }
+    .lb-table td { padding:14px 16px; border-bottom:1px solid var(--border); vertical-align:middle; }
     .lb-table tr:hover td { background:rgba(124,58,237,0.04); }
 
     .rank-num { font-size:1.1rem; font-weight:900; color:var(--text-muted); min-width:32px; text-align:center; }
@@ -103,7 +103,7 @@
     .badge-open { background:rgba(245,158,11,0.15); color:#fbbf24; border:1px solid rgba(245,158,11,0.25); }
 
     .score-bar { display:flex; align-items:center; gap:8px; }
-    .score-track { flex:1; height:6px; background:rgba(255,255,255,0.08); border-radius:3px; min-width:60px; }
+    .score-track { flex:1; height:6px; background:var(--tag-bg); border-radius:3px; min-width:60px; }
     .score-fill  { height:100%; border-radius:3px; transition:width 0.4s; }
     .score-num   { font-size:0.8rem; font-weight:700; min-width:28px; text-align:left; }
 
@@ -111,7 +111,7 @@
     .cat-row   { display:flex; align-items:center; gap:6px; font-size:0.72rem; }
     .cat-label { color:var(--text-muted); min-width:40px; }
     .cat-dots  { display:flex; gap:2px; }
-    .dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.1); }
+    .dot { width:8px; height:8px; border-radius:50%; background:var(--tag-bg); }
     .dot.on { background: #7c3aed; }
     .dot.half { background: rgba(124,58,237,0.4); }
 
@@ -132,7 +132,7 @@
     }
     .lb-link:hover { background:rgba(124,58,237,0.15); border-color:#7c3aed; }
 
-    .lb-wrapper { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.07); border-radius:16px; overflow:hidden; }
+    .lb-wrapper { background:var(--bg-card); border:1px solid var(--border); border-radius:16px; overflow:hidden; }
     .lb-scroll  { overflow-x:auto; }
 
     /* Legend */
@@ -142,7 +142,7 @@
 
     /* FAQ */
     .faq-section { margin-top:64px; }
-    .faq-item { border-bottom:1px solid rgba(255,255,255,0.07); }
+    .faq-item { border-bottom:1px solid var(--border); }
     .faq-q {
       padding:18px 0; font-weight:700; cursor:pointer; display:flex;
       justify-content:space-between; align-items:center; font-size:0.97rem;
@@ -265,7 +265,7 @@
     </div>
 
     <!-- Static SEO content -->
-    <div style="margin-top:56px;padding:32px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:16px">
+    <div style="margin-top:56px;padding:32px;background:var(--bg-card);border:1px solid var(--border);border-radius:16px">
       <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:20px">מדריך לבחירת מודל AI — 2026</h2>
       <p style="color:var(--text-muted);line-height:1.8;margin-bottom:24px">שוק מודלי ה-AI השתנה דרמטית ב-2026. Claude Opus 4.6 של Anthropic ו-GPT-4o של OpenAI שומרים על הבכורה בדירוגים הכלליים, אבל הפער בין המודלים המובילים מצטמצם. Gemini 2.5 Pro של Google מציע את חלון ההקשר הגדול ביותר בשוק (2M token), ואילו Llama 4 של Meta הביא לעולם מודל קוד פתוח שמתחרה בקלוזד-סורס.</p>
 
