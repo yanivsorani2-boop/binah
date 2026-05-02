@@ -107,15 +107,10 @@
   status = 301
 
 # URL canonicalization — strip .html (force 301)
+# TEST: specific redirect to verify force=true works
 [[redirects]]
-  from = "/articles/:slug.html"
-  to = "/articles/:slug"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/guides/:slug.html"
-  to = "/guides/:slug"
+  from = "/articles/claude-vs-gpt4o.html"
+  to = "/articles/claude-vs-gpt4o"
   status = 301
   force = true
 
