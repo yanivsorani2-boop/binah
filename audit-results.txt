@@ -1,0 +1,44 @@
+=== FINAL AUDIT ===
+1. noindex check (sample 20):
+  noindex articles: 0 / 20 (expected: 0)
+2. .html redirects:
+  1 redirect (expected: 1)
+3. Sitemap entries:
+  318 URLs in sitemap.xml
+4. Cache-Control:
+  cache-control: public,max-age=0,must-revalidate
+5. www redirect:
+  HTTP 200, redirects=1
+6. Favicon:
+  /favicon.ico: 404
+  /favicon.svg: 404
+  /apple-touch-icon.png: 404
+  /site.webmanifest: 404
+7. RSS feed:
+  HTTP 404
+8. Hub pages:
+  /comparisons: 200
+  /guides-hebrew: 200
+  /tools-hebrew: 200
+  /news: 200
+  /business-ai: 200
+9. Homepage HTML size:
+    358374 bytes
+10. OG images:
+  /images/og/claude-vs-gpt4o.jpg: 200
+11. Generic anchors:
+  'קרא עוד' count:      261
+12. Article word counts (sample 5):
+  articles/2026-03-19-business-ai-tools-israeli-businesses-roi-2026.html: ? words
+  articles/2026-03-19-compare-claude-vs-gemini-vs-chatgpt-2026.html: ? words
+  articles/2026-03-19-guide-chatgpt-beginners-guide-step-by-step.html: ? words
+  articles/2026-03-19-hebrew-hebrew-ai-tools-review-2026.html: ? words
+  articles/2026-03-19-hebrew-weekly-hebrew-ai-tools-march-2026.html: ? words
+13. External links rel=nofollow:
+         4 /      850 external links have rel=nofollow
+14. BlogPosting schema:
+        47 /      282 articles have BlogPosting schema
+15. hreflang on homepage:
+  2 hreflang tags
+
+=== DONE ===
