@@ -1,3 +1,1 @@
-# Force 301 — strip .html from articles and guides
-/articles/*.html  /articles/:splat  301!
-/guides/*.html    /guides/:splat    301!
+# Redirects managed in netlify.toml
