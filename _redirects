@@ -1,0 +1,3 @@
+# Force 301 — strip .html from articles and guides (overrides file existence)
+/articles/*.html  /articles/:splat  301!
+/guides/*.html    /guides/:splat    301!
