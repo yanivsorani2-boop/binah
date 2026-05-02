@@ -1,0 +1,29 @@
+=== SEO FINAL AUDIT ===
+
+PASS no dupe topics: 63 articles, 63 topics
+PASS BlogPosting on all articles
+PASS wordCount NOT in BreadcrumbList
+PASS FAQ no placeholder answers
+PASS RSS feed.xml exists
+PASS favicon favicon.ico exists
+PASS favicon favicon.svg exists
+PASS favicon favicon-32x32.png exists
+PASS favicon favicon-16x16.png exists
+PASS favicon apple-touch-icon.png exists
+PASS favicon android-chrome-192x192.png exists
+PASS favicon android-chrome-512x512.png exists
+PASS favicon site.webmanifest exists
+PASS WebP images: 282
+PASS AVIF images: 282
+PASS no generic read-more anchors on index
+PASS internal links >=3 per article (10 sampled)
+PASS author box on articles (10 sampled)
+PASS s-maxage configured in netlify.toml
+PASS www redirect configured
+PASS RSS link in index.html
+PASS <picture> tags on hub pages: 4 hubs
+
+=== SUMMARY ===
+PASS: 22
+FAIL: 0
+ALL CHECKS PASSED
