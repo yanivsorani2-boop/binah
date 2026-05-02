@@ -107,10 +107,1713 @@
   status = 301
 
 # URL canonicalization — strip .html (force 301)
-# TEST: specific redirect to verify force=true works
+[[redirects]]
+  from = "/articles/2026-03-19-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-03-19-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-19-compare-claude-vs-gemini-vs-chatgpt-2026.html"
+  to = "/articles/2026-03-19-compare-claude-vs-gemini-vs-chatgpt-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-19-guide-chatgpt-beginners-guide-step-by-step.html"
+  to = "/articles/2026-03-19-guide-chatgpt-beginners-guide-step-by-step"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-19-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-19-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-19-hebrew-weekly-hebrew-ai-tools-march-2026.html"
+  to = "/articles/2026-03-19-hebrew-weekly-hebrew-ai-tools-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-19-tools-best-ai-coding-tools-2026-comparison.html"
+  to = "/articles/2026-03-19-tools-best-ai-coding-tools-2026-comparison"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-20-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-03-20-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-20-business-ai-for-israeli-businesses-roi.html"
+  to = "/articles/2026-03-20-business-ai-for-israeli-businesses-roi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-20-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026.html"
+  to = "/articles/2026-03-20-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-20-guide-chatgpt-beginner-to-advanced-guide.html"
+  to = "/articles/2026-03-20-guide-chatgpt-beginner-to-advanced-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-20-guide-weekly-guide-ai-practical-march-2026.html"
+  to = "/articles/2026-03-20-guide-weekly-guide-ai-practical-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-20-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-20-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-20-tools-ai-tools-comparison-march-2026.html"
+  to = "/articles/2026-03-20-tools-ai-tools-comparison-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-21-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-03-21-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-21-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-03-21-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-21-compare-gemini-25-pro-vs-claude-37-vs-gpt45-comparison-2026.html"
+  to = "/articles/2026-03-21-compare-gemini-25-pro-vs-claude-37-vs-gpt45-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-21-guide-chatgpt-beginners-guide-step-by-step.html"
+  to = "/articles/2026-03-21-guide-chatgpt-beginners-guide-step-by-step"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-21-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-21-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-21-tools-best-ai-coding-tools-2026.html"
+  to = "/articles/2026-03-21-tools-best-ai-coding-tools-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-22-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-03-22-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-22-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026.html"
+  to = "/articles/2026-03-22-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-22-gpt5-release-impact-2026.html"
+  to = "/articles/2026-03-22-gpt5-release-impact-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-22-guide-chatgpt-beginners-guide-2026.html"
+  to = "/articles/2026-03-22-guide-chatgpt-beginners-guide-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-22-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-22-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-22-tools-ai-tools-comparison-march-2026.html"
+  to = "/articles/2026-03-22-tools-ai-tools-comparison-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-23-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-03-23-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-23-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-03-23-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-23-compare-gpt4o-vs-claude-vs-gemini-2026.html"
+  to = "/articles/2026-03-23-compare-gpt4o-vs-claude-vs-gemini-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-23-guide-chatgpt-practical-guide-beginners-to-advanced.html"
+  to = "/articles/2026-03-23-guide-chatgpt-practical-guide-beginners-to-advanced"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-23-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-23-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-23-tools-ai-tools-comparison-march-2026.html"
+  to = "/articles/2026-03-23-tools-ai-tools-comparison-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-23-tools-weekly-tools-march-23-2026.html"
+  to = "/articles/2026-03-23-tools-weekly-tools-march-23-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-24-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-03-24-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-24-business-weekly-business-ai-march-2026.html"
+  to = "/articles/2026-03-24-business-weekly-business-ai-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-24-compare-gemini-2-vs-gpt4o-vs-claude-3-5-2026.html"
+  to = "/articles/2026-03-24-compare-gemini-2-vs-gpt4o-vs-claude-3-5-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-24-gpt5-release-impact-2026.html"
+  to = "/articles/2026-03-24-gpt5-release-impact-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-24-guide-ai-prompts-guide-for-beginners.html"
+  to = "/articles/2026-03-24-guide-ai-prompts-guide-for-beginners"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-24-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-24-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-24-tools-best-ai-writing-tools-2026-comparison.html"
+  to = "/articles/2026-03-24-tools-best-ai-writing-tools-2026-comparison"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-25-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-03-25-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-25-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-03-25-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-25-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026.html"
+  to = "/articles/2026-03-25-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-25-compare-weekly-compare-models-march-2026.html"
+  to = "/articles/2026-03-25-compare-weekly-compare-models-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-25-guide-beginner-guide-chatgpt-prompts-2026.html"
+  to = "/articles/2026-03-25-guide-beginner-guide-chatgpt-prompts-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-25-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-25-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-25-tools-ai-tools-comparison-march-2026.html"
+  to = "/articles/2026-03-25-tools-ai-tools-comparison-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-26-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-03-26-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-26-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-03-26-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-26-compare-gemini-2-vs-gpt5-vs-claude4-comparison-2026.html"
+  to = "/articles/2026-03-26-compare-gemini-2-vs-gpt5-vs-claude4-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-26-guide-chatgpt-practical-guide-all-levels.html"
+  to = "/articles/2026-03-26-guide-chatgpt-practical-guide-all-levels"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-26-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-26-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-26-hebrew-weekly-hebrew-tools-march-2026.html"
+  to = "/articles/2026-03-26-hebrew-weekly-hebrew-tools-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-26-tools-ai-video-tools-comparison-2026.html"
+  to = "/articles/2026-03-26-tools-ai-video-tools-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-27-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-03-27-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-27-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-03-27-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-27-compare-gemini-2-vs-gpt4o-vs-claude-3-5-comparison-2026.html"
+  to = "/articles/2026-03-27-compare-gemini-2-vs-gpt4o-vs-claude-3-5-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-27-guide-chatgpt-practical-guide-all-levels.html"
+  to = "/articles/2026-03-27-guide-chatgpt-practical-guide-all-levels"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-27-guide-weekly-guide-ai-practical-march-2026.html"
+  to = "/articles/2026-03-27-guide-weekly-guide-ai-practical-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-27-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-27-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-27-tools-ai-tools-comparison-march-2026.html"
+  to = "/articles/2026-03-27-tools-ai-tools-comparison-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-28-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-03-28-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-28-business-ai-tools-israeli-business-roi-2026.html"
+  to = "/articles/2026-03-28-business-ai-tools-israeli-business-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-28-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026.html"
+  to = "/articles/2026-03-28-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-28-guide-how-to-use-chatgpt-step-by-step-guide.html"
+  to = "/articles/2026-03-28-guide-how-to-use-chatgpt-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-28-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-28-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-28-tools-ai-tools-comparison-march-2026.html"
+  to = "/articles/2026-03-28-tools-ai-tools-comparison-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-30-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-03-30-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-30-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-03-30-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-30-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026.html"
+  to = "/articles/2026-03-30-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-30-guide-beginners-guide-to-ai-tools-2026.html"
+  to = "/articles/2026-03-30-guide-beginners-guide-to-ai-tools-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-30-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-30-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-30-tools-ai-tools-comparison-march-2026.html"
+  to = "/articles/2026-03-30-tools-ai-tools-comparison-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-30-tools-weekly-tools-march-2026.html"
+  to = "/articles/2026-03-30-tools-weekly-tools-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-31-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-03-31-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-31-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-03-31-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-31-business-weekly-business-ai-tools-march-2026.html"
+  to = "/articles/2026-03-31-business-weekly-business-ai-tools-march-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-31-compare-gemini-25-vs-gpt45-vs-claude-37-comparison-2026.html"
+  to = "/articles/2026-03-31-compare-gemini-25-vs-gpt45-vs-claude-37-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-31-guide-how-to-use-chatgpt-step-by-step-guide.html"
+  to = "/articles/2026-03-31-guide-how-to-use-chatgpt-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-31-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-03-31-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-03-31-tools-ai-video-tools-comparison-2026.html"
+  to = "/articles/2026-03-31-tools-ai-video-tools-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-01-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-01-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-01-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-01-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-01-compare-gemini-vs-chatgpt-vs-claude-2026.html"
+  to = "/articles/2026-04-01-compare-gemini-vs-chatgpt-vs-claude-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-01-compare-weekly-compare-models-april-2026.html"
+  to = "/articles/2026-04-01-compare-weekly-compare-models-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-01-guide-how-to-use-chatgpt-step-by-step-guide.html"
+  to = "/articles/2026-04-01-guide-how-to-use-chatgpt-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-01-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-01-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-01-tools-best-ai-coding-tools-2026-comparison.html"
+  to = "/articles/2026-04-01-tools-best-ai-coding-tools-2026-comparison"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-02-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-02-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-02-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-02-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-02-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026.html"
+  to = "/articles/2026-04-02-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-02-guide-chatgpt-practical-guide-beginners-to-advanced.html"
+  to = "/articles/2026-04-02-guide-chatgpt-practical-guide-beginners-to-advanced"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-02-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-02-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-02-hebrew-weekly-hebrew-tools-april-2026.html"
+  to = "/articles/2026-04-02-hebrew-weekly-hebrew-tools-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-02-tools-ai-tools-comparison-april-2026.html"
+  to = "/articles/2026-04-02-tools-ai-tools-comparison-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-03-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-03-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-03-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-03-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-03-compare-gemini-2-vs-gpt4o-vs-claude-37-comparison-2026.html"
+  to = "/articles/2026-04-03-compare-gemini-2-vs-gpt4o-vs-claude-37-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-03-guide-chatgpt-practical-guide-beginners-to-advanced.html"
+  to = "/articles/2026-04-03-guide-chatgpt-practical-guide-beginners-to-advanced"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-03-guide-weekly-guide-ai-practical-april-2026.html"
+  to = "/articles/2026-04-03-guide-weekly-guide-ai-practical-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-03-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-03-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-03-tools-ai-tools-comparison-april-2026.html"
+  to = "/articles/2026-04-03-tools-ai-tools-comparison-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-04-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-04-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-04-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-04-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-04-compare-gemini-2-vs-gpt4o-vs-claude-37-comparison-2026.html"
+  to = "/articles/2026-04-04-compare-gemini-2-vs-gpt4o-vs-claude-37-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-04-guide-how-to-use-chatgpt-step-by-step-guide.html"
+  to = "/articles/2026-04-04-guide-how-to-use-chatgpt-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-04-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-04-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-04-tools-best-ai-coding-tools-2026-comparison.html"
+  to = "/articles/2026-04-04-tools-best-ai-coding-tools-2026-comparison"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-05-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-05-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-05-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-05-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-05-compare-gemini-vs-chatgpt-vs-claude-2026.html"
+  to = "/articles/2026-04-05-compare-gemini-vs-chatgpt-vs-claude-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-05-guide-how-to-use-chatgpt-step-by-step-guide.html"
+  to = "/articles/2026-04-05-guide-how-to-use-chatgpt-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-05-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-05-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-05-tools-ai-coding-tools-comparison-2026.html"
+  to = "/articles/2026-04-05-tools-ai-coding-tools-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-06-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-06-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-06-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-06-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-06-compare-gpt4o-vs-gemini-vs-claude-2026.html"
+  to = "/articles/2026-04-06-compare-gpt4o-vs-gemini-vs-claude-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-06-guide-how-to-use-chatgpt-step-by-step-guide.html"
+  to = "/articles/2026-04-06-guide-how-to-use-chatgpt-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-06-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-06-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-06-tools-best-ai-coding-tools-2026-comparison.html"
+  to = "/articles/2026-04-06-tools-best-ai-coding-tools-2026-comparison"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-06-tools-weekly-tools-april-2026.html"
+  to = "/articles/2026-04-06-tools-weekly-tools-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-07-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-07-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-07-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-07-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-07-business-weekly-business-ai-april-2026.html"
+  to = "/articles/2026-04-07-business-weekly-business-ai-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-07-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026.html"
+  to = "/articles/2026-04-07-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-07-guide-chatgpt-practical-guide-beginners-to-advanced.html"
+  to = "/articles/2026-04-07-guide-chatgpt-practical-guide-beginners-to-advanced"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-07-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-07-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-07-tools-best-ai-coding-tools-2026-comparison.html"
+  to = "/articles/2026-04-07-tools-best-ai-coding-tools-2026-comparison"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-09-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-09-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-09-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-09-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-09-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026.html"
+  to = "/articles/2026-04-09-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-09-guide-how-to-use-chatgpt-step-by-step-guide.html"
+  to = "/articles/2026-04-09-guide-how-to-use-chatgpt-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-09-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-09-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-09-hebrew-weekly-hebrew-ai-tools-april-2026.html"
+  to = "/articles/2026-04-09-hebrew-weekly-hebrew-ai-tools-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-09-tools-ai-video-tools-comparison-2026.html"
+  to = "/articles/2026-04-09-tools-ai-video-tools-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-10-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-10-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-10-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-10-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-10-compare-ai-models-comparison-2026.html"
+  to = "/articles/2026-04-10-compare-ai-models-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-10-guide-chatgpt-beginner-to-advanced-guide.html"
+  to = "/articles/2026-04-10-guide-chatgpt-beginner-to-advanced-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-10-guide-weekly-guide-ai-practical-april-2026.html"
+  to = "/articles/2026-04-10-guide-weekly-guide-ai-practical-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-10-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-10-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-10-tools-ai-video-tools-comparison-2026.html"
+  to = "/articles/2026-04-10-tools-ai-video-tools-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-11-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-11-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-11-business-ai-tools-israeli-business-roi-2026.html"
+  to = "/articles/2026-04-11-business-ai-tools-israeli-business-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-11-compare-gemini-25-pro-vs-gpt-45-vs-claude-37.html"
+  to = "/articles/2026-04-11-compare-gemini-25-pro-vs-gpt-45-vs-claude-37"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-11-guide-how-to-use-chatgpt-step-by-step-guide.html"
+  to = "/articles/2026-04-11-guide-how-to-use-chatgpt-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-11-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-11-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-11-tools-best-ai-coding-tools-2026-comparison.html"
+  to = "/articles/2026-04-11-tools-best-ai-coding-tools-2026-comparison"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-12-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-12-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-12-business-ai-tools-israeli-business-roi-2026.html"
+  to = "/articles/2026-04-12-business-ai-tools-israeli-business-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-12-compare-gemini-2-vs-gpt-4o-vs-claude-3-5-comparison-2026.html"
+  to = "/articles/2026-04-12-compare-gemini-2-vs-gpt-4o-vs-claude-3-5-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-12-guide-chatgpt-beginners-guide-2026.html"
+  to = "/articles/2026-04-12-guide-chatgpt-beginners-guide-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-12-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-12-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-12-tools-ai-tools-comparison-april-2026.html"
+  to = "/articles/2026-04-12-tools-ai-tools-comparison-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-13-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-13-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-13-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-13-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-13-compare-gpt4o-vs-gemini-vs-claude-2026.html"
+  to = "/articles/2026-04-13-compare-gpt4o-vs-gemini-vs-claude-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-13-guide-chatgpt-beginners-step-by-step-guide.html"
+  to = "/articles/2026-04-13-guide-chatgpt-beginners-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-13-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-13-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-13-tools-ai-coding-tools-comparison-2026.html"
+  to = "/articles/2026-04-13-tools-ai-coding-tools-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-13-tools-weekly-tools-april-13-2026.html"
+  to = "/articles/2026-04-13-tools-weekly-tools-april-13-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-14-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-14-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-14-business-ai-for-israeli-businesses-roi.html"
+  to = "/articles/2026-04-14-business-ai-for-israeli-businesses-roi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-14-business-weekly-business-ai-israel-april-2026.html"
+  to = "/articles/2026-04-14-business-weekly-business-ai-israel-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-14-compare-claude-vs-gemini-vs-gpt-2026.html"
+  to = "/articles/2026-04-14-compare-claude-vs-gemini-vs-gpt-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-14-guide-beginners-guide-to-chatgpt-prompts.html"
+  to = "/articles/2026-04-14-guide-beginners-guide-to-chatgpt-prompts"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-14-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-14-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-14-tools-ai-tools-comparison-april-2026.html"
+  to = "/articles/2026-04-14-tools-ai-tools-comparison-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-15-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-15-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-15-business-ai-tools-israeli-business-roi-2026.html"
+  to = "/articles/2026-04-15-business-ai-tools-israeli-business-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-15-compare-gemini-2-vs-gpt-4o-vs-claude-3-5-comparison-2026.html"
+  to = "/articles/2026-04-15-compare-gemini-2-vs-gpt-4o-vs-claude-3-5-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-15-compare-weekly-compare-models-april-2026.html"
+  to = "/articles/2026-04-15-compare-weekly-compare-models-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-15-guide-chatgpt-practical-guide-beginners-to-advanced.html"
+  to = "/articles/2026-04-15-guide-chatgpt-practical-guide-beginners-to-advanced"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-15-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-15-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-15-tools-best-ai-coding-tools-2026-comparison.html"
+  to = "/articles/2026-04-15-tools-best-ai-coding-tools-2026-comparison"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-16-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-16-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-16-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-16-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-16-compare-claude-vs-gemini-vs-chatgpt-2026.html"
+  to = "/articles/2026-04-16-compare-claude-vs-gemini-vs-chatgpt-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-16-guide-chatgpt-practical-guide-all-levels.html"
+  to = "/articles/2026-04-16-guide-chatgpt-practical-guide-all-levels"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-16-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-16-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-16-hebrew-weekly-hebrew-ai-tools-april-2026.html"
+  to = "/articles/2026-04-16-hebrew-weekly-hebrew-ai-tools-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-16-tools-ai-tools-comparison-april-2026.html"
+  to = "/articles/2026-04-16-tools-ai-tools-comparison-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-17-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-17-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-17-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-17-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-17-compare-claude-vs-chatgpt-vs-gemini-2026.html"
+  to = "/articles/2026-04-17-compare-claude-vs-chatgpt-vs-gemini-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-17-guide-chatgpt-practical-guide-beginners-to-advanced.html"
+  to = "/articles/2026-04-17-guide-chatgpt-practical-guide-beginners-to-advanced"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-17-guide-weekly-guide-ai-tools-april-2026.html"
+  to = "/articles/2026-04-17-guide-weekly-guide-ai-tools-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-17-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-17-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-17-tools-ai-tools-comparison-april-2026.html"
+  to = "/articles/2026-04-17-tools-ai-tools-comparison-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-18-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-18-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-18-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-18-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-18-compare-gemini-vs-chatgpt-vs-claude-2026.html"
+  to = "/articles/2026-04-18-compare-gemini-vs-chatgpt-vs-claude-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-18-guide-how-to-use-chatgpt-step-by-step-guide.html"
+  to = "/articles/2026-04-18-guide-how-to-use-chatgpt-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-18-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-18-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-18-tools-ai-video-tools-comparison-2026.html"
+  to = "/articles/2026-04-18-tools-ai-video-tools-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-19-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-19-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-19-business-ai-for-israeli-businesses-roi-automation.html"
+  to = "/articles/2026-04-19-business-ai-for-israeli-businesses-roi-automation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-19-compare-gemini-2-vs-gpt-4o-vs-claude-3-5-comparison-2026.html"
+  to = "/articles/2026-04-19-compare-gemini-2-vs-gpt-4o-vs-claude-3-5-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-19-guide-chatgpt-beginners-guide-2026.html"
+  to = "/articles/2026-04-19-guide-chatgpt-beginners-guide-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-19-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-19-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-19-tools-ai-tools-comparison-april-2026.html"
+  to = "/articles/2026-04-19-tools-ai-tools-comparison-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-20-ai-agents-autonomous-work-2026.html"
+  to = "/articles/2026-04-20-ai-agents-autonomous-work-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-20-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-20-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-20-compare-gpt4o-vs-gemini-vs-claude-2026.html"
+  to = "/articles/2026-04-20-compare-gpt4o-vs-gemini-vs-claude-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-20-guide-how-to-use-chatgpt-step-by-step-guide.html"
+  to = "/articles/2026-04-20-guide-how-to-use-chatgpt-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-20-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-20-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-20-tools-best-ai-coding-tools-2026-comparison.html"
+  to = "/articles/2026-04-20-tools-best-ai-coding-tools-2026-comparison"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-20-tools-weekly-tools-april-2026.html"
+  to = "/articles/2026-04-20-tools-weekly-tools-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-21-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-21-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-21-business-ai-tools-israeli-business-roi-2026.html"
+  to = "/articles/2026-04-21-business-ai-tools-israeli-business-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-21-business-weekly-business-ai-tools-april-2026.html"
+  to = "/articles/2026-04-21-business-weekly-business-ai-tools-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-21-compare-gemini-2-5-vs-gpt-4o-vs-claude-3-7-comparison-2026.html"
+  to = "/articles/2026-04-21-compare-gemini-2-5-vs-gpt-4o-vs-claude-3-7-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-21-guide-how-to-use-chatgpt-step-by-step-guide.html"
+  to = "/articles/2026-04-21-guide-how-to-use-chatgpt-step-by-step-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-21-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-21-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-21-tools-ai-tools-comparison-april-2026.html"
+  to = "/articles/2026-04-21-tools-ai-tools-comparison-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-22-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-22-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-22-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-22-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-22-compare-gemini-vs-chatgpt-vs-claude-2026.html"
+  to = "/articles/2026-04-22-compare-gemini-vs-chatgpt-vs-claude-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-22-compare-weekly-compare-models-april-2026.html"
+  to = "/articles/2026-04-22-compare-weekly-compare-models-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-22-guide-chatgpt-practical-guide-all-levels.html"
+  to = "/articles/2026-04-22-guide-chatgpt-practical-guide-all-levels"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-22-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-22-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-22-tools-ai-tools-comparison-april-2026.html"
+  to = "/articles/2026-04-22-tools-ai-tools-comparison-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-23-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-23-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-23-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-23-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-23-compare-gemini-vs-chatgpt-vs-claude-2026.html"
+  to = "/articles/2026-04-23-compare-gemini-vs-chatgpt-vs-claude-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-23-guide-chatgpt-beginners-guide-2026.html"
+  to = "/articles/2026-04-23-guide-chatgpt-beginners-guide-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-23-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-23-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-23-hebrew-weekly-hebrew-ai-tools-april-2026.html"
+  to = "/articles/2026-04-23-hebrew-weekly-hebrew-ai-tools-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-23-tools-ai-tools-comparison-april-2026.html"
+  to = "/articles/2026-04-23-tools-ai-tools-comparison-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-24-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-24-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-24-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-24-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-24-compare-gemini-2-vs-gpt4o-vs-claude-2026.html"
+  to = "/articles/2026-04-24-compare-gemini-2-vs-gpt4o-vs-claude-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-24-guide-chatgpt-practical-guide-beginners-to-advanced.html"
+  to = "/articles/2026-04-24-guide-chatgpt-practical-guide-beginners-to-advanced"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-24-guide-weekly-guide-ai-practical-april-2026.html"
+  to = "/articles/2026-04-24-guide-weekly-guide-ai-practical-april-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-24-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-24-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-24-tools-ai-coding-tools-comparison-2026.html"
+  to = "/articles/2026-04-24-tools-ai-coding-tools-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-25-ai-agents-enterprise-2026.html"
+  to = "/articles/2026-04-25-ai-agents-enterprise-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-25-business-ai-tools-israeli-businesses-roi-2026.html"
+  to = "/articles/2026-04-25-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-25-compare-gemini-2-vs-gpt4o-vs-claude-3-5-comparison-2026.html"
+  to = "/articles/2026-04-25-compare-gemini-2-vs-gpt4o-vs-claude-3-5-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-25-guide-chatgpt-practical-guide-beginners-to-advanced.html"
+  to = "/articles/2026-04-25-guide-chatgpt-practical-guide-beginners-to-advanced"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-25-hebrew-hebrew-ai-tools-review-2026.html"
+  to = "/articles/2026-04-25-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-25-tools-ai-tools-comparison-2026.html"
+  to = "/articles/2026-04-25-tools-ai-tools-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/ai-jobs-2025.html"
+  to = "/articles/ai-jobs-2025"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/ai-small-business.html"
+  to = "/articles/ai-small-business"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/ai-video-tools.html"
+  to = "/articles/ai-video-tools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/biz-ai-accounting-finance.html"
+  to = "/articles/biz-ai-accounting-finance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/biz-ai-content-writing.html"
+  to = "/articles/biz-ai-content-writing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/biz-ai-customer-service.html"
+  to = "/articles/biz-ai-customer-service"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/biz-ai-data-analytics.html"
+  to = "/articles/biz-ai-data-analytics"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/biz-ai-design-images.html"
+  to = "/articles/biz-ai-design-images"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/biz-ai-hiring-hr.html"
+  to = "/articles/biz-ai-hiring-hr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/biz-ai-marketing-small-business.html"
+  to = "/articles/biz-ai-marketing-small-business"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/biz-ai-seo-website.html"
+  to = "/articles/biz-ai-seo-website"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/biz-ai-time-automation.html"
+  to = "/articles/biz-ai-time-automation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/biz-ai-whatsapp-crm.html"
+  to = "/articles/biz-ai-whatsapp-crm"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/chatgpt-10-uses.html"
+  to = "/articles/chatgpt-10-uses"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/articles/claude-vs-gpt4o.html"
   to = "/articles/claude-vs-gpt4o"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/crazy-anthropic-hedge-fund.html"
+  to = "/articles/crazy-anthropic-hedge-fund"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/crazy-deepmind-agi-2027.html"
+  to = "/articles/crazy-deepmind-agi-2027"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/crazy-deepmind-superconductor.html"
+  to = "/articles/crazy-deepmind-superconductor"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/crazy-figure-robot-2026.html"
+  to = "/articles/crazy-figure-robot-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/crazy-openai-math-40years.html"
+  to = "/articles/crazy-openai-math-40years"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/crazy-stanford-ai-book.html"
+  to = "/articles/crazy-stanford-ai-book"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/crazy-suno-spotify-1.html"
+  to = "/articles/crazy-suno-spotify-1"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/gpt5-launch.html"
+  to = "/articles/gpt5-launch"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/midjourney-beginners.html"
+  to = "/articles/midjourney-beginners"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/ollama-guide.html"
+  to = "/articles/ollama-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/perplexity-ai.html"
+  to = "/articles/perplexity-ai"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/product-amazon-echo-alexa-ai.html"
+  to = "/articles/product-amazon-echo-alexa-ai"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/product-apple-intelligence.html"
+  to = "/articles/product-apple-intelligence"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/product-google-pixel-9-ai.html"
+  to = "/articles/product-google-pixel-9-ai"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/product-humane-ai-pin.html"
+  to = "/articles/product-humane-ai-pin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/product-meta-ray-ban-ai.html"
+  to = "/articles/product-meta-ray-ban-ai"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/product-microsoft-copilot-pc.html"
+  to = "/articles/product-microsoft-copilot-pc"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/product-nvidia-rtx-ai-pc.html"
+  to = "/articles/product-nvidia-rtx-ai-pc"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/product-rabbit-r1.html"
+  to = "/articles/product-rabbit-r1"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/product-samsung-galaxy-ai.html"
+  to = "/articles/product-samsung-galaxy-ai"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/product-tesla-fsd.html"
+  to = "/articles/product-tesla-fsd"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/prompt-engineering.html"
+  to = "/articles/prompt-engineering"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/sora-openai.html"
+  to = "/articles/sora-openai"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/vibe-coding.html"
+  to = "/articles/vibe-coding"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/guide-chatgpt.html"
+  to = "/guides/guide-chatgpt"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/guide-claude.html"
+  to = "/guides/guide-claude"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/guide-prompt-basics.html"
+  to = "/guides/guide-prompt-basics"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/guide-prompt-cot.html"
+  to = "/guides/guide-prompt-cot"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/guide-prompt-role.html"
+  to = "/guides/guide-prompt-role"
   status = 301
   force = true
 
