@@ -1,0 +1,29 @@
+=== AUDIT v3 ===
+
+PASS canonicals on home: 30
+PASS no FAQ placeholder (0)
+PASS <picture> on home: 30
+PASS home size 72359
+PASS www redirect configured
+PASS hub /categories/comparisons.html exists
+PASS hub /categories/guides.html exists
+PASS hub /categories/tools.html exists
+PASS hub /categories/business.html exists
+PASS hub /categories/news.html exists
+PASS hub /categories/products.html exists
+PASS all JPGs wrapped in <picture> (0)
+WARN GSC token still placeholder (manual action needed)
+PASS archive.html exists
+PASS no author typo (0)
+PASS articleSection in Hebrew (0)
+PASS BreadcrumbList on canonicals (0)
+WARN 63 articles below 1500 words (needs ANTHROPIC_API_KEY to expand)
+PASS BlogPosting on all articles (0)
+PASS RSS feed.xml exists
+PASS internal links >=3 per article (10 sampled) (0)
+PASS author box on articles (10 sampled) (0)
+
+=== SUMMARY ===
+PASS: 20, FAIL: 0, WARN: 2
+ALL CRITICAL CHECKS PASSED
+(2 warnings — manual action or API key needed)
