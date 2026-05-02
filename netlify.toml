@@ -61,20 +61,63 @@
   status = 200
 
 [[redirects]]
+  from = "/guides-hebrew"
+  to = "/guides-hub.html"
+  status = 200
+
+[[redirects]]
+  from = "/tools-hebrew"
+  to = "/tools-hub.html"
+  status = 200
+
+[[redirects]]
+  from = "/news"
+  to = "/news-hub.html"
+  status = 200
+
+[[redirects]]
+  from = "/business-ai"
+  to = "/business-hub.html"
+  status = 200
+
+# Hebrew aliases
+[[redirects]]
   from = "/השוואות"
   to = "/comparisons.html"
   status = 301
 
-# URL canonicalization — strip .html (301)
+[[redirects]]
+  from = "/מדריכים"
+  to = "/guides-hub.html"
+  status = 301
+
+[[redirects]]
+  from = "/כלים"
+  to = "/tools-hub.html"
+  status = 301
+
+[[redirects]]
+  from = "/חדשות"
+  to = "/news-hub.html"
+  status = 301
+
+[[redirects]]
+  from = "/AI-לעסקים"
+  to = "/business-hub.html"
+  status = 301
+
+# URL canonicalization — strip .html (force 301)
 [[redirects]]
   from = "/articles/*.html"
   to = "/articles/:splat"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/guides/*.html"
   to = "/guides/:splat"
   status = 301
+  force = true
 
 # Redirects — legacy article URLs
 [[redirects]]

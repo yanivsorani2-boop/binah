@@ -22,6 +22,10 @@ REDIRECT_SOURCES = {
 MAIN_PAGES = [
     ("/"                        , "daily",   "1.0", "2026-05-01"),
     ("/comparisons"             , "weekly",  "0.9", "2026-05-02"),
+    ("/guides-hebrew"           , "weekly",  "0.9", "2026-05-02"),
+    ("/tools-hebrew"            , "weekly",  "0.9", "2026-05-02"),
+    ("/news"                    , "weekly",  "0.9", "2026-05-02"),
+    ("/business-ai"             , "weekly",  "0.9", "2026-05-02"),
     ("/ai-leaderboard.html"     , "weekly",  "0.9", "2026-04-29"),
     ("/ai-directory.html"       , "weekly",  "0.9", "2026-04-29"),
     ("/guides.html"             , "weekly",  "0.9", "2026-04-22"),
