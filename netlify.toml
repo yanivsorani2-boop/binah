@@ -108,14 +108,14 @@
 
 # URL canonicalization — strip .html (force 301)
 [[redirects]]
-  from = "/articles/*.html"
-  to = "/articles/:splat"
+  from = "/articles/:slug.html"
+  to = "/articles/:slug"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/guides/*.html"
-  to = "/guides/:splat"
+  from = "/guides/:slug.html"
+  to = "/guides/:slug"
   status = 301
   force = true
 
