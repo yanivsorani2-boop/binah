@@ -400,4 +400,10 @@
     <image:image><image:loc>https://binah.co.il/images/og-default.jpg</image:loc></image:image>
   </url>
 
+  <url>
+    <loc>https://binah.co.il/archive.html</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
