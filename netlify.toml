@@ -19,30 +19,26 @@
 
 # HTML — revalidate every hour at CDN, no browser cache
 [[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate, s-maxage=3600, stale-while-revalidate=86400"
+
+[[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate, s-maxage=3600"
+    Cache-Control = "public, max-age=0, must-revalidate, s-maxage=3600, stale-while-revalidate=86400"
 
-[[headers]]
-  for = "/articles/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate, s-maxage=3600"
-
-[[headers]]
-  for = "/guides/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate, s-maxage=3600"
-
-[[headers]]
-  for = "/weekly/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate, s-maxage=3600"
-
-# Sitemap — טרי
+# Sitemap
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
     Cache-Control = "public, max-age=3600"
+
+# RSS Feed
+[[headers]]
+  for = "/feed.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=1800"
 
 # Security headers
 [[headers]]
@@ -53,6 +49,13 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com https://ep2.adtrafficquality.google https://tpc.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; font-src 'self' https://fonts.gstatic.com"
+
+# www → non-www 301
+[[redirects]]
+  from = "https://www.binah.co.il/*"
+  to = "https://binah.co.il/:splat"
+  status = 301
+  force = true
 
 # Hub pages clean URLs
 [[redirects]]
