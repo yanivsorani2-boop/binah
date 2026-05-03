@@ -1,0 +1,32 @@
+=== INVARIANTS CHECK ===
+
+PASS protected files intact (14 files)
+PASS canonicals linked from home: 30 / 63
+PASS no duplicate topics: 63 = 63
+PASS sitemap entries exist as files
+PASS BlogPosting on all auto articles
+PASS BreadcrumbList on all auto articles
+PASS no FAQ placeholder answers
+PASS wordCount NOT in BreadcrumbList
+PASS articleSection in Hebrew
+PASS no author name typo
+PASS no read-more on homepage
+PASS feed.xml exists
+PASS all 6 category pages exist
+PASS archive.html exists
+PASS all favicons present
+PASS homepage size: 72359B
+PASS www redirect in netlify.toml
+PASS s-maxage in netlify.toml
+PASS internal links >=3 (10 sampled)
+PASS author box present (10 sampled)
+PASS <picture> on home: 30
+
+WARN GSC token placeholder (manual action)
+WARN 63 articles below 1500 words (needs API key)
+
+===============================
+PASS: 26 | FAIL: 0 | WARN: 2
+===============================
+ALL INVARIANTS PASS
+(2 non-blocking warnings)
