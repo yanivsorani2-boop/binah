@@ -46,7 +46,8 @@ done
 naked=0
 for url in $(echo "$SITEMAP" | grep -oE '<loc>[^<]+/articles/2026-[^<]+</loc>' | sed 's|<loc>||;s|</loc>||' | head -5); do
   body=$(curl -fsS "$url" --max-time 10 2>/dev/null || echo "")
-  jpg_outside=$(echo "$body" | grep -oE '<img[^>]*src="[^"]*\.jpg"' | grep -v '<picture' | grep 'images/og' | wc -l | tr -d ' ')
+  stripped=$(echo "$body" | perl -0pe 's/<picture>.*?<\/picture>//gs')
+  jpg_outside=$(echo "$stripped" | grep -oE '<img[^>]*src="[^"]*\.jpg"' | grep 'images/og' | wc -l | tr -d ' ')
   [ "$jpg_outside" -gt 0 ] && naked=$((naked+1))
 done
 [ "$naked" -eq 0 ] && ok "<picture> wraps OG images in articles" || ko "<picture> missing in $naked articles"
