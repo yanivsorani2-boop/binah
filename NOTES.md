@@ -1,60 +1,61 @@
 # NOTES — פעולות שדורשות התערבות אנושית
 
-## DONE (2026-05-02)
+## DONE (v5 — 2026-05-04)
 - Consolidated 241 → 63 unique articles (removed doorway pages)
-- Fixed BreadcrumbList schema (removed invalid wordCount)
+- Added 178 × 301 redirects for deleted duplicates
+- Fixed BreadcrumbList schema (removed invalid wordCount from all)
+- Added BreadcrumbList JSON-LD to all 63 auto articles
 - Added BlogPosting JSON-LD to all articles
-- Removed 62 FAQ placeholder schemas
-- Created RSS feed at /feed.xml
+- Removed 62 FAQ placeholder schemas (spam answers)
+- Fixed articleSection to Hebrew in all auto articles
+- Fixed author name typo (סורני → סוראני)
+- Recalculated accurate wordCount in BlogPosting
+- Created RSS feed at /feed.xml (50 items)
 - Generated favicon PNGs (16, 32, 192, 512)
-- Generated WebP + AVIF for all OG images
-- Added `<picture>` tags with modern formats
+- Updated site.webmanifest with correct icon paths
+- Generated WebP + AVIF for all 282 OG images
+- Added `<picture>` tags (AVIF/WebP/JPG) in homepage cards + hub pages
 - Removed 150+ generic "read more" anchors
+- Added 30 canonical article cards to homepage (with `<picture>`)
+- Created archive.html with all 63 articles
+- Created data/articles-archive.json for lazy loading
+- Created 6 category hub pages under /categories/ with CollectionPage schema
 - Added internal links (3-5) to all auto articles
 - Added author boxes to all auto articles
-- Added www → non-www redirect
+- Added www → non-www 301 redirect in netlify.toml
 - Added stale-while-revalidate cache headers
+- Added feed.xml cache header (30 min)
+- Created .protected-checksums.txt for 14 manual articles
+- Created scripts/invariants.sh (26 checks, all PASS)
+- Created scripts/inject-gsc.sh for easy GSC token injection
+- All pages added to sitemap.xml
 
 ---
 
-## TODO — Google Search Console Verification
-
-1. כנס ל-[Google Search Console](https://search.google.com/search-console)
-2. הוסף property: `https://binah.co.il`
-3. בחר **"HTML tag"** verification method
-4. העתק את הקוד שמתחיל ב-`google-site-verification`
-5. ערוך `index.html` — החלף `REPLACE_ME_WITH_GSC_TOKEN` בקוד האמיתי
-6. Push ל-GitHub → המתן לדפלוי
-7. לחץ "Verify" ב-GSC
-
-### לאחר אימות:
-- כנס ל-GSC → Sitemaps
-- הוסף: `https://binah.co.il/sitemap.xml`
-- לחץ Submit
-
----
-
-## TODO — DNS: www redirect
+## TODO 1 — DNS: www redirect
 ב-Netlify Dashboard → Domain settings:
 1. הוסף `www.binah.co.il` כ-domain alias
-2. אם משתמש ב-Netlify DNS: הוסף CNAME record `www → apex-loadbalancer.netlify.com`
-3. אם DNS חיצוני (Cloudflare/GoDaddy): הוסף CNAME `www → binah.co.il` (או ל-apex-loadbalancer.netlify.com)
-4. ה-redirect עצמו כבר מוגדר ב-netlify.toml (301 www → non-www)
+2. הוסף CNAME record: `www → apex-loadbalancer.netlify.com`
+3. ה-redirect ב-netlify.toml כבר מוגדר (301 www → non-www)
 
 ---
 
-## TODO — ANTHROPIC_API_KEY (אופציונלי)
-עם API key אפשר:
-- לייצר FAQ אמיתיים (לא placeholder) לכל מאמר
-- לאחד תוכן כפול באמצעות Claude API
-- הרץ: `export ANTHROPIC_API_KEY="sk-ant-..." && node scripts/fix-schema.js`
+## TODO 2 — GSC token
+1. כנס ל-[Google Search Console](https://search.google.com/search-console)
+2. הוסף property `https://binah.co.il` → בחר HTML tag verification
+3. העתק את ה-token והרץ:
+```bash
+bash scripts/inject-gsc.sh "<your-token-here>"
+git add -A && git commit -m "Add GSC verification token" && git push
+```
+4. חזור ל-GSC → לחץ Verify
+5. כנס ל-Sitemaps → הוסף `https://binah.co.il/sitemap.xml`
 
 ---
 
-## TODO — הרחבת תוכן מאמרים (Claude API)
-הסקריפט `scripts/generate_content.py` מוכן. מרחיב מאמרים ל-1500+ מילים.
+## TODO 3 — ANTHROPIC_API_KEY (אופציונלי)
+להרחבת תוכן המאמרים ל-1500+ מילים ולייצור FAQ אמיתיים:
 ```bash
 export ANTHROPIC_API_KEY="sk-ant-..."
-cd "/Users/sorani/Desktop/site & tools/binah"
 python3 scripts/generate_content.py
 ```
