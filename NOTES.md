@@ -1,5 +1,11 @@
 # NOTES — פעולות שדורשות התערבות אנושית
 
+## DONE (v5.1 — 2026-05-04)
+- Synced sitemap.xml: all 63 canonical articles now indexed (was only 7)
+- Replaced invariants.sh with production-aware version (10 curl-based checks)
+- Disabled daily auto-generator (daily-update.yml → manual trigger only)
+- Created scripts/sync-sitemap.js for future maintenance
+
 ## DONE (v5 — 2026-05-04)
 - Consolidated 241 → 63 unique articles (removed doorway pages)
 - Added 178 × 301 redirects for deleted duplicates
