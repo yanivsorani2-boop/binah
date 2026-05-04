@@ -40,9 +40,14 @@
 
 ## TODO 1 — DNS: www redirect
 ב-Netlify Dashboard → Domain settings:
-1. הוסף `www.binah.co.il` כ-domain alias
-2. הוסף CNAME record: `www → apex-loadbalancer.netlify.com`
-3. ה-redirect ב-netlify.toml כבר מוגדר (301 www → non-www)
+1. כנס ל-Netlify Dashboard → Site → Domain management
+2. לחץ "Add domain alias" → הקלד `www.binah.co.il`
+3. ב-רשם הדומיין (GoDaddy / Cloudflare / אחר) הוסף CNAME record:
+   - Name: `www`
+   - Value: `apex-loadbalancer.netlify.com`
+   - TTL: 3600
+4. חזור ל-Netlify ובדוק שה-alias מופיע כ-active
+5. ה-redirect ב-netlify.toml כבר מוגדר (301 www → non-www) — אין צורך לשנות שם כלום
 
 ---
 

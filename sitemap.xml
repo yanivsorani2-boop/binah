@@ -778,4 +778,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://binah.co.il/articles/deepseek-r2</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://binah.co.il/images/og/deepseek-r2.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://binah.co.il/articles/gemini-2025</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://binah.co.il/images/og/gemini-2025.jpg</image:loc></image:image>
+  </url>
 </urlset>
