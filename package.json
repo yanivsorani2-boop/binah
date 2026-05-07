@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.95.1",
     "csso-cli": "^4.0.2",
     "sharp": "^0.34.5",
     "terser": "^5.46.1"

@@ -64,9 +64,11 @@ git add -A && git commit -m "Add GSC verification token" && git push
 
 ---
 
-## TODO 3 — ANTHROPIC_API_KEY (אופציונלי)
-להרחבת תוכן המאמרים ל-1500+ מילים ולייצור FAQ אמיתיים:
-```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
-python3 scripts/generate_content.py
-```
+## TODO 3 — ANTHROPIC_API_KEY (חובה לפעולה v6 step 3)
+המפתח הקיים ב-~/.env מחזיר 404 על כל המודלים — כנראה חסרים credits או billing.
+לתיקון:
+1. כנס ל-https://console.anthropic.com/settings/billing
+2. הוסף אמצעי תשלום / רכוש credits
+3. ודא שהמפתח פעיל: `curl -s https://api.anthropic.com/v1/messages -H "x-api-key: $ANTHROPIC_API_KEY" ...`
+4. הרץ: `source ~/.env && export ANTHROPIC_API_KEY && node scripts/write-rich-articles.mjs`
+5. אחרי הצלחה: `git add articles/ .merged/ && git commit -m "SEO v6: enrich 17 canonicals" && git push`

@@ -1,0 +1,70 @@
+{
+  "hebrew-weekly-roundup": {
+    "canonical": "2026-04-23-hebrew-weekly-hebrew-ai-tools-april-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "compare-flagship-models": {
+    "canonical": "2026-04-25-compare-gemini-2-vs-gpt4o-vs-claude-3-5-comparison-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "guide-chatgpt-mastery": {
+    "canonical": "2026-04-25-guide-chatgpt-practical-guide-beginners-to-advanced",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "tools-coding-comparison": {
+    "canonical": "2026-04-24-tools-ai-coding-tools-comparison-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "tools-weekly-roundup": {
+    "canonical": "2026-04-20-tools-weekly-tools-april-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "business-weekly-roundup": {
+    "canonical": "2026-04-21-business-weekly-business-ai-tools-april-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "misc": {
+    "canonical": "2026-03-24-gpt5-release-impact-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "guide-prompts-engineering": {
+    "canonical": "2026-03-24-guide-ai-prompts-guide-for-beginners",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "tools-writing-comparison": {
+    "canonical": "2026-03-24-tools-best-ai-writing-tools-2026-comparison",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "compare-models-general": {
+    "canonical": "2026-04-22-compare-weekly-compare-models-april-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "guide-weekly-ai-roundup": {
+    "canonical": "2026-04-24-guide-weekly-guide-ai-practical-april-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "guide-ai-tools-overview": {
+    "canonical": "2026-04-17-guide-weekly-guide-ai-tools-april-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "tools-comprehensive-comparison": {
+    "canonical": "2026-04-25-tools-ai-tools-comparison-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "business-ai-roi-israel": {
+    "canonical": "2026-04-25-business-ai-tools-israeli-businesses-roi-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "tools-video-comparison": {
+    "canonical": "2026-04-18-tools-ai-video-tools-comparison-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "ai-agents-enterprise": {
+    "canonical": "2026-04-25-ai-agents-enterprise-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  },
+  "hebrew-ai-tools-review": {
+    "canonical": "2026-04-25-hebrew-hebrew-ai-tools-review-2026",
+    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+  }
+}
