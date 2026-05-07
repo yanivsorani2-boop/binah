@@ -1,0 +1,162 @@
+{
+  "hebrew-weekly-roundup": {
+    "canonical": "2026-04-23-hebrew-weekly-hebrew-ai-tools-april-2026",
+    "redirects": [
+      "2026-04-02-hebrew-weekly-hebrew-tools-april-2026",
+      "2026-03-26-hebrew-weekly-hebrew-tools-march-2026",
+      "2026-03-19-hebrew-weekly-hebrew-ai-tools-march-2026"
+    ],
+    "count": 4,
+    "topic_he": ""
+  },
+  "compare-flagship-models": {
+    "canonical": "2026-04-25-compare-gemini-2-vs-gpt4o-vs-claude-3-5-comparison-2026",
+    "redirects": [
+      "2026-04-24-compare-gemini-2-vs-gpt4o-vs-claude-2026",
+      "2026-04-23-compare-gemini-vs-chatgpt-vs-claude-2026",
+      "2026-04-21-compare-gemini-2-5-vs-gpt-4o-vs-claude-3-7-comparison-2026",
+      "2026-04-20-compare-gpt4o-vs-gemini-vs-claude-2026",
+      "2026-04-19-compare-gemini-2-vs-gpt-4o-vs-claude-3-5-comparison-2026",
+      "2026-04-17-compare-claude-vs-chatgpt-vs-gemini-2026",
+      "2026-04-16-compare-claude-vs-gemini-vs-chatgpt-2026",
+      "2026-04-14-compare-claude-vs-gemini-vs-gpt-2026",
+      "2026-04-11-compare-gemini-25-pro-vs-gpt-45-vs-claude-37",
+      "2026-04-09-compare-gemini-2-vs-gpt4o-vs-claude-3-7-comparison-2026",
+      "2026-04-04-compare-gemini-2-vs-gpt4o-vs-claude-37-comparison-2026",
+      "2026-03-31-compare-gemini-25-vs-gpt45-vs-claude-37-comparison-2026",
+      "2026-03-26-compare-gemini-2-vs-gpt5-vs-claude4-comparison-2026",
+      "2026-03-24-compare-gemini-2-vs-gpt4o-vs-claude-3-5-2026",
+      "2026-03-23-compare-gpt4o-vs-claude-vs-gemini-2026",
+      "2026-03-21-compare-gemini-25-pro-vs-claude-37-vs-gpt45-comparison-2026"
+    ],
+    "count": 17,
+    "topic_he": ""
+  },
+  "guide-chatgpt-mastery": {
+    "canonical": "2026-04-25-guide-chatgpt-practical-guide-beginners-to-advanced",
+    "redirects": [
+      "2026-04-23-guide-chatgpt-beginners-guide-2026",
+      "2026-04-22-guide-chatgpt-practical-guide-all-levels",
+      "2026-04-21-guide-how-to-use-chatgpt-step-by-step-guide",
+      "2026-04-14-guide-beginners-guide-to-chatgpt-prompts",
+      "2026-04-13-guide-chatgpt-beginners-step-by-step-guide",
+      "2026-04-10-guide-chatgpt-beginner-to-advanced-guide",
+      "2026-03-25-guide-beginner-guide-chatgpt-prompts-2026",
+      "2026-03-21-guide-chatgpt-beginners-guide-step-by-step"
+    ],
+    "count": 9,
+    "topic_he": ""
+  },
+  "tools-coding-comparison": {
+    "canonical": "2026-04-24-tools-ai-coding-tools-comparison-2026",
+    "redirects": [
+      "2026-04-20-tools-best-ai-coding-tools-2026-comparison",
+      "2026-03-21-tools-best-ai-coding-tools-2026"
+    ],
+    "count": 3,
+    "topic_he": ""
+  },
+  "tools-weekly-roundup": {
+    "canonical": "2026-04-20-tools-weekly-tools-april-2026",
+    "redirects": [
+      "2026-04-13-tools-weekly-tools-april-13-2026",
+      "2026-03-30-tools-weekly-tools-march-2026",
+      "2026-03-23-tools-weekly-tools-march-23-2026"
+    ],
+    "count": 4,
+    "topic_he": ""
+  },
+  "business-weekly-roundup": {
+    "canonical": "2026-04-21-business-weekly-business-ai-tools-april-2026",
+    "redirects": [
+      "2026-04-14-business-weekly-business-ai-israel-april-2026",
+      "2026-04-07-business-weekly-business-ai-april-2026",
+      "2026-03-31-business-weekly-business-ai-tools-march-2026",
+      "2026-03-24-business-weekly-business-ai-march-2026"
+    ],
+    "count": 5,
+    "topic_he": ""
+  },
+  "misc": {
+    "canonical": "2026-03-24-gpt5-release-impact-2026",
+    "redirects": [],
+    "count": 1,
+    "topic_he": ""
+  },
+  "guide-prompts-engineering": {
+    "canonical": "2026-03-24-guide-ai-prompts-guide-for-beginners",
+    "redirects": [],
+    "count": 1,
+    "topic_he": ""
+  },
+  "tools-writing-comparison": {
+    "canonical": "2026-03-24-tools-best-ai-writing-tools-2026-comparison",
+    "redirects": [],
+    "count": 1,
+    "topic_he": ""
+  },
+  "compare-models-general": {
+    "canonical": "2026-04-22-compare-weekly-compare-models-april-2026",
+    "redirects": [
+      "2026-04-10-compare-ai-models-comparison-2026",
+      "2026-03-25-compare-weekly-compare-models-march-2026"
+    ],
+    "count": 3,
+    "topic_he": ""
+  },
+  "guide-weekly-ai-roundup": {
+    "canonical": "2026-04-24-guide-weekly-guide-ai-practical-april-2026",
+    "redirects": [
+      "2026-03-27-guide-weekly-guide-ai-practical-march-2026"
+    ],
+    "count": 2,
+    "topic_he": ""
+  },
+  "guide-ai-tools-overview": {
+    "canonical": "2026-04-17-guide-weekly-guide-ai-tools-april-2026",
+    "redirects": [
+      "2026-03-30-guide-beginners-guide-to-ai-tools-2026"
+    ],
+    "count": 2,
+    "topic_he": ""
+  },
+  "tools-comprehensive-comparison": {
+    "canonical": "2026-04-25-tools-ai-tools-comparison-2026",
+    "redirects": [
+      "2026-04-23-tools-ai-tools-comparison-april-2026",
+      "2026-03-30-tools-ai-tools-comparison-march-2026"
+    ],
+    "count": 3,
+    "topic_he": ""
+  },
+  "business-ai-roi-israel": {
+    "canonical": "2026-04-25-business-ai-tools-israeli-businesses-roi-2026",
+    "redirects": [
+      "2026-04-21-business-ai-tools-israeli-business-roi-2026",
+      "2026-04-19-business-ai-for-israeli-businesses-roi-automation",
+      "2026-04-14-business-ai-for-israeli-businesses-roi"
+    ],
+    "count": 4,
+    "topic_he": ""
+  },
+  "tools-video-comparison": {
+    "canonical": "2026-04-18-tools-ai-video-tools-comparison-2026",
+    "redirects": [],
+    "count": 1,
+    "topic_he": ""
+  },
+  "ai-agents-enterprise": {
+    "canonical": "2026-04-25-ai-agents-enterprise-2026",
+    "redirects": [
+      "2026-04-20-ai-agents-autonomous-work-2026"
+    ],
+    "count": 2,
+    "topic_he": ""
+  },
+  "hebrew-ai-tools-review": {
+    "canonical": "2026-04-25-hebrew-hebrew-ai-tools-review-2026",
+    "redirects": [],
+    "count": 1,
+    "topic_he": ""
+  }
+}
