@@ -1,5 +1,15 @@
 # NOTES — פעולות שדורשות התערבות אנושית
 
+## DONE (v6 — 2026-05-07 — radical consolidation)
+- Clustered 63 thin auto articles into 17 canonical groups
+- Deleted 46 duplicate HTML files + 138 orphan OG images
+- Added 46 x 301 redirects in netlify.toml
+- Cleaned sitemap.xml (17 auto articles remain)
+- Removed orphan cards from index.html, archive.html, category pages, feed.xml
+- All 10 production invariants PASS
+- All sampled redirects return 200|1 (301 -> canonical)
+- BLOCKED: content enrichment to 3000+ words (API key has no credits — see TODO 3)
+
 ## DONE (v5.1 — 2026-05-04)
 - Synced sitemap.xml: all 63 canonical articles now indexed (was only 7)
 - Replaced invariants.sh with production-aware version (10 curl-based checks)
@@ -64,11 +74,28 @@ git add -A && git commit -m "Add GSC verification token" && git push
 
 ---
 
-## TODO 3 — ANTHROPIC_API_KEY (חובה לפעולה v6 step 3)
+## TODO 3 — ANTHROPIC_API_KEY (חובה להרחבת תוכן)
 המפתח הקיים ב-~/.env מחזיר 404 על כל המודלים — כנראה חסרים credits או billing.
 לתיקון:
 1. כנס ל-https://console.anthropic.com/settings/billing
-2. הוסף אמצעי תשלום / רכוש credits
-3. ודא שהמפתח פעיל: `curl -s https://api.anthropic.com/v1/messages -H "x-api-key: $ANTHROPIC_API_KEY" ...`
+2. הוסף אמצעי תשלום / רכוש credits ($10 מספיק)
+3. ודא שהמפתח פעיל:
+```bash
+source ~/.env && export ANTHROPIC_API_KEY
+curl -s https://api.anthropic.com/v1/messages \
+  -H "x-api-key: $ANTHROPIC_API_KEY" \
+  -H "content-type: application/json" \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{"model":"claude-sonnet-4-5-20250514","max_tokens":10,"messages":[{"role":"user","content":"hi"}]}'
+```
 4. הרץ: `source ~/.env && export ANTHROPIC_API_KEY && node scripts/write-rich-articles.mjs`
-5. אחרי הצלחה: `git add articles/ .merged/ && git commit -m "SEO v6: enrich 17 canonicals" && git push`
+5. אחרי הצלחה: `git add articles/ .merged/ && git commit -m "SEO v6: enrich 17 canonicals to 3000+ words" && git push`
+
+---
+
+## TODO 4 — POST-DEPLOY (Google Search Console)
+1. כנס ל-Google Search Console → Indexing → Pages
+2. סינון "נסרק אך לא נכלל באינדקס" — צריך לרדת מ-61 ל-~10 תוך 4-6 שבועות
+3. URL Inspection: הזן את 17 הקנונים החדשים, לחץ "Request Indexing" לכל אחד
+4. אחרי 3 שבועות: בדוק כמה מהם עברו ל-"Indexed"
+5. אם עדיין יש "crawled but not indexed" — שקול הרחבת התוכן (TODO 3)
