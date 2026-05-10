@@ -3209,3 +3209,41 @@
   to = "/articles/2026-04-25-ai-agents-enterprise-2026"
   status = 301
   force = true
+
+# === v7 final consolidation ===
+
+[[redirects]]
+  from = "/articles/2026-04-22-compare-weekly-compare-models-april-2026"
+  to = "/articles/2026-04-25-compare-gemini-2-vs-gpt4o-vs-claude-3-5-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-17-guide-weekly-guide-ai-tools-april-2026"
+  to = "/articles/2026-04-25-guide-chatgpt-practical-guide-beginners-to-advanced"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-24-guide-weekly-guide-ai-practical-april-2026"
+  to = "/articles/2026-04-25-guide-chatgpt-practical-guide-beginners-to-advanced"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-20-tools-weekly-tools-april-2026"
+  to = "/articles/2026-04-25-tools-ai-tools-comparison-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-21-business-weekly-business-ai-tools-april-2026"
+  to = "/articles/2026-04-25-business-ai-tools-israeli-businesses-roi-2026"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/articles/2026-04-23-hebrew-weekly-hebrew-ai-tools-april-2026"
+  to = "/articles/2026-04-25-hebrew-hebrew-ai-tools-review-2026"
+  status = 301
+  force = true

@@ -1,70 +1,70 @@
 {
   "hebrew-weekly-roundup": {
     "canonical": "2026-04-23-hebrew-weekly-hebrew-ai-tools-april-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaodxkDCjcBgMjG2Tb6aS\"}"
   },
   "compare-flagship-models": {
     "canonical": "2026-04-25-compare-gemini-2-vs-gpt4o-vs-claude-3-5-comparison-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011Caoe5VXrVfEBv4kioo56L\"}"
   },
   "guide-chatgpt-mastery": {
     "canonical": "2026-04-25-guide-chatgpt-practical-guide-beginners-to-advanced",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaoeCFPkG3CeJ8YSouGr4\"}"
   },
   "tools-coding-comparison": {
     "canonical": "2026-04-24-tools-ai-coding-tools-comparison-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaoeJz8Ah6Rsy3WjPHzD4\"}"
   },
   "tools-weekly-roundup": {
     "canonical": "2026-04-20-tools-weekly-tools-april-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaoeRi3yUoktoMBmgaKBo\"}"
   },
   "business-weekly-roundup": {
     "canonical": "2026-04-21-business-weekly-business-ai-tools-april-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaoeYReCLgxHJ5vz8jXUS\"}"
   },
   "misc": {
     "canonical": "2026-03-24-gpt5-release-impact-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011Caoef9z4Q7BiL2mpA6Yfb\"}"
   },
   "guide-prompts-engineering": {
     "canonical": "2026-03-24-guide-ai-prompts-guide-for-beginners",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaoemszKzWgRpv3LxoYo3\"}"
   },
   "tools-writing-comparison": {
     "canonical": "2026-03-24-tools-best-ai-writing-tools-2026-comparison",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaoetdFWMQSXosmCzzBaU\"}"
   },
   "compare-models-general": {
     "canonical": "2026-04-22-compare-weekly-compare-models-april-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011Caof1NtFjBe1rR1tK5i26\"}"
   },
   "guide-weekly-ai-roundup": {
     "canonical": "2026-04-24-guide-weekly-guide-ai-practical-april-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011Caof88CuQwE9XSiDDTcya\"}"
   },
   "guide-ai-tools-overview": {
     "canonical": "2026-04-17-guide-weekly-guide-ai-tools-april-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaofEqvJp7BPCuGxxS7sT\"}"
   },
   "tools-comprehensive-comparison": {
     "canonical": "2026-04-25-tools-ai-tools-comparison-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaofMaYHmETdHaM7XnMBs\"}"
   },
   "business-ai-roi-israel": {
     "canonical": "2026-04-25-business-ai-tools-israeli-businesses-roi-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaofUKMvdv6a11CDH1vtV\"}"
   },
   "tools-video-comparison": {
     "canonical": "2026-04-18-tools-ai-video-tools-comparison-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011Caofb4e6aTsESobzQcmst\"}"
   },
   "ai-agents-enterprise": {
     "canonical": "2026-04-25-ai-agents-enterprise-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaofhpTG7BsUmb2W9G9Fi\"}"
   },
   "hebrew-ai-tools-review": {
     "canonical": "2026-04-25-hebrew-hebrew-ai-tools-review-2026",
-    "error": "Could not resolve authentication method. Expected one of apiKey, authToken, credentials, config, or profile to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    "error": "404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-4-5-20250514\"},\"request_id\":\"req_011CaofpaN8QWGBZmy7wFsAf\"}"
   }
 }
