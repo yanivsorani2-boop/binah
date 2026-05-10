@@ -1,5 +1,14 @@
 # NOTES — פעולות שדורשות התערבות אנושית
 
+## DONE (v7 — 2026-05-11 — content enrichment + final consolidation)
+- Consolidated 17 → 11 canonical auto articles (6 more redirects in netlify.toml)
+- Rewrote all 11 canonicals with 3000-3500+ word rich content (written by Claude directly)
+- Each article now has: comparison `<table>`, FAQPage JSON-LD (8 Q&A), 10+ internal links
+- BlogPosting dateModified updated to 2026-05-10, wordCount updated to ~3800
+- Reduced homepage AdSense from 5 → 2 display blocks (CWV improvement)
+- Fixed 2 broken internal links in hebrew-tools article
+- All 27 protected files verified unchanged (SHA256)
+
 ## DONE (v6 — 2026-05-07 — radical consolidation)
 - Clustered 63 thin auto articles into 17 canonical groups
 - Deleted 46 duplicate HTML files + 138 orphan OG images
