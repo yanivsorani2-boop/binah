@@ -1,0 +1,374 @@
+{
+  "expand": [
+    {
+      "path": "articles/deepseek-r2.html",
+      "slug": "deepseek-r2",
+      "words": 667,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/crazy-openai-math-40years.html",
+      "slug": "crazy-openai-math-40years",
+      "words": 853,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/biz-ai-seo-website.html",
+      "slug": "biz-ai-seo-website",
+      "words": 834,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/gemini-2025.html",
+      "slug": "gemini-2025",
+      "words": 691,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/vibe-coding.html",
+      "slug": "vibe-coding",
+      "words": 1309,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/product-google-pixel-9-ai.html",
+      "slug": "product-google-pixel-9-ai",
+      "words": 750,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/crazy-deepmind-superconductor.html",
+      "slug": "crazy-deepmind-superconductor",
+      "words": 844,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/gpt5-launch.html",
+      "slug": "gpt5-launch",
+      "words": 467,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/crazy-deepmind-agi-2027.html",
+      "slug": "crazy-deepmind-agi-2027",
+      "words": 860,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/product-samsung-galaxy-ai.html",
+      "slug": "product-samsung-galaxy-ai",
+      "words": 733,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/perplexity-ai.html",
+      "slug": "perplexity-ai",
+      "words": 719,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/crazy-suno-spotify-1.html",
+      "slug": "crazy-suno-spotify-1",
+      "words": 636,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/product-microsoft-copilot-pc.html",
+      "slug": "product-microsoft-copilot-pc",
+      "words": 846,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/biz-ai-accounting-finance.html",
+      "slug": "biz-ai-accounting-finance",
+      "words": 792,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/biz-ai-content-writing.html",
+      "slug": "biz-ai-content-writing",
+      "words": 770,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/crazy-anthropic-hedge-fund.html",
+      "slug": "crazy-anthropic-hedge-fund",
+      "words": 629,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/sora-openai.html",
+      "slug": "sora-openai",
+      "words": 691,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/product-apple-intelligence.html",
+      "slug": "product-apple-intelligence",
+      "words": 657,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/midjourney-beginners.html",
+      "slug": "midjourney-beginners",
+      "words": 858,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/crazy-figure-robot-2026.html",
+      "slug": "crazy-figure-robot-2026",
+      "words": 657,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/product-tesla-fsd.html",
+      "slug": "product-tesla-fsd",
+      "words": 760,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/biz-ai-time-automation.html",
+      "slug": "biz-ai-time-automation",
+      "words": 836,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/biz-ai-data-analytics.html",
+      "slug": "biz-ai-data-analytics",
+      "words": 748,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/product-humane-ai-pin.html",
+      "slug": "product-humane-ai-pin",
+      "words": 656,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/crazy-stanford-ai-book.html",
+      "slug": "crazy-stanford-ai-book",
+      "words": 645,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/claude-vs-gpt4o.html",
+      "slug": "claude-vs-gpt4o",
+      "words": 793,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/product-amazon-echo-alexa-ai.html",
+      "slug": "product-amazon-echo-alexa-ai",
+      "words": 695,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/ollama-guide.html",
+      "slug": "ollama-guide",
+      "words": 622,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/biz-ai-marketing-small-business.html",
+      "slug": "biz-ai-marketing-small-business",
+      "words": 644,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/product-nvidia-rtx-ai-pc.html",
+      "slug": "product-nvidia-rtx-ai-pc",
+      "words": 738,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/ai-jobs-2025.html",
+      "slug": "ai-jobs-2025",
+      "words": 792,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/biz-ai-customer-service.html",
+      "slug": "biz-ai-customer-service",
+      "words": 784,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/chatgpt-10-uses.html",
+      "slug": "chatgpt-10-uses",
+      "words": 823,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/biz-ai-hiring-hr.html",
+      "slug": "biz-ai-hiring-hr",
+      "words": 830,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/biz-ai-whatsapp-crm.html",
+      "slug": "biz-ai-whatsapp-crm",
+      "words": 648,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/prompt-engineering.html",
+      "slug": "prompt-engineering",
+      "words": 1001,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/product-rabbit-r1.html",
+      "slug": "product-rabbit-r1",
+      "words": 704,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/biz-ai-design-images.html",
+      "slug": "biz-ai-design-images",
+      "words": 818,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/product-meta-ray-ban-ai.html",
+      "slug": "product-meta-ray-ban-ai",
+      "words": 628,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/ai-video-tools.html",
+      "slug": "ai-video-tools",
+      "words": 1177,
+      "dir": "articles"
+    },
+    {
+      "path": "articles/ai-small-business.html",
+      "slug": "ai-small-business",
+      "words": 756,
+      "dir": "articles"
+    },
+    {
+      "path": "guides/guide-claude.html",
+      "slug": "guide-claude",
+      "words": 847,
+      "dir": "guides"
+    },
+    {
+      "path": "guides/guide-chatgpt.html",
+      "slug": "guide-chatgpt",
+      "words": 904,
+      "dir": "guides"
+    },
+    {
+      "path": "guides/guide-prompt-cot.html",
+      "slug": "guide-prompt-cot",
+      "words": 742,
+      "dir": "guides"
+    },
+    {
+      "path": "guides/guide-midjourney.html",
+      "slug": "guide-midjourney",
+      "words": 829,
+      "dir": "guides"
+    },
+    {
+      "path": "guides/guide-prompt-role.html",
+      "slug": "guide-prompt-role",
+      "words": 862,
+      "dir": "guides"
+    },
+    {
+      "path": "guides/guide-ollama.html",
+      "slug": "guide-ollama",
+      "words": 852,
+      "dir": "guides"
+    },
+    {
+      "path": "guides/guide-prompt-basics.html",
+      "slug": "guide-prompt-basics",
+      "words": 672,
+      "dir": "guides"
+    },
+    {
+      "path": "categories/products.html",
+      "slug": "products",
+      "words": 382,
+      "dir": "categories"
+    },
+    {
+      "path": "categories/tools.html",
+      "slug": "tools",
+      "words": 263,
+      "dir": "categories"
+    },
+    {
+      "path": "weekly/week-2026-03-22.html",
+      "slug": "week-2026-03-22",
+      "words": 510,
+      "dir": "weekly"
+    },
+    {
+      "path": "weekly/week-2026-04-12.html",
+      "slug": "week-2026-04-12",
+      "words": 530,
+      "dir": "weekly"
+    },
+    {
+      "path": "weekly/week-2026-04-05.html",
+      "slug": "week-2026-04-05",
+      "words": 563,
+      "dir": "weekly"
+    },
+    {
+      "path": "weekly/week-2026-04-19.html",
+      "slug": "week-2026-04-19",
+      "words": 518,
+      "dir": "weekly"
+    }
+  ],
+  "merge": [
+    {
+      "path": "weekly/week-2026-02-24.html",
+      "slug": "week-2026-02-24",
+      "words": 242,
+      "dir": "weekly"
+    },
+    {
+      "path": "weekly/week-2026-03-02.html",
+      "slug": "week-2026-03-02",
+      "words": 229,
+      "dir": "weekly"
+    },
+    {
+      "path": "weekly/week-2026-02-17.html",
+      "slug": "week-2026-02-17",
+      "words": 246,
+      "dir": "weekly"
+    }
+  ],
+  "noindex": [
+    {
+      "path": "categories/news.html",
+      "slug": "news",
+      "words": 107,
+      "dir": "categories"
+    },
+    {
+      "path": "categories/comparisons.html",
+      "slug": "comparisons",
+      "words": 102,
+      "dir": "categories"
+    },
+    {
+      "path": "categories/guides.html",
+      "slug": "guides",
+      "words": 111,
+      "dir": "categories"
+    },
+    {
+      "path": "categories/business.html",
+      "slug": "business",
+      "words": 122,
+      "dir": "categories"
+    }
+  ]
+}

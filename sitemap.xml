@@ -349,54 +349,26 @@
     <image:image><image:loc>https://binah.co.il/images/og-default.jpg</image:loc></image:image>
   </url>
 
-  <!-- Weekly -->
+  <!-- Monthly Summaries -->
   <url>
-    <loc>https://binah.co.il/weekly/week-2026-02-17.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://binah.co.il/weekly/monthly-2026-02.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image><image:loc>https://binah.co.il/images/og-default.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://binah.co.il/weekly/week-2026-02-24.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://binah.co.il/weekly/monthly-2026-03.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image><image:loc>https://binah.co.il/images/og-default.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://binah.co.il/weekly/week-2026-03-02.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://binah.co.il/weekly/monthly-2026-04.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image><image:loc>https://binah.co.il/images/og-default.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://binah.co.il/weekly/week-2026-03-22.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image><image:loc>https://binah.co.il/images/og-default.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://binah.co.il/weekly/week-2026-04-05.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image><image:loc>https://binah.co.il/images/og-default.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://binah.co.il/weekly/week-2026-04-12.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image><image:loc>https://binah.co.il/images/og-default.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://binah.co.il/weekly/week-2026-04-19.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image><image:loc>https://binah.co.il/images/og-default.jpg</image:loc></image:image>
   </url>
 

@@ -57,6 +57,49 @@
   status = 301
   force = true
 
+# Weekly → Monthly redirects (SEO v8)
+[[redirects]]
+  from = "/weekly/week-2026-02-17.html"
+  to = "/weekly/monthly-2026-02.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/weekly/week-2026-02-24.html"
+  to = "/weekly/monthly-2026-02.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/weekly/week-2026-03-02.html"
+  to = "/weekly/monthly-2026-03.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/weekly/week-2026-03-22.html"
+  to = "/weekly/monthly-2026-03.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/weekly/week-2026-04-05.html"
+  to = "/weekly/monthly-2026-04.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/weekly/week-2026-04-12.html"
+  to = "/weekly/monthly-2026-04.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/weekly/week-2026-04-19.html"
+  to = "/weekly/monthly-2026-04.html"
+  status = 301
+  force = true
+
 # Hub pages clean URLs
 [[redirects]]
   from = "/comparisons"
