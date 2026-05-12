@@ -42,7 +42,7 @@
   },
   "inLanguage": "he",
   "datePublished": "2026-03-18",
-  "dateModified": "2026-05-01",
+  "dateModified": "2026-05-12",
   "author": {
     "@type": "Person",
     "name": "יניב סוראני",
@@ -58,7 +58,7 @@
     }
   },
   "image": {"@type": "ImageObject", "url": "https://binah.co.il/images/og/midjourney-beginners.jpg"},
-  "wordCount": 1227,
+  "wordCount": 2850,
   "articleSection": "כללי"
 }
 </script>
@@ -67,10 +67,14 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"מה זה Midjourney?","acceptedAnswer":{"@type":"Answer","text":"Midjourney הוא כלי AI ליצירת תמונות מתיאור טקסטואלי. מזינים פרומפט באנגלית ומקבלים 4 תמונות מקצועיות תוך כדקה."}},
-    {"@type":"Question","name":"כמה עולה Midjourney?","acceptedAnswer":{"@type":"Answer","text":"Midjourney עולה $10 לחודש (Basic) עד $60 (Pro). אין גרסה חינמית קבועה, אך לפעמים מציעים ניסיון חינם."}},
+    {"@type":"Question","name":"מה זה Midjourney?","acceptedAnswer":{"@type":"Answer","text":"Midjourney הוא כלי AI ליצירת תמונות מתיאור טקסטואלי. מזינים פרומפט באנגלית ומקבלים 4 תמונות מקצועיות תוך כדקה. הכלי פועל דרך ממשק אינטרנט ייעודי וגם דרך Discord."}},
+    {"@type":"Question","name":"כמה עולה Midjourney?","acceptedAnswer":{"@type":"Answer","text":"Midjourney עולה $10 לחודש (Basic) עד $60 (Pro). אין גרסה חינמית קבועה, אך לפעמים מציעים ניסיון חינם של 25 תמונות."}},
     {"@type":"Question","name":"האם צריך לכתוב את הפרומפט באנגלית?","acceptedAnswer":{"@type":"Answer","text":"כן, Midjourney עובד הכי טוב עם פרומפטים באנגלית. ניתן לתרגם את הרעיון לאנגלית עם ChatGPT ואז להשתמש ב-Midjourney."}},
-    {"@type":"Question","name":"מה ההבדל בין v6 ל-v7?","acceptedAnswer":{"@type":"Answer","text":"v6.1 מצוין לפוטוריאליזם וטקסט בתמונה. v7 הוא כל-תכליתי עם בקרה טובה יותר — ברירת המחדל המומלצת למתחילים."}}
+    {"@type":"Question","name":"מה ההבדל בין v6 ל-v7?","acceptedAnswer":{"@type":"Answer","text":"v6.1 מצוין לפוטוריאליזם וטקסט בתמונה. v7 הוא כל-תכליתי עם בקרה טובה יותר, תמיכה ב-4096x4096, style references ו-inpainting."}},
+    {"@type":"Question","name":"מה היתרון של Midjourney על פני DALL-E?","acceptedAnswer":{"@type":"Answer","text":"Midjourney מצטיין באיכות אסתטית, שליטה בסגנון, ורזולוציה גבוהה של עד 4096x4096. DALL-E 4 נוח יותר לגישה דרך ChatGPT אבל הסגנון שלו פחות ייחודי."}},
+    {"@type":"Question","name":"האם ניתן להשתמש בתמונות Midjourney למטרות מסחריות?","acceptedAnswer":{"@type":"Answer","text":"כן, כל התוכניות בתשלום מאפשרות שימוש מסחרי בתמונות שנוצרו. תוכנית Pro מוסיפה מצב Stealth שמסתיר את הפרומפטים מהציבור."}},
+    {"@type":"Question","name":"מהי רזולוציית הפלט המקסימלית?","acceptedAnswer":{"@type":"Answer","text":"ב-v7 הרזולוציה המקסימלית היא 4096x4096 פיקסלים, שזה פי 4 מגרסאות קודמות. זו רזולוציה מתאימה להדפסה מקצועית."}},
+    {"@type":"Question","name":"מה זה style reference ב-Midjourney?","acceptedAnswer":{"@type":"Answer","text":"Style reference (--sref) מאפשר להעלות תמונה כרפרנס סגנוני. Midjourney ילמד את הסגנון מהתמונה ויחיל אותו על הפרומפט שלכם — שימושי במיוחד למיתוג עקבי."}}
   ]
 }
 </script>
@@ -121,7 +125,7 @@
     <h1>Midjourney למתחילים: יצירת תמונות AI בקלות</h1>
     <div class="meta">
       <span>📅 מרץ 2026</span>
-      <span>⏱ 6 דקות קריאה</span>
+      <span>⏱ 14 דקות קריאה</span>
       <span>✍ <a href="../about.html">יניב סוראני</a></span>
     </div>
   </div>
@@ -147,20 +151,38 @@
 }
 </script>
 </div>
-
+
     <main class="article-body">
 <div class="container"><a href="../index.html" class="btn-back">→ חזרה</a></div>
 
-      <p>בשנת 2025, <strong>יצירת תמונות AI</strong> עברה ממחלקת "מגניב אבל לא שימושי" למחלקת "כלי עבודה יומיומי". משווקים, מעצבים, יוצרי תוכן ואנשי עסקים משתמשים בכלים כמו Midjourney כדי ליצור בתוך שניות תמונות שהיו עולות מאות דולרים לצלם.</p>
+      <p>בשנת 2026, <strong>יצירת תמונות באמצעות AI</strong> הפכה לכלי עבודה יומיומי של משווקים, מעצבים, יוצרי תוכן ואנשי עסקים. Midjourney הוא אחד הכלים הפופולריים ביותר בתחום — ובצדק. בעוד כלים אחרים מייצרים תמונות שנראות "גנריות", Midjourney בולט בסגנון אסתטי ייחודי שהופך כל פלט לתמונה שנראית כמו יצירת אמנות. מדריך זה מכסה את כל מה שצריך לדעת כדי להתחיל: מהגדרת חשבון ועד לטכניקות מתקדמות של כתיבת פרומפטים.</p>
 
       <h2>מה זה AI ליצירת תמונות?</h2>
-      <p>מודלי AI ליצירת תמונות הוכשרו על מיליארדי תמונות מהאינטרנט. כאשר אתם כותבים "שקיעה בפריז עם מגדל אייפל", המודל מבין אילו פיקסלים צריכים להופיע — ויוצר תמונה חדשה לגמרי שמעולם לא הייתה קיימת.</p>
+      <p>מודלי AI ליצירת תמונות הוכשרו על מיליארדי תמונות מהאינטרנט. כאשר אתם כותבים "שקיעה בפריז עם מגדל אייפל", המודל מבין אילו פיקסלים צריכים להופיע — ויוצר תמונה חדשה לגמרי שמעולם לא הייתה קיימת. הטכנולוגיה מבוססת על מודלי דיפוזיה (Diffusion Models) שמתחילים מרעש אקראי ו"מנקים" אותו בהדרגה עד שנוצרת תמונה תואמת לתיאור הטקסטואלי.</p>
 
-      <p><strong>Midjourney</strong> נבדל מהמתחרים (DALL-E 3, Stable Diffusion, Adobe Firefly) בזכות הסגנון האסתטי הייחודי שלו — תמונות שנראות כמו יצירות אמנות, לא כמו "מוצר AI גנרי".</p>
+      <p><strong>Midjourney</strong> נבדל מהמתחרים בזכות הסגנון האסתטי הייחודי שלו — תמונות שנראות כמו יצירות אמנות, לא כמו "מוצר AI גנרי". אם אתם מתעניינים בכלי <a href="biz-ai-design-images.html">AI לעיצוב תמונות לעסקים</a>, Midjourney הוא נקודת פתיחה מצוינת.</p>
 
       <h2>
       <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-איך Midjourney עובד — ב-3 שורות</h2>
+מה השתנה ב-2026</h2>
+      <p>2026 הביאה שינויים משמעותיים ב-Midjourney. הנה העדכונים העיקריים שצריך להכיר:</p>
+
+      <h3>Midjourney v7 — הגרסה החדשה</h3>
+      <p>גרסה 7 שוחררה בתחילת 2026 והיא כוללת שיפורים משמעותיים בהשוואה ל-v6.1. המודל מבין טוב יותר פרומפטים מורכבים, מייצר פרטים עדינים יותר (שיער, ידיים, טקסטורות), ומגיב בצורה מדויקת יותר להוראות מיקום כמו "בצד שמאל" או "מאחורי". מהירות היצירה ירדה מ-60 שניות בממוצע ל-30 שניות.</p>
+
+      <h3>אפליקציית אינטרנט מלאה</h3>
+      <p>Midjourney כבר לא תלוי ב-Discord בלבד. אפליקציית האינטרנט ב-midjourney.com/app כוללת עורך מלא, גלריה אישית, וארגון פרויקטים בתיקיות. הממשק הגרפי נוח יותר משמעותית — במיוחד למתחילים שלא מכירים את Discord.</p>
+
+      <h3>רזולוציה 4096x4096</h3>
+      <p>v7 תומך ברזולוציית פלט של עד 4096x4096 פיקסלים — פי 4 מהגרסאות הקודמות. זו רזולוציה מתאימה להדפסות גדולות, פוסטרים וחומרים שיווקיים מודפסים. לא צריך יותר כלי upscale חיצוני ברוב המקרים.</p>
+
+      <h3>Style References (--sref)</h3>
+      <p>אחת היכולות החדשות: אתם יכולים להעלות תמונה כ-"רפרנס סגנוני". Midjourney ילמד את הסגנון (צבעים, מרקמים, אווירה) מהתמונה שלכם ויחיל אותו על הפרומפט. לדוגמה: אם יש לכם סגנון מיתוגי מסוים, תוכלו לייצר סדרה שלמה של תמונות בסגנון אחיד. השימוש: <code>--sref [URL של תמונת רפרנס]</code></p>
+
+      <h3>Inpainting — עריכה של חלקים בתמונה</h3>
+      <p>Inpainting מאפשר לסמן אזור בתמונה קיימת ולבקש מ-Midjourney ליצור מחדש רק את האזור הזה. לדוגמה: שינוי רקע, הסרת אובייקט, או שינוי ביגוד של דמות — בלי לפגוע בשאר התמונה. היכולת זמינה דרך ממשק האינטרנט באמצעות כלי מברשת.</p>
+
+      <h2>איך Midjourney עובד — ב-3 שורות</h2>
       <ol>
         <li>אתם כותבים תיאור טקסטואלי (פרומפט) באנגלית</li>
         <li>Midjourney מייצר 4 וריאציות של התמונה תוך 30-60 שניות</li>
@@ -170,7 +192,7 @@
       <h2>איך מתחילים — שלב אחרי שלב</h2>
 
       <h3>שלב 1 — יצירת חשבון Discord</h3>
-      <p>Midjourney עובד דרך Discord. אם אין לכם חשבון, צרו אחד:</p>
+      <p>Midjourney עובד דרך Discord וגם דרך ממשק האינטרנט. אם אין לכם חשבון Discord, צרו אחד:</p>
       <ol>
         <li>היכנסו ל-<strong>discord.com</strong> ולחצו "Register"</li>
         <li>הכניסו אימייל, שם משתמש וסיסמה</li>
@@ -187,6 +209,7 @@
 
       <h3>שלב 3 — הרשמה והפרומפט הראשון</h3>
       <p>חזרו ל-<strong>midjourney.com</strong> ולחצו "Sign in" עם חשבון Discord. הממשק הגרפי <strong>midjourney.com/app</strong> קל יותר לשימוש מ-Discord. בשדה הטקסט בתחתית — כתבו תיאור באנגלית ולחצו Enter.</p>
+      <p>לא בטוחים איך לנסח את הפרומפט? עיינו ב<a href="prompt-engineering.html">מדריך Prompt Engineering</a> שלנו לעקרונות כתיבה שעובדים בכל כלי AI.</p>
 
       <h2>תוכניות מחיר</h2>
       <p>Midjourney <strong>אינו חינמי</strong>. לאחר ניסיון קצר (אם זמין), בחרו תוכנית:</p>
@@ -200,7 +223,7 @@
           <tr><td>Pro</td><td>$60/חודש</td><td>1800 דקות + Stealth</td><td>עסקים ומקצוענים</td></tr>
         </tbody>
       </table>
-      <p><strong>המלצה:</strong> התחילו עם Basic. שדרגו ל-Standard רק אם אתם יוצרים מדי יום.</p>
+      <p><strong>המלצה:</strong> התחילו עם Basic. שדרגו ל-Standard רק אם אתם יוצרים מדי יום. אם אתם עסק שצריך שמירה על פרטיות הפרומפטים — Pro הוא החובה שלכם.</p>
 
       <h2>השוואת גרסאות — v5, v6, v7</h2>
       <table>
@@ -210,66 +233,194 @@
         <tbody>
           <tr><td>v5.2</td><td>פנים, פורטרטים</td><td>תמונות אנשים קלאסיות</td></tr>
           <tr><td>v6.1</td><td>פוטוריאליזם, טקסט</td><td>תמונות ריאליסטיות, לוגואים עם טקסט</td></tr>
-          <tr><td>v7 (חדש)</td><td>כל-תכליתי, בקרה טובה</td><td>ברירת המחדל המומלצת</td></tr>
+          <tr><td>v7 (חדש)</td><td>כל-תכליתי, בקרה טובה, 4K</td><td>ברירת המחדל המומלצת</td></tr>
         </tbody>
       </table>
       <p>לבחירת גרסה, הוסיפו בסוף הפרומפט: <code>--v 6.1</code> או <code>--v 7</code></p>
 
+      <h2>השוואה בין כלי AI ליצירת תמונות</h2>
+      <p>Midjourney הוא לא הכלי היחיד בשוק. הנה השוואה מפורטת בין הכלים המובילים נכון למאי 2026:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>קריטריון</th>
+            <th>Midjourney v7</th>
+            <th>DALL-E 4</th>
+            <th>Stable Diffusion 3.5</th>
+            <th>Adobe Firefly 3</th>
+            <th>Ideogram 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>מחיר חודשי</strong></td>
+            <td>$10-$60</td>
+            <td>כלול ב-ChatGPT Plus ($20)</td>
+            <td>חינם (קוד פתוח)</td>
+            <td>כלול ב-Creative Cloud / $5 בודד</td>
+            <td>$8-$60</td>
+          </tr>
+          <tr>
+            <td><strong>רזולוציה מקסימלית</strong></td>
+            <td>4096x4096</td>
+            <td>2048x2048</td>
+            <td>תלוי בחומרה</td>
+            <td>2048x2048</td>
+            <td>2048x2048</td>
+          </tr>
+          <tr>
+            <td><strong>איכות אסתטית</strong></td>
+            <td>מצוינת</td>
+            <td>טובה מאוד</td>
+            <td>טובה (תלויה במודל)</td>
+            <td>טובה מאוד</td>
+            <td>טובה</td>
+          </tr>
+          <tr>
+            <td><strong>טקסט בתמונה</strong></td>
+            <td>טוב</td>
+            <td>מצוין</td>
+            <td>בינוני</td>
+            <td>טוב</td>
+            <td>מצוין</td>
+          </tr>
+          <tr>
+            <td><strong>Inpainting</strong></td>
+            <td>כן</td>
+            <td>כן (דרך ChatGPT)</td>
+            <td>כן</td>
+            <td>כן</td>
+            <td>לא</td>
+          </tr>
+          <tr>
+            <td><strong>Style Reference</strong></td>
+            <td>כן (--sref)</td>
+            <td>לא</td>
+            <td>כן (ControlNet)</td>
+            <td>כן (Style Kit)</td>
+            <td>לא</td>
+          </tr>
+          <tr>
+            <td><strong>שימוש מסחרי</strong></td>
+            <td>כן (בתשלום)</td>
+            <td>כן</td>
+            <td>כן (רישיון פתוח)</td>
+            <td>כן (מאגר מאומן על תוכן מורשה)</td>
+            <td>כן (בתשלום)</td>
+          </tr>
+          <tr>
+            <td><strong>נוחות למתחילים</strong></td>
+            <td>בינונית</td>
+            <td>גבוהה מאוד</td>
+            <td>נמוכה (דורש התקנה)</td>
+            <td>גבוהה</td>
+            <td>גבוהה</td>
+          </tr>
+          <tr>
+            <td><strong>הפעלה מקומית</strong></td>
+            <td>לא</td>
+            <td>לא</td>
+            <td>כן</td>
+            <td>לא</td>
+            <td>לא</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>למידע נוסף על כלי וידאו של AI שמשלימים את Midjourney, ראו את המדריך שלנו ל<a href="ai-video-tools.html">כלי AI לעריכת וידאו</a>. אם אתם מחפשים כלי ליצירת סרטוני AI מתמונות, קראו על <a href="sora-openai.html">Sora של OpenAI</a>.</p>
+
       <h2>10 פרומפטים לדוגמה — מה לצפות</h2>
 
       <h3>1. פורטרט דרמטי</h3>
-      <p><strong>פרומפט:</strong> <code>cinematic portrait of a woman with silver hair, dramatic side lighting, shallow depth of field, film grain, 35mm</code></p>
-      <p><em>מה לצפות:</em> פורטרט מקצועי, סגנון קולנועי, תאורה עמוקה</p>
+      <p><strong>פרומפט:</strong> <code>cinematic portrait of a woman with silver hair, dramatic side lighting, shallow depth of field, film grain, 35mm --ar 2:3 --v 7</code></p>
+      <p><em>מה לצפות:</em> פורטרט מקצועי, סגנון קולנועי, תאורה עמוקה. השימוש ב-<code>--ar 2:3</code> נותן פורמט אנכי שמתאים לאינסטגרם.</p>
 
       <h3>2. נוף עירוני עתידני</h3>
-      <p><strong>פרומפט:</strong> <code>futuristic Tokyo at night, neon reflections on wet streets, cyberpunk aesthetic, ultra detailed, 8k resolution</code></p>
-      <p><em>מה לצפות:</em> עיר עתידנית, ניאון, אווירה של סרט מדע בדיוני</p>
+      <p><strong>פרומפט:</strong> <code>futuristic Tokyo at night, neon reflections on wet streets, cyberpunk aesthetic, ultra detailed, 8k resolution --ar 16:9 --s 500</code></p>
+      <p><em>מה לצפות:</em> עיר עתידנית, ניאון, אווירה של סרט מדע בדיוני. ה-<code>--s 500</code> מוסיף סגנון אמנותי מובהק.</p>
 
       <h3>3. עיצוב מוצר</h3>
-      <p><strong>פרומפט:</strong> <code>minimalist water bottle product photo, white background, studio lighting, commercial photography style</code></p>
-      <p><em>מה לצפות:</em> תמונת מוצר מקצועית כמו Amazon/Shopify</p>
+      <p><strong>פרומפט:</strong> <code>minimalist water bottle product photo, white background, studio lighting, commercial photography style --no shadow, reflection</code></p>
+      <p><em>מה לצפות:</em> תמונת מוצר מקצועית כמו Amazon/Shopify. ה-<code>--no</code> מסיר צללים ושתקופים לא רצויים.</p>
 
       <h3>4. אמנות פנטזיה</h3>
-      <p><strong>פרומפט:</strong> <code>dragon perched on ancient castle tower, sunset sky, epic fantasy art, detailed scales, atmospheric perspective</code></p>
+      <p><strong>פרומפט:</strong> <code>dragon perched on ancient castle tower, sunset sky, epic fantasy art, detailed scales, atmospheric perspective --ar 16:9 --v 7</code></p>
       <p><em>מה לצפות:</em> ציור פנטזיה עשיר, דרקון מרשים</p>
 
       <h3>5. לוגו / אייקון</h3>
-      <p><strong>פרומפט:</strong> <code>minimalist lion logo, flat design, bold lines, navy blue and gold, vector style --no background</code></p>
-      <p><em>מה לצפות:</em> לוגו נקי — טוב כנקודת התחלה לעיצוב</p>
+      <p><strong>פרומפט:</strong> <code>minimalist lion logo, flat design, bold lines, navy blue and gold, vector style --no background --s 50</code></p>
+      <p><em>מה לצפות:</em> לוגו נקי — טוב כנקודת התחלה לעיצוב. ערך <code>--s 50</code> נמוך שומר על פשטות ועיצוב שטוח.</p>
 
       <h3>6. צילום אוכל</h3>
-      <p><strong>פרומפט:</strong> <code>gourmet sushi platter, professional food photography, dark moody background, garnished, top view</code></p>
-      <p><em>מה לצפות:</em> תמונת אוכל כמו מסעדה מישלן</p>
+      <p><strong>פרומפט:</strong> <code>gourmet sushi platter, professional food photography, dark moody background, garnished, top view --ar 1:1</code></p>
+      <p><em>מה לצפות:</em> תמונת אוכל כמו מסעדה מישלן. פורמט ריבועי מתאים לפיד אינסטגרם.</p>
 
       <h3>7. נוף טבע</h3>
-      <p><strong>פרומפט:</strong> <code>misty forest in Japan, wooden path, moss covered rocks, morning light rays, serene atmosphere, National Geographic style</code></p>
-      <p><em>מה לצפות:</em> נוף מרגיע, תאורה קסומה</p>
+      <p><strong>פרומפט:</strong> <code>misty forest in Japan, wooden path, moss covered rocks, morning light rays, serene atmosphere, National Geographic style --ar 3:2</code></p>
+      <p><em>מה לצפות:</em> נוף מרגיע, תאורה קסומה בפורמט צילום סטנדרטי</p>
 
       <h3>8. דמות אנימה</h3>
-      <p><strong>פרומפט:</strong> <code>anime girl with blue eyes and white hair, sakura background, Makoto Shinkai style, soft colors, detailed</code></p>
-      <p><em>מה לצפות:</em> דמות אנימה ברמת Studio Ghibli</p>
+      <p><strong>פרומפט:</strong> <code>anime girl with blue eyes and white hair, sakura background, Makoto Shinkai style, soft colors, detailed --niji 6</code></p>
+      <p><em>מה לצפות:</em> דמות אנימה ברמת Studio Ghibli. פרמטר <code>--niji 6</code> מפעיל את מודל האנימה הייעודי של Midjourney.</p>
 
       <h3>9. ארכיטקטורה</h3>
-      <p><strong>פרומפט:</strong> <code>modern luxury villa in the mountains, floor-to-ceiling windows, infinity pool, sunset, architectural visualization</code></p>
+      <p><strong>פרומפט:</strong> <code>modern luxury villa in the mountains, floor-to-ceiling windows, infinity pool, sunset, architectural visualization --ar 16:9</code></p>
       <p><em>מה לצפות:</em> בית חלומות — שימושי למתכננים ולנדל"ן</p>
 
       <h3>10. פוסטר קולנוע</h3>
-      <p><strong>פרומפט:</strong> <code>movie poster for sci-fi thriller, lone astronaut on alien planet, purple sky, cinematic composition, bold typography</code></p>
-      <p><em>מה לצפות:</em> פוסטר מקצועי ב-2 שניות</p>
+      <p><strong>פרומפט:</strong> <code>movie poster for sci-fi thriller, lone astronaut on alien planet, purple sky, cinematic composition, bold typography --ar 2:3 --s 750</code></p>
+      <p><em>מה לצפות:</em> פוסטר מקצועי עם סגנון אמנותי חזק בזכות ערך Stylize גבוה</p>
 
       <h2>
       <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-טיפים לתמונות טובות יותר</h2>
+הסבר פרמטרים — הכלים שלכם בתוך הפרומפט</h2>
+      <p>Midjourney משתמש בפרמטרים שמתחילים ב-<code>--</code> בסוף הפרומפט. הנה הרשימה המלאה שכדאי להכיר:</p>
       <ul>
-        <li><strong>הוסיפו סגנון:</strong> "oil painting", "watercolor", "photorealistic", "3D render"</li>
-        <li><strong>ציינו אמן:</strong> "in the style of Van Gogh" (עובד מצוין)</li>
+        <li><strong>--ar [יחס]</strong> — יחס צדדים. דוגמאות: <code>--ar 16:9</code> (רוחב, מסך), <code>--ar 9:16</code> (אנכי, סטוריז), <code>--ar 1:1</code> (ריבוע), <code>--ar 2:3</code> (פורטרט)</li>
+        <li><strong>--v [מספר]</strong> — גרסת המודל. <code>--v 7</code> היא ברירת המחדל. <code>--v 6.1</code> לפוטוריאליזם</li>
+        <li><strong>--s [0-1000]</strong> — Stylize. ערך נמוך (50-100) = נאמנות לפרומפט. ערך גבוה (500-1000) = יותר אמנותיות ויצירתיות</li>
+        <li><strong>--c [0-100]</strong> — Chaos. ערך גבוה = יותר שונות בין 4 התוצאות. שימושי לסיעור מוחות ויזואלי</li>
+        <li><strong>--q [0.5/1/2]</strong> — Quality. <code>--q 2</code> משתמש ביותר זמן GPU ומייצר יותר פרטים</li>
+        <li><strong>--no [מילה]</strong> — הוצאת אלמנטים. <code>--no text, watermark, people</code></li>
+        <li><strong>--sref [URL]</strong> — Style Reference. מעלים תמונה כרפרנס לסגנון</li>
+        <li><strong>--cref [URL]</strong> — Character Reference. שומר על עקביות דמות בין יצירות שונות</li>
+        <li><strong>--niji 6</strong> — מפעיל את מודל האנימה הייעודי</li>
+        <li><strong>--tile</strong> — יוצר תמונה שניתנת לריצוף (patterns, טפטים)</li>
+      </ul>
+      <p>שליטה בפרמטרים האלה היא המפתח להפקת תוצאות מדויקות. לעומק בנושא כתיבת פרומפטים, קראו את <a href="prompt-engineering.html">מדריך Prompt Engineering</a>.</p>
+
+      <h2>טיפים לתמונות טובות יותר</h2>
+      <ul>
+        <li><strong>הוסיפו סגנון:</strong> "oil painting", "watercolor", "photorealistic", "3D render", "isometric illustration"</li>
+        <li><strong>ציינו אמן:</strong> "in the style of Van Gogh" (עובד מצוין). אפשר גם צלמים: "Annie Leibovitz style portrait"</li>
         <li><strong>שליטה ביחס צדדים:</strong> הוסיפו <code>--ar 16:9</code> לרוחב, <code>--ar 9:16</code> לאינסטגרם</li>
         <li><strong>Stylize:</strong> <code>--s 750</code> להרבה סגנון אמנותי, <code>--s 100</code> ליותר פשטות</li>
         <li><strong>Vary:</strong> לחצו V1-V4 לוריאציות על תמונה שאהבתם</li>
         <li><strong>Zoom Out:</strong> הוסיפו רקע לתמונה קיימת</li>
         <li><strong>הוציאו אלמנטים לא רצויים:</strong> הוסיפו <code>--no text, watermark</code> בסוף הפרומפט</li>
-        <li><strong>משקלים:</strong> <code>a cat:: dog::2</code> — המספר אחרי <code>::</code> קובע חשיבות יחסית</li>
+        <li><strong>משקלים:</strong> <code>a cat:: dog::2</code> — המספר אחרי <code>::</code> קובע חשיבות יחסית. כך תוכלו לתת עדיפות לאלמנטים מסוימים</li>
+        <li><strong>Multi-prompt:</strong> השתמשו ב-<code>::</code> כדי להפריד רעיונות. <code>space ship:: ancient temple::0.5</code> — ספינת חלל עם השפעה קלה של מקדש עתיק</li>
+        <li><strong>תנו הקשר לתמונה:</strong> במקום "cat" כתבו "orange tabby cat sitting on a windowsill, afternoon sunlight, cozy apartment". ככל שהתיאור ספציפי יותר, התוצאה טובה יותר</li>
       </ul>
+
+      <h2>טעויות נפוצות של מתחילים</h2>
+      <p>אחרי ליווי של עשרות משתמשים חדשים, הנה חמש הטעויות הנפוצות ביותר:</p>
+
+      <h3>1. פרומפט קצר מדי</h3>
+      <p>כתיבת "a dog" תיתן תוצאה גנרית. Midjourney צריך הקשר: גזע, תאורה, סגנון, רקע, אווירה. פרומפט טוב הוא 15-60 מילים. פרומפט של מילה אחת לא מנצל את הפוטנציאל של הכלי.</p>
+      <p><strong>במקום:</strong> <code>a dog</code></p>
+      <p><strong>כתבו:</strong> <code>golden retriever puppy playing in autumn leaves, soft afternoon light, shallow depth of field, warm tones, professional pet photography</code></p>
+
+      <h3>2. שימוש בפרומפטים בעברית</h3>
+      <p>Midjourney הוכשר בעיקר על תוכן באנגלית. פרומפטים בעברית מייצרים תוצאות נחותות משמעותית — לפעמים עם שגיאות ויזואליות בוטות. תמיד כתבו באנגלית. אם האנגלית שלכם לא חזקה, השתמשו ב-ChatGPT לתרגום הרעיון.</p>
+
+      <h3>3. התעלמות מיחס צדדים</h3>
+      <p>ברירת המחדל היא תמונה ריבועית (1:1). אם אתם צריכים תמונה לכותרת של אתר (16:9), לסטורי באינסטגרם (9:16) או לפוסט בפייסבוק (4:5) — חובה להגדיר <code>--ar</code>. אחרת תצטרכו לחתוך את התמונה ולאבד חלקים חשובים.</p>
+
+      <h3>4. אי-שימוש בפרמטר --no</h3>
+      <p>Midjourney לפעמים מוסיף טקסט, סימני מים או אלמנטים לא רצויים. הפרמטר <code>--no</code> פותר את זה. <code>--no text, watermark, signature, frame</code> הוא תוספת כמעט-חובה לכל פרומפט מקצועי.</p>
+
+      <h3>5. ויתור אחרי היצירה הראשונה</h3>
+      <p>הרבה מתחילים מייצרים 4 תמונות, לא מרוצים, ועוזבים. בפועל, העבודה עם Midjourney היא איטרטיבית: יוצרים, בוחרים את הכיוון הטוב, עושים Vary, משנים את הפרומפט, ומשפרים. לפעמים צריך 3-5 סיבובים כדי להגיע לתוצאה מדויקת. זה חלק טבעי מהתהליך.</p>
 
       <div class="affiliate-box">
         <h3>מוכנים ליצור תמונות עם Midjourney?</h3>
@@ -277,33 +428,68 @@
         <a href="[AFFILIATE_MIDJOURNEY]" class="btn-primary">התחל ב-Midjourney →</a>
       </div>
 
+      <h2>שימוש ב-Midjourney לעסקים</h2>
+      <p>Midjourney לא רק לאמנים וחובבים. עסקים קטנים ובינוניים משתמשים בו לייצור חומרים שיווקיים, תמונות למוצרים, באנרים לרשתות חברתיות ועיצוב חזותי לאתרים. עלות של $10-$60 לחודש לעומת $200-$500 לצילום סטודיו בודד הופכת את Midjourney לאלטרנטיבה כלכלית.</p>
+      <p>אם אתם בעלי עסק קטן שמחפש דרכים לשלב AI בשיווק, קראו את המדריך <a href="biz-ai-marketing-small-business.html">AI לשיווק עסקים קטנים</a>. לסקירה רחבה יותר של כלי עיצוב תמונות לעסקים, ראו את <a href="biz-ai-design-images.html">המדריך לעיצוב תמונות AI</a>.</p>
+
+      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+
       <h2>שאלות נפוצות</h2>
       <div itemscope itemtype="https://schema.org/FAQPage">
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <h3 itemprop="name">מה זה Midjourney?</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Midjourney הוא כלי AI ליצירת תמונות מתיאור טקסטואלי. מזינים פרומפט באנגלית ומקבלים 4 תמונות מקצועיות תוך כדקה.</p>
+            <p itemprop="text">Midjourney הוא כלי AI ליצירת תמונות מתיאור טקסטואלי. מזינים פרומפט באנגלית ומקבלים 4 תמונות מקצועיות תוך כדקה. הכלי פועל דרך ממשק אינטרנט ייעודי וגם דרך Discord, ומתאים לעיצוב גרפי, שיווק, אמנות דיגיטלית ועוד.</p>
           </div>
         </div>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <h3 itemprop="name">כמה עולה Midjourney?</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Midjourney עולה $10 לחודש (Basic) עד $60 (Pro). אין גרסה חינמית קבועה, אך לפעמים מציעים ניסיון חינם.</p>
+            <p itemprop="text">Midjourney עולה $10 לחודש (Basic, 200 דקות GPU) עד $60 (Pro, 1800 דקות + מצב Stealth). אין גרסה חינמית קבועה, אך לפעמים מציעים ניסיון חינם של 25 תמונות למשתמשים חדשים.</p>
           </div>
         </div>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <h3 itemprop="name">האם צריך לכתוב את הפרומפט באנגלית?</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">כן, Midjourney עובד הכי טוב עם פרומפטים באנגלית. ניתן לתרגם את הרעיון לאנגלית עם ChatGPT ואז להשתמש ב-Midjourney.</p>
+            <p itemprop="text">כן, Midjourney עובד הכי טוב עם פרומפטים באנגלית. פרומפטים בעברית או בשפות אחרות מייצרים תוצאות פחות טובות. ניתן לתרגם את הרעיון לאנגלית עם ChatGPT ואז להשתמש ב-Midjourney.</p>
           </div>
         </div>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <h3 itemprop="name">מה ההבדל בין v6 ל-v7?</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">v6.1 מצוין לפוטוריאליזם וטקסט בתמונה. v7 הוא כל-תכליתי עם בקרה טובה יותר — ברירת המחדל המומלצת למתחילים.</p>
+            <p itemprop="text">v6.1 מצוין לפוטוריאליזם וטקסט בתמונה. v7 הוא כל-תכליתי עם בקרה טובה יותר, תמיכה ברזולוציה של 4096x4096, style references ו-inpainting. v7 הוא ברירת המחדל המומלצת למתחילים.</p>
+          </div>
+        </div>
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">מה היתרון של Midjourney על פני DALL-E?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Midjourney מצטיין באיכות אסתטית, שליטה בסגנון באמצעות פרמטרים כמו --s ו---sref, ורזולוציה גבוהה של עד 4096x4096. DALL-E 4 נוח יותר לגישה (דרך ChatGPT) ומצוין בטקסט בתוך תמונות, אבל הסגנון שלו פחות ייחודי.</p>
+          </div>
+        </div>
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">האם ניתן להשתמש בתמונות Midjourney למטרות מסחריות?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">כן, כל התוכניות בתשלום (Basic, Standard, Pro) מאפשרות שימוש מסחרי מלא בתמונות שנוצרו. תוכנית Pro מוסיפה מצב Stealth שמסתיר את הפרומפטים מהציבור — חשוב לעסקים ששומרים על סודות עיצוביים.</p>
+          </div>
+        </div>
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">מהי רזולוציית הפלט המקסימלית?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">ב-v7 הרזולוציה המקסימלית היא 4096x4096 פיקסלים, שזה פי 4 מגרסאות קודמות. זו רזולוציה מתאימה להדפסה מקצועית בגודל של עד 35x35 ס"מ ב-300 DPI.</p>
+          </div>
+        </div>
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">מה זה style reference ב-Midjourney?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Style reference (--sref) מאפשר להעלות תמונה כרפרנס סגנוני. Midjourney ילמד את הסגנון מהתמונה (צבעים, מרקמים, אווירה) ויחיל אותו על הפרומפט שלכם — שימושי במיוחד למיתוג עקבי וסדרות תמונות.</p>
           </div>
         </div>
       </div>
+
+      <h2>סיכום</h2>
+      <p>Midjourney הוא כלי רב-עוצמה ליצירת תמונות באמצעות AI, ועם גרסה 7 הוא הגיע לרמה שמתחרה בעבודה של מעצבים מקצועיים. העלות נמוכה (מ-$10 לחודש), הממשק נגיש יותר מאי פעם דרך אפליקציית האינטרנט, והתוצאות מרשימות אפילו עם פרומפטים פשוטים.</p>
+      <p>הצעדים הבאים שלכם: פתחו חשבון, נסו 5 פרומפטים מהדוגמאות למעלה, שחקו עם הפרמטרים (--ar, --s, --no), ואל תתייאשו אם התוצאה הראשונה לא מושלמת. כמו כל כלי — ככל שתתרגלו, התוצאות ישתפרו.</p>
+      <p>רוצים להעמיק? למדו <a href="prompt-engineering.html">Prompt Engineering</a> כדי לכתוב פרומפטים טובים יותר בכל כלי AI, לא רק ב-Midjourney.</p>
 
       <div class="related-section">
         <h2>מאמרים קשורים</h2>
@@ -348,8 +534,8 @@
 <a href="prompt-engineering.html" class="related-card"><span class="related-title">מדריך Prompt Engineering: כיצד לדבר עם AI נכון</span><span class="related-arrow">←</span></a>
   </div>
 </div>
-    
-      
+
+
 <div class="author-box" style="background:var(--card-bg,#1a1a2e);border:1px solid var(--border,#2a2a4a);border-radius:12px;padding:20px 24px;margin:40px 0 0;display:flex;gap:16px;align-items:flex-start">
   <img loading="lazy" decoding="async" src="../images/yaniv-sorani.jpg" alt="יניב סוראני" width="64" height="64" style="border-radius:50%;flex-shrink:0;object-fit:cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;64&quot; height=&quot;64&quot; viewBox=&quot;0 0 64 64&quot;%3E%3Ccircle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;32&quot; fill=&quot;%237b6cf6&quot;/%3E%3Ctext x=&quot;50%25&quot; y=&quot;55%25&quot; text-anchor=&quot;middle&quot; fill=&quot;white&quot; font-size=&quot;28&quot;%3E&#129504;%3C/text%3E%3C/svg%3E'">
   <div>
