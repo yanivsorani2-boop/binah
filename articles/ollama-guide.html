@@ -42,7 +42,7 @@
   },
   "inLanguage": "he",
   "datePublished": "2026-03-18",
-  "dateModified": "2026-05-01",
+  "dateModified": "2026-05-11",
   "author": {
     "@type": "Person",
     "name": "יניב סוראני",
@@ -58,7 +58,7 @@
     }
   },
   "image": {"@type": "ImageObject", "url": "https://binah.co.il/images/og/ollama-guide.jpg"},
-  "wordCount": 1018,
+  "wordCount": 3150,
   "articleSection": "מדריכים"
 }
 </script>
@@ -70,7 +70,11 @@
     {"@type":"Question","name":"מה זה Ollama?","acceptedAnswer":{"@type":"Answer","text":"Ollama הוא כלי קוד פתוח שמאפשר להריץ מודלי AI גדולים (כמו Llama, Mistral, Gemma) ישירות על המחשב שלך — ללא אינטרנט, ללא עלות חודשית, עם פרטיות מלאה."}},
     {"@type":"Question","name":"האם צריך מחשב חזק להריץ Ollama?","acceptedAnswer":{"@type":"Answer","text":"מודלים קטנים (7B פרמטרים) רצים על 8GB RAM. מודלים גדולים דורשים 16GB+. כרטיס גרפיקה מאיץ משמעותית אך אינו חובה. Mac M1/M2/M3 עובד מצוין."}},
     {"@type":"Question","name":"האם Ollama חינמי?","acceptedAnswer":{"@type":"Answer","text":"כן, Ollama הוא חינמי לחלוטין וקוד פתוח. גם המודלים שאפשר להוריד (Llama, Mistral ועוד) הם חינמיים."}},
-    {"@type":"Question","name":"איזה מודל AI עדיף להוריד ב-Ollama?","acceptedAnswer":{"@type":"Answer","text":"למתחילים: llama3.2:3b אם יש 8GB RAM, llama3.2:8b אם יש 16GB. לקוד: codellama. למחשבים חלשים: phi3:mini (4GB RAM בלבד)."}}
+    {"@type":"Question","name":"איזה מודל AI עדיף להוריד ב-Ollama?","acceptedAnswer":{"@type":"Answer","text":"למתחילים: llama3.2:3b אם יש 8GB RAM, llama3.2:8b אם יש 16GB. לקוד: codellama. למחשבים חלשים: phi3:mini (4GB RAM בלבד)."}},
+    {"@type":"Question","name":"האם Ollama תומך בעברית?","acceptedAnswer":{"@type":"Answer","text":"מודלים כמו Gemma 2, Llama 3 ו-Mistral תומכים בעברית ברמה סבירה עד טובה. עברית אינה שפת אם שלהם, אבל לשימושים כמו תרגום, סיכום ושאלות כלליות הם עובדים היטב."}},
+    {"@type":"Question","name":"מה ההבדל בין Ollama ל-ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT הוא שירות ענן של OpenAI שדורש מנוי ($20/חודש), שולח את הנתונים שלך לשרתים חיצוניים ודורש חיבור אינטרנט. Ollama רץ על המחשב שלך, חינמי, עובד אופליין ושומר על הפרטיות — אבל המודלים שלו קטנים יותר ופחות חכמים מ-GPT-4o."}},
+    {"@type":"Question","name":"האם אפשר להשתמש ב-Ollama לעבודה עם קוד?","acceptedAnswer":{"@type":"Answer","text":"בהחלט. מודלים כמו CodeLlama ו-DeepSeek Coder מתמחים בכתיבת קוד. ניתן לשלב אותם עם עורכי קוד כמו VS Code באמצעות תוספים כמו Continue.dev, ולקבל השלמת קוד וסיוע בזמן אמת — הכל מקומית."}},
+    {"@type":"Question","name":"כמה מקום אחסון Ollama תופס?","acceptedAnswer":{"@type":"Answer","text":"Ollama עצמו תופס מעט מקום, אבל כל מודל תופס בין 2GB ל-40GB. מומלץ לשמור לפחות 50GB פנויים אם אתם מתכננים להתקין מספר מודלים."}}
   ]
 }
 </script>
@@ -121,7 +125,7 @@
     <h1>Ollama: כיצד להריץ AI בחינם על המחשב שלך</h1>
     <div class="meta">
       <span>📅 מרץ 2026</span>
-      <span>⏱ 6 דקות קריאה</span>
+      <span>⏱ 16 דקות קריאה</span>
       <span>✍ <a href="../about.html">יניב סוראני</a></span>
     </div>
   </div>
@@ -151,30 +155,37 @@
     <main class="article-body">
 <div class="container"><a href="../guides.html" class="btn-back">→ חזרה</a></div>
 
-      <p>ChatGPT עולה $20 לחודש. Claude Pro עולה $20 לחודש. אבל מה אם תוכלו לקבל חוויה דומה — <strong>בחינם לחלוטין, עם פרטיות מלאה, ומבלי לשלוח נתונים לאף שרת?</strong> Ollama הופך את זה לאפשרי.</p>
+      <p>ChatGPT עולה $20 לחודש. Claude Pro עולה $20 לחודש. <a href="gemini-2025.html">Gemini Advanced</a> עולה סכום דומה. אבל מה אם תוכלו לקבל חוויה דומה — <strong>בחינם לחלוטין, עם פרטיות מלאה, ומבלי לשלוח נתונים לאף שרת?</strong> Ollama הופך את זה לאפשרי. במדריך הזה נלמד בדיוק איך להתקין, להגדיר ולהפיק את המרב מ-Ollama — הכלי שמשנה את הדרך שבה אנשים משתמשים בבינה מלאכותית.</p>
 
       <h2>למה להריץ AI מקומי?</h2>
-      <p>שלוש סיבות עיקריות:</p>
+      <p>לפני שנצלול לתוך Ollama עצמו, חשוב להבין למה בכלל כדאי להריץ מודלי שפה גדולים (LLMs) על המחשב האישי במקום להשתמש בשירותי ענן. הנה הסיבות העיקריות:</p>
       <ul>
-        <li><strong>פרטיות:</strong> מסמכים רגישים, נתוני לקוחות, קוד פרטי — הכל נשאר אצלכם</li>
-        <li><strong>חינם לגמרי:</strong> לאחר הורדה, כל שיחה חינמית ללא הגבלה</li>
-        <li><strong>אופליין:</strong> עובד במטוס, ביערות, בכל מקום</li>
+        <li><strong>פרטיות מוחלטת:</strong> מסמכים רגישים, נתוני לקוחות, קוד פרטי, מידע רפואי או משפטי — הכל נשאר אצלכם על המחשב. שום מילה לא נשלחת לשרתים חיצוניים. זה קריטי במיוחד לעורכי דין, רואי חשבון, רופאים, ולכל מי שעובד עם מידע חסוי</li>
+        <li><strong>חינם לגמרי:</strong> לאחר ההורדה הראשונית, כל שיחה חינמית ללא הגבלה. אין מנויים חודשיים, אין הגבלת הודעות, אין "שדרגו לגרסה בתשלום". חישבו על זה — $20 לחודש זה $240 בשנה, ועם Ollama אתם חוסכים את כל הסכום הזה</li>
+        <li><strong>עבודה אופליין:</strong> עובד במטוס, ביערות, בבונקר — בכל מקום שאין חיבור לאינטרנט. מושלם למי שנוסע הרבה או עובד מאזורים עם קישוריות לא יציבה</li>
+        <li><strong>שליטה מלאה:</strong> אתם בוחרים איזה מודל להריץ, עם אילו פרמטרים, ומגדירים את ההתנהגות בדיוק לפי הצרכים שלכם. אין צנזורה כפויה, אין מגבלות שרירותיות</li>
+        <li><strong>מהירות תגובה:</strong> בשעות עומס, שירותי ענן כמו ChatGPT מאטים. מודל מקומי מגיב באותה מהירות תמיד — הביצועים תלויים רק בחומרה שלכם</li>
       </ul>
 
       <h2>
       <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 מה זה Ollama?</h2>
-      <p>Ollama הוא <strong>כלי קוד פתוח</strong> שמאפשר להוריד ולהריץ מודלי AI גדולים (LLMs) על המחשב האישי. הוא מנהל את ההורדה, האחסון, ומספק ממשק פשוט להרצת מודלים.</p>
+      <p>Ollama הוא <strong>כלי קוד פתוח</strong> שמאפשר להוריד ולהריץ מודלי AI גדולים (LLMs) על המחשב האישי. הוא מנהל את ההורדה, האחסון, ומספק ממשק פשוט להרצת מודלים. הפרויקט הושק בתחילת 2024 וצבר במהירות מאות אלפי משתמשים ברחבי העולם, הודות לפשטות השימוש וליכולת להריץ מודלים מתקדמים בפקודה אחת בלבד.</p>
 
-      <p>בשונה מהרצת מודלים "ידנית" עם Python, Ollama:</p>
+      <p>Ollama בנוי על <strong>llama.cpp</strong> — ספריית C++ מותאמת שמריצה מודלי שפה ביעילות גם על מעבדים רגילים (CPU) וגם על כרטיסי מסך (GPU). הוא תומך בפורמט GGUF לכימות מודלים, מה שמאפשר להפעיל מודלים ענקיים על חומרה ביתית.</p>
+
+      <p>בשונה מהרצת מודלים "ידנית" עם Python ו-frameworks כמו Transformers של Hugging Face, Ollama:</p>
       <ul>
-        <li>פשוט להתקנה (כמו כל תוכנה רגילה)</li>
-        <li>מנהל אוטומטית את ה-VRAM / RAM</li>
-        <li>מספק API תואם ל-OpenAI API</li>
-        <li>תומך ב-50+ מודלים מובילים</li>
+        <li>פשוט להתקנה (כמו כל תוכנה רגילה — בלי סביבות Python, בלי תלויות מסובכות)</li>
+        <li>מנהל אוטומטית את ה-VRAM / RAM — מחליט לבד מתי להשתמש ב-GPU ומתי ב-CPU</li>
+        <li>מספק API תואם ל-OpenAI API — מה שמאפשר לחבר אותו לכל כלי שעובד עם ChatGPT</li>
+        <li>תומך ב-100+ מודלים מובילים מספריית Ollama הרשמית</li>
+        <li>מאפשר ליצור מודלים מותאמים אישית עם קובצי Modelfile</li>
+        <li>כולל מנגנון עדכון מודלים אוטומטי</li>
       </ul>
 
       <h2>דרישות מערכת</h2>
+      <p>לפני שמתקינים, ודאו שהמחשב שלכם עומד בדרישות. הטבלה הבאה מפרטת את המינימום והמומלץ:</p>
       <table>
         <thead>
           <tr><th>רכיב</th><th>מינימום</th><th>מומלץ</th></tr>
@@ -182,66 +193,151 @@
         <tbody>
           <tr><td>RAM</td><td>8GB</td><td>16GB+</td></tr>
           <tr><td>אחסון פנוי</td><td>10GB</td><td>50GB+</td></tr>
-          <tr><td>GPU</td><td>אופציונלי</td><td>NVIDIA 8GB VRAM</td></tr>
-          <tr><td>מעבד</td><td>Intel/AMD מודרני</td><td>Apple Silicon (M1+)</td></tr>
+          <tr><td>GPU</td><td>אופציונלי</td><td>NVIDIA 8GB+ VRAM / Apple Silicon</td></tr>
+          <tr><td>מעבד</td><td>Intel/AMD מודרני (AVX2)</td><td>Apple Silicon (M1+)</td></tr>
+          <tr><td>מערכת הפעלה</td><td>macOS 11+, Windows 10+, Linux</td><td>macOS 14+ / Ubuntu 22.04+</td></tr>
         </tbody>
       </table>
-      <p><strong>Apple Silicon (M1–M4)</strong> הוא הפלטפורמה הטובה ביותר ל-Ollama — GPU משותף עם RAM מאפשר ביצועים מצוינים גם ב-8GB.</p>
+      <p><strong>Apple Silicon (M1–M4)</strong> הוא הפלטפורמה הטובה ביותר ל-Ollama — ארכיטקטורת Unified Memory מאפשרת ל-GPU ול-CPU לחלוק את אותו זיכרון, כך שמודלים גדולים רצים בביצועים מצוינים גם ב-8GB. למעשה, Mac עם M3 Pro ו-18GB RAM מריץ מודלים באיכות שדורשת כרטיס NVIDIA ב-$800+ על PC.</p>
+      <p>לגבי <strong>כרטיסי NVIDIA</strong> — כל כרטיס מסדרת RTX 2000 ומעלה נתמך. ככל שיש יותר VRAM, ניתן להריץ מודלים גדולים יותר. הנה פירוט:</p>
+      <ul>
+        <li><strong>6GB VRAM (RTX 2060, 3060):</strong> מודלים עד 7B פרמטרים</li>
+        <li><strong>8GB VRAM (RTX 3070, 4060):</strong> מודלים עד 13B פרמטרים</li>
+        <li><strong>12GB+ VRAM (RTX 3080, 4070 Ti):</strong> מודלים עד 30B פרמטרים</li>
+        <li><strong>24GB VRAM (RTX 4090):</strong> מודלים עד 70B פרמטרים (בכימות נמוך)</li>
+      </ul>
+      <p>כרטיסי AMD נתמכים באופן חלקי — סדרת RX 7000 עובדת עם ROCm, אך הביצועים נמוכים יותר מ-NVIDIA בדרך כלל.</p>
 
       <h2>שלבי התקנה — Mac</h2>
       <h3>דרך 1 — הורדה ישירה</h3>
       <ol>
         <li>היכנסו ל-<strong>ollama.com</strong> ולחצו "Download for Mac"</li>
         <li>גררו את Ollama.app לתיקיית Applications</li>
-        <li>פתחו — תראו אייקון בשורת התפריט</li>
-        <li>פתחו Terminal והריצו את הפקודה הראשונה:</li>
+        <li>פתחו — תראו אייקון בשורת התפריט (menubar). לחיצה עליו תראה שהשרת פעיל</li>
+        <li>פתחו Terminal (ניתן למצוא דרך Spotlight עם Command+Space)</li>
+        <li>הריצו את הפקודה הראשונה שמורידה ומפעילה מודל:</li>
       </ol>
       <pre><code>ollama pull llama3.2</code></pre>
+      <p>ההורדה תיקח כמה דקות (תלוי במהירות האינטרנט). לאחר מכן הריצו:</p>
+      <pre><code>ollama run llama3.2</code></pre>
+      <p>וזהו — אתם כבר משוחחים עם AI מקומי. הקלידו כל שאלה ותקבלו תשובה.</p>
 
       <h3>דרך 2 — Homebrew (למי שמכיר)</h3>
       <pre><code>brew install ollama</code></pre>
-      <p>לאחר ההתקנה הפעילו את ה-daemon:</p>
+      <p>לאחר ההתקנה הפעילו את ה-daemon (השרת שרץ ברקע):</p>
       <pre><code>ollama serve</code></pre>
+      <p>שימו לב: אם התקנתם דרך Homebrew, תצטרכו להפעיל את <code>ollama serve</code> ידנית בכל פעם, או להגדיר אותו כ-launchd service שיעלה אוטומטית עם המחשב.</p>
 
       <h2>
       <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 שלבי התקנה — Windows</h2>
       <ol>
-        <li>הורידו מ-ollama.com את installer ל-Windows</li>
-        <li>הריצו כמנהל מערכת</li>
-        <li>Ollama מותקן כ-Windows Service</li>
-        <li>פתחו PowerShell והריצו:</li>
+        <li>הורידו מ-ollama.com את ה-installer ל-Windows</li>
+        <li>הריצו כמנהל מערכת (לחצו ימני ← Run as administrator)</li>
+        <li>Ollama מותקן כ-Windows Service — כלומר הוא רץ אוטומטית ברקע</li>
+        <li>פתחו PowerShell (או Command Prompt) והריצו:</li>
       </ol>
       <pre><code>ollama pull llama3.2</code></pre>
+      <p>טיפ חשוב ל-Windows: אם יש לכם כרטיס NVIDIA, ודאו שמותקנים דרייברים עדכניים (גרסה 525+). Ollama יזהה אוטומטית את הכרטיס וישתמש בו. ניתן לבדוק עם הפקודה:</p>
+      <pre><code>nvidia-smi</code></pre>
+
+      <h2>שלבי התקנה — Linux</h2>
+      <p>Linux הוא הפלטפורמה המועדפת על מפתחים רבים, ו-Ollama תומך בה באופן מלא. ההתקנה פשוטה במיוחד:</p>
+      <pre><code>curl -fsSL https://ollama.com/install.sh | sh</code></pre>
+      <p>הסקריפט מזהה אוטומטית את הפצת הלינוקס, מוריד את הגרסה המתאימה, ומגדיר את Ollama כ-systemd service. לאחר ההתקנה:</p>
+      <pre><code># בדיקה שהשרת רץ
+systemctl status ollama
+
+# הורדת מודל ראשון
+ollama pull llama3.2
+
+# התחלת שיחה
+ollama run llama3.2</code></pre>
+      <p>עבור שרתים עם כרטיסי NVIDIA, ודאו שמותקנים CUDA drivers (גרסה 11.7+) ו-nvidia-container-toolkit אם אתם משתמשים גם ב-Docker.</p>
 
       <h2>המודלים הטובים ביותר</h2>
+      <p>אחד היתרונות הגדולים של Ollama הוא המבחר הרחב של מודלים זמינים. הנה המודלים המומלצים לשימושים שונים:</p>
 
       <table>
         <thead>
           <tr><th>מודל</th><th>גודל</th><th>מצוין ב</th><th>מחשבים נתמכים</th></tr>
         </thead>
         <tbody>
-          <tr><td>llama3.2:3b</td><td>2GB</td><td>שיחות מהירות</td><td>כל Mac, כל PC</td></tr>
-          <tr><td>llama3.2:8b</td><td>5GB</td><td>הכל-תכליתי</td><td>16GB RAM</td></tr>
-          <tr><td>mistral:7b</td><td>4.1GB</td><td>הוראות, קוד</td><td>8GB RAM</td></tr>
+          <tr><td>llama3.2:3b</td><td>2GB</td><td>שיחות מהירות, סיכומים</td><td>כל Mac, כל PC</td></tr>
+          <tr><td>llama3.2:8b</td><td>5GB</td><td>הכל-תכליתי, מאוזן</td><td>16GB RAM</td></tr>
+          <tr><td>llama3.1:70b</td><td>40GB</td><td>איכות מקסימלית, מחקר</td><td>64GB RAM / RTX 4090</td></tr>
+          <tr><td>mistral:7b</td><td>4.1GB</td><td>הוראות, קוד, עברית סבירה</td><td>8GB RAM</td></tr>
           <tr><td>codellama:13b</td><td>7.4GB</td><td>כתיבת קוד</td><td>16GB RAM</td></tr>
+          <tr><td>deepseek-coder:6.7b</td><td>3.8GB</td><td>קוד — Python, JS, TypeScript</td><td>8GB RAM</td></tr>
           <tr><td>phi3:mini</td><td>2.3GB</td><td>מהיר מאוד, מחשבים חלשים</td><td>4GB RAM</td></tr>
           <tr><td>gemma2:9b</td><td>5.4GB</td><td>שפות רבות, כולל עברית</td><td>16GB RAM</td></tr>
+          <tr><td>qwen2:7b</td><td>4.4GB</td><td>שפות אסיאתיות, מתמטיקה</td><td>8GB RAM</td></tr>
+          <tr><td>llava:7b</td><td>4.7GB</td><td>ניתוח תמונות (multimodal)</td><td>8GB RAM</td></tr>
         </tbody>
       </table>
+      <p>להורדת מודל, פשוט הריצו <code>ollama pull שם-המודל</code>. למשל, <code>ollama pull gemma2:9b</code>. שימו לב שמודלים כמו <a href="deepseek-r2.html">DeepSeek</a> זמינים גם ב-Ollama ומספקים ביצועים מרשימים בהרצה מקומית.</p>
 
       <h2>
       <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-ביצועים מה לצפות?</h2>
-      <p>הציפיות חשובות — Ollama מהיר, אבל לא תמיד במהירות ChatGPT:</p>
+Ollama מול שירותי ענן — השוואה מקיפה</h2>
+      <p>שואלים את עצמכם מה עדיף — <a href="chatgpt-10-uses.html">ChatGPT</a> בענן או AI מקומי עם Ollama? הנה השוואה מפורטת:</p>
+      <table>
+        <thead>
+          <tr><th>קריטריון</th><th>Ollama (מקומי)</th><th>ChatGPT / Claude (ענן)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>עלות</td><td>חינם לחלוטין</td><td>$20/חודש (Pro/Plus)</td></tr>
+          <tr><td>פרטיות</td><td>מלאה — נתונים לא עוזבים את המחשב</td><td>נתונים נשלחים לשרתי החברה</td></tr>
+          <tr><td>חיבור אינטרנט</td><td>לא נדרש (אחרי ההורדה)</td><td>נדרש תמיד</td></tr>
+          <tr><td>איכות תשובות</td><td>טובה עד טובה מאוד (תלוי במודל)</td><td>מצוינת (GPT-4o, Claude Opus)</td></tr>
+          <tr><td>מהירות</td><td>תלוי בחומרה (10-50 tokens/שנייה)</td><td>מהיר ועקבי (~80 tokens/שנייה)</td></tr>
+          <tr><td>הגבלת שימוש</td><td>אין הגבלה</td><td>מגבלת הודעות בשעה</td></tr>
+          <tr><td>התאמה אישית</td><td>מלאה — Modelfile, פרמטרים, system prompt</td><td>מוגבלת</td></tr>
+          <tr><td>תמיכה בעברית</td><td>סבירה עד טובה (Gemma2, Llama3)</td><td>מצוינת</td></tr>
+          <tr><td>עדכניות מידע</td><td>מוגבלת לתאריך אימון המודל</td><td>חיפוש אינטרנט בזמן אמת</td></tr>
+          <tr><td>ניתוח תמונות</td><td>LLaVA, Bakllava</td><td>GPT-4o Vision, Claude Vision</td></tr>
+          <tr><td>יצירת תמונות</td><td>לא נתמך</td><td>DALL-E, Imagen</td></tr>
+        </tbody>
+      </table>
+      <p><strong>השורה התחתונה:</strong> Ollama מושלם למשימות יומיומיות, עבודה עם מידע רגיש, ולמי שרוצה AI בחינם. לעומת זאת, שירותי ענן עדיפים למשימות מורכבות שדורשות את המודלים הכי גדולים, חיפוש אינטרנט, או <a href="prompt-engineering.html">prompt engineering מתקדם</a> עם המודלים החזקים ביותר.</p>
+
+      <h2>ביצועים — מה לצפות?</h2>
+      <p>הציפיות חשובות — Ollama מהיר, אבל לא תמיד במהירות ChatGPT. הנה מדדי ביצועים ריאליסטיים עם מודל llama3.2:8b:</p>
       <ul>
+        <li><strong>Apple M4 Pro (24GB RAM):</strong> ~55 tokens/שנייה — מהיר יותר מ-ChatGPT</li>
         <li><strong>Apple M3 Pro (18GB RAM):</strong> ~40 tokens/שנייה — מהיר מאוד לקריאה</li>
-        <li><strong>MacBook Air M2 (8GB):</strong> ~15 tokens/שנייה — בסדר גמור</li>
-        <li><strong>PC עם NVIDIA 3080:</strong> ~50+ tokens/שנייה — מצוין</li>
+        <li><strong>MacBook Air M2 (8GB):</strong> ~15 tokens/שנייה — בסדר גמור, מספיק לשימוש נוח</li>
+        <li><strong>PC עם NVIDIA RTX 4080:</strong> ~60+ tokens/שנייה — מצוין</li>
+        <li><strong>PC עם NVIDIA RTX 3080:</strong> ~50+ tokens/שנייה — מצוין</li>
+        <li><strong>PC עם NVIDIA RTX 3060 (12GB):</strong> ~30 tokens/שנייה — טוב</li>
         <li><strong>PC ללא GPU ייעודי:</strong> 3-8 tokens/שנייה — איטי אך שמיש</li>
       </ul>
+      <p>להשוואה: קריאה נוחה של טקסט בעברית דורשת כ-5 tokens/שנייה. כלומר גם מחשבים חלשים יחסית מספקים חוויה סבירה. מעל 20 tokens/שנייה, התחושה כמעט זהה ל-ChatGPT.</p>
 
-      <h2>ממשק גרפי — Open WebUI</h2>
+      <h2>יצירת מודל מותאם אישית עם Modelfile</h2>
+      <p>אחד הפיצ'רים החזקים של Ollama הוא היכולת ליצור מודלים מותאמים אישית. אתם יכולים להגדיר system prompt, טמפרטורה, ופרמטרים נוספים בקובץ פשוט שנקרא <strong>Modelfile</strong>.</p>
+      <p>דוגמה — יצירת עוזר כתיבה בעברית:</p>
+      <pre><code>FROM llama3.2:8b
+
+SYSTEM """
+אתה עוזר כתיבה מקצועי בשפה העברית. אתה כותב בסגנון ברור,
+מקצועי ונעים לקריאה. אתה תמיד עונה בעברית, גם אם השאלה
+נשאלת באנגלית. אתה מומחה ב-SEO, שיווק דיגיטלי וכתיבת תוכן.
+"""
+
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
+PARAMETER num_ctx 4096</code></pre>
+      <p>שמרו את הקובץ כ-<code>Modelfile</code> והריצו:</p>
+      <pre><code>ollama create hebrew-writer -f Modelfile</code></pre>
+      <p>עכשיו תוכלו להפעיל את המודל המותאם:</p>
+      <pre><code>ollama run hebrew-writer</code></pre>
+      <p>אפשר ליצור מודלים לכל מטרה: עוזר קוד שמתמחה ב-Python, יועץ משפטי, מורה למתמטיקה, או כל תפקיד אחר. הגדרת ה-system prompt משפיעה משמעותית על איכות התשובות — בדיוק כמו <a href="prompt-engineering.html">Prompt Engineering</a> בשירותי ענן.</p>
+
+      <h2>
+      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+ממשק גרפי — Open WebUI</h2>
+      <p>שורת הפקודה מצוינת, אבל רוב המשתמשים מעדיפים ממשק גרפי נוח. <strong>Open WebUI</strong> הוא הפתרון המושלם — ממשק וובי שנראה בדיוק כמו ChatGPT, רץ מקומית, ומתחבר ל-Ollama.</p>
       <p>הריצו את הפקודה (דורש Docker):</p>
       <pre><code>docker run -d -p 3000:8080 \
   --add-host=host.docker.internal:host-gateway \
@@ -250,24 +346,138 @@
   --restart always \
   ghcr.io/open-webui/open-webui:main</code></pre>
       <p>גשו ל-<code>localhost:3000</code> — ממשק ChatGPT מלא לחלוטין, מקומי. הדגל <code>--restart always</code> מבטיח שהממשק יקום מחדש אוטומטית לאחר הפעלת המחשב.</p>
+      <p>Open WebUI תומך בפיצ'רים מתקדמים:</p>
+      <ul>
+        <li>היסטוריית שיחות מלאה ומאורגנת בתיקיות</li>
+        <li>העלאת מסמכים ל-RAG (שליפת מידע מתוך קבצים)</li>
+        <li>מעבר קל בין מודלים שונים באמצע שיחה</li>
+        <li>שיתוף שיחות עם משתמשים אחרים ברשת המקומית</li>
+        <li>ניהול משתמשים — מתאים לצוותים ולמשפחות</li>
+        <li>תמיכה ב-Markdown, קוד עם syntax highlighting, ו-LaTeX</li>
+      </ul>
+      <p>אם אין לכם Docker, חלופה פופולרית היא <strong>Enchanted</strong> — אפליקציית macOS ילידית ש-מתחברת ל-Ollama ומספקת ממשק יפה בלי תלות ב-Docker.</p>
+
+      <h2>שימוש ב-API של Ollama</h2>
+      <p>Ollama מספק REST API שתואם לפורמט של OpenAI, מה שמקל מאוד על אינטגרציה עם כלים קיימים. ה-API רץ על <code>localhost:11434</code> כברירת מחדל.</p>
+      <p>דוגמה לשליחת בקשה עם curl:</p>
+      <pre><code>curl http://localhost:11434/api/chat -d '{
+  "model": "llama3.2",
+  "messages": [
+    {"role": "user", "content": "מה הבירה של צרפת?"}
+  ]
+}'</code></pre>
+      <p>או בפורמט תואם OpenAI:</p>
+      <pre><code>curl http://localhost:11434/v1/chat/completions -d '{
+  "model": "llama3.2",
+  "messages": [
+    {"role": "user", "content": "כתוב שיר קצר בעברית"}
+  ]
+}'</code></pre>
+      <p>הנקודה החשובה: כל כלי שתומך ב-OpenAI API יכול לעבוד עם Ollama — פשוט שנו את ה-endpoint ל-<code>http://localhost:11434/v1</code> ואת ה-API key לכל ערך שתרצו (Ollama לא דורש מפתח). זה פותח דלת לשימוש ב-Ollama עם עשרות כלים: <a href="vibe-coding.html">כלי Vibe Coding</a>, IDE plugins, סקריפטים של אוטומציה ועוד.</p>
+
+      <h2>Ollama עם n8n — אוטומציה מקומית</h2>
+      <p>אחד השימושים המגניבים ביותר: חיבור Ollama ל-n8n (כלי אוטומציה ויזואלי). תוכלו לבנות workflows AI שרצים לגמרי מקומית — ללא API, ללא תשלום. דוגמאות לתהליכים:</p>
+      <ul>
+        <li>ניתוח אוטומטי של מיילים נכנסים וסיווגם לקטגוריות</li>
+        <li>יצירת סיכומי פגישות ממסמכים שנשמרים בתיקייה</li>
+        <li>ניתוח סנטימנט של ביקורות לקוחות</li>
+        <li>תרגום אוטומטי של מסמכים</li>
+        <li>יצירת טיוטות תשובה למיילים</li>
+      </ul>
+      <p>ב-n8n, הוסיפו node מסוג "HTTP Request" או השתמשו ב-node הייעודי של Ollama, הגדירו את ה-endpoint ל-<code>http://localhost:11434</code>, ובחרו את המודל הרצוי. כל העיבוד קורה על המחשב שלכם.</p>
+
+      <h2>שילוב Ollama עם כלי פיתוח</h2>
+      <p>למפתחים, Ollama הוא כלי רב-עוצמה שמשתלב עם סביבת העבודה. הנה הדרכים הפופולריות:</p>
+      <ul>
+        <li><strong>Continue.dev (VS Code / JetBrains):</strong> תוסף שמספק השלמת קוד, הסבר על קוד, וצ'אט — הכל דרך Ollama. התקינו את התוסף, הגדירו את Ollama כ-provider, ותהנו מ-Copilot מקומי בחינם</li>
+        <li><strong>Aider:</strong> כלי CLI שמאפשר לערוך קבצי קוד ישירות דרך שיחה עם AI. תומך ב-Ollama ומאפשר לבצע שינויים בקוד בפקודה אחת</li>
+        <li><strong>LangChain / LlamaIndex:</strong> ספריות Python פופולריות ל-RAG ולבניית אפליקציות AI, שתומכות ב-Ollama כ-LLM provider</li>
+      </ul>
 
       <h2>
       <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-Ollama עם n8n — אוטומציה מקומית</h2>
-      <p>אחד השימושים המגניבים: חיבור Ollama ל-n8n (כלי אוטומציה). תוכלו לבנות workflows AI שרצים לגמרי מקומית — ללא API, ללא תשלום.</p>
+פקודות CLI שימושיות</h2>
+      <p>הנה מדריך מקיף לכל הפקודות החשובות:</p>
+      <pre><code># הורדת מודל
+ollama pull llama3.2
 
-      <h2>פקודות CLI שימושיות</h2>
-      <pre><code># רשימת מודלים מותקנים
+# הרצת מודל (מוריד אוטומטית אם לא קיים)
+ollama run llama3.2
+
+# רשימת מודלים מותקנים
 ollama list
 
-# מחיקת מודל
+# מחיקת מודל (לפנות מקום)
 ollama rm mistral
 
-# מידע על מודל
+# מידע מפורט על מודל
 ollama show llama3.2
 
-# הרצה עם פרמטרים
-ollama run llama3.2 --verbose</code></pre>
+# הרצה עם מצב verbose (מציג ביצועים)
+ollama run llama3.2 --verbose
+
+# העתקת מודל בשם חדש
+ollama cp llama3.2 my-custom-model
+
+# עדכון מודל לגרסה אחרונה
+ollama pull llama3.2
+
+# הפעלת השרת ידנית
+ollama serve
+
+# בדיקת גרסת Ollama
+ollama --version</code></pre>
+      <p>טיפ: ניתן לשלוח prompt ישירות מהפקודה בלי להיכנס למצב אינטראקטיבי:</p>
+      <pre><code>ollama run llama3.2 "תרגם לאנגלית: שלום עולם"</code></pre>
+
+      <h2>טיפים לשיפור ביצועים</h2>
+      <p>כדי להפיק את המרב מ-Ollama, הנה כמה טיפים שיכולים לשפר משמעותית את המהירות והאיכות:</p>
+      <ol>
+        <li><strong>בחרו את גודל המודל הנכון:</strong> אל תריצו מודל 70B על מחשב עם 16GB RAM. מודל 7-8B שרץ מהר עדיף על מודל גדול שזוחל</li>
+        <li><strong>סגרו תוכנות כבדות:</strong> Chrome עם 50 טאבים אוכל RAM. סגרו מה שלא צריך לפני הפעלת Ollama</li>
+        <li><strong>השתמשו בכימות מתאים:</strong> מודלים מגיעים בכימויים שונים (Q4, Q5, Q8). Q4 מהיר יותר וקטן יותר, Q8 איכותי יותר אך כבד</li>
+        <li><strong>הגדירו את num_ctx:</strong> גודל חלון ההקשר (context window) משפיע על צריכת הזיכרון. אם לא צריכים שיחות ארוכות, הקטינו ל-2048</li>
+        <li><strong>Mac — העדיפו Apple Silicon:</strong> M1 ומעלה מריצים מודלים בצורה מצוינת בזכות Unified Memory</li>
+        <li><strong>Windows — עדכנו דרייברים:</strong> דרייברי NVIDIA עדכניים יכולים לשפר ביצועים ב-20-30%</li>
+        <li><strong>הפעילו GPU offloading:</strong> ב-Ollama, כל השכבות שנכנסות ל-VRAM רצות מהר יותר. ודאו שה-GPU מנוצל</li>
+      </ol>
+
+      <h2>פתרון בעיות נפוצות</h2>
+      <p>נתקלתם בבעיה? הנה הפתרונות למקרים הנפוצים ביותר:</p>
+      <ul>
+        <li><strong>"Error: model not found"</strong> — המודל לא הורד. הריצו <code>ollama pull שם-המודל</code></li>
+        <li><strong>"Error: insufficient memory"</strong> — אין מספיק RAM. נסו מודל קטן יותר (3b במקום 8b) או סגרו תוכנות אחרות</li>
+        <li><strong>Ollama לא מגיב</strong> — ודאו שהשרת רץ: <code>ollama serve</code>. ב-Mac, בדקו שהאייקון מופיע ב-menubar</li>
+        <li><strong>תשובות איטיות מאוד</strong> — בדקו ב-<code>ollama run model --verbose</code> אם ה-GPU בשימוש. אם כתוב "CPU only" והמחשב כולל GPU, עדכנו דרייברים</li>
+        <li><strong>Docker / Open WebUI לא מתחבר</strong> — ודאו שה-flag <code>--add-host=host.docker.internal:host-gateway</code> קיים בפקודת ה-docker run</li>
+        <li><strong>מודל נותן תשובות באנגלית במקום בעברית</strong> — הוסיפו ל-system prompt הוראה מפורשת: "תמיד ענה בעברית". או צרו Modelfile מותאם</li>
+        <li><strong>מלא דיסק</strong> — מודלים תופסים מקום. מחקו מודלים שלא בשימוש עם <code>ollama rm שם-המודל</code> ובדקו מקום עם <code>ollama list</code></li>
+      </ul>
+
+      <h2>
+      <div class="ad-in-article"><ins class="adsbygoogle" style="display:block;min-height:250px" data-ad-client="ca-pub-9475752562192165" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+שימושים מעשיים ל-Ollama</h2>
+      <p>מעבר לצ'אט רגיל, Ollama פותח עולם שלם של שימושים:</p>
+      <ul>
+        <li><strong>סיכום מסמכים:</strong> העבירו מסמך ארוך ובקשו סיכום — מושלם למסמכים משפטיים או דוחות</li>
+        <li><strong>כתיבת תוכן:</strong> יצירת טיוטות למאמרים, מיילים, פוסטים לרשתות חברתיות</li>
+        <li><strong>עזרה בקוד:</strong> הסבר על קוד, מציאת באגים, כתיבת פונקציות — <a href="vibe-coding.html">בסגנון Vibe Coding</a></li>
+        <li><strong>תרגום:</strong> תרגום מסמכים בין שפות, כולל עברית-אנגלית</li>
+        <li><strong>למידה:</strong> שאלו שאלות על כל נושא, בקשו הסברים פשוטים למושגים מורכבים</li>
+        <li><strong>ניתוח נתונים:</strong> העבירו טבלאות CSV וביקשו ניתוח, מגמות, או תובנות</li>
+        <li><strong>Brainstorming:</strong> סיעור מוחות לרעיונות לעסק, שמות מוצרים, אסטרטגיות שיווק</li>
+        <li><strong>כתיבה אקדמית:</strong> עזרה בניסוח מאמרים, ביבליוגרפיה, ומבנה מחקרי</li>
+      </ul>
+
+      <h2>Ollama ותמיכה בעברית</h2>
+      <p>שאלה שעולה הרבה: האם מודלים מקומיים יודעים עברית? התשובה: כן, ברמה סבירה עד טובה, תלוי במודל. הנה הדירוג שלנו:</p>
+      <ul>
+        <li><strong>Gemma 2 (9B):</strong> הטוב ביותר בעברית מבין המודלים הקטנים. Google אימנה אותו על מגוון רחב של שפות</li>
+        <li><strong>Llama 3.1/3.2 (8B+):</strong> עברית סבירה, טוב לשיחות כלליות ותרגום</li>
+        <li><strong>Mistral (7B):</strong> עברית בסיסית, עדיף להשתמש בו לאנגלית</li>
+        <li><strong>Phi-3:</strong> תמיכה מינימלית בעברית, מומלץ רק לאנגלית</li>
+      </ul>
+      <p>טיפ חשוב: גם אם המודל לא מושלם בעברית, ניתן לכתוב <a href="prompt-engineering.html">prompts באנגלית</a> ולבקש תשובה בעברית — זה בדרך כלל משפר את האיכות.</p>
 
       <h2>שאלות נפוצות</h2>
       <div itemscope itemtype="https://schema.org/FAQPage">
@@ -280,16 +490,57 @@ ollama run llama3.2 --verbose</code></pre>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <h3 itemprop="name">האם צריך מחשב חזק להריץ Ollama?</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">מודלים קטנים (7B פרמטרים) רצים על 8GB RAM. מודלים גדולים דורשים 16GB+. כרטיס גרפיקה מאיץ משמעותית אך אינו חובה. Mac M1/M2/M3 עובד מצוין.</p>
+            <p itemprop="text">מודלים קטנים (7B פרמטרים) רצים על 8GB RAM. מודלים גדולים דורשים 16GB+. כרטיס גרפיקה מאיץ משמעותית אך אינו חובה. Mac M1/M2/M3/M4 עובד מצוין בזכות Unified Memory.</p>
           </div>
         </div>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <h3 itemprop="name">איזה מודל AI עדיף להוריד ב-Ollama?</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">למתחילים: llama3.2:3b אם יש 8GB RAM, llama3.2:8b אם יש 16GB. לקוד: codellama. למחשבים חלשים: phi3:mini (4GB RAM בלבד).</p>
+            <p itemprop="text">למתחילים: llama3.2:3b אם יש 8GB RAM, llama3.2:8b אם יש 16GB. לקוד: codellama או deepseek-coder. למחשבים חלשים: phi3:mini (4GB RAM בלבד). לעברית: gemma2:9b.</p>
+          </div>
+        </div>
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">האם Ollama תומך בעברית?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">מודלים כמו Gemma 2, Llama 3 ו-Mistral תומכים בעברית ברמה סבירה עד טובה. לתוצאות טובות יותר, כתבו את ה-prompt באנגלית ובקשו תשובה בעברית, או השתמשו ב-Gemma2 שמתמחה בשפות מרובות.</p>
+          </div>
+        </div>
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">מה ההבדל בין Ollama ל-ChatGPT?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">ChatGPT הוא שירות ענן של OpenAI ($20/חודש) ששולח נתונים לשרתים חיצוניים ודורש אינטרנט. Ollama רץ על המחשב שלך, חינמי, עובד אופליין ושומר על פרטיות מלאה — אבל המודלים קטנים יותר ופחות חכמים מ-GPT-4o.</p>
+          </div>
+        </div>
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">האם אפשר להשתמש ב-Ollama לעבודה עם קוד?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">בהחלט. מודלים כמו CodeLlama ו-DeepSeek Coder מתמחים בכתיבת קוד. ניתן לשלב אותם עם VS Code באמצעות Continue.dev ולקבל השלמת קוד מקומית בחינם — בדיוק כמו GitHub Copilot.</p>
+          </div>
+        </div>
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">כמה מקום אחסון Ollama תופס?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Ollama עצמו תופס מעט מקום, אבל כל מודל תופס בין 2GB ל-40GB. מומלץ לשמור לפחות 50GB פנויים אם מתכננים להתקין מספר מודלים. ניתן למחוק מודלים שלא בשימוש עם הפקודה ollama rm.</p>
+          </div>
+        </div>
+        <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 itemprop="name">האם Ollama בטוח לשימוש?</h3>
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">כן. Ollama הוא קוד פתוח שניתן לבדיקה על ידי כל אחד. כברירת מחדל, השרת מאזין רק על localhost ולא חשוף לאינטרנט. הנתונים נשארים על המחשב שלך ולא נשלחים לשום מקום.</p>
           </div>
         </div>
       </div>
+
+      <h2>סיכום — למי Ollama מתאים?</h2>
+      <p>Ollama הוא כלי שכל מי שמתעניין בבינה מלאכותית צריך להכיר. הוא מתאים במיוחד ל:</p>
+      <ul>
+        <li><strong>אנשי מקצוע שעובדים עם מידע רגיש</strong> — עורכי דין, רופאים, רואי חשבון, <a href="ai-small-business.html">בעלי עסקים קטנים</a></li>
+        <li><strong>מפתחים</strong> — שרוצים AI מקומי ללא עלויות API, לפיתוח ולטסטים</li>
+        <li><strong>סטודנטים</strong> — שרוצים AI בחינם ללמידה ולכתיבת עבודות</li>
+        <li><strong>חובבי טכנולוגיה</strong> — שרוצים להבין איך AI עובד "מבפנים"</li>
+        <li><strong>כל מי שרוצה לחסוך $240 בשנה</strong> — ועדיין ליהנות מ-AI איכותי</li>
+      </ul>
+      <p>התחילו עם <code>ollama pull llama3.2</code>, נסו כמה שיחות, ותגלו שעולם ה-AI המקומי קרוב הרבה יותר ממה שחשבתם. ואם אתם רוצים להעמיק, קראו את המדריכים שלנו על <a href="prompt-engineering.html">כתיבת prompts אפקטיביים</a> ועל <a href="claude-vs-gpt4o.html">השוואת מודלי AI מובילים</a>.</p>
 
       <div class="related-section">
         <h2>מאמרים קשורים</h2>
