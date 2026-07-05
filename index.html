@@ -73,13 +73,36 @@
       -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--ds-border);
     }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 12px; }
     .logo { font-size: 1.6rem; font-weight: 900; }
     .main-nav { display: none; gap: 4px; }
     .main-nav a { color: var(--ds-text); font-weight: 500; font-size: 0.95rem; padding: 8px 14px; border-radius: 10px; }
     .main-nav a:hover { color: var(--ds-heading); background: rgba(148, 163, 184, 0.08); }
-    .nav-cta { font-size: 0.9rem; padding: 10px 22px; }
-    @media (min-width: 960px) { .main-nav { display: flex; } }
+    .nav-cta { font-size: 0.9rem; padding: 10px 22px; white-space: nowrap; }
+    .nav-left { display: flex; align-items: center; gap: 10px; }
+
+    /* Hamburger (mobile) */
+    .hamburger {
+      display: flex; flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; padding: 10px; background: none;
+      border: 1px solid var(--ds-border); border-radius: 10px; cursor: pointer;
+    }
+    .hamburger span { display: block; height: 2px; width: 100%; background: var(--ds-heading); border-radius: 2px; transition: transform 0.25s var(--ds-ease), opacity 0.2s; }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav {
+      display: none; flex-direction: column; gap: 2px; padding: 12px 20px 18px;
+      border-top: 1px solid var(--ds-border);
+      background: rgba(10, 14, 26, 0.97);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: var(--ds-text); font-weight: 500; padding: 12px 8px; border-bottom: 1px solid var(--ds-border); }
+    .mobile-nav a:last-child { border-bottom: none; }
+    @media (min-width: 960px) {
+      .main-nav { display: flex; }
+      .hamburger, .mobile-nav { display: none !important; }
+    }
 
     .hero {
       position: relative; overflow: hidden; text-align: center;
@@ -97,14 +120,32 @@
     .hero .ds-lead { max-width: 640px; margin: 0 auto 40px; }
     .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 
+    /* Trust strip */
+    .trust-strip { padding: 40px 0; border-block: 1px solid var(--ds-border); background: rgba(17, 24, 39, 0.35); }
+    .trust-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; text-align: center; }
+    @media (min-width: 960px) { .trust-grid { grid-template-columns: repeat(4, 1fr); } }
+    .trust-num {
+      font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.1;
+      background: var(--ds-gradient); -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .trust-label { color: var(--ds-muted); font-size: 0.9rem; margin-top: 6px; }
+
     .section-head { text-align: center; max-width: 680px; margin: 0 auto 48px; }
     .section-head p { color: var(--ds-muted); margin-top: 14px; }
 
-    .value-card .icon {
+    /* Profession cards */
+    .pro-card { display: flex; flex-direction: column; gap: 8px; color: inherit; }
+    .pro-card .icon {
       width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; background: var(--ds-gradient-soft); border: 1px solid var(--ds-border); margin-bottom: 18px;
+      font-size: 1.6rem; background: var(--ds-gradient-soft); border: 1px solid var(--ds-border); margin-bottom: 8px;
     }
-    .value-card p { color: var(--ds-muted); font-size: 0.95rem; margin-top: 8px; }
+    .pro-card h3 { color: var(--ds-heading); }
+    .pro-card p { color: var(--ds-muted); font-size: 0.93rem; flex: 1; }
+    .pro-card .more { color: var(--ds-cyan); font-weight: 700; font-size: 0.9rem; }
+    .pro-card:hover .more { text-decoration: underline; }
+
+    .value-card p, .step p { color: var(--ds-muted); font-size: 0.95rem; margin-top: 8px; }
 
     .article-card { display: flex; flex-direction: column; gap: 10px; }
     .article-card .tag { font-size: 0.78rem; font-weight: 700; color: var(--ds-cyan); }
@@ -122,8 +163,8 @@
       background: var(--ds-gradient); -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent; color: transparent;
     }
-    .step p { color: var(--ds-muted); font-size: 0.95rem; margin-top: 8px; }
 
+    /* CTA bands (calculator teaser + closing) */
     .cta-band {
       text-align: center; border-radius: var(--ds-radius-lg);
       padding: 56px 24px; position: relative; overflow: hidden;
@@ -136,6 +177,18 @@
     }
     .cta-band > * { position: relative; }
     .cta-band p { max-width: 520px; margin: 14px auto 32px; color: var(--ds-muted); }
+    .cta-band .ds-btn-primary.big { font-size: 1.2rem; padding: 18px 44px; }
+
+    /* Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed; bottom: 22px; left: 22px; z-index: 90;
+      width: 58px; height: 58px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: #25D366; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.25s var(--ds-ease), box-shadow 0.25s;
+    }
+    .whatsapp-float:hover { transform: translateY(-3px); box-shadow: 0 0 24px rgba(37, 211, 102, 0.5); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
 
     .site-footer { border-top: 1px solid var(--ds-border); padding: 48px 0 32px; margin-top: 40px; }
     .footer-grid { display: grid; gap: 32px; grid-template-columns: 1fr; }
@@ -152,7 +205,12 @@
 
 <header class="site-header">
   <div class="ds-container nav-inner">
-    <a href="/" class="logo ds-gradient-text">בינה</a>
+    <div class="nav-left">
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="פתיחת תפריט">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="/" class="logo ds-gradient-text">בינה</a>
+    </div>
     <nav class="main-nav" aria-label="ניווט ראשי">
       <a href="/business.html">AI לעסקים</a>
       <a href="/guides.html">מדריכים</a>
@@ -160,8 +218,16 @@
       <a href="/archive.html">כל המאמרים</a>
       <a href="/about.html">אודות</a>
     </nav>
-    <a href="/contact.html" class="ds-btn ds-btn-primary nav-cta">שיחת אבחון חינם</a>
+    <a href="/contact.html" class="ds-btn ds-btn-primary nav-cta">שיחת אבחון</a>
   </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="ניווט מובייל">
+    <a href="/business.html">AI לעסקים</a>
+    <a href="/guides.html">מדריכים</a>
+    <a href="/tools.html">כלים</a>
+    <a href="/archive.html">כל המאמרים</a>
+    <a href="/about.html">אודות</a>
+    <a href="/contact.html">צור קשר</a>
+  </nav>
 </header>
 
 <main>
@@ -179,117 +245,73 @@
     </div>
   </section>
 
-  <!-- Value props -->
-  <section class="ds-section">
+  <!-- Trust strip -->
+  <section class="trust-strip">
     <div class="ds-container">
-      <div class="section-head ds-reveal">
-        <h2>מה <span class="ds-gradient-text">AI</span> עושה לעסק שלך</h2>
-        <p>ארבעה תחומים שבהם בינה מלאכותית מחזירה את ההשקעה כבר בחודש הראשון.</p>
-      </div>
-      <div class="ds-grid ds-grid-4">
-        <div class="ds-card value-card ds-reveal">
-          <div class="icon">⚡</div>
-          <h3>אוטומציה של משימות</h3>
-          <p>15 שעות עבודה בשבוע חוזרות אליך — מיילים, הצעות מחיר, דוחות וסיכומים נכתבים לבד.</p>
+      <div class="trust-grid">
+        <div>
+          <div class="trust-num"><span data-count="12">0</span>+</div>
+          <div class="trust-label">שעות נחסכות בשבוע בממוצע</div>
         </div>
-        <div class="ds-card value-card ds-reveal">
-          <div class="icon">💬</div>
-          <h3>שירות לקוחות 24/7</h3>
-          <p>צ'אטבוט חכם בוואטסאפ ובאתר שעונה ללקוחות מיד — גם כשאתה ישן.</p>
+        <div>
+          <div class="trust-num"><span data-count="20">0</span>+</div>
+          <div class="trust-label">שנות ניסיון בטכנולוגיה</div>
         </div>
-        <div class="ds-card value-card ds-reveal">
-          <div class="icon">📈</div>
-          <h3>שיווק חכם</h3>
-          <p>תוכן, מודעות וקמפיינים שנבנים בדקות במקום בימים — מותאמים לקהל הישראלי.</p>
+        <div>
+          <div class="trust-num"><span data-count="100">0</span>+</div>
+          <div class="trust-label">כלי AI נבחנו לעומק</div>
         </div>
-        <div class="ds-card value-card ds-reveal">
-          <div class="icon">📊</div>
-          <h3>החלטות מנתונים</h3>
-          <p>ניתוח מכירות, מלאי והתנהגות לקוחות בשפה פשוטה — בלי אנליסט.</p>
+        <div>
+          <div class="trust-num"><span data-count="280">0</span>+</div>
+          <div class="trust-label">מדריכים ומאמרים שנכתבו</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Business articles -->
+  <!-- Solutions by profession -->
   <section class="ds-section">
     <div class="ds-container">
       <div class="section-head ds-reveal">
-        <h2>מדריכים <span class="ds-gradient-text">לעסקים</span></h2>
-        <p>ידע מעשי בעברית — איך מטמיעים AI בכל חלק של העסק.</p>
+        <h2>פתרונות <span class="ds-gradient-text">לפי מקצוע</span></h2>
+        <p>כל עסק מבזבז זמן במקום אחר. בחרו את התחום שלכם וגלו איפה AI נכנס לתמונה.</p>
       </div>
       <div class="ds-grid ds-grid-3">
-        <article class="ds-card article-card ds-reveal">
-          <span class="tag">אוטומציה</span>
-          <h3><a href="/articles/biz-ai-time-automation.html">10 משימות שאפשר לאטומט עם AI ולחסוך 15 שעות בשבוע</a></h3>
-          <p>המדריך המעשי לאוטומציה של העבודה השוטפת בעסק.</p>
-        </article>
-        <article class="ds-card article-card ds-reveal">
-          <span class="tag">שירות לקוחות</span>
-          <h3><a href="/articles/biz-ai-customer-service.html">צ'אטבוט לשירות לקוחות — AI שעונה ללקוחות 24/7</a></h3>
-          <p>איך מקימים מענה אוטומטי חכם שלקוחות באמת אוהבים.</p>
-        </article>
-        <article class="ds-card article-card ds-reveal">
-          <span class="tag">שיווק</span>
-          <h3><a href="/articles/biz-ai-marketing-small-business.html">שיווק דיגיטלי עם AI — המדריך המלא לעסק קטן</a></h3>
-          <p>קמפיינים, תוכן ופרסום ממומן — הכל עם כלי AI בעברית.</p>
-        </article>
-        <article class="ds-card article-card ds-reveal">
-          <span class="tag">וואטסאפ</span>
-          <h3><a href="/articles/biz-ai-whatsapp-crm.html">WhatsApp + AI = CRM חכם לעסק קטן</a></h3>
-          <p>להפוך את הוואטסאפ העסקי למכונת מכירות מסודרת.</p>
-        </article>
-        <article class="ds-card article-card ds-reveal">
-          <span class="tag">כספים</span>
-          <h3><a href="/articles/biz-ai-accounting-finance.html">AI בחשבונאות — לנהל את הכספים בעזרת בינה מלאכותית</a></h3>
-          <p>תזרים, חשבוניות ותחזיות — בשליטה מלאה ובפחות זמן.</p>
-        </article>
-        <article class="ds-card article-card ds-reveal">
-          <span class="tag">ROI</span>
-          <h3><a href="/articles/2026-04-25-business-ai-tools-israeli-businesses-roi-2026.html">כלי AI לעסקים ישראלים — להכפיל את ההחזר על ההשקעה</a></h3>
-          <p>אילו כלים שווים את הכסף, וכמה זמן הם באמת חוסכים.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive tools -->
-  <section class="ds-section">
-    <div class="ds-container">
-      <div class="section-head ds-reveal">
-        <h2>כלים <span class="ds-gradient-text">אינטראקטיביים</span></h2>
-        <p>בדקו, השוו וחשבו — הכל בעברית, הכל בחינם.</p>
-      </div>
-      <div class="ds-grid ds-grid-3">
-        <a href="/quiz.html" class="ds-card tool-card ds-reveal">
-          <div class="icon">🎯</div>
-          <h3>חידון התאמת AI</h3>
-          <p>איזה כלי AI מתאים לעסק שלך?</p>
-        </a>
-        <a href="/ai-cost-calculator.html" class="ds-card tool-card ds-reveal">
-          <div class="icon">🧮</div>
-          <h3>מחשבון עלויות</h3>
-          <p>כמה יעלה לך AI בחודש?</p>
-        </a>
-        <a href="/prompt-library.html" class="ds-card tool-card ds-reveal">
-          <div class="icon">📚</div>
-          <h3>ספריית פרומפטים</h3>
-          <p>פרומפטים מוכנים לעסקים בעברית.</p>
-        </a>
-        <a href="/ai-leaderboard.html" class="ds-card tool-card ds-reveal">
-          <div class="icon">🏆</div>
-          <h3>לוח מודלים חי</h3>
-          <p>איזה מודל AI מוביל עכשיו?</p>
-        </a>
-        <a href="/ai-directory.html" class="ds-card tool-card ds-reveal">
-          <div class="icon">🗂️</div>
-          <h3>ספריית כלי AI</h3>
-          <p>48 כלים מסודרים לפי קטגוריה.</p>
-        </a>
-        <a href="/ai-compare.html" class="ds-card tool-card ds-reveal">
+        <a href="/solutions/lawyers.html" class="ds-card pro-card ds-reveal">
           <div class="icon">⚖️</div>
-          <h3>משווה מודלים</h3>
-          <p>Claude, GPT, Gemini — ראש בראש.</p>
+          <h3>עורכי דין</h3>
+          <p>חסכו 10 שעות שבועיות על ניסוח מסמכים, חוזים וסיכומי פסיקה.</p>
+          <span class="more">איך זה עובד ←</span>
+        </a>
+        <a href="/solutions/accountants.html" class="ds-card pro-card ds-reveal">
+          <div class="icon">🧾</div>
+          <h3>רואי חשבון</h3>
+          <p>קליטת חשבוניות, התאמות בנקים ודוחות — אוטומטית במקום ידנית.</p>
+          <span class="more">איך זה עובד ←</span>
+        </a>
+        <a href="/solutions/realtors.html" class="ds-card pro-card ds-reveal">
+          <div class="icon">🏠</div>
+          <h3>מתווכים</h3>
+          <p>מודעות נכסים, מענה מיידי לפניות ומעקב לידים — בלי לפספס אף לקוח.</p>
+          <span class="more">איך זה עובד ←</span>
+        </a>
+        <a href="/solutions/clinics.html" class="ds-card pro-card ds-reveal">
+          <div class="icon">🩺</div>
+          <h3>מרפאות</h3>
+          <p>זימון תורים, תזכורות למטופלים וסיכומי ביקור — הצוות מתפנה לטיפול.</p>
+          <span class="more">איך זה עובד ←</span>
+        </a>
+        <a href="/solutions/restaurants.html" class="ds-card pro-card ds-reveal">
+          <div class="icon">🍽️</div>
+          <h3>מסעדות</h3>
+          <p>הזמנות בוואטסאפ, ניהול מלאי ותוכן לרשתות — הכל ממקום אחד.</p>
+          <span class="more">איך זה עובד ←</span>
+        </a>
+        <a href="/solutions/contractors.html" class="ds-card pro-card ds-reveal">
+          <div class="icon">🏗️</div>
+          <h3>קבלנים</h3>
+          <p>הצעות מחיר מהירות, מעקב פרויקטים ותיאום ספקים — פחות ניירת, יותר שטח.</p>
+          <span class="more">איך זה עובד ←</span>
         </a>
       </div>
     </div>
@@ -317,6 +339,71 @@
           <h3>הטמעה ומדידה</h3>
           <p>מטמיעים, מדריכים את הצוות ומודדים תוצאות — עד שהחיסכון מדבר בעד עצמו.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator teaser -->
+  <section class="ds-section">
+    <div class="ds-container">
+      <div class="cta-band ds-reveal">
+        <h2>כמה שעות <span class="ds-gradient-text">AI יחסוך</span> לעסק שלך?</h2>
+        <p>ענו על כמה שאלות קצרות וקבלו הערכה מיידית — כמה שעות עבודה וכסף אתם משאירים על השולחן כל חודש.</p>
+        <a href="/savings-calculator.html" class="ds-btn ds-btn-primary big">חשבו את החיסכון שלכם</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business articles -->
+  <section class="ds-section">
+    <div class="ds-container">
+      <div class="section-head ds-reveal">
+        <h2>מדריכים <span class="ds-gradient-text">לעסקים</span></h2>
+        <p>ידע מעשי בעברית — איך מטמיעים AI בכל חלק של העסק.</p>
+      </div>
+      <div class="ds-grid ds-grid-3">
+        <article class="ds-card article-card ds-reveal">
+          <span class="tag">אוטומציה</span>
+          <h3><a href="/articles/biz-ai-time-automation.html">10 משימות שאפשר לאטומט עם AI ולחסוך 15 שעות בשבוע</a></h3>
+          <p>המדריך המעשי לאוטומציה של העבודה השוטפת בעסק.</p>
+        </article>
+        <article class="ds-card article-card ds-reveal">
+          <span class="tag">שירות לקוחות</span>
+          <h3><a href="/articles/biz-ai-customer-service.html">צ'אטבוט לשירות לקוחות — AI שעונה ללקוחות 24/7</a></h3>
+          <p>איך מקימים מענה אוטומטי חכם שלקוחות באמת אוהבים.</p>
+        </article>
+        <article class="ds-card article-card ds-reveal">
+          <span class="tag">שיווק</span>
+          <h3><a href="/articles/biz-ai-marketing-small-business.html">שיווק דיגיטלי עם AI — המדריך המלא לעסק קטן</a></h3>
+          <p>קמפיינים, תוכן ופרסום ממומן — הכל עם כלי AI בעברית.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive tools (business-focused) -->
+  <section class="ds-section">
+    <div class="ds-container">
+      <div class="section-head ds-reveal">
+        <h2>כלים <span class="ds-gradient-text">אינטראקטיביים</span></h2>
+        <p>בדקו, השוו וחשבו — הכל בעברית, הכל בחינם.</p>
+      </div>
+      <div class="ds-grid ds-grid-3">
+        <a href="/quiz.html" class="ds-card tool-card ds-reveal">
+          <div class="icon">🎯</div>
+          <h3>חידון התאמת AI</h3>
+          <p>איזה כלי AI מתאים לעסק שלך?</p>
+        </a>
+        <a href="/ai-cost-calculator.html" class="ds-card tool-card ds-reveal">
+          <div class="icon">🧮</div>
+          <h3>מחשבון עלויות</h3>
+          <p>כמה יעלה לך AI בחודש?</p>
+        </a>
+        <a href="/prompt-library.html" class="ds-card tool-card ds-reveal">
+          <div class="icon">📚</div>
+          <h3>ספריית פרומפטים</h3>
+          <p>פרומפטים מוכנים לעסקים בעברית.</p>
+        </a>
       </div>
     </div>
   </section>
@@ -367,6 +454,21 @@
   </div>
 </footer>
 
+<!-- Floating WhatsApp (placeholder number — replace 972500000000) -->
+<a href="https://wa.me/972500000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="שיחה בוואטסאפ">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.04 3C9.03 3 3.34 8.69 3.34 15.7c0 2.24.59 4.42 1.7 6.34L3.2 28.8l6.94-1.82a12.63 12.63 0 0 0 5.9 1.5h.01c7 0 12.7-5.69 12.7-12.7C28.74 8.69 23.05 3 16.04 3zm0 23.34h-.01a10.5 10.5 0 0 1-5.35-1.47l-.38-.23-3.98 1.05 1.06-3.88-.25-.4a10.53 10.53 0 0 1-1.62-5.62c0-5.83 4.74-10.57 10.58-10.57 2.82 0 5.48 1.1 7.47 3.1a10.5 10.5 0 0 1 3.1 7.48c0 5.83-4.75 10.57-10.57 10.57zm5.8-7.92c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.24-.19.21-.37.24-.69.08-.32-.16-1.34-.5-2.56-1.58-.95-.85-1.58-1.9-1.77-2.21-.19-.32-.02-.5.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.56 1.14 3.08 1.3 3.29.16.21 2.24 3.42 5.43 4.8.76.33 1.35.52 1.81.67.76.24 1.46.21 2 .13.61-.09 1.88-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.29-.21-.61-.37z"/></svg>
+</a>
+
 <script src="/design-system.js" defer></script>
+<script>
+  (function () {
+    var btn = document.getElementById('hamburger');
+    var nav = document.getElementById('mobile-nav');
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>
 </body>
 </html>
