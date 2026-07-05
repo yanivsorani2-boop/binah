@@ -11,9 +11,6 @@
 5. **הסרה** (לאחר אישור בלבד) — מחיקת 25 המאמרים, הוספת 301 ב-netlify.toml, עדכון sitemap.xml, feed.xml, archive.html, עמודי קטגוריה, .protected-checksums.txt.
 6. **אימות** — `bash scripts/invariants.sh` (כל 10 הבדיקות חייבות לעבור) + בדיקת הפניות מדגמית.
 
-## Placeholders להחלפה
-- מספר וואטסאפ בכפתור הצף: `972500000000` (index.html)
-
 ## רשימת שימור מאושרת
 biz-ai-accounting-finance, biz-ai-content-writing, biz-ai-customer-service, biz-ai-data-analytics, biz-ai-design-images, biz-ai-hiring-hr, biz-ai-marketing-small-business, biz-ai-seo-website, biz-ai-time-automation, biz-ai-whatsapp-crm, ai-small-business, 2026-04-25-business-ai-tools-israeli-businesses-roi-2026, 2026-04-25-ai-agents-enterprise-2026, 2026-03-24-guide-ai-prompts-guide-for-beginners, 2026-04-25-guide-chatgpt-practical-guide-beginners-to-advanced, 2026-04-25-hebrew-hebrew-ai-tools-review-2026, 2026-04-25-tools-ai-tools-comparison-2026, 2026-04-24-tools-ai-coding-tools-comparison-2026, 2026-04-18-tools-ai-video-tools-comparison-2026, 2026-03-24-tools-best-ai-writing-tools-2026-comparison, 2026-04-25-compare-gemini-2-vs-gpt4o-vs-claude-3-5-comparison-2026, 2026-03-24-gpt5-release-impact-2026, ollama-guide, midjourney-beginners, vibe-coding, perplexity-ai, chatgpt-10-uses.
 
