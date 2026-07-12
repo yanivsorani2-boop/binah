@@ -1,474 +1,494 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>בינה — הטמעת AI לעסקים בישראל | העסק שלך. חכם פי עשרה.</title>
-  <meta name="description" content="בינה — הטמעת בינה מלאכותית לעסקים ישראלים: אוטומציה, שיווק, שירות לקוחות ומדריכים מעשיים בעברית. קבעו שיחת אבחון חינם.">
-  <meta property="og:title" content="בינה — הטמעת AI לעסקים בישראל">
-  <meta property="og:description" content="העסק שלך. חכם פי עשרה. הטמעת בינה מלאכותית לעסקים ישראלים — אוטומציה, שיווק ושירות לקוחות שעובדים 24/7.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://binah.co.il/">
-  <meta name="robots" content="index, follow">
-  <meta name="google-site-verification" content="YOUR_GSC_TOKEN_HERE">
-  <link rel="canonical" href="https://binah.co.il/">
-  <link rel="alternate" hreflang="he-IL" href="https://binah.co.il/">
-  <link rel="alternate" type="application/rss+xml" title="בינה RSS" href="/feed.xml">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/favicon.ico" sizes="48x48">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/design-system.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-MG65DD6GYJ');
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://binah.co.il/#website",
-        "url": "https://binah.co.il/",
-        "name": "בינה — AI לעסקים",
-        "description": "הטמעת בינה מלאכותית לעסקים ישראלים — אוטומציה, שיווק, שירות לקוחות ומדריכים בעברית",
-        "inLanguage": "he",
-        "publisher": { "@id": "https://binah.co.il/#organization" }
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://binah.co.il/#organization",
-        "name": "בינה",
-        "url": "https://binah.co.il/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://binah.co.il/images/logo.svg",
-          "width": 512,
-          "height": 512
-        },
-        "sameAs": ["https://twitter.com/BinahAI"]
-      }
-    ]
-  }
-  </script>
-
-  <style>
-    /* Page-specific styles on top of the design system */
-    .site-header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(10, 14, 26, 0.8);
-      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--ds-border);
-    }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 12px; }
-    .logo { font-size: 1.6rem; font-weight: 900; }
-    .main-nav { display: none; gap: 4px; }
-    .main-nav a { color: var(--ds-text); font-weight: 500; font-size: 0.95rem; padding: 8px 14px; border-radius: 10px; }
-    .main-nav a:hover { color: var(--ds-heading); background: rgba(148, 163, 184, 0.08); }
-    .nav-cta { font-size: 0.9rem; padding: 10px 22px; white-space: nowrap; }
-    .nav-left { display: flex; align-items: center; gap: 10px; }
-
-    /* Hamburger (mobile) */
-    .hamburger {
-      display: flex; flex-direction: column; justify-content: center; gap: 5px;
-      width: 44px; height: 44px; padding: 10px; background: none;
-      border: 1px solid var(--ds-border); border-radius: 10px; cursor: pointer;
-    }
-    .hamburger span { display: block; height: 2px; width: 100%; background: var(--ds-heading); border-radius: 2px; transition: transform 0.25s var(--ds-ease), opacity 0.2s; }
-    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-nav {
-      display: none; flex-direction: column; gap: 2px; padding: 12px 20px 18px;
-      border-top: 1px solid var(--ds-border);
-      background: rgba(10, 14, 26, 0.97);
-    }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a { color: var(--ds-text); font-weight: 500; padding: 12px 8px; border-bottom: 1px solid var(--ds-border); }
-    .mobile-nav a:last-child { border-bottom: none; }
-    @media (min-width: 960px) {
-      .main-nav { display: flex; }
-      .hamburger, .mobile-nav { display: none !important; }
-    }
-
-    .hero {
-      position: relative; overflow: hidden; text-align: center;
-      padding: 96px 0 80px;
-    }
-    .hero::before {
-      content: ""; position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(ellipse 60% 45% at 50% -5%, rgba(139, 92, 246, 0.22), transparent 70%),
-        radial-gradient(ellipse 40% 35% at 85% 20%, rgba(34, 211, 238, 0.10), transparent 70%),
-        radial-gradient(ellipse 40% 35% at 15% 25%, rgba(59, 130, 246, 0.12), transparent 70%);
-    }
-    .hero > .ds-container { position: relative; }
-    .hero h1 { margin: 24px 0 20px; }
-    .hero .ds-lead { max-width: 640px; margin: 0 auto 40px; }
-    .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
-
-    /* Trust strip */
-    .trust-strip { padding: 40px 0; border-block: 1px solid var(--ds-border); background: rgba(17, 24, 39, 0.35); }
-    .trust-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; text-align: center; }
-    @media (min-width: 960px) { .trust-grid { grid-template-columns: repeat(4, 1fr); } }
-    .trust-num {
-      font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.1;
-      background: var(--ds-gradient); -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; color: transparent;
-    }
-    .trust-label { color: var(--ds-muted); font-size: 0.9rem; margin-top: 6px; }
-
-    .section-head { text-align: center; max-width: 680px; margin: 0 auto 48px; }
-    .section-head p { color: var(--ds-muted); margin-top: 14px; }
-
-    /* Profession cards */
-    .pro-card { display: flex; flex-direction: column; gap: 8px; color: inherit; }
-    .pro-card .icon {
-      width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; background: var(--ds-gradient-soft); border: 1px solid var(--ds-border); margin-bottom: 8px;
-    }
-    .pro-card h3 { color: var(--ds-heading); }
-    .pro-card p { color: var(--ds-muted); font-size: 0.93rem; flex: 1; }
-    .pro-card .more { color: var(--ds-cyan); font-weight: 700; font-size: 0.9rem; }
-    .pro-card:hover .more { text-decoration: underline; }
-
-    .value-card p, .step p { color: var(--ds-muted); font-size: 0.95rem; margin-top: 8px; }
-
-    .article-card { display: flex; flex-direction: column; gap: 10px; }
-    .article-card .tag { font-size: 0.78rem; font-weight: 700; color: var(--ds-cyan); }
-    .article-card h3 a { color: var(--ds-heading); }
-    .article-card h3 a:hover { color: var(--ds-cyan); }
-    .article-card p { color: var(--ds-muted); font-size: 0.92rem; }
-
-    .tool-card { text-align: center; padding: 24px 18px; }
-    .tool-card .icon { font-size: 2rem; margin-bottom: 10px; }
-    .tool-card h3 { font-size: 1.05rem; }
-    .tool-card p { color: var(--ds-muted); font-size: 0.88rem; margin-top: 6px; }
-
-    .step .num {
-      font-size: 2.6rem; font-weight: 900; line-height: 1; margin-bottom: 12px;
-      background: var(--ds-gradient); -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; color: transparent;
-    }
-
-    /* CTA bands (calculator teaser + closing) */
-    .cta-band {
-      text-align: center; border-radius: var(--ds-radius-lg);
-      padding: 56px 24px; position: relative; overflow: hidden;
-      background: var(--ds-surface);
-      border: 1px solid var(--ds-border-strong);
-    }
-    .cta-band::before {
-      content: ""; position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(ellipse 70% 90% at 50% 110%, rgba(34, 211, 238, 0.14), transparent 70%);
-    }
-    .cta-band > * { position: relative; }
-    .cta-band p { max-width: 520px; margin: 14px auto 32px; color: var(--ds-muted); }
-    .cta-band .ds-btn-primary.big { font-size: 1.2rem; padding: 18px 44px; }
-
-    /* Floating WhatsApp */
-    .whatsapp-float {
-      position: fixed; bottom: 22px; left: 22px; z-index: 90;
-      width: 58px; height: 58px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      background: #25D366; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      transition: transform 0.25s var(--ds-ease), box-shadow 0.25s;
-    }
-    .whatsapp-float:hover { transform: translateY(-3px); box-shadow: 0 0 24px rgba(37, 211, 102, 0.5); }
-    .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
-
-    .site-footer { border-top: 1px solid var(--ds-border); padding: 48px 0 32px; margin-top: 40px; }
-    .footer-grid { display: grid; gap: 32px; grid-template-columns: 1fr; }
-    @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
-    .footer-grid h4 { font-size: 0.95rem; margin-bottom: 12px; }
-    .footer-grid ul { list-style: none; }
-    .footer-grid li { margin-bottom: 8px; }
-    .footer-grid a { color: var(--ds-muted); font-size: 0.9rem; }
-    .footer-grid a:hover { color: var(--ds-cyan); }
-    .footer-bottom { text-align: center; color: var(--ds-muted); font-size: 0.82rem; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--ds-border); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>בינה — סטודיו דיגיטלי | בניית אתרים ואפליקציות iPhone לעסקים</title>
+<meta name="description" content="בונים לעסק שלך אתר מהיר או אפליקציית iPhone אמיתית — עם כוח של בינה מלאכותית. מהרעיון לאוויר תוך ימים, במחיר שקוף. קבעו שיחת ייעוץ חינם.">
+<link rel="canonical" href="https://binah.co.il/">
+<meta property="og:title" content="בינה — סטודיו דיגיטלי | אתרים ואפליקציות לעסקים">
+<meta property="og:description" content="אתר מהיר או אפליקציית iPhone לעסק שלך — מהרעיון לאוויר תוך ימים, עם כוח של AI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://binah.co.il/">
+<meta property="og:locale" content="he_IL">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800;900&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "בינה — סטודיו דיגיטלי",
+  "url": "https://binah.co.il/",
+  "description": "בניית אתרים, אפליקציות iPhone ופתרונות בינה מלאכותית לעסקים בישראל",
+  "areaServed": "IL",
+  "priceRange": "₪₪",
+  "telephone": "+972504205097"
+}
+</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MG65DD6GYJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MG65DD6GYJ');
+</script>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="ds-container nav-inner">
-    <div class="nav-left">
-      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="פתיחת תפריט">
-        <span></span><span></span><span></span>
-      </button>
-      <a href="/" class="logo ds-gradient-text">בינה</a>
+<div class="scroll-progress" id="progress"></div>
+<div class="mesh"></div>
+<div class="grain"></div>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="iconGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- ניווט -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">בינה<em>.</em></a>
+    <div class="nav-links">
+      <a href="#services">שירותים</a>
+      <a href="#work">עבודות</a>
+      <a href="#process">איך זה עובד</a>
+      <a href="#faq">שאלות</a>
+      <a href="/archive.html">מגזין AI</a>
     </div>
-    <nav class="main-nav" aria-label="ניווט ראשי">
-      <a href="/business.html">AI לעסקים</a>
-      <a href="/guides.html">מדריכים</a>
-      <a href="/tools.html">כלים</a>
-      <a href="/archive.html">כל המאמרים</a>
-      <a href="/about.html">אודות</a>
-    </nav>
-    <a href="/contact.html" class="ds-btn ds-btn-primary nav-cta">שיחת אבחון</a>
+    <a href="#contact" class="btn btn-grad">שיחת ייעוץ חינם</a>
   </div>
-  <nav class="mobile-nav" id="mobile-nav" aria-label="ניווט מובייל">
-    <a href="/business.html">AI לעסקים</a>
-    <a href="/guides.html">מדריכים</a>
-    <a href="/tools.html">כלים</a>
-    <a href="/archive.html">כל המאמרים</a>
-    <a href="/about.html">אודות</a>
-    <a href="/contact.html">צור קשר</a>
-  </nav>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="container">
+    <div class="eyebrow"><span class="dot"></span> פתוחים לפרויקטים חדשים</div>
+    <h1>אתר או אפליקציה לעסק שלך.<br><span class="grad-text">מהרעיון לאוויר תוך ימים.</span></h1>
+    <p class="sub">אנחנו בונים אתרים מהירים ואפליקציות iPhone אמיתיות — בעזרת הכלים המתקדמים בעולם של בינה מלאכותית. בלי חודשים של פיתוח, בלי הפתעות במחיר.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-wa magnetic" href="https://wa.me/972504205097?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%90%D7%AA%D7%A8%20%D7%90%D7%95%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.2 1.2z"/></svg>
+        דברו איתנו בוואטסאפ
+      </a>
+      <a class="btn btn-ghost" href="#work">צפו בעבודות שלנו ←</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b data-count="4" data-suffix="+">4+</b><span>אפליקציות ואתרים באוויר</span></div>
+      <div class="stat"><b>ימים</b><span>מאפיון להשקה — לא חודשים</span></div>
+      <div class="stat"><b data-count="100" data-suffix="%">100%</b><span>מחיר סגור מראש</span></div>
+    </div>
+  </div>
 </header>
 
-<main>
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>אתרי תדמית</span><span>אפליקציות iPhone</span><span>דפי נחיתה</span><span>צ'אטבוטים חכמים</span><span>אוטומציות AI</span><span>חנויות אונליין</span><span>SwiftUI</span><span>קידום אורגני</span>
+    <span>אתרי תדמית</span><span>אפליקציות iPhone</span><span>דפי נחיתה</span><span>צ'אטבוטים חכמים</span><span>אוטומציות AI</span><span>חנויות אונליין</span><span>SwiftUI</span><span>קידום אורגני</span>
+  </div>
+</div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="ds-container">
-      <span class="ds-eyebrow">✦ הטמעת AI לעסקים בישראל</span>
-      <h1>העסק שלך.<br><span class="ds-gradient-text">חכם פי עשרה.</span></h1>
-      <p class="ds-lead">אנחנו עוזרים לעסקים ישראלים להטמיע בינה מלאכותית בשטח — אוטומציה של משימות, שיווק חכם ושירות לקוחות שעובד 24/7. בלי באזז, רק תוצאות.</p>
-      <div class="hero-actions">
-        <a href="/contact.html" class="ds-btn ds-btn-primary">שיחת אבחון חינם</a>
-        <a href="/business.html" class="ds-btn ds-btn-ghost">למדריכים לעסקים</a>
-      </div>
+<!-- שירותים -->
+<section id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag">מה אנחנו עושים</div>
+      <h2>שלושה שירותים. מטרה אחת: <br>שהעסק שלך יגדל.</h2>
+      <p>כל פרויקט נבנה בהתאמה אישית, עם טכנולוגיה שגופים גדולים משלמים עליה מאות אלפים — במחיר של עסק קטן.</p>
     </div>
-  </section>
-
-  <!-- Trust strip -->
-  <section class="trust-strip">
-    <div class="ds-container">
-      <div class="trust-grid">
-        <div>
-          <div class="trust-num"><span data-count="12">0</span>+</div>
-          <div class="trust-label">שעות נחסכות בשבוע בממוצע</div>
-        </div>
-        <div>
-          <div class="trust-num"><span data-count="20">0</span>+</div>
-          <div class="trust-label">שנות ניסיון בטכנולוגיה</div>
-        </div>
-        <div>
-          <div class="trust-num"><span data-count="100">0</span>+</div>
-          <div class="trust-label">כלי AI נבחנו לעומק</div>
-        </div>
-        <div>
-          <div class="trust-num"><span data-count="280">0</span>+</div>
-          <div class="trust-label">מדריכים ומאמרים שנכתבו</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solutions by profession -->
-  <section class="ds-section" id="solutions">
-    <div class="ds-container">
-      <div class="section-head ds-reveal">
-        <h2>פתרונות <span class="ds-gradient-text">לפי מקצוע</span></h2>
-        <p>כל עסק מבזבז זמן במקום אחר. בחרו את התחום שלכם וגלו איפה AI נכנס לתמונה.</p>
-      </div>
-      <div class="ds-grid ds-grid-3">
-        <a href="/solutions/lawyers.html" class="ds-card pro-card ds-reveal">
-          <div class="icon">⚖️</div>
-          <h3>עורכי דין</h3>
-          <p>חסכו 10 שעות שבועיות על ניסוח מסמכים, חוזים וסיכומי פסיקה.</p>
-          <span class="more">איך זה עובד ←</span>
-        </a>
-        <a href="/solutions/accountants.html" class="ds-card pro-card ds-reveal">
-          <div class="icon">🧾</div>
-          <h3>רואי חשבון</h3>
-          <p>קליטת חשבוניות, התאמות בנקים ודוחות — אוטומטית במקום ידנית.</p>
-          <span class="more">איך זה עובד ←</span>
-        </a>
-        <a href="/solutions/realtors.html" class="ds-card pro-card ds-reveal">
-          <div class="icon">🏠</div>
-          <h3>מתווכים</h3>
-          <p>מודעות נכסים, מענה מיידי לפניות ומעקב לידים — בלי לפספס אף לקוח.</p>
-          <span class="more">איך זה עובד ←</span>
-        </a>
-        <a href="/solutions/clinics.html" class="ds-card pro-card ds-reveal">
-          <div class="icon">🩺</div>
-          <h3>מרפאות</h3>
-          <p>זימון תורים, תזכורות למטופלים וסיכומי ביקור — הצוות מתפנה לטיפול.</p>
-          <span class="more">איך זה עובד ←</span>
-        </a>
-        <a href="/solutions/restaurants.html" class="ds-card pro-card ds-reveal">
-          <div class="icon">🍽️</div>
-          <h3>מסעדות</h3>
-          <p>הזמנות בוואטסאפ, ניהול מלאי ותוכן לרשתות — הכל ממקום אחד.</p>
-          <span class="more">איך זה עובד ←</span>
-        </a>
-        <a href="/solutions/contractors.html" class="ds-card pro-card ds-reveal">
-          <div class="icon">🏗️</div>
-          <h3>קבלנים</h3>
-          <p>הצעות מחיר מהירות, מעקב פרויקטים ותיאום ספקים — פחות ניירת, יותר שטח.</p>
-          <span class="more">איך זה עובד ←</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works -->
-  <section class="ds-section">
-    <div class="ds-container">
-      <div class="section-head ds-reveal">
-        <h2>איך זה <span class="ds-gradient-text">עובד</span></h2>
-      </div>
-      <div class="ds-grid ds-grid-3">
-        <div class="ds-card step ds-reveal">
-          <div class="num">01</div>
-          <h3>שיחת אבחון</h3>
-          <p>שיחה קצרה וחינמית — מבינים איפה העסק מבזבז זמן וכסף, ואיפה AI יכול לעזור.</p>
-        </div>
-        <div class="ds-card step ds-reveal">
-          <div class="num">02</div>
-          <h3>תוכנית מותאמת</h3>
-          <p>בוחרים יחד את הכלים הנכונים לעסק שלך — בלי מנויים מיותרים ובלי סיבוכים.</p>
-        </div>
-        <div class="ds-card step ds-reveal">
-          <div class="num">03</div>
-          <h3>הטמעה ומדידה</h3>
-          <p>מטמיעים, מדריכים את הצוות ומודדים תוצאות — עד שהחיסכון מדבר בעד עצמו.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Calculator teaser -->
-  <section class="ds-section">
-    <div class="ds-container">
-      <div class="cta-band ds-reveal">
-        <h2>כמה שעות <span class="ds-gradient-text">AI יחסוך</span> לעסק שלך?</h2>
-        <p>ענו על כמה שאלות קצרות וקבלו הערכה מיידית — כמה שעות עבודה וכסף אתם משאירים על השולחן כל חודש.</p>
-        <a href="/savings-calculator.html" class="ds-btn ds-btn-primary big">חשבו את החיסכון שלכם</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Business articles -->
-  <section class="ds-section">
-    <div class="ds-container">
-      <div class="section-head ds-reveal">
-        <h2>מדריכים <span class="ds-gradient-text">לעסקים</span></h2>
-        <p>ידע מעשי בעברית — איך מטמיעים AI בכל חלק של העסק.</p>
-      </div>
-      <div class="ds-grid ds-grid-3">
-        <article class="ds-card article-card ds-reveal">
-          <span class="tag">אוטומציה</span>
-          <h3><a href="/articles/biz-ai-time-automation.html">10 משימות שאפשר לאטומט עם AI ולחסוך 15 שעות בשבוע</a></h3>
-          <p>המדריך המעשי לאוטומציה של העבודה השוטפת בעסק.</p>
-        </article>
-        <article class="ds-card article-card ds-reveal">
-          <span class="tag">שירות לקוחות</span>
-          <h3><a href="/articles/biz-ai-customer-service.html">צ'אטבוט לשירות לקוחות — AI שעונה ללקוחות 24/7</a></h3>
-          <p>איך מקימים מענה אוטומטי חכם שלקוחות באמת אוהבים.</p>
-        </article>
-        <article class="ds-card article-card ds-reveal">
-          <span class="tag">שיווק</span>
-          <h3><a href="/articles/biz-ai-marketing-small-business.html">שיווק דיגיטלי עם AI — המדריך המלא לעסק קטן</a></h3>
-          <p>קמפיינים, תוכן ופרסום ממומן — הכל עם כלי AI בעברית.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive tools (business-focused) -->
-  <section class="ds-section">
-    <div class="ds-container">
-      <div class="section-head ds-reveal">
-        <h2>כלים <span class="ds-gradient-text">אינטראקטיביים</span></h2>
-        <p>בדקו, השוו וחשבו — הכל בעברית, הכל בחינם.</p>
-      </div>
-      <div class="ds-grid ds-grid-3">
-        <a href="/quiz.html" class="ds-card tool-card ds-reveal">
-          <div class="icon">🎯</div>
-          <h3>חידון התאמת AI</h3>
-          <p>איזה כלי AI מתאים לעסק שלך?</p>
-        </a>
-        <a href="/ai-cost-calculator.html" class="ds-card tool-card ds-reveal">
-          <div class="icon">🧮</div>
-          <h3>מחשבון עלויות</h3>
-          <p>כמה יעלה לך AI בחודש?</p>
-        </a>
-        <a href="/prompt-library.html" class="ds-card tool-card ds-reveal">
-          <div class="icon">📚</div>
-          <h3>ספריית פרומפטים</h3>
-          <p>פרומפטים מוכנים לעסקים בעברית.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="ds-section">
-    <div class="ds-container">
-      <div class="cta-band ds-reveal">
-        <h2>מוכנים להפוך את העסק <span class="ds-gradient-text">לחכם יותר?</span></h2>
-        <p>שיחת אבחון חינם, בלי התחייבות — תצאו ממנה עם לפחות שלושה דברים שאפשר לשפר כבר מחר.</p>
-        <a href="/contact.html" class="ds-btn ds-btn-primary">קבעו שיחת אבחון חינם</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="ds-container">
-    <div class="footer-grid">
-      <div>
-        <h4 class="ds-gradient-text" style="font-size:1.3rem;font-weight:900;">בינה</h4>
-        <p style="color:var(--ds-muted);font-size:0.9rem;">הטמעת בינה מלאכותית לעסקים ישראלים — ידע, כלים וליווי בעברית.</p>
-      </div>
-      <div>
-        <h4>ניווט</h4>
+    <div class="services-grid">
+      <div class="service reveal spot">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="15" rx="2"/><path d="M2 9h20M6 19v2M18 19v2"/></svg></div>
+        <h3>אתר לעסק</h3>
+        <p>אתר תדמית או דף נחיתה שנטען במהירות בזק, נראה מיליון דולר בנייד, ומביא פניות.</p>
         <ul>
-          <li><a href="/business.html">AI לעסקים</a></li>
-          <li><a href="/guides.html">מדריכים</a></li>
-          <li><a href="/tools.html">כלים</a></li>
-          <li><a href="/archive.html">כל המאמרים</a></li>
-          <li><a href="/about.html">אודות</a></li>
-          <li><a href="/contact.html">צור קשר</a></li>
+          <li>עיצוב מותאם אישית לעסק שלך</li>
+          <li>מהירות טעינה מושלמת (ציון 100 בגוגל)</li>
+          <li>מותאם לקידום בגוגל מהיום הראשון</li>
+          <li>טופס פניות + חיבור לוואטסאפ</li>
+          <li>דומיין, אחסון ותעודת אבטחה — עלינו</li>
         </ul>
+        <div class="price-line"><span class="from">החל מ־</span><span class="price">2,900 ₪</span></div>
+        <a href="#contact" class="btn btn-ghost">רוצה אתר כזה</a>
       </div>
-      <div>
-        <h4>מידע</h4>
+      <div class="service reveal spot">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
+        <h3>אפליקציית iPhone</h3>
+        <p>אפליקציה אמיתית ב-App Store — לא אתר עטוף. בנויה ב-SwiftUI, הטכנולוגיה של אפל עצמה.</p>
         <ul>
-          <li><a href="/methodology.html">מתודולוגיה</a></li>
-          <li><a href="/ai-disclosure.html">גילוי נאות AI</a></li>
-          <li><a href="/privacy-policy.html">מדיניות פרטיות</a></li>
-          <li><a href="/terms.html">תנאי שימוש</a></li>
-          <li><a href="/feed.xml">RSS</a></li>
+          <li>אפליקציה מקורית מלאה ב-App Store</li>
+          <li>עיצוב ברמה של האפליקציות הגדולות</li>
+          <li>התראות, ווידג'טים ומנויים בתשלום</li>
+          <li>ליווי מלא מול אפל עד האישור</li>
+          <li>עדכונים ותחזוקה גם אחרי ההשקה</li>
         </ul>
+        <div class="price-line"><span class="from">החל מ־</span><span class="price">14,900 ₪</span></div>
+        <a href="#contact" class="btn btn-ghost">רוצה אפליקציה</a>
+      </div>
+      <div class="service reveal spot">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.9 5.7L20 9.5l-5 4 1.6 6.2L12 16.3l-4.6 3.4L9 13.5l-5-4 6.1-1.8z"/></svg></div>
+        <h3>פתרונות AI לעסק</h3>
+        <p>העסק שלך עובד 24/7 גם כשאתה ישן: צ'אטבוט שעונה ללקוחות, אוטומציות שחוסכות שעות עבודה.</p>
+        <ul>
+          <li>צ'אטבוט חכם לאתר או לוואטסאפ</li>
+          <li>אוטומציה של משימות חוזרות</li>
+          <li>יצירת תוכן שיווקי אוטומטית</li>
+          <li>ייעוץ AI מותאם לעסק שלך</li>
+          <li>הטמעה מהירה בכלים הקיימים שלך</li>
+        </ul>
+        <div class="price-line"><span class="from">החל מ־</span><span class="price">1,900 ₪</span></div>
+        <a href="#contact" class="btn btn-ghost">רוצה לשמוע עוד</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 בינה — binah.co.il · כל הזכויות שמורות</div>
+  </div>
+</section>
+
+<!-- תיק עבודות -->
+<section id="work" class="work">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag">תיק עבודות</div>
+      <h2>לא מבטיחים. מראים.</h2>
+      <p>מוצרים אמיתיים שבנינו, חיים היום ב-App Store ובאוויר.</p>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-info">
+        <div class="app-head">
+          <img class="app-icon" src="assets/img/icon-torli.png" alt="אייקון תורלי" loading="lazy">
+          <div>
+            <h3>תורלי</h3>
+            <div class="app-type">אפליקציית iPhone · ניהול תורים לעסקי יופי</div>
+          </div>
+        </div>
+        <p>יומן תורים חכם לעצמאיות בתחום היופי: תזכורות אוטומטיות בוואטסאפ, כרטיסי תור ממותגים, מעקב הכנסות ודוחות — הכול בעברית מושלמת.</p>
+        <div class="chips"><span class="chip">SwiftUI</span><span class="chip">מנויים בתשלום</span><span class="chip">ווידג'ט</span><span class="chip">App Store</span></div>
+      </div>
+      <div class="project-media">
+        <div class="phone back"><img src="assets/img/shot-torli-02.png" alt="תורלי — מסך לקוחות" loading="lazy"></div>
+        <div class="phone front"><img src="assets/img/shot-torli-01.png" alt="תורלי — יומן יומי" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-info">
+        <div class="app-head">
+          <img class="app-icon" src="assets/img/icon-sidorit.png" alt="אייקון סידורית" loading="lazy">
+          <div>
+            <h3>סידורית</h3>
+            <div class="app-type">אפליקציית iPhone · סידורי עבודה לצוותים</div>
+          </div>
+        </div>
+        <p>מערכת סידורי עבודה לחנויות וצוותים: בניית משמרות בלחיצה, ניהול עובדים, חופשות ונוכחות — במקום אקסלים וכאב ראש.</p>
+        <div class="chips"><span class="chip">SwiftUI</span><span class="chip">ניהול צוות</span><span class="chip">דוחות</span><span class="chip">App Store</span></div>
+      </div>
+      <div class="project-media">
+        <div class="phone back"><img src="assets/img/shot-sidorit-3.png" alt="סידורית — תצוגה חודשית" loading="lazy"></div>
+        <div class="phone front"><img src="assets/img/shot-sidorit-1.png" alt="סידורית — מסך ראשי" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-info">
+        <div class="app-head">
+          <img class="app-icon" src="assets/img/icon-mevazakim.png" alt="אייקון חדשותי" loading="lazy">
+          <div>
+            <h3>חדשותי</h3>
+            <div class="app-type">אפליקציית iPhone · חדשות בזמן אמת</div>
+          </div>
+        </div>
+        <p>אפליקציית חדשות מלאה בעברית: מבזקים בזמן אמת, התראות, קטגוריות ועיצוב RTL מוקפד — חוויית קריאה מהירה ונקייה.</p>
+        <div class="chips"><span class="chip">SwiftUI</span><span class="chip">Firebase</span><span class="chip">התראות פוש</span><span class="chip">App Store</span></div>
+      </div>
+      <div class="project-media">
+        <div class="site-frame">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="body">
+            <div class="fake-h"></div>
+            <div class="fake-l"></div>
+            <div class="fake-l"></div>
+            <div class="fake-l short"></div>
+            <br>
+            <div class="fake-l"></div>
+            <div class="fake-l short"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project reveal">
+      <div class="project-info">
+        <div class="app-head">
+          <div>
+            <h3>מגזין בינה</h3>
+            <div class="app-type">אתר תוכן · binah.co.il</div>
+          </div>
+        </div>
+        <p>מגזין AI בעברית עם עשרות מדריכים והשוואות, תנועה אורגנית מגוגל וציוני מהירות מושלמים — האתר שאתם נמצאים בו עכשיו.</p>
+        <div class="chips"><span class="chip">SEO</span><span class="chip">מהירות 100</span><span class="chip">תוכן AI</span></div>
+      </div>
+      <div class="project-media">
+        <div class="site-frame">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="body">
+            <div class="fake-h"></div>
+            <div class="fake-l"></div>
+            <div class="fake-l short"></div>
+            <br>
+            <div class="fake-l"></div>
+            <div class="fake-l"></div>
+            <div class="fake-l short"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- תהליך -->
+<section id="process">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag">איך זה עובד</div>
+      <h2>ארבעה שלבים. אפס כאב ראש.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal spot">
+        <div class="num">01</div>
+        <h3>שיחת היכרות</h3>
+        <p>מספרים לנו על העסק והחלום. אנחנו מציעים פתרון ומחיר סגור — בחינם וללא התחייבות.</p>
+      </div>
+      <div class="step reveal spot">
+        <div class="num">02</div>
+        <h3>אפיון ועיצוב</h3>
+        <p>תוך יומיים תקבלו הדמיה חיה של המוצר שלכם. מתקנים יחד עד שזה מושלם.</p>
+      </div>
+      <div class="step reveal spot">
+        <div class="num">03</div>
+        <h3>בנייה מהירה</h3>
+        <p>הקסם קורה: בעזרת כלי ה-AI המתקדמים בעולם אנחנו בונים בימים מה שלוקח לאחרים חודשים.</p>
+      </div>
+      <div class="step reveal spot">
+        <div class="num">04</div>
+        <h3>השקה וליווי</h3>
+        <p>עולים לאוויר — לגוגל או ל-App Store. נשארים איתכם לעדכונים, תיקונים ושדרוגים.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- למה אנחנו -->
+<section id="why">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag">למה בינה</div>
+      <h2>היתרון הלא הוגן שלנו: AI</h2>
+      <p>אנחנו לא סוכנות רגילה. אנחנו בונים עם הכלים שמשנים את העולם — ומעבירים את החיסכון אליכם.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal spot">
+        <div class="w-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M13 2L4.5 12.5H11L9.5 22 19 10.5h-6.5L13 2z"/></svg></div>
+        <div><h3>מהירות שלא הכרתם</h3><p>פרויקטים שנמשכים חודשים אצל אחרים — אצלנו עולים לאוויר תוך ימים.</p></div>
+      </div>
+      <div class="why reveal spot">
+        <div class="w-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div><h3>מחיר סגור מראש</h3><p>בלי שעות עבודה מתנפחות. מקבלים הצעה — זה המחיר הסופי.</p></div>
+      </div>
+      <div class="why reveal spot">
+        <div class="w-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1M22 4L12 14l-3-3"/></svg></div>
+        <div><h3>מוצר אמיתי, לא תבנית</h3><p>כל אתר ואפליקציה נבנים בקוד נקי בהתאמה אישית — לא וורדפרס איטי ולא תבנית משוכפלת.</p></div>
+      </div>
+      <div class="why reveal spot">
+        <div class="w-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.4-.7L3 21l1.8-5.6a8.4 8.4 0 1 1 16.2-3.9z"/></svg></div>
+        <div><h3>עברית מושלמת</h3><p>RTL אמיתי, לשון פנייה נכונה, וואטסאפ מובנה — הכול מותאם לקהל ישראלי.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag">שאלות נפוצות</div>
+      <h2>כל מה שרציתם לדעת</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq">
+        <summary>כמה זמן באמת לוקח לבנות אתר או אפליקציה?</summary>
+        <div class="faq-body">אתר תדמית: 3–7 ימי עבודה מרגע קבלת החומרים. אפליקציית iPhone: 2–4 שבועות כולל תהליך האישור של אפל. אנחנו עובדים עם כלי AI מתקדמים שמאיצים את הפיתוח פי כמה — בלי להתפשר על איכות.</div>
+      </details>
+      <details class="faq">
+        <summary>מה כלול במחיר ומה לא?</summary>
+        <div class="faq-body">המחיר שתקבלו הוא סופי וכולל הכול: עיצוב, פיתוח, העלאה לאוויר והדרכה. באתרים — גם דומיין ואחסון לשנה הראשונה. באפליקציות — גם ליווי מול אפל. אין עלויות נסתרות.</div>
+      </details>
+      <details class="faq">
+        <summary>אני צריך לדעת משהו טכני?</summary>
+        <div class="faq-body">ממש לא. אתם מספרים לנו מה העסק צריך בשפה שלכם — אנחנו מתרגמים את זה למוצר. אחרי ההשקה תקבלו הדרכה פשוטה איך לעדכן תכנים בעצמכם.</div>
+      </details>
+      <details class="faq">
+        <summary>האפליקציה תהיה ממש ב-App Store?</summary>
+        <div class="faq-body">כן. אפליקציה מקורית מלאה שעוברת את הביקורת של אפל ויושבת ב-App Store תחת השם של העסק שלכם — כולל התראות, מנויים בתשלום וכל היכולות של אפליקציה אמיתית.</div>
+      </details>
+      <details class="faq">
+        <summary>מה קורה אחרי ההשקה?</summary>
+        <div class="faq-body">לא נעלמים. כל פרויקט כולל תקופת ליווי לתיקונים והתאמות, ותוכלו להמשיך איתנו במסלול תחזוקה חודשי או לפנות רק כשצריך.</div>
+      </details>
+      <details class="faq">
+        <summary>למה לא לבנות לבד עם וויקס או AI?</summary>
+        <div class="faq-body">אפשר — אבל אתר תבנית איטי נראה כמו כולם ולא מקודם בגוגל, ובניית אפליקציה אמיתית דורשת ידע פיתוח מקצועי. אנחנו נותנים לכם את הטוב משני העולמות: מהירות של AI עם ליטוש של מקצוענים.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- יצירת קשר -->
+<section id="contact">
+  <div class="container contact-wrap">
+    <div class="contact-info reveal">
+      <h2>בואו נבנה משהו <span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">גדול</span> ביחד</h2>
+      <p>ספרו לנו על העסק שלכם בהודעה קצרה — ותקבלו תשובה עוד היום עם כיוון ומחיר. שיחת הייעוץ חינם, ההחלטה כולה שלכם.</p>
+      <a class="btn btn-wa" href="https://wa.me/972504205097?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%90%D7%AA%D7%A8%20%D7%90%D7%95%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.2 1.2z"/></svg>
+        וואטסאפ — מענה מהיר
+      </a>
+    </div>
+    <form class="form-card reveal" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none"><input name="bot-field"></p>
+      <label for="f-name">שם מלא</label>
+      <input id="f-name" name="name" type="text" required placeholder="איך קוראים לך?">
+      <label for="f-phone">טלפון</label>
+      <input id="f-phone" name="phone" type="tel" required placeholder="050-0000000">
+      <label for="f-type">מה בונים?</label>
+      <select id="f-type" name="type">
+        <option>אתר לעסק</option>
+        <option>אפליקציית iPhone</option>
+        <option>פתרון AI לעסק</option>
+        <option>עוד לא בטוח/ה — בואו נדבר</option>
+      </select>
+      <label for="f-msg">ספרו לנו בכמה מילים</label>
+      <textarea id="f-msg" name="message" placeholder="מה העסק שלכם ומה הייתם רוצים לבנות?"></textarea>
+      <button type="submit" class="btn btn-grad">שלחו — ונחזור אליכם היום</button>
+    </form>
+  </div>
+</section>
+
+<!-- פוטר -->
+<footer>
+  <div class="container footer-inner">
+    <div class="logo">בינה<em>.</em></div>
+    <div class="footer-links">
+      <a href="#services">שירותים</a>
+      <a href="#work">עבודות</a>
+      <a href="/archive.html">מגזין AI</a>
+      <a href="/privacy-policy.html">פרטיות</a>
+    </div>
+    <div>© 2026 בינה — סטודיו דיגיטלי</div>
   </div>
 </footer>
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/972504205097" class="whatsapp-float" target="_blank" rel="noopener" aria-label="שיחה בוואטסאפ">
-  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.04 3C9.03 3 3.34 8.69 3.34 15.7c0 2.24.59 4.42 1.7 6.34L3.2 28.8l6.94-1.82a12.63 12.63 0 0 0 5.9 1.5h.01c7 0 12.7-5.69 12.7-12.7C28.74 8.69 23.05 3 16.04 3zm0 23.34h-.01a10.5 10.5 0 0 1-5.35-1.47l-.38-.23-3.98 1.05 1.06-3.88-.25-.4a10.53 10.53 0 0 1-1.62-5.62c0-5.83 4.74-10.57 10.58-10.57 2.82 0 5.48 1.1 7.47 3.1a10.5 10.5 0 0 1 3.1 7.48c0 5.83-4.75 10.57-10.57 10.57zm5.8-7.92c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.24-.19.21-.37.24-.69.08-.32-.16-1.34-.5-2.56-1.58-.95-.85-1.58-1.9-1.77-2.21-.19-.32-.02-.5.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55l-.61-.01c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.66 0 1.56 1.14 3.08 1.3 3.29.16.21 2.24 3.42 5.43 4.8.76.33 1.35.52 1.81.67.76.24 1.46.21 2 .13.61-.09 1.88-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.29-.21-.61-.37z"/></svg>
+<!-- וואטסאפ צף -->
+<a class="wa-float" href="https://wa.me/972504205097?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%91%D7%A0%D7%99%D7%99%D7%AA%20%D7%90%D7%AA%D7%A8%20%D7%90%D7%95%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94" target="_blank" rel="noopener" aria-label="וואטסאפ">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.2 1.2z"/></svg>
 </a>
 
-<script src="/design-system.js" defer></script>
 <script>
-  (function () {
-    var btn = document.getElementById('hamburger');
-    var nav = document.getElementById('mobile-nav');
-    btn.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+// ניווט שקוף → מלא בגלילה
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30), { passive: true });
+
+// פס התקדמות
+const bar = document.getElementById('progress');
+addEventListener('scroll', () => {
+  const h = document.documentElement;
+  bar.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight)})`;
+}, { passive: true });
+
+// חשיפה בגלילה + סטאגר לפי מיקום בגריד
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => {
+  const sibs = [...el.parentElement.children].filter(c => c.classList.contains('reveal'));
+  if (sibs.length > 1) el.style.setProperty('--d', `${(sibs.indexOf(el) % 4) * 0.09}s`);
+  io.observe(el);
+});
+
+const motionOK = matchMedia('(prefers-reduced-motion: no-preference)').matches;
+const finePointer = matchMedia('(pointer: fine)').matches;
+
+// מונים בהירו
+if (motionOK) {
+  const cio = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    cio.unobserve(e.target);
+    const end = +e.target.dataset.count, suf = e.target.dataset.suffix || '', t0 = performance.now();
+    (function tick(t) {
+      const p = Math.min((t - t0) / 1200, 1), ease = 1 - Math.pow(1 - p, 3);
+      e.target.textContent = Math.round(end * ease) + suf;
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }), { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+}
+
+if (motionOK && finePointer) {
+  // כפתור מגנטי (הצמדה עדינה לעכבר)
+  document.querySelectorAll('.magnetic').forEach(el => {
+    let tx = 0, ty = 0, x = 0, y = 0, raf;
+    const loop = () => {
+      x += (tx - x) * 0.18; y += (ty - y) * 0.18;
+      el.style.transform = `translate(${x}px, ${y}px)`;
+      if (Math.abs(tx - x) > 0.2 || Math.abs(ty - y) > 0.2) raf = requestAnimationFrame(loop);
+    };
+    el.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      tx = (e.clientX - r.left - r.width / 2) * 0.3;
+      ty = (e.clientY - r.top - r.height / 2) * 0.3;
+      cancelAnimationFrame(raf); raf = requestAnimationFrame(loop);
     });
-  })();
+    el.addEventListener('mouseleave', () => { tx = ty = 0; cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); });
+  });
+
+  // הטיית 3D למוקאפים
+  document.querySelectorAll('.project-media').forEach(media => {
+    const items = media.querySelectorAll('.phone, .site-frame');
+    media.addEventListener('mousemove', e => {
+      const r = media.getBoundingClientRect();
+      const rx = ((e.clientY - r.top) / r.height - 0.5) * -10;
+      const ry = ((e.clientX - r.left) / r.width - 0.5) * 12;
+      items.forEach(el => el.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)` +
+        (el.classList.contains('back') ? ' translateY(26px) scale(0.94)' : ''));
+    });
+    media.addEventListener('mouseleave', () => items.forEach(el => el.style.transform = ''));
+  });
+
+  // ספוטלייט עוקב עכבר
+  document.querySelectorAll('.spot').forEach(card => {
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+      card.style.setProperty('--my', `${e.clientY - r.top}px`);
+    });
+  });
+}
 </script>
+
 </body>
 </html>
